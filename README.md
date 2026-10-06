@@ -177,3 +177,11 @@ Un iframe srcdoc utiliza modo estándar incluso sin DOCTYPE: el tutorial identif
 ## SEO con Google
 
 `seo.html` incluye fundamentos y referencias oficiales de Google Search Central. El editor genera ejemplos de title, meta description y canonical y una vista didáctica de resultado. No consulta Google, no publica datos y no predice posiciones. La lista de revisión es manual; sus casillas se reinician al recargar. El tema se integra con el progreso de estudio, el menú, footer, portada, glosario y documentación. Estilos e interacción separados: `assets/seo.css` y `js/seo.js`.
+
+### SEO dentro de HTML
+
+La página HTML incluye la sección `#seo-html`: head completo, meta description, comparación con title y h1, encabezados, enlaces e imágenes. El paso 2 y los documentos acumulativos de HTML, CSS y JavaScript incluyen la descripción. Cambiar o quitar ese metadato permite comprobar que no añade contenido al body. Referencias oficiales de Google enlazadas en el tema.
+
+### Errores HTTP
+
+La lección DNS y HTTP incluye una referencia desplegable de 17 códigos de error, ejemplos, pasos de diagnóstico y diferencias con DNS, TLS, CORS y errores de JavaScript. Los desplegables usan HTML nativo.

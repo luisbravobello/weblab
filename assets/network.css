@@ -215,3 +215,26 @@
     padding: 12px;
   }
 }
+
+/* Referencia de errores: estructura nativa desplegable, sin JavaScript. */
+.http-error-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  margin-block: 24px;
+  align-items: start;
+}
+.http-error-grid details {
+  padding: 20px;
+  border: 1px solid var(--line, #dce1ea);
+  border-radius: 12px;
+  background: #fff;
+}
+.http-error-grid summary {
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 24px;
+}
+.http-error-grid p {
+  margin-block: 16px 0;
+}
