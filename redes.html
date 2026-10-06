@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Aprende cómo funciona la web: URL, DNS, HTTP, HTTPS, estados y un recorrido interactivo paso a paso."
+    />
+    <title>DNS, HTTP y HTTPS paso a paso | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/network.css" />
+    <script src="js/network.js" defer></script>
+  </head>
+  <body data-page="redes">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="json.html">JSON y datos</a>
+              <a href="redes.html" aria-current="page">DNS, HTTP y HTTPS</a>
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">FUNDAMENTOS DE LA WEB</p>
+          <h1>De una dirección a una página.</h1>
+          <p>
+            DNS encuentra direcciones. HTTP permite solicitar recursos. HTTPS
+            protege la comunicación. Sigue el recorrido y prueba qué pasa cuando
+            cambia una respuesta.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#recorrido">Paso a paso</a><a href="#direccion">La URL</a
+            ><a href="#dns">DNS</a><a href="#http">HTTP</a
+            ><a href="#https">HTTPS</a><a href="#diagnostico">Diagnóstico</a
+            ><a href="#prueba">Practicar</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- La estructura y las explicaciones están en HTML; JS solo cambia el paso visible. -->
+      <section
+        id="recorrido"
+        class="section container"
+        aria-labelledby="journey-title"
+      >
+        <header class="section-head">
+          <h2 id="journey-title">1. Sigue una visita, paso a paso</h2>
+          <p>
+            Ejemplo local simulado:
+            <code>https://pokeatlas.test/index.html</code>. El dominio y la IP
+            son de ejemplo; no se hacen consultas DNS ni peticiones reales.
+          </p>
+        </header>
+        <div class="network-lab">
+          <fieldset class="network-options">
+            <legend>Configura la visita</legend>
+            <label for="network-protocol"
+              >Protocolo
+              <select id="network-protocol">
+                <option value="https">HTTPS · conexión protegida</option>
+                <option value="http">HTTP · sin TLS</option>
+              </select>
+            </label>
+            <label for="network-status"
+              >Respuesta del servidor
+              <select id="network-status">
+                <option value="200">200 · Recurso disponible</option>
+                <option value="404">404 · Recurso no encontrado</option>
+                <option value="500">500 · Error del servidor</option>
+              </select>
+            </label>
+          </fieldset>
+          <ol class="network-track" aria-label="Etapas de la visita">
+            <li>
+              <button type="button" data-network-step="0" aria-current="step">
+                URL
+              </button>
+            </li>
+            <li><button type="button" data-network-step="1">DNS</button></li>
+            <li>
+              <button type="button" data-network-step="2">Conexión</button>
+            </li>
+            <li>
+              <button type="button" data-network-step="3">Petición</button>
+            </li>
+            <li>
+              <button type="button" data-network-step="4">Respuesta</button>
+            </li>
+            <li><button type="button" data-network-step="5">Página</button></li>
+          </ol>
+          <p id="network-step-status" class="network-step-status" role="status">
+            Paso 1 de 6: URL
+          </p>
+          <article class="network-panel" data-network-panel>
+            <h3>El navegador interpreta la dirección</h3>
+            <p>
+              Identifica el protocolo, el nombre del servidor y el recurso
+              solicitado. El dominio es <code>pokeatlas.test</code>; la ruta es
+              <code>/index.html</code>.
+            </p>
+            <pre><code><span data-network-https>https</span><span data-network-http hidden>http</span>://pokeatlas.test/index.html</code></pre>
+            <p>
+              Una dirección no es el archivo en tu ordenador: indica cómo y
+              dónde pedirlo.
+            </p>
+          </article>
+          <article class="network-panel" data-network-panel hidden>
+            <h3>DNS resuelve el nombre</h3>
+            <p>
+              Un resolvedor busca la dirección asociada al dominio. Puede
+              reutilizar información en caché o consultar otros servidores DNS.
+              En este ejemplo obtiene la IP de documentación
+              <code>192.0.2.10</code>.
+            </p>
+            <pre><code>pokeatlas.test → 192.0.2.10</code></pre>
+            <p>
+              DNS no descarga el HTML. Si el nombre no puede resolverse, este
+              recorrido se detiene antes de la petición HTTP.
+            </p>
+          </article>
+          <article class="network-panel" data-network-panel hidden>
+            <h3>Se establece la conexión</h3>
+            <div data-network-https>
+              <p>
+                Con HTTPS, TLS protege el intercambio y el navegador comprueba
+                el certificado del servidor para ese nombre.
+              </p>
+              <pre><code>Destino de ejemplo: 192.0.2.10:443
+TLS: conexión cifrada y certificado válido</code></pre>
+            </div>
+            <div data-network-http hidden>
+              <p>
+                Con HTTP sin TLS, la comunicación no tiene la protección de
+                HTTPS.
+              </p>
+              <pre><code>Destino de ejemplo: 192.0.2.10:80
+Sin TLS: comunicación no cifrada por HTTPS</code></pre>
+            </div>
+            <p>
+              Los puertos 80 y 443 son los predeterminados. La conexión concreta
+              depende de la versión de HTTP: HTTP/3 usa QUIC, que incorpora TLS.
+            </p>
+          </article>
+          <article class="network-panel" data-network-panel hidden>
+            <h3>El navegador solicita el recurso</h3>
+            <p>
+              El método <code>GET</code> solicita una representación del
+              recurso. La ruta y las cabeceras describen qué se pide y a qué
+              servidor.
+            </p>
+            <pre><code>GET /index.html HTTP/1.1
+Host: pokeatlas.test
+Accept: text/html</code></pre>
+            <p>
+              Es una representación didáctica de HTTP/1.1. HTTP/2 y HTTP/3
+              codifican los mensajes de otra forma y emplean pseudocabeceras.
+            </p>
+          </article>
+          <article class="network-panel" data-network-panel hidden>
+            <h3>El servidor responde</h3>
+            <div data-network-response="200">
+              <pre><code>HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+
+&lt;h1&gt;Bienvenido a PokéAtlas&lt;/h1&gt;</code></pre>
+              <p>
+                El recurso está disponible. La respuesta incluye un estado,
+                cabeceras y, en este caso, un cuerpo HTML.
+              </p>
+            </div>
+            <div data-network-response="404" hidden>
+              <pre><code>HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+
+&lt;h1&gt;Página no encontrada&lt;/h1&gt;</code></pre>
+              <p>
+                Se llegó al servidor, pero el recurso solicitado no está
+                disponible. Revisa la ruta; DNS sí funcionó en este ejemplo.
+              </p>
+            </div>
+            <div data-network-response="500" hidden>
+              <pre><code>HTTP/1.1 500 Internal Server Error
+Content-Type: text/html; charset=utf-8
+
+&lt;h1&gt;No pudimos preparar la página&lt;/h1&gt;</code></pre>
+              <p>
+                El servidor encontró un problema al procesar la solicitud.
+                Cambiar el CSS no resuelve ese fallo.
+              </p>
+            </div>
+          </article>
+          <article class="network-panel" data-network-panel hidden>
+            <h3>El navegador interpreta la respuesta</h3>
+            <div class="network-preview" data-network-response="200">
+              <p class="eyebrow">VISTA DEL EJEMPLO</p>
+              <h4>Bienvenido a PokéAtlas</h4>
+              <p>
+                El HTML construye la estructura, el CSS define la presentación y
+                JavaScript añade comportamiento.
+              </p>
+            </div>
+            <div class="network-preview" data-network-response="404" hidden>
+              <h4>Página no encontrada</h4>
+              <p>
+                Una respuesta 404 también puede contener HTML que el navegador
+                muestra.
+              </p>
+            </div>
+            <div class="network-preview" data-network-response="500" hidden>
+              <h4>No pudimos preparar la página</h4>
+              <p>Esta es la página de error del servidor de ejemplo.</p>
+            </div>
+            <p>
+              Una página suele necesitar peticiones adicionales para CSS,
+              JavaScript, imágenes y fuentes. El navegador puede empezar a
+              mostrar contenido antes de que todos los recursos terminen.
+            </p>
+          </article>
+          <nav class="network-actions" aria-label="Controlar el recorrido">
+            <button
+              id="network-prev"
+              class="button secondary"
+              type="button"
+              disabled
+            >
+              Anterior
+            </button>
+            <button id="network-next" class="button primary" type="button">
+              Siguiente paso
+            </button>
+            <button id="network-reset" class="button secondary" type="button">
+              Reiniciar
+            </button>
+          </nav>
+        </div>
+        <p class="network-note">
+          Recorrido simplificado: las cachés, las conexiones reutilizadas, los
+          intermediarios y las versiones del protocolo pueden cambiar el trabajo
+          necesario en una visita real.
+        </p>
+      </section>
+
+      <section
+        id="direccion"
+        class="section container"
+        aria-labelledby="url-title"
+      >
+        <header class="section-head">
+          <h2 id="url-title">2. Lee una URL antes de usarla</h2>
+          <p>
+            URL significa localizador uniforme de recursos. El dominio es solo
+            una parte.
+          </p>
+        </header>
+        <pre
+          class="network-code"
+        ><code>https://pokeatlas.test:443/pokedex.html?region=kanto#resultados</code></pre>
+        <dl class="network-definitions">
+          <div>
+            <dt>Esquema · <code>https</code></dt>
+            <dd>Indica cómo acceder al recurso.</dd>
+          </div>
+          <div>
+            <dt>Nombre del servidor · <code>pokeatlas.test</code></dt>
+            <dd>
+              Nombre que puede resolverse mediante DNS. Una URL también puede
+              utilizar una IP.
+            </dd>
+          </div>
+          <div>
+            <dt>Puerto · <code>443</code></dt>
+            <dd>
+              Identifica el servicio del destino. Si se omite, se usa el
+              predeterminado del esquema.
+            </dd>
+          </div>
+          <div>
+            <dt>Ruta · <code>/pokedex.html</code></dt>
+            <dd>
+              Identifica el recurso; no tiene que corresponder a un archivo
+              físico.
+            </dd>
+          </div>
+          <div>
+            <dt>Consulta · <code>?region=kanto</code></dt>
+            <dd>
+              Transporta parámetros. Su significado lo define la aplicación.
+            </dd>
+          </div>
+          <div>
+            <dt>Fragmento · <code>#resultados</code></dt>
+            <dd>
+              Lo interpreta el navegador, por ejemplo para ir a una sección. No
+              se envía al servidor en la petición HTTP.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="dns" class="section container" aria-labelledby="dns-title">
+        <header class="section-head">
+          <h2 id="dns-title">3. DNS: del nombre a la dirección</h2>
+          <p>
+            Domain Name System es un sistema distribuido y jerárquico. Permite
+            consultar registros asociados a nombres.
+          </p>
+        </header>
+        <ol class="network-explainer">
+          <li>
+            <h3>Se comprueba la caché</h3>
+            <p>
+              El navegador, el sistema o el resolvedor pueden tener información
+              reutilizable. La caché evita repetir trabajo.
+            </p>
+          </li>
+          <li>
+            <h3>El resolvedor busca una respuesta</h3>
+            <p>
+              Si necesita buscarla, puede consultar la jerarquía DNS: raíz,
+              dominio de nivel superior y servidores autoritativos.
+            </p>
+          </li>
+          <li>
+            <h3>Se obtiene el registro</h3>
+            <p>
+              Un registro A contiene una dirección IPv4; AAAA, una IPv6. Un
+              nombre puede tener varias direcciones.
+            </p>
+          </li>
+        </ol>
+        <div class="network-table-wrap">
+          <table class="network-table">
+            <caption>
+              Registros DNS frecuentes
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Para qué sirve</th>
+                <th scope="col">Cuándo lo encuentras</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">A</th>
+                <td>Asocia un nombre con una IPv4.</td>
+                <td>Conectar un dominio a un servidor.</td>
+              </tr>
+              <tr>
+                <th scope="row">AAAA</th>
+                <td>Asocia un nombre con una IPv6.</td>
+                <td>Publicar un servicio con IPv6.</td>
+              </tr>
+              <tr>
+                <th scope="row">CNAME</th>
+                <td>Indica un alias de otro nombre.</td>
+                <td>Apuntar un subdominio al nombre de un proveedor.</td>
+              </tr>
+              <tr>
+                <th scope="row">MX</th>
+                <td>Indica servidores de correo.</td>
+                <td>Configurar el correo del dominio.</td>
+              </tr>
+              <tr>
+                <th scope="row">TXT</th>
+                <td>Contiene información de texto.</td>
+                <td>Verificar un dominio o publicar políticas de correo.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>TTL:</strong> indica cuánto tiempo puede conservarse un
+          registro en caché. Un cambio DNS puede tardar en verse porque todavía
+          hay respuestas anteriores guardadas; no existe una espera universal
+          idéntica para todos.
+        </p>
+        <p>
+          <strong>En tu proyecto:</strong> el dominio es el nombre; el hosting
+          sirve los recursos; los registros DNS conectan ese nombre con el
+          destino. Ninguno sustituye a <code>index.html</code>.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developer.mozilla.org/en-US/docs/Glossary/DNS"
+            target="_blank"
+            rel="noopener"
+            >Referencia: DNS en MDN</a
+          >
+        </p>
+      </section>
+
+      <section id="http" class="section container" aria-labelledby="http-title">
+        <header class="section-head">
+          <h2 id="http-title">4. HTTP: petición y respuesta</h2>
+          <p>
+            Hypertext Transfer Protocol organiza el intercambio entre cliente y
+            servidor. También se utiliza para solicitar datos de APIs.
+          </p>
+        </header>
+        <div class="network-pair">
+          <article>
+            <h3>La petición</h3>
+            <p>
+              Incluye método, destino y cabeceras. Algunos métodos permiten
+              enviar un cuerpo.
+            </p>
+            <pre><code>POST /api/comentarios HTTP/1.1
+Host: pokeatlas.test
+Content-Type: application/json
+
+{"texto":"Mi Pokémon favorito es Eevee"}</code></pre>
+          </article>
+          <article>
+            <h3>La respuesta</h3>
+            <p>
+              Incluye estado y cabeceras; según el caso, también un cuerpo.
+              <code>Content-Type</code> describe el formato.
+            </p>
+            <pre><code>HTTP/1.1 201 Created
+Content-Type: application/json
+
+{"id":42,"texto":"Mi Pokémon favorito es Eevee"}</code></pre>
+          </article>
+        </div>
+        <p>
+          El ejemplo de comentarios es ficticio. No hay un servidor que guarde
+          comentarios en estos proyectos.
+        </p>
+        <div class="network-table-wrap">
+          <table class="network-table">
+            <caption>
+              Métodos: qué intención expresa cada petición
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Método</th>
+                <th scope="col">Uso habitual</th>
+                <th scope="col">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">GET</th>
+                <td>Solicitar una representación.</td>
+                <td>Leer una ficha de Pokémon.</td>
+              </tr>
+              <tr>
+                <th scope="row">POST</th>
+                <td>Enviar datos para que el servidor los procese.</td>
+                <td>Crear un comentario.</td>
+              </tr>
+              <tr>
+                <th scope="row">PUT</th>
+                <td>Crear o reemplazar el recurso de una dirección.</td>
+                <td>Reemplazar un perfil completo.</td>
+              </tr>
+              <tr>
+                <th scope="row">PATCH</th>
+                <td>Aplicar cambios parciales.</td>
+                <td>Modificar un apodo.</td>
+              </tr>
+              <tr>
+                <th scope="row">DELETE</th>
+                <td>Solicitar la eliminación de un recurso.</td>
+                <td>Borrar un comentario.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          La API define qué métodos admite cada ruta. Usar POST no cifra los
+          datos; la protección del transporte corresponde a HTTPS.
+        </p>
+        <div class="network-table-wrap">
+          <table class="network-table">
+            <caption>
+              Estados que conviene reconocer
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Grupo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Lectura práctica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2xx · Éxito</th>
+                <td>200 / 201 / 204</td>
+                <td>
+                  Solicitud atendida / recurso creado / respuesta sin contenido.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3xx · Redirección o caché</th>
+                <td>301 / 302 / 304</td>
+                <td>
+                  Otra dirección permanente / temporal / reutilizar la
+                  representación almacenada.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4xx · Problema con la solicitud</th>
+                <td>401 / 403 / 404 / 429</td>
+                <td>
+                  Autenticación requerida / acceso rechazado / recurso no
+                  encontrado / demasiadas solicitudes.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">5xx · Problema del servidor</th>
+                <td>500 / 503</td>
+                <td>Error interno / servicio temporalmente no disponible.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>Relación con JavaScript:</strong> <code>fetch()</code> no
+          rechaza automáticamente su promesa por una respuesta 404 o 500.
+          Comprueba <code>response.ok</code> o
+          <code>response.status</code> antes de leer los datos.
+        </p>
+        <pre
+          class="network-code"
+        ><code>const response = await fetch("https://pokeapi.co/api/v2/pokemon/25");
+if (!response.ok) {
+  throw new Error(`Respuesta HTTP: ${response.status}`);
+}
+const pokemon = await response.json();
+console.log(pokemon.name);</code></pre>
+        <p>
+          Este bloque es un ejemplo para estudiar.
+          <a class="text-link" href="javascript.html#laboratorio"
+            >Practica fetch en el laboratorio JavaScript</a
+          >.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages"
+            target="_blank"
+            rel="noopener"
+            >Referencia: mensajes HTTP</a
+          >
+          ·
+          <a
+            class="text-link"
+            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+            target="_blank"
+            rel="noopener"
+            >Referencia: estados HTTP</a
+          >
+        </p>
+      </section>
+
+      <section
+        id="https"
+        class="section container"
+        aria-labelledby="https-title"
+      >
+        <header class="section-head">
+          <h2 id="https-title">5. HTTPS protege el intercambio</h2>
+          <p>HTTPS utiliza HTTP sobre una conexión protegida con TLS.</p>
+        </header>
+        <div class="network-pair">
+          <article>
+            <h3>Qué aporta</h3>
+            <ul>
+              <li>Cifrado de los datos durante el transporte.</li>
+              <li>Protección de la integridad del intercambio.</li>
+              <li>Autenticación del servidor mediante su certificado.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Qué debes distinguir</h3>
+            <p>
+              HTTPS no garantiza que todo el contenido sea verdadero ni que el
+              negocio sea fiable. Tampoco cambia el significado de los métodos y
+              estados HTTP.
+            </p>
+            <p>
+              Un formulario, una API y los recursos de una página publicada
+              deberían usar conexiones HTTPS.
+            </p>
+          </article>
+        </div>
+        <p>
+          <a
+            class="text-link"
+            href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+            target="_blank"
+            rel="noopener"
+            >Referencia: HTTPS en MDN</a
+          >
+        </p>
+      </section>
+
+      <section
+        id="diagnostico"
+        class="section container"
+        aria-labelledby="diagnosis-title"
+      >
+        <header class="section-head">
+          <h2 id="diagnosis-title">6. Encuentra dónde falla</h2>
+          <p>Observa el error antes de cambiar tu HTML, CSS o JavaScript.</p>
+        </header>
+        <div class="network-table-wrap">
+          <table class="network-table">
+            <caption>
+              Un síntoma, una primera comprobación
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Síntoma</th>
+                <th scope="col">Comprueba</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">El nombre no se resuelve</th>
+                <td>
+                  Dominio escrito, conexión y registros DNS. Todavía puede no
+                  existir una respuesta HTTP.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Conexión rechazada</th>
+                <td>
+                  Servidor encendido, dirección y puerto. No es lo mismo que un
+                  404.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Error de certificado</th>
+                <td>Nombre, vigencia y configuración HTTPS del servidor.</td>
+              </tr>
+              <tr>
+                <th scope="row">CSS o imagen con 404</th>
+                <td>Ruta, extensión, mayúsculas y archivo publicado.</td>
+              </tr>
+              <tr>
+                <th scope="row">API con 500</th>
+                <td>
+                  Estado del servicio y registros del servidor si lo
+                  administras.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Error CORS</th>
+                <td>
+                  Permisos de origen de la respuesta. No se arregla añadiendo
+                  etiquetas HTML.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ol class="network-explainer">
+          <li>
+            <h3>Abre las herramientas del navegador</h3>
+            <p>Entra en la pestaña Network / Red y recarga la página.</p>
+          </li>
+          <li>
+            <h3>Elige un recurso</h3>
+            <p>
+              Examina su dirección, método, estado, tipo, tiempo y cabeceras.
+            </p>
+          </li>
+          <li>
+            <h3>Lee la respuesta</h3>
+            <p>
+              Comprueba si recibiste HTML, JSON, un mensaje de error o una
+              respuesta desde caché.
+            </p>
+          </li>
+        </ol>
+        <p>
+          En PokéAtlas, compara la carga de <code>index.html</code> con la
+          petición a <code>pokeapi.co</code>. Son servidores y recursos
+          diferentes.
+        </p>
+      </section>
+
+      <section
+        id="prueba"
+        class="section container"
+        aria-labelledby="quiz-title"
+      >
+        <header class="section-head">
+          <h2 id="quiz-title">7. Comprueba lo aprendido</h2>
+          <p>Responde y revisa la explicación. Puedes repetir la actividad.</p>
+        </header>
+        <form id="network-quiz" class="network-quiz">
+          <fieldset>
+            <legend>¿Qué hace DNS en este recorrido?</legend>
+            <label
+              ><input type="radio" name="dns-answer" value="html" required />
+              Descarga y dibuja el HTML.</label
+            ><label
+              ><input type="radio" name="dns-answer" value="address" /> Obtiene
+              la dirección asociada al nombre.</label
+            >
+          </fieldset>
+          <fieldset>
+            <legend>Recibes un 404. ¿Qué sabes?</legend>
+            <label
+              ><input type="radio" name="http-answer" value="dns" required />
+              DNS no pudo resolver el dominio.</label
+            ><label
+              ><input type="radio" name="http-answer" value="resource" /> Hubo
+              respuesta HTTP, pero el recurso no se encontró.</label
+            >
+          </fieldset>
+          <button class="button primary" type="submit">
+            Comprobar respuestas
+          </button>
+          <p id="network-quiz-score" role="status"></p>
+          <p id="network-quiz-explanation" hidden>
+            DNS resuelve nombres; no descarga el HTML. Un 404 es una respuesta
+            HTTP: revisa el recurso solicitado, no confundas este estado con un
+            error de resolución.
+          </p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de DNS y HTTP">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y simulación propias apoyadas en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works"
+              target="_blank"
+              rel="noopener"
+              >MDN · Cómo funciona la web</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Glossary/DNS"
+              target="_blank"
+              rel="noopener"
+              >MDN · DNS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
+              target="_blank"
+              rel="noopener"
+              >MDN · Visión general de HTTP</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages"
+              target="_blank"
+              rel="noopener"
+              >MDN · Mensajes HTTP</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+              target="_blank"
+              rel="noopener"
+              >MDN · Estados HTTP</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+              target="_blank"
+              rel="noopener"
+              >MDN · HTTPS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+              target="_blank"
+              rel="noopener"
+              >MDN · Uso de fetch</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html#redes">Ver documentación del tema</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="redes" /> Marcar esta página
+          como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="json.html">JSON con ejemplos</a>
+          <a href="redes.html">Cómo funciona la web</a>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

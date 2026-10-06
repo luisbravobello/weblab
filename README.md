@@ -1,12 +1,14 @@
 # WebLab
 
-Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 14 páginas de estudio, ejercicios y documentación.
+Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 16 páginas de estudio, ejercicios y documentación.
 
 ## Páginas
 
 | Archivo | Contenido |
 | --- | --- |
 | `index.html` | Portada, recorrido de aprendizaje y ejemplo interactivo |
+| `json.html` | JSON con datos de Pokémon, objetos, listas, tipos, parse, stringify y editor local con validación |
+| `redes.html` | URL, DNS, HTTP, HTTPS, métodos, estados, diagnóstico, recorrido simulado y actividad de repaso |
 | `html.html` | Anatomía del documento, semántica, atributos, referencia de elementos y laboratorio |
 | `css.html` | Cascada, modelo de caja, selectores, propiedades y controles visuales |
 | `javascript.html` | Datos, funciones, DOM, eventos, asincronía, contador y consola |
@@ -18,7 +20,7 @@ Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y prác
 | `practicas.html` | Seis retos, seis ejercicios de errores y progreso local |
 | `componentes.html` | Pestañas, acordeones, modal, tablas y listas |
 | `proyecto.html` | Proyecto completo y editable en cuatro etapas |
-| `glosario.html` | Treinta términos con búsqueda y documentación |
+| `glosario.html` | Treinta y tres términos con búsqueda y documentación |
 | `fuentes.html` | Fuentes, estándares, guías y criterio editorial |
 | `paletas.html` | Creador de paletas aplicado a 31 tipos de página con 12 plantillas completas |
 
@@ -162,3 +164,11 @@ Quitar el enlace CSS o la referencia de app.js desconecta el contenido de esos e
 
 Un iframe srcdoc utiliza modo estándar incluso sin DOCTYPE: el tutorial identifica esa limitación y recomienda comprobar ese caso en un archivo real.
 
+
+## DNS y HTTP
+
+`redes.html` explica el recorrido desde una URL hasta su representación. La simulación permite elegir HTTP o HTTPS y respuestas 200, 404 y 500; sus controles solo muestran contenido ya definido en HTML. No realiza consultas DNS ni peticiones HTTP reales. Incluye una actividad de repaso y se integra con el progreso local. Estilos: `assets/network.css`. Interacción: `js/network.js`. Referencias enlazadas en el tema, la documentación y el footer.
+
+## JSON con ejemplos
+
+`json.html` incluye un editor de texto, tres ejemplos y una vista de Pokémon. `JSON.parse()` valida la sintaxis y los campos se comprueban antes de mostrarlos. `JSON.stringify()` produce la vista con sangría. JavaScript solo actualiza plantillas y textos: no utiliza `eval` ni envía el contenido. Archivos separados: `assets/json-lab.css` y `js/json-lab.js`. Acceso desde el menú, footer, portada y glosario; progreso guardado con los otros temas.

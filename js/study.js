@@ -45,6 +45,8 @@ try {
   studyStorageAvailable = false;
 }
 const studyTopics = [
+  "json",
+  "redes",
   "html",
   "css",
   "javascript",

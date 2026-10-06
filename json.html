@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Aprende JSON con ejemplos de Pokémon: objetos, arrays, tipos, JSON.parse, JSON.stringify y un editor para validar tus datos."
+    />
+    <title>JSON paso a paso con ejemplos | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/json-lab.css" />
+    <script src="js/json-lab.js" defer></script>
+  </head>
+  <body data-page="json">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="json.html" aria-current="page">JSON y datos</a>
+              <a href="redes.html">DNS, HTTP y HTTPS</a>
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">DATOS PARA LA WEB</p>
+          <h1>Aprende JSON escribiendo.</h1>
+          <p>
+            Lee un ejemplo de Pokémon, cambia sus valores y comprueba el
+            resultado. Distingue el texto JSON del valor que obtiene JavaScript
+            al interpretarlo.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#concepto">Qué es</a><a href="#estructura">Estructura</a
+            ><a href="#laboratorio">Escribir y validar</a
+            ><a href="#conversion">parse y stringify</a
+            ><a href="#api">JSON y APIs</a>
+          </nav>
+        </div>
+      </header>
+      <section
+        id="concepto"
+        class="section container"
+        aria-labelledby="json-title"
+      >
+        <header class="section-head">
+          <h2 id="json-title">1. JSON representa datos como texto</h2>
+          <p>
+            JavaScript Object Notation es un formato de intercambio que también
+            pueden leer otros lenguajes.
+          </p>
+        </header>
+        <p>
+          Un archivo <code>pokemon.json</code> puede guardar datos sin ejecutar
+          instrucciones. JSON no dibuja una página: HTML define su estructura,
+          CSS su aspecto y JavaScript puede leer esos datos y mostrarlos.
+        </p>
+        <p>
+          Una API puede responder con JSON usando
+          <code>Content-Type: application/json</code>. También sirve para
+          archivos de configuración o intercambiar datos entre aplicaciones.
+        </p>
+        <pre class="json-code"><code>{
+  "nombre": "Pikachu",
+  "numero": 25,
+  "tipos": ["Eléctrico"],
+  "favorito": true,
+  "apodo": null
+}</code></pre>
+        <p>
+          Este ejemplo es propio y simplificado; no representa la respuesta
+          completa de PokéAPI.
+        </p>
+      </section>
+      <section
+        id="estructura"
+        class="section container"
+        aria-labelledby="structure-title"
+      >
+        <header class="section-head">
+          <h2 id="structure-title">2. Construye la estructura</h2>
+          <p>
+            Las claves de un objeto y los textos llevan comillas dobles. Los
+            valores pueden ser objetos, arrays, textos, números, booleanos o
+            null.
+          </p>
+        </header>
+        <ol class="json-steps">
+          <li>
+            <strong>Abre un objeto con <code>{</code>.</strong> Define pares
+            como <code>"nombre": "Pikachu"</code>.
+          </li>
+          <li>
+            <strong>Separa propiedades con comas.</strong> La última propiedad
+            no lleva coma final.
+          </li>
+          <li>
+            <strong>Usa <code>[]</code> para una lista.</strong> Por ejemplo,
+            <code>"tipos": ["Planta", "Veneno"]</code>.
+          </li>
+          <li>
+            <strong
+              >Anida otro objeto cuando los datos estén relacionados.</strong
+            >
+            Por ejemplo, <code>"datos": {"region": "Kanto"}</code>.
+          </li>
+          <li>
+            <strong>Cierra los corchetes y las llaves.</strong> Cada apertura
+            debe tener su cierre.
+          </li>
+        </ol>
+        <p>
+          <code>"25"</code> es texto; <code>25</code> es número.
+          <code>true</code> es un booleano; <code>"true"</code> es texto.
+          <code>null</code> expresa un valor nulo.
+        </p>
+        <p>
+          JSON no admite comentarios, funciones, <code>undefined</code>,
+          <code>NaN</code> ni <code>Infinity</code>. También puede contener un
+          array o un valor simple en su raíz.
+        </p>
+      </section>
+      <!-- Ejemplos en HTML; JavaScript solo interpreta el texto y actualiza la vista. -->
+      <section
+        id="laboratorio"
+        class="section container"
+        aria-labelledby="json-lab-title"
+      >
+        <header class="section-head">
+          <h2 id="json-lab-title">3. Escribe, valida y compara</h2>
+          <p>
+            Cambia el nombre, añade un tipo o modifica favorito. Después prueba
+            quitar una comilla: verás un error y podrás corregirlo.
+          </p>
+        </header>
+        <div class="json-lab">
+          <form id="json-form">
+            <label for="json-example">Cargar un ejemplo</label>
+            <select id="json-example">
+              <option value="pokemon">Un Pokémon</option>
+              <option value="equipo">Un equipo</option>
+              <option value="error">Error: coma final</option>
+            </select>
+            <label for="json-editor">Tu texto JSON</label>
+            <textarea
+              id="json-editor"
+              rows="16"
+              spellcheck="false"
+              aria-describedby="json-editor-help json-status"
+            >
+{
+  "nombre": "Pikachu",
+  "numero": 25,
+  "tipos": ["Eléctrico"],
+  "favorito": true,
+  "apodo": null,
+  "datos": { "region": "Kanto" }
+}</textarea>
+            <p id="json-editor-help">
+              El contenido se procesa en este navegador. No se ejecuta código ni
+              se envía a un servidor.
+            </p>
+            <nav class="json-actions" aria-label="Acciones del editor">
+              <button class="button primary" type="submit">
+                Validar y mostrar</button
+              ><button id="json-format" class="button secondary" type="button">
+                Ordenar sangría</button
+              ><button id="json-reset" class="button secondary" type="button">
+                Restablecer ejemplo
+              </button>
+            </nav>
+          </form>
+          <article class="json-result" aria-labelledby="json-result-title">
+            <h3 id="json-result-title">
+              El resultado de interpretar tus datos
+            </h3>
+            <p id="json-status" role="status">Pulsa Validar y mostrar.</p>
+            <section
+              id="json-card"
+              class="json-preview"
+              hidden
+              aria-label="Vista de los datos del Pokémon"
+            >
+              <h4 id="json-name"></h4>
+              <p id="json-number"></p>
+              <p id="json-types"></p>
+              <p id="json-favorite"></p>
+            </section>
+            <h4>JSON con sangría</h4>
+            <pre
+              class="json-code"
+            ><code id="json-output">Todavía no se ha interpretado el ejemplo.</code></pre>
+            <p id="json-shape-note">
+              La vista de Pokémon utiliza nombre, numero, tipos y favorito.
+              Otros datos válidos se muestran en el bloque de texto.
+            </p>
+          </article>
+        </div>
+        <template id="json-example-pokemon"
+          >{ "nombre": "Pikachu", "numero": 25, "tipos": ["Eléctrico"],
+          "favorito": true, "apodo": null, "datos": { "region": "Kanto" }
+          }</template
+        >
+        <template id="json-example-equipo"
+          >{ "entrenador": "Luis", "equipo": [ { "nombre": "Bulbasaur",
+          "numero": 1 }, { "nombre": "Pikachu", "numero": 25 } ] }</template
+        >
+        <template id="json-example-error"
+          >{ "nombre": "Pikachu", "numero": 25, }</template
+        >
+      </section>
+      <section
+        id="conversion"
+        class="section container"
+        aria-labelledby="convert-title"
+      >
+        <header class="section-head">
+          <h2 id="convert-title">4. Del texto al valor, y de vuelta</h2>
+          <p>
+            Usa parse para interpretar y stringify para producir texto JSON.
+          </p>
+        </header>
+        <div class="json-pair">
+          <article>
+            <h3>JSON.parse(texto)</h3>
+            <pre
+              class="json-code"
+            ><code>const texto = '{"nombre":"Pikachu","tipos":["Eléctrico"]}';
+const pokemon = JSON.parse(texto);
+console.log(pokemon.nombre); // Pikachu
+console.log(pokemon.tipos[0]); // Eléctrico</code></pre>
+            <p>
+              Si la sintaxis no es válida, lanza un error. Captúralo con
+              <code>try / catch</code>, como hace el editor.
+            </p>
+          </article>
+          <article>
+            <h3>JSON.stringify(valor)</h3>
+            <pre
+              class="json-code"
+            ><code>const pokemon = { nombre: "Pikachu", numero: 25 };
+const texto = JSON.stringify(pokemon, null, 2);
+console.log(texto); // texto JSON con sangría</code></pre>
+            <p>
+              El último argumento indica espacios de sangría. No todo valor
+              JavaScript se conserva: undefined y funciones se omiten en
+              objetos; las referencias circulares producen un error.
+            </p>
+          </article>
+        </div>
+        <p>
+          Una sintaxis válida no garantiza la estructura esperada.
+          <code>{"nombre": 25}</code> es JSON válido, pero una interfaz que
+          espera un nombre de texto debe comprobar el tipo.
+        </p>
+      </section>
+      <section id="api" class="section container" aria-labelledby="api-title">
+        <header class="section-head">
+          <h2 id="api-title">5. Así se conecta con una API</h2>
+          <p>
+            HTTP transporta la respuesta; JSON organiza los datos. Son
+            responsabilidades diferentes.
+          </p>
+        </header>
+        <pre class="json-code"><code>async function leerPokemon() {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon/25");
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const pokemon = await response.json();
+  console.log(pokemon.name);
+}</code></pre>
+        <p>
+          <code>response.json()</code> lee e interpreta el cuerpo de la
+          respuesta. Si ya tienes el valor interpretado, no necesitas llamar de
+          nuevo a <code>JSON.parse()</code>.
+        </p>
+        <p>
+          El ejemplo no se ejecuta automáticamente.
+          <a class="text-link" href="javascript.html#laboratorio"
+            >Estudia fetch en JavaScript</a
+          >
+          y <a class="text-link" href="redes.html#http">repasa HTTP</a>.
+        </p>
+        <p>
+          <strong>Reto:</strong> añade un tercer miembro al equipo y localiza
+          su nombre con <code>datos.equipo[2].nombre</code>. Los índices
+          empiezan en cero.
+        </p>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de JSON">
+        <h2>Fuentes de este tema</h2>
+        <p>Ejemplos propios apoyados en la documentación de MDN.</p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON"
+              target="_blank"
+              rel="noopener"
+              >MDN · Trabajar con JSON</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
+              target="_blank"
+              rel="noopener"
+              >MDN · JSON.parse()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
+              target="_blank"
+              rel="noopener"
+              >MDN · JSON.stringify()</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+              target="_blank"
+              rel="noopener"
+              >MDN · Usar fetch</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html#json">Consultar documentación del tema</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="json" /> Marcar esta página
+          como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="json.html">JSON con ejemplos</a>
+          <a href="redes.html">Cómo funciona la web</a>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

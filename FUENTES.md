@@ -81,3 +81,26 @@ La retícula de 12 columnas, el sistema de 8 puntos, la pauta 60–30–10 y las
 Las páginas no constituyen una auditoría completa, una certificación, ni una referencia exhaustiva de todas las APIs. Las pruebas locales cubren comportamientos concretos de los ejemplos; un producto real requiere pruebas adicionales de contenido, estados y compatibilidad.
 
 
+
+## DNS, HTTP y HTTPS
+
+Tema: [Cómo funciona la web](redes.html). Recorrido y ejemplos propios; los dominios e IP de la simulación son de documentación. Referencias consultadas el 6 de octubre de 2026:
+
+- [MDN · Cómo funciona la web](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works)
+- [MDN · DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS)
+- [MDN · HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview)
+- [MDN · Mensajes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages)
+- [MDN · Estados HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
+- [MDN · HTTPS](https://developer.mozilla.org/en-US/docs/Glossary/HTTPS)
+- [MDN · Uso de fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [MDN · Métodos HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods)
+- [MDN · Partes de una URL](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL)
+- [MDN · CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)
+
+## JSON y datos
+
+Tema: [JSON con ejemplos](json.html). Ejemplos propios de Pokémon y editor local. Referencias consultadas el 6 de octubre de 2026:
+
+- [MDN · Trabajar con JSON](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON)
+- [MDN · JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+- [MDN · JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)

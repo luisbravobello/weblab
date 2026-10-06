@@ -1,0 +1,217 @@
+/* DNS Y HTTP: controles, recorrido y tablas adaptables. */
+.network-lab {
+  border: 1px solid var(--line, #dce1ea);
+  border-radius: 20px;
+  padding: 24px;
+  background: #f6f8fc;
+}
+.network-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #ccd4e2;
+  border-radius: 12px;
+}
+.network-options legend {
+  font-weight: 800;
+  padding: 0 8px;
+}
+.network-options label {
+  font-weight: 700;
+}
+.network-options select {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+}
+.network-track {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 16px;
+}
+.network-track button {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px;
+  border: 1px solid #ccd4e2;
+  border-radius: 8px;
+  color: #263149;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}
+.network-track button[aria-current="step"] {
+  background: #233de0;
+  color: white;
+  border-color: #233de0;
+  font-weight: 800;
+}
+.network-step-status {
+  font-weight: 800;
+  color: #233de0;
+}
+.network-panel {
+  padding: 24px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid #ccd4e2;
+}
+.network-panel h3 {
+  margin-top: 0;
+}
+.network-panel pre,
+.network-code,
+.network-pair pre {
+  padding: 16px;
+  background: #162033;
+  color: #ecf0ff;
+  border-radius: 12px;
+  overflow: auto;
+  line-height: 1.7;
+  font-size: 0.875rem;
+}
+.network-panel pre code,
+.network-code code,
+.network-pair pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+.network-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+.network-actions button:disabled {
+  background: #e7ebf2;
+  color: #526176;
+  cursor: default;
+}
+.network-note {
+  margin-top: 16px;
+  color: #526176;
+  font-size: 0.875rem;
+}
+.network-preview {
+  background: #fff6d5;
+  color: #233047;
+  padding: 24px;
+  border-radius: 12px;
+}
+.network-preview h4 {
+  font-size: 1.5rem;
+  margin: 8px 0;
+}
+.network-definitions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.network-definitions > div,
+.network-pair > article {
+  padding: 24px;
+  border: 1px solid #ccd4e2;
+  border-radius: 16px;
+  min-width: 0;
+}
+.network-definitions dt {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.network-definitions dd {
+  margin: 0;
+}
+.network-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+.network-explainer {
+  padding-left: 24px;
+}
+.network-explainer li {
+  padding-left: 8px;
+  margin-bottom: 24px;
+}
+.network-explainer h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.network-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+.network-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.network-table caption {
+  text-align: left;
+  font-weight: 800;
+  padding-bottom: 16px;
+}
+.network-table th,
+.network-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 16px;
+  border-bottom: 1px solid #ccd4e2;
+}
+.network-table thead {
+  background: #f0f3fa;
+}
+.network-table tbody th {
+  min-width: 120px;
+}
+.network-quiz {
+  max-width: 800px;
+}
+.network-quiz fieldset {
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #ccd4e2;
+  border-radius: 16px;
+}
+.network-quiz legend {
+  font-weight: 800;
+}
+.network-quiz label {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+.network-quiz input {
+  flex: 0 0 auto;
+  width: auto;
+}
+.network-quiz [role="status"] {
+  font-weight: 800;
+  margin-top: 16px;
+}
+@media (max-width: 700px) {
+  .network-lab,
+  .network-panel {
+    padding: 16px;
+  }
+  .network-options,
+  .network-pair,
+  .network-definitions {
+    grid-template-columns: 1fr;
+  }
+  .network-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .network-table th,
+  .network-table td {
+    padding: 12px;
+  }
+}
