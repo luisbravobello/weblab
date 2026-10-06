@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Accesibilidad que puedes probar: ejercicios, explicaciones y documentación para estudiar desarrollo web."
+    />
+    <title>Accesibilidad que puedes probar | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="accesibilidad">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html" aria-current="page">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">APRENDER ES PONER A PRUEBA</p>
+          <h1>Una web para más personas.</h1>
+          <p>
+            Empieza con controles nativos, estructura clara y mensajes
+            comprensibles. La accesibilidad se verifica con varias pruebas; un
+            solo ejemplo no demuestra conformidad.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#teclado">Teclado</a><a href="#formularios">Formularios</a
+            ><a href="#imagenes">Imágenes</a><a href="#revisar">Revisión</a>
+          </nav>
+        </div>
+      </header>
+      <section id="teclado" class="section container">
+        <header class="section-head">
+          <h2>Recorre la interfaz sin ratón.</h2>
+          <p>
+            Pulsa Tab para avanzar, Shift + Tab para volver y Enter o Espacio
+            para activar botones.
+          </p>
+        </header>
+        <section class="keyboard-demo" aria-labelledby="keyboard-title">
+          <h3 id="keyboard-title">Un recorrido de tres pasos</h3>
+          <a href="#formularios">Ir al formulario</a
+          ><button id="keyboard-action" type="button">Activar ejemplo</button
+          ><button id="a11y-dialog-open" type="button">Abrir ayuda</button>
+          <p id="keyboard-result" role="status">
+            Todavía no has activado el ejemplo.
+          </p>
+        </section>
+        <dialog id="a11y-dialog" aria-labelledby="a11y-dialog-title">
+          <h2 id="a11y-dialog-title">Un diálogo nativo</h2>
+          <p>Prueba Tab y Escape. Al cerrar vuelve al botón que lo abrió.</p>
+          <form method="dialog">
+            <button class="button primary">Cerrar ayuda</button>
+          </form>
+        </dialog>
+        <div class="design-three">
+          <article>
+            <h3>Orden lógico</h3>
+            <p>
+              El orden del DOM determina normalmente el recorrido. Evita usar
+              tabindex positivo para corregir una distribución confusa.
+            </p>
+          </article>
+          <article>
+            <h3>Foco visible</h3>
+            <p>
+              Quien usa teclado necesita saber dónde está. No retires outline
+              sin una alternativa clara.
+            </p>
+          </article>
+          <article>
+            <h3>Nombre y función</h3>
+            <p>
+              button comunica una acción. a con href comunica un destino. Un div
+              con click no aporta esas funciones automáticamente.
+            </p>
+          </article>
+        </div>
+        <pre><code>button:focus-visible, a:focus-visible {
+  outline: 3px solid #233de0;
+  outline-offset: 4px;
+}</code></pre>
+        <p class="note">
+          Esta demostración no sustituye pruebas con lectores de pantalla. La
+          compatibilidad depende del navegador y la tecnología de asistencia.
+        </p>
+      </section>
+      <section id="formularios" class="section container">
+        <header class="section-head">
+          <h2>Una etiqueta y un error que ayudan.</h2>
+          <p>
+            Prueba el formulario vacío o con un correo incorrecto. Es un
+            ejercicio local: no envía datos.
+          </p>
+        </header>
+        <form id="accessible-form" class="control-panel" novalidate>
+          <label for="a11y-email">Correo electrónico</label
+          ><input
+            id="a11y-email"
+            type="email"
+            required
+            aria-describedby="a11y-email-help a11y-email-error"
+          />
+          <p id="a11y-email-help" class="note">
+            Ejemplo: nombre@dominio.com. No se guardará ni se enviará.
+          </p>
+          <p id="a11y-email-error" class="form-error" hidden></p>
+          <button class="button primary" type="submit">Validar ejemplo</button>
+          <p id="a11y-form-result" role="status"></p>
+        </form>
+        <dl class="design-definitions">
+          <dt>label</dt>
+          <dd>Nombra el control y permite activarlo desde el texto.</dd>
+          <dt>aria-describedby</dt>
+          <dd>Asocia instrucciones y errores al campo.</dd>
+          <dt>aria-invalid</dt>
+          <dd>Indica un valor no válido tras la comprobación.</dd>
+          <dt>role=status</dt>
+          <dd>Anuncia un resultado sin mover el foco innecesariamente.</dd>
+        </dl>
+      </section>
+      <section id="imagenes" class="section container">
+        <header class="section-head">
+          <h2>El alt depende de la función.</h2>
+          <p>
+            Una misma imagen puede necesitar una descripción, un nombre
+            funcional o alt vacío.
+          </p>
+        </header>
+        <div class="design-three">
+          <article>
+            <h3>Informativa</h3>
+            <pre><code>&lt;img src=&quot;mapa.png&quot; alt=&quot;Ruta desde la estación al museo&quot;&gt;</code></pre>
+            <p>
+              Describe la información útil en el contexto, sin repetir un pie
+              idéntico.
+            </p>
+          </article>
+          <article>
+            <h3>Decorativa</h3>
+            <pre><code>&lt;img src=&quot;adorno.png&quot; alt=&quot;&quot;&gt;</code></pre>
+            <p>Si no aporta información ni función, alt vacío evita ruido.</p>
+          </article>
+          <article>
+            <h3>Funcional</h3>
+            <pre><code>&lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;WebLab, inicio&quot;&gt;&lt;/a&gt;</code></pre>
+            <p>El texto alternativo debe comunicar el destino o la acción.</p>
+          </article>
+        </div>
+        <p>
+          Un gráfico complejo necesita también explicación textual de sus datos
+          y relaciones. No basta “gráfico”.
+        </p>
+      </section>
+      <section id="revisar" class="section container">
+        <header class="section-head">
+          <h2>Una lista de revisión inicial.</h2>
+          <p>Es un punto de partida, no una auditoría completa de WCAG.</p>
+        </header>
+        <ul class="study-checklist">
+          <li>
+            <label
+              ><input type="checkbox" /> Puedo recorrer controles con
+              teclado.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Los títulos describen una jerarquía
+              lógica.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Las imágenes tienen un alt apropiado a
+              su función.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Los campos tienen etiquetas,
+              instrucciones y errores claros.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> El contraste y los estados no dependen
+              solo del color.</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> La página funciona al ampliar texto y
+              reducir movimiento.</label
+            >
+          </li>
+        </ul>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de accesibilidad">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/tutorials/"
+              target="_blank"
+              rel="noopener"
+              >W3C WAI · Tutoriales</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/tutorials/forms/"
+              target="_blank"
+              rel="noopener"
+              >WAI · Formularios</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/tutorials/images/decision-tree/"
+              target="_blank"
+              rel="noopener"
+              >WAI · Árbol de decisión de alt</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/TR/WCAG22/"
+              target="_blank"
+              rel="noopener"
+              >WCAG 2.2</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="accesibilidad" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

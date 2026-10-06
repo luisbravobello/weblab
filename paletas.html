@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Crea paletas de colores y pruébalas en páginas completas: vista previa en tiempo real, contraste, generación y CSS."
+    />
+    <title>Creador de paletas aplicado a páginas | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <script src="js/design-data.js" defer></script>
+    <script src="js/design.js" defer></script>
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/palette.css" />
+    <script src="js/palette.js" defer></script>
+  </head>
+  <body data-page="paletas">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html" aria-current="page">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="color.html#paletas">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">EL COLOR EN UNA PÁGINA COMPLETA</p>
+          <h1>Crea la paleta. Mira la página.</h1>
+          <p>
+            Elige una distribución, cambia colores por función y observa el
+            resultado en tiempo real. No necesitas salir del laboratorio.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#metodo">Cómo crearla</a
+            ><a href="#creador">Creador y vista previa</a
+            ><a href="#herramientas">Herramientas externas</a>
+          </nav>
+        </div>
+      </header>
+      <section id="metodo" class="section container">
+        <header class="section-head">
+          <h2>Construye una paleta en cinco decisiones.</h2>
+          <p>
+            Una combinación bonita no basta: necesita papeles definidos y
+            contraste.
+          </p>
+        </header>
+        <ol class="palette-method">
+          <li>
+            <h3>Define el contexto</h3>
+            <p>
+              La tarea y el público orientan las decisiones. Un checkout no
+              tiene las mismas prioridades que una portada editorial.
+            </p>
+          </li>
+          <li>
+            <h3>Elige un acento</h3>
+            <p>
+              Empieza por un tono de marca y comprueba dónde debe atraer la
+              atención.
+            </p>
+          </li>
+          <li>
+            <h3>Construye superficies</h3>
+            <p>
+              Fondo y superficie separan áreas sin competir con cada acción.
+            </p>
+          </li>
+          <li>
+            <h3>Comprueba el texto</h3>
+            <p>
+              Revisa el contraste en fondo, tarjetas y botones. No dependas de
+              la apariencia de los hex juntos.
+            </p>
+          </li>
+          <li>
+            <h3>Prueba la página</h3>
+            <p>
+              Aplica el sistema a contenido real, controles, estados y distintos
+              anchos.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section id="creador" class="section container">
+        <header class="section-head">
+          <h2>Tu laboratorio de paletas.</h2>
+          <p>
+            Las 31 opciones comparten 12 plantillas visuales según su tarea. Son
+            ejemplos ficticios completos, no sitios reales ni operaciones de
+            compra.
+          </p>
+        </header>
+        <div class="palette-workspace">
+          <form id="theme-controls" class="control-panel">
+            <fieldset>
+              <legend>Página y contexto</legend>
+              <label for="theme-layout">Tipo de página completa</label
+              ><select id="theme-layout">
+                <option value="landing">Landing de servicios</option>
+                <option value="editorial">Artículo editorial</option>
+                <option value="shop">Catálogo / tienda</option>
+                <option value="dashboard">Panel de trabajo</option>
+                <option value="portfolio">Portafolio</option>
+                <option value="docs">Documentación</option>
+                <optgroup label="Comercio y contratación">
+                  <option
+                    value="product"
+                    data-layout="portfolio"
+                    data-description="Presenta imágenes y especificaciones junto a la decisión de compra. Añade variantes, entrega y devoluciones cerca de la acción."
+                    data-feature="Galería del producto"
+                    data-title="Descripción y especificaciones"
+                    data-body="Características, medidas y preguntas."
+                    data-aside="Precio, variantes y compra"
+                  >
+                    Ficha de producto
+                  </option>
+                  <option
+                    value="cart"
+                    data-layout="shop"
+                    data-description="Permite revisar productos, cantidades y coste antes de pagar. Muestra cambios y totales sin sorpresas."
+                    data-feature="Productos seleccionados"
+                    data-title="Revisar el pedido"
+                    data-body="Cantidades, disponibilidad y eliminación."
+                    data-aside="Resumen y continuar"
+                  >
+                    Carrito de compra
+                  </option>
+                  <option
+                    value="checkout"
+                    data-layout="shop"
+                    data-description="Centra el recorrido en datos, envío y pago. Reduce distracciones y ofrece un resumen persistente y errores concretos."
+                    data-feature="Datos de contacto y envío"
+                    data-title="Método de pago"
+                    data-body="Campos etiquetados y validación útil."
+                    data-aside="Resumen del pedido"
+                  >
+                    Checkout / pago
+                  </option>
+                  <option
+                    value="pricing"
+                    data-layout="landing"
+                    data-description="Compara opciones con criterios equivalentes. Explica límites, periodicidad y coste; una opción recomendada no debe ocultar las demás."
+                    data-feature="Propuesta y periodicidad"
+                    data-title="Comparación de planes"
+                    data-body="Prestaciones, límites y precios claros."
+                    data-aside="Preguntas y condiciones"
+                  >
+                    Planes y precios
+                  </option>
+                  <option
+                    value="booking"
+                    data-layout="shop"
+                    data-description="Expone servicio, fecha, hora y disponibilidad. El resumen mantiene contexto y confirma zona horaria cuando corresponde."
+                    data-feature="Servicio y disponibilidad"
+                    data-title="Elegir fecha y hora"
+                    data-body="Calendario, duración y datos del visitante."
+                    data-aside="Resumen de reserva"
+                  >
+                    Reservas / citas
+                  </option>
+                </optgroup>
+                <optgroup label="Servicios y marcas">
+                  <option
+                    value="corporate"
+                    data-layout="landing"
+                    data-description="Explica actividad, propuesta y credenciales. Facilita encontrar servicios y contacto, con una navegación estable."
+                    data-feature="Propuesta de la empresa"
+                    data-title="Servicios y proyectos"
+                    data-body="Evidencia, equipo y trayectoria."
+                    data-aside="Contacto y credenciales"
+                  >
+                    Web corporativa
+                  </option>
+                  <option
+                    value="restaurant"
+                    data-layout="portfolio"
+                    data-description="Prioriza carta, horarios, ubicación y reservas. Las fotos apoyan la decisión; no deben sustituir precios ni información."
+                    data-feature="Cocina y ambiente"
+                    data-title="Carta y especialidades"
+                    data-body="Platos, precios y opciones alimentarias."
+                    data-aside="Horarios y reservar"
+                  >
+                    Restaurante / cafetería
+                  </option>
+                  <option
+                    value="realestate"
+                    data-layout="portfolio"
+                    data-description="Permite inspeccionar imágenes, ubicación y características antes de contactar. Expone precio y datos esenciales juntos."
+                    data-feature="Galería del inmueble"
+                    data-title="Detalles y distribución"
+                    data-body="Superficie, habitaciones y condiciones."
+                    data-aside="Precio y solicitar visita"
+                  >
+                    Ficha inmobiliaria
+                  </option>
+                  <option
+                    value="contact"
+                    data-layout="shop"
+                    data-description="Relaciona un formulario breve con alternativas de contacto. Explica qué ocurre tras el envío y pide solo los datos necesarios."
+                    data-feature="Motivo de contacto"
+                    data-title="Formulario de consulta"
+                    data-body="Nombre, contacto y mensaje."
+                    data-aside="Canales y horario"
+                  >
+                    Contacto / presupuesto
+                  </option>
+                  <option
+                    value="about"
+                    data-layout="editorial"
+                    data-description="Cuenta quién trabaja y cómo, con hechos y ejemplos. Mantén la historia legible y los datos complementarios bien agrupados."
+                    data-feature="Historia y propósito"
+                    data-title="Equipo y forma de trabajar"
+                    data-body="Trayectoria, procesos y proyectos reales."
+                    data-aside="Datos y contacto"
+                  >
+                    Sobre nosotros / equipo
+                  </option>
+                  <option
+                    value="event"
+                    data-layout="landing"
+                    data-description="Muestra qué ocurre, cuándo y dónde. Después programa, participantes y registro, con requisitos y accesibilidad explícitos."
+                    data-feature="Evento, fecha y lugar"
+                    data-title="Programa y participantes"
+                    data-body="Agenda, entradas y ubicación."
+                    data-aside="Registro y logística"
+                  >
+                    Evento / conferencia
+                  </option>
+                  <option
+                    value="nonprofit"
+                    data-layout="landing"
+                    data-description="Explica la causa con evidencia y transparencia. Separa donar, participar e informarse y muestra el impacto de cada acción."
+                    data-feature="Causa e impacto"
+                    data-title="Proyectos y resultados"
+                    data-body="Evidencia, participación y transparencia."
+                    data-aside="Donar o colaborar"
+                  >
+                    Proyecto social / ONG
+                  </option>
+                </optgroup>
+                <optgroup label="Contenido y aprendizaje">
+                  <option
+                    value="blog"
+                    data-layout="portfolio"
+                    data-description="Organiza publicaciones por tema y actualidad. Distingue el contenido destacado del archivo y deja categorías visibles."
+                    data-feature="Artículo destacado"
+                    data-title="Publicaciones recientes"
+                    data-body="Tarjetas con título, autor, fecha y resumen."
+                    data-aside="Temas y archivo"
+                  >
+                    Portada de blog / revista
+                  </option>
+                  <option
+                    value="course"
+                    data-layout="docs"
+                    data-description="Conecta índice de módulos, lección y recursos. Haz visible el progreso sin interrumpir el aprendizaje."
+                    data-feature="Lección y objetivo"
+                    data-title="Contenido y ejercicios"
+                    data-body="Explicación, ejemplos y evaluación."
+                    data-aside="Recursos y progreso"
+                  >
+                    Curso / aula virtual
+                  </option>
+                  <option
+                    value="faq"
+                    data-layout="editorial"
+                    data-description="Agrupa preguntas por intención del usuario. Usa búsqueda y desplegables cuando ayudan; no escondas condiciones esenciales."
+                    data-feature="Buscar una respuesta"
+                    data-title="Preguntas por categoría"
+                    data-body="Respuestas breves y enlaces relacionados."
+                    data-aside="Ayuda adicional"
+                  >
+                    Preguntas frecuentes
+                  </option>
+                  <option
+                    value="knowledge"
+                    data-layout="docs"
+                    data-description="Expone búsqueda, categorías y artículos de soporte. Mantén rutas de navegación y un canal humano para casos no resueltos."
+                    data-feature="Buscar ayuda"
+                    data-title="Artículos y guías"
+                    data-body="Pasos, soluciones y contenido relacionado."
+                    data-aside="Contactar soporte"
+                  >
+                    Centro de ayuda
+                  </option>
+                  <option
+                    value="search"
+                    data-layout="shop"
+                    data-description="Mantiene la consulta, los filtros y el total de resultados visibles. Ofrece orden, paginación y un estado vacío útil."
+                    data-feature="Consulta y total"
+                    data-title="Resultados de búsqueda"
+                    data-body="Coincidencias con contexto y orden."
+                    data-aside="Filtros y refinamiento"
+                  >
+                    Resultados de búsqueda
+                  </option>
+                </optgroup>
+                <optgroup label="Comunidad y áreas de usuario">
+                  <option
+                    value="profile"
+                    data-layout="dashboard"
+                    data-description="Distingue identidad, datos editables, preferencias y acciones sensibles. Guarda cambios con confirmación y errores claros."
+                    data-feature="Identidad del usuario"
+                    data-title="Información y preferencias"
+                    data-body="Datos, actividad y ajustes de cuenta."
+                    data-aside="Estado y ayuda"
+                  >
+                    Perfil / cuenta
+                  </option>
+                  <option
+                    value="login"
+                    data-layout="shop"
+                    data-description="Centra la tarea en un formulario corto y ayuda de recuperación. Evita navegación que distraiga y condiciones difíciles de encontrar."
+                    data-feature="Bienvenida y contexto"
+                    data-title="Formulario de acceso"
+                    data-body="Credenciales, recuperación y mensajes."
+                    data-aside="Ayuda y privacidad"
+                  >
+                    Acceso / registro
+                  </option>
+                  <option
+                    value="community"
+                    data-layout="shop"
+                    data-description="Ordena conversaciones por categorías y actividad. Hace reconocibles títulos, autorías y reglas de participación."
+                    data-feature="Conversaciones destacadas"
+                    data-title="Temas y respuestas"
+                    data-body="Actividad, autores y búsqueda."
+                    data-aside="Categorías y normas"
+                  >
+                    Comunidad / foro
+                  </option>
+                  <option
+                    value="chat"
+                    data-layout="dashboard"
+                    data-description="Relaciona lista de conversaciones, hilo activo y contexto del contacto. El foco de teclado y los nuevos mensajes requieren estados claros."
+                    data-feature="Conversación activa"
+                    data-title="Mensajes y respuesta"
+                    data-body="Historial, escritura y estados de envío."
+                    data-aside="Contacto y detalles"
+                  >
+                    Mensajería / chat
+                  </option>
+                </optgroup>
+                <optgroup label="Páginas de estado y soporte">
+                  <option
+                    value="comingsoon"
+                    data-layout="landing"
+                    data-description="Explica qué llegará y cuándo si la fecha es real. Ofrece una sola acción útil y no inventes contadores o urgencia."
+                    data-feature="Propuesta del lanzamiento"
+                    data-title="Información disponible"
+                    data-body="Qué esperar y cómo recibir novedades."
+                    data-aside="Contacto o notificación"
+                  >
+                    Próximamente / lanzamiento
+                  </option>
+                  <option
+                    value="confirmation"
+                    data-layout="editorial"
+                    data-description="Confirma la acción con datos concretos y un siguiente paso. No obliga a repetir el proceso para saber si terminó."
+                    data-feature="Confirmación de la acción"
+                    data-title="Resumen y siguiente paso"
+                    data-body="Referencia, instrucciones y seguimiento."
+                    data-aside="Ayuda relacionada"
+                  >
+                    Confirmación / éxito
+                  </option>
+                  <option
+                    value="error"
+                    data-layout="landing"
+                    data-description="Explica la ausencia de forma breve y ofrece rutas de recuperación: inicio, búsqueda o sección relevante."
+                    data-feature="Página no encontrada"
+                    data-title="Opciones para continuar"
+                    data-body="Buscar, volver al inicio o consultar ayuda."
+                    data-aside="Contacto de soporte"
+                  >
+                    Error 404 / página no encontrada
+                  </option>
+                  <option
+                    value="status"
+                    data-layout="editorial"
+                    data-description="Muestra estado actual, incidentes y actualizaciones fechadas. Distingue mantenimiento planificado de fallos activos."
+                    data-feature="Estado del servicio"
+                    data-title="Incidentes y actualizaciones"
+                    data-body="Componentes afectados y progreso."
+                    data-aside="Historial y soporte"
+                  >
+                    Estado del servicio
+                  </option>
+                </optgroup></select
+              ><label for="theme-business">Paleta inicial por negocio</label
+              ><select id="theme-business">
+                <option value="restaurante">Restaurante</option>
+                <option value="tecnologia">Tecnología / app</option>
+                <option value="lujo">Lujo / moda</option>
+                <option value="infantil">Infantil / diversión</option>
+                <option value="legal">Legal / corporativo</option>
+                <option value="deporte">Deportes / fitness</option>
+                <option value="salud">Salud / bienestar</option>
+                <option value="inmobiliaria">Inmobiliaria</option>
+                <option value="editorial">Editorial / blog</option>
+                <option value="boda">Boda / evento</option>
+                <option value="arte">Arte / creativo</option>
+                <option value="tienda">Tienda / comercio</option>
+                <option value="educacion">Educación</option>
+                <option value="gastronomia">Cafetería / artesanía</option>
+                <option value="social">Proyecto social</option></select
+              ><label for="theme-brand">Nombre de la marca de ejemplo</label
+              ><input
+                id="theme-brand"
+                type="text"
+                value="Estudio Nexo"
+                maxlength="45"
+              /><label for="theme-width">Ancho de la muestra</label
+              ><select id="theme-width">
+                <option value="1100">1100 px · escritorio</option>
+                <option value="768">768 px · tablet</option>
+                <option value="360">360 px · móvil</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>Colores por función</legend>
+              <label for="theme-background"
+                >Fondo
+                <output id="theme-background-value">#fff9f1</output></label
+              ><input
+                id="theme-background"
+                type="color"
+                value="#fff9f1"
+              /><label for="theme-surface"
+                >Superficie secundaria
+                <output id="theme-surface-value">#f0dcc4</output></label
+              ><input id="theme-surface" type="color" value="#f0dcc4" /><label
+                for="theme-accent"
+                >Acento de marca
+                <output id="theme-accent-value">#87361d</output></label
+              ><input id="theme-accent" type="color" value="#87361d" /><label
+                for="theme-text"
+                >Texto <output id="theme-text-value">#18213a</output></label
+              ><input id="theme-text" type="color" value="#18213a" /><label
+                ><input id="theme-auto-text" type="checkbox" checked /> Elegir
+                texto por contraste automáticamente</label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>Generar desde el acento</legend>
+              <label for="theme-harmony">Relación cromática</label
+              ><select id="theme-harmony">
+                <option value="mono">Monocromática</option>
+                <option value="analogous">Análoga</option>
+                <option value="complementary">Complementaria</option>
+                <option value="triadic">Triádica</option></select
+              ><button id="theme-generate" type="button" class="button primary">
+                Generar paleta</button
+              ><button id="theme-reset" type="button" class="button secondary">
+                Restaurar paleta del negocio
+              </button>
+            </fieldset>
+            <p id="theme-feedback" class="note" role="status"></p>
+          </form>
+          <section
+            class="theme-preview-zone"
+            aria-labelledby="theme-preview-title"
+          >
+            <header>
+              <h3 id="theme-preview-title">Vista previa de página completa</h3>
+              <p id="theme-layout-description" class="note"></p>
+            </header>
+            <div class="theme-frame-scroll">
+              <iframe
+                id="theme-frame"
+                title="Página de ejemplo con tu paleta"
+                sandbox="allow-scripts"
+              ></iframe>
+            </div>
+            <p id="theme-contrast" class="theme-contrast" role="status"></p>
+            <p class="note">
+              Puedes desplazarte dentro de la muestra. Los botones están
+              desactivados porque representan una maqueta; los enlaces internos
+              solo recorren esta vista previa.
+            </p>
+          </section>
+        </div>
+        <section class="palette-export">
+          <h3>CSS de tu paleta</h3>
+          <pre><code id="theme-css"></code></pre>
+          <button id="theme-copy" class="button secondary" type="button">
+            Copiar CSS
+          </button>
+          <p id="theme-copy-status" role="status"></p>
+        </section>
+      </section>
+      <section id="herramientas" class="section container">
+        <header class="section-head">
+          <h2>Herramientas para explorar y crear.</h2>
+          <p>
+            Estas herramientas conocidas resuelven tareas distintas. No
+            sustituyen las pruebas de contraste ni ofrecen una paleta
+            obligatoria por sector.
+          </p>
+        </header>
+        <p id="theme-tool-advice" class="callout" role="status"></p>
+        <div class="source-grid">
+          <article class="source-card">
+            <h3>Coolors</h3>
+            <p>Generar y explorar combinaciones con rapidez.</p>
+            <p>
+              Útil para iniciar varias alternativas de una identidad. Reasigna
+              después los colores a funciones concretas.
+            </p>
+            <a href="https://coolors.co/" target="_blank" rel="noopener"
+              >Abrir Coolors</a
+            >
+          </article>
+          <article class="source-card">
+            <h3>Adobe Color</h3>
+            <p>Explorar armonías y extraer colores de imágenes.</p>
+            <p>
+              Útil si partes de fotografías o una identidad existente. La
+              extracción no garantiza contraste legible.
+            </p>
+            <a href="https://color.adobe.com/" target="_blank" rel="noopener"
+              >Abrir Adobe Color</a
+            >
+          </article>
+          <article class="source-card">
+            <h3>Realtime Colors</h3>
+            <p>Ver colores y tipografías aplicados en una web.</p>
+            <p>
+              Útil para landing, servicios y aplicaciones donde necesitas
+              comparar superficies y acciones.
+            </p>
+            <a
+              href="https://www.realtimecolors.com/"
+              target="_blank"
+              rel="noopener"
+              >Abrir Realtime Colors</a
+            >
+          </article>
+          <article class="source-card">
+            <h3>Happy Hues</h3>
+            <p>Ver paletas seleccionadas en contexto de interfaz.</p>
+            <p>
+              Útil para aprender qué color se usa en fondo, título, botón o
+              tarjeta.
+            </p>
+            <a href="https://www.happyhues.co/" target="_blank" rel="noopener"
+              >Abrir Happy Hues</a
+            >
+          </article>
+          <article class="source-card">
+            <h3>Color Hunt</h3>
+            <p>Explorar colecciones de paletas.</p>
+            <p>
+              Útil para inspiración inicial; no sustituye la prueba con
+              contenido real ni el contraste.
+            </p>
+            <a href="https://colorhunt.co/" target="_blank" rel="noopener"
+              >Abrir Color Hunt</a
+            >
+          </article>
+        </div>
+        <p class="note">
+          Revisadas el 6 de octubre de 2026. Sus funciones, cuentas necesarias y
+          planes pueden cambiar.
+        </p>
+      </section>
+      <aside class="topic-sources">
+        <h2>Fuentes y alcance</h2>
+        <p>
+          Laboratorio y plantillas originales de WebLab. Las armonías son
+          relaciones HSL orientativas; las paletas por negocio son puntos de
+          partida, no reglas universales.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors"
+              target="_blank"
+              rel="noopener"
+              >MDN · Colores CSS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+              target="_blank"
+              rel="noopener"
+              >W3C · Contraste mínimo</a
+            >
+          </li>
+          <li>
+            <a href="color.html">Teoría de color y proporción 60–30–10</a>
+          </li>
+        </ul>
+        <a href="fuentes.html">Documentación del sitio</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="paletas" />Marcar el
+          laboratorio de paletas como estudiado</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+      <template id="theme-template-landing"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Propuesta</a><a href="#detalle">Detalles</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <section class="mock-hero">
+            <p class="mock-kicker">UNA PROPUESTA CLARA</p>
+            <h1 data-feature>Una experiencia que se recuerda.</h1>
+            <p>
+              Un diseño coherente acompaña cada decisión. Explora la propuesta y
+              sus detalles.
+            </p>
+            <button disabled>Conocer la propuesta</button>
+          </section>
+          <section id="detalle">
+            <h2 data-title>Lo que nos diferencia</h2>
+            <p data-body>Detalles claros para elegir.</p>
+            <section class="mock-cards">
+              <article>
+                <span class="mock-tag">01</span>
+                <h3>Estructura clara</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">02</span>
+                <h3>Diseño consistente</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">03</span>
+                <h3>Interacción útil</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+            </section>
+          </section>
+          <aside data-aside>Información complementaria</aside>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-portfolio"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Proyectos</a><a href="#detalle">Proceso</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <section class="mock-hero compact">
+            <p class="mock-kicker">CREAMOS CON INTENCIÓN</p>
+            <h1 data-feature>Ideas y proyectos</h1>
+            <p>
+              Una selección de trabajos con contexto, decisiones y resultados.
+            </p>
+            <button disabled>Consultar proyecto</button>
+          </section>
+          <section id="detalle">
+            <h2 data-title>Proyectos seleccionados</h2>
+            <p data-body>Cada pieza responde a una tarea.</p>
+            <section class="mock-cards">
+              <article>
+                <span class="mock-tag">01</span>
+                <h3>Identidad visual</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">02</span>
+                <h3>Experiencia web</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">03</span>
+                <h3>Sistema de componentes</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+            </section>
+          </section>
+          <aside data-aside>Proceso y contacto</aside>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-editorial"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Lectura</a><a href="#detalle">Relacionado</a>
+          </nav>
+        </header>
+        <main id="contenido" class="mock-editorial">
+          <article>
+            <p class="mock-kicker">IDEAS PARA TU PROYECTO</p>
+            <h1 data-feature>Contenido que se entiende</h1>
+            <p class="mock-lead">
+              Una explicación clara no depende de un color concreto: depende de
+              jerarquía, contenido y lectura.
+            </p>
+            <h2 data-title>Una idea principal</h2>
+            <p data-body>Introduce el contenido con contexto suficiente.</p>
+            <p>
+              La paleta organiza superficies y prioridades. El fondo acompaña la
+              lectura, las zonas secundarias agrupan información y el acento
+              indica acciones o detalles relevantes.
+            </p>
+            <blockquote>
+              Elige colores por función y comprueba cada combinación.
+            </blockquote>
+            <h2>Un siguiente paso</h2>
+            <p>
+              Prueba la misma estructura con otra paleta. Observa si el texto y
+              las acciones siguen siendo claros.
+            </p>
+            <button disabled>Seguir leyendo</button>
+          </article>
+          <aside id="detalle">
+            <h3 data-aside>Información relacionada</h3>
+            <p>Notas y referencias que complementan la lectura.</p>
+            <ul>
+              <li>Contexto</li>
+              <li>Recursos</li>
+              <li>Información adicional</li>
+            </ul>
+          </aside>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-shop"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Catálogo</a><a href="#detalle">Información</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <p class="mock-kicker">ENCUENTRA LO QUE NECESITAS</p>
+          <h1 data-feature>Catálogo de propuestas</h1>
+          <div class="mock-sidebar-layout">
+            <aside>
+              <h3 data-aside>Filtros</h3>
+              <label
+                >Buscar<input placeholder="Nombre o categoría" disabled
+              /></label>
+              <p>Opciones seleccionadas</p>
+              <ul>
+                <li>Todos los resultados</li>
+                <li>Disponibilidad</li>
+                <li>Categorías</li>
+              </ul>
+            </aside>
+            <section id="detalle">
+              <h2 data-title>Resultados disponibles</h2>
+              <p data-body>Información comparable para decidir.</p>
+              <section class="mock-cards">
+                <article>
+                  <span class="mock-tag">01</span>
+                  <h3>Propuesta inicial</h3>
+                  <p>
+                    Una idea concreta, explicada con claridad y suficiente
+                    espacio.
+                  </p>
+                  <button disabled>Consultar</button>
+                </article>
+                <article>
+                  <span class="mock-tag">02</span>
+                  <h3>Propuesta completa</h3>
+                  <p>
+                    Una idea concreta, explicada con claridad y suficiente
+                    espacio.
+                  </p>
+                  <button disabled>Consultar</button>
+                </article>
+                <article>
+                  <span class="mock-tag">03</span>
+                  <h3>Propuesta a medida</h3>
+                  <p>
+                    Una idea concreta, explicada con claridad y suficiente
+                    espacio.
+                  </p>
+                  <button disabled>Consultar</button>
+                </article>
+              </section>
+              <p class="mock-meta">1–3 de 3 resultados de ejemplo</p>
+            </section>
+          </div>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-dashboard"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Resumen</a><a href="#detalle">Actividad</a>
+          </nav>
+        </header>
+        <main id="contenido" class="mock-sidebar-layout">
+          <aside>
+            <h3>Navegación</h3>
+            <ul>
+              <li>Resumen</li>
+              <li>Proyectos</li>
+              <li>Actividad</li>
+              <li>Configuración</li>
+            </ul>
+            <p data-aside>Ayuda y contexto</p>
+          </aside>
+          <section id="detalle">
+            <p class="mock-kicker">TU ÁREA DE TRABAJO</p>
+            <h1 data-feature>Resumen de actividad</h1>
+            <section class="mock-metrics">
+              <article>
+                <strong>12</strong>
+                <p>Proyectos</p>
+              </article>
+              <article>
+                <strong>4</strong>
+                <p>En curso</p>
+              </article>
+              <article>
+                <strong>8</strong>
+                <p>Completados</p>
+              </article>
+            </section>
+            <h2 data-title>Actividad reciente</h2>
+            <p data-body>Estados y tareas organizados.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Proyecto</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sitio editorial</td>
+                  <td><span class="mock-tag">En revisión</span></td>
+                </tr>
+                <tr>
+                  <td>Interfaz de servicios</td>
+                  <td>En desarrollo</td>
+                </tr>
+              </tbody>
+            </table>
+            <button disabled>Crear proyecto</button>
+          </section>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-docs"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Guía</a><a href="#detalle">Recursos</a>
+          </nav>
+        </header>
+        <main id="contenido" class="mock-sidebar-layout">
+          <aside>
+            <h3>En esta guía</h3>
+            <ol>
+              <li>Introducción</li>
+              <li>Primeros pasos</li>
+              <li>Ejemplo</li>
+              <li>Revisión</li>
+            </ol>
+            <p data-aside>Recursos de consulta</p>
+          </aside>
+          <article id="detalle">
+            <p class="mock-kicker">APRENDE PASO A PASO</p>
+            <h1 data-feature>Un recorrido claro</h1>
+            <h2 data-title>Primeros pasos</h2>
+            <p data-body>Una explicación con ejemplos.</p>
+            <p>
+              El contenido y sus niveles deben ser reconocibles. Reserva el
+              acento para enlaces, selección y acciones, sin convertir cada
+              palabra en una señal.
+            </p>
+            <pre><code>.pagina { background: var(--fondo); }
+.tarjeta { background: var(--superficie); }
+.accion { background: var(--acento); }</code></pre>
+            <h2>Comprueba el resultado</h2>
+            <p>
+              Lee un párrafo, identifica un enlace y localiza el siguiente paso.
+            </p>
+            <button disabled>Continuar</button>
+          </article>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-product"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Producto</a
+            ><a href="#detalle">Características</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <p class="mock-kicker">CONOCE LOS DETALLES</p>
+          <section class="mock-product">
+            <article class="mock-product-info">
+              <p class="mock-tag">FICHA DE EJEMPLO</p>
+              <h2>Vista y características</h2>
+              <p>
+                Esta superficie representa el área de presentación del producto.
+              </p>
+              <ul>
+                <li>Detalles de uso</li>
+                <li>Contenido incluido</li>
+                <li>Opciones disponibles</li>
+              </ul>
+            </article>
+            <article>
+              <h1 data-feature>Una propuesta completa</h1>
+              <p>
+                Información relevante, con condiciones claras y un siguiente
+                paso visible.
+              </p>
+              <strong class="mock-price">49 € · precio ficticio</strong
+              ><label
+                >Opción<select disabled>
+                  <option>Opción principal</option>
+                </select></label
+              ><button disabled>Consultar disponibilidad</button>
+              <p data-aside>Condiciones y entrega</p>
+            </article>
+          </section>
+          <section id="detalle">
+            <h2 data-title>Descripción y especificaciones</h2>
+            <p data-body>Los detalles apoyan la decisión.</p>
+            <section class="mock-cards">
+              <article>
+                <span class="mock-tag">01</span>
+                <h3>Estructura clara</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">02</span>
+                <h3>Diseño consistente</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">03</span>
+                <h3>Interacción útil</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+            </section>
+          </section>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-checkout"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <p>Datos · Revisión · Confirmación</p>
+        </header>
+        <main id="contenido">
+          <p class="mock-kicker">UN PROCESO SIN DISTRACCIONES</p>
+          <h1 data-feature>Completa los datos</h1>
+          <div class="mock-sidebar-layout reverse">
+            <section>
+              <h2 data-title>Formulario del proceso</h2>
+              <p data-body>Campos etiquetados y pasos claros.</p>
+              <form>
+                <label>Nombre<input placeholder="Tu nombre" disabled /></label
+                ><label
+                  >Correo<input
+                    placeholder="nombre@dominio.com"
+                    disabled /></label
+                ><label
+                  >Dirección o detalle<input
+                    placeholder="Información de ejemplo"
+                    disabled
+                /></label>
+                <fieldset>
+                  <legend>Preferencia</legend>
+                  <label
+                    ><input type="radio" checked disabled /> Opción
+                    principal</label
+                  ><label><input type="radio" disabled /> Otra opción</label>
+                </fieldset>
+                <button disabled>Continuar al resumen</button>
+              </form>
+            </section>
+            <aside>
+              <h3 data-aside>Resumen</h3>
+              <p>Propuesta seleccionada</p>
+              <p>Información y condiciones</p>
+              <hr />
+              <strong>Todo está visible antes de confirmar.</strong>
+            </aside>
+          </div>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-pricing"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Planes</a><a href="#detalle">Condiciones</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <section class="mock-hero compact">
+            <p class="mock-kicker">ELIGE CON INFORMACIÓN</p>
+            <h1 data-feature>Planes para distintas necesidades</h1>
+            <p>Compara criterios equivalentes y revisa las condiciones.</p>
+          </section>
+          <h2 data-title>Comparación de planes</h2>
+          <p data-body>Prestaciones, límites y periodicidad.</p>
+          <section class="mock-cards">
+            <article>
+              <h3>Inicial</h3>
+              <strong class="mock-price">19 €</strong>
+              <p>Precio ficticio por mes.</p>
+              <ul>
+                <li>Una propuesta</li>
+                <li>Recursos iniciales</li>
+                <li>Ayuda básica</li>
+              </ul>
+              <button disabled>Consultar plan</button>
+            </article>
+            <article class="featured">
+              <p class="mock-tag">EJEMPLO DESTACADO</p>
+              <h3>Completo</h3>
+              <strong class="mock-price">39 €</strong>
+              <p>Precio ficticio por mes.</p>
+              <ul>
+                <li>Varias propuestas</li>
+                <li>Recursos completos</li>
+                <li>Ayuda ampliada</li>
+              </ul>
+              <button disabled>Consultar plan</button>
+            </article>
+            <article>
+              <h3>A medida</h3>
+              <strong class="mock-price">Consultar</strong>
+              <p>Según necesidades.</p>
+              <ul>
+                <li>Alcance definido</li>
+                <li>Revisión conjunta</li>
+                <li>Condiciones claras</li>
+              </ul>
+              <button disabled>Solicitar información</button>
+            </article>
+          </section>
+          <aside id="detalle" data-aside>Condiciones y preguntas</aside>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-chat"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <p>Mensajería de ejemplo</p>
+        </header>
+        <main id="contenido">
+          <h1 data-feature>Conversación activa</h1>
+          <section class="mock-chat">
+            <aside>
+              <h3>Conversaciones</h3>
+              <p class="mock-tag">Equipo de diseño</p>
+              <p>Proyecto editorial</p>
+              <p>Soporte</p>
+            </aside>
+            <article>
+              <h2 data-title>Mensajes</h2>
+              <p data-body>Historial y respuesta.</p>
+              <p class="bubble">¿Revisamos la propuesta?</p>
+              <p class="bubble own">Sí, ya tengo los detalles.</p>
+              <label
+                >Respuesta<input
+                  placeholder="Escribe un mensaje…"
+                  disabled /></label
+              ><button disabled>Enviar ejemplo</button>
+            </article>
+            <aside>
+              <h3 data-aside>Contacto y detalles</h3>
+              <p>Información contextual.</p>
+            </aside>
+          </section>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-profile"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Cuenta</a><a href="#detalle">Preferencias</a>
+          </nav>
+        </header>
+        <main id="contenido" class="mock-sidebar-layout">
+          <aside>
+            <h3>Tu cuenta</h3>
+            <ul>
+              <li>Perfil</li>
+              <li>Preferencias</li>
+              <li>Actividad</li>
+            </ul>
+            <p data-aside>Estado y ayuda</p>
+          </aside>
+          <section id="detalle">
+            <p class="mock-kicker">CONTROL DE TU INFORMACIÓN</p>
+            <h1 data-feature>Perfil y preferencias</h1>
+            <h2 data-title>Información de la cuenta</h2>
+            <p data-body>Datos y acciones claramente separados.</p>
+            <form>
+              <label>Nombre<input value="Persona de ejemplo" disabled /></label
+              ><label
+                >Correo<input value="ejemplo@dominio.com" disabled /></label
+              ><label
+                ><input type="checkbox" checked disabled /> Recibir avisos del
+                proyecto</label
+              ><button disabled>Guardar ejemplo</button>
+            </form>
+          </section>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      ><template id="theme-template-status"
+        ><header class="mock-site-header">
+          <strong data-brand>Estudio Nexo</strong>
+          <nav>
+            <a href="#contenido">Información</a><a href="#detalle">Ayuda</a>
+          </nav>
+        </header>
+        <main id="contenido">
+          <section class="mock-hero compact">
+            <p class="mock-kicker">UN ESTADO COMPRENSIBLE</p>
+            <h1 data-feature>Información del proceso</h1>
+            <p>
+              Explica qué ocurrió y qué puede hacer la persona a continuación.
+            </p>
+            <button disabled>Continuar</button>
+          </section>
+          <section id="detalle">
+            <h2 data-title>Resumen y opciones</h2>
+            <p data-body>Detalles concretos y un siguiente paso.</p>
+            <section class="mock-cards">
+              <article>
+                <span class="mock-tag">01</span>
+                <h3>Resumen</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">02</span>
+                <h3>Seguimiento</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+              <article>
+                <span class="mock-tag">03</span>
+                <h3>Ayuda</h3>
+                <p>
+                  Una idea concreta, explicada con claridad y suficiente
+                  espacio.
+                </p>
+                <button disabled>Consultar</button>
+              </article>
+            </section>
+          </section>
+          <aside data-aside>Información adicional</aside>
+        </main>
+        <footer>
+          Ejemplo ficticio de WebLab · No realiza operaciones
+        </footer></template
+      >
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,4258 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="JavaScript: lógica e interacción: aprende con explicaciones, referencias y ejercicios interactivos en español."
+    />
+    <title>JavaScript: lógica e interacción | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/tutorial.css" />
+    <script src="js/tutorial.js" defer></script>
+  </head>
+  <body data-page="javascript">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a
+          ><a href="javascript.html" aria-current="page">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="javascript.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero js-theme">
+        <div class="container">
+          <p class="eyebrow">CAPÍTULO 03 / APRENDE LA WEB</p>
+          <h1>Haz que la página responda.</h1>
+          <p>
+            JavaScript lee datos, toma decisiones y reacciona a eventos. Conecta
+            la estructura HTML con las acciones de quien la usa.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#ruta-javascript">Ruta de 11 temas</a
+            ><a href="#paso-a-paso">Construir la página</a>
+            <a href="#fundamentos">Fundamentos</a
+            ><a href="#historia">Historia</a><a href="#referencia">Referencia</a
+            ><a href="#laboratorio">Laboratorio</a><a href="#repaso">Repaso</a>
+          </nav>
+        </div>
+      </header>
+      <section id="ruta-javascript" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">11 TEMAS · ESCRIBE · EJECUTA · COMPARA</p>
+          <h2>Aprende JavaScript paso a paso, escribiendo.</h2>
+          <p>
+            Esta ruta empieza por el lenguaje y termina con una petición real.
+            En cada lección carga el ejercicio, escribe tu solución en el
+            laboratorio y prueba el resultado.
+          </p>
+        </header>
+        <nav class="chapter-nav" aria-label="Temas de JavaScript">
+          <a href="#js-leccion-console">1. La consola y console.log</a
+          ><a href="#js-leccion-variables">2. Variables y tipos</a
+          ><a href="#js-leccion-operators">3. Operadores</a
+          ><a href="#js-leccion-conditionals">4. Condicionales: if / else</a
+          ><a href="#js-leccion-functions">5. Funciones</a
+          ><a href="#js-leccion-arrays">6. Arrays</a
+          ><a href="#js-leccion-loops">7. Bucles: for y forEach</a
+          ><a href="#js-leccion-objects">8. Objetos (y así vienen las APIs)</a
+          ><a href="#js-leccion-dom">9. El DOM</a
+          ><a href="#js-leccion-events">10. Eventos</a
+          ><a href="#js-leccion-fetch">11. fetch + async / await</a>
+        </nav>
+        <div class="js-lesson-grid">
+          <article id="js-leccion-console" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 1 DE 11</p>
+            <h3>La consola y console.log</h3>
+            <p>
+              La consola permite observar valores sin colocarlos en la interfaz.
+              console.log muestra información y ayuda a seguir el programa.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>Escribe un saludo y el resultado de 2 + 3 en la consola.</p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>console.log puede recibir varios argumentos.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>console.log(&quot;Hola, JavaScript&quot;);
+console.log(&quot;Resultado:&quot;, 2 + 3);</code></pre>
+              <p>Verás el saludo y el número 5.</p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar La consola y console.log"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-console"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-console-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-console-log">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-console">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Escribe dos llamadas a console.log.</pre></template
+          ><template id="exercise-js-console-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+console.log(&quot;Hola, JavaScript&quot;);
+console.log(&quot;Resultado:&quot;, 2 + 3);</pre>
+          </template>
+          <article id="js-leccion-variables" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 2 DE 11</p>
+            <h3>Variables y tipos</h3>
+            <p>
+              const conserva la referencia; let permite reasignarla. String,
+              number y boolean representan texto, números y condiciones. typeof
+              permite observar algunos tipos.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Declara un nombre, una edad y una condición. Muestra sus valores y
+              tipos.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>
+                Pon comillas al texto; los números y booleanos no necesitan
+                comillas.
+              </p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const nombre = &quot;Ana&quot;;
+let edad = 20;
+const estudia = true;
+console.log(nombre, typeof nombre);
+console.log(edad, typeof edad);
+console.log(estudia, typeof estudia);</code></pre>
+              <p>
+                String, number y boolean. Recuerda que typeof null es una
+                excepción histórica: devuelve object.
+              </p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar Variables y tipos"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-variables"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-variables-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-let">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-variables">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Declara nombre, edad y estudia; después usa typeof.</pre></template
+          ><template id="exercise-js-variables-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const nombre = &quot;Ana&quot;;
+let edad = 20;
+const estudia = true;
+console.log(nombre, typeof nombre);
+console.log(edad, typeof edad);
+console.log(estudia, typeof estudia);</pre>
+          </template>
+          <article id="js-leccion-operators" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 3 DE 11</p>
+            <h3>Operadores</h3>
+            <p>
+              Los operadores combinan, comparan o transforman valores: +, -, *,
+              /, %, ===, !==, >, &&, || y !.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Calcula el total de tres unidades de un producto y comprueba si
+              supera 50.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Multiplica precio por cantidad y compara el total con >.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const precio = 18;
+const cantidad = 3;
+const total = precio * cantidad;
+console.log(&quot;Total:&quot;, total);
+console.log(&quot;Supera 50:&quot;, total &gt; 50);
+console.log(&quot;Comparación estricta:&quot;, 5 === &quot;5&quot;);</code></pre>
+              <p>
+                Total 54; supera 50: true. 5 === "5" es false. El + también
+                concatena cadenas.
+              </p>
+            </details>
+            <nav class="editor-actions" aria-label="Practicar Operadores">
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-operators"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-operators-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#referencia">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-operators">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Declara precio y cantidad; calcula total y una comparación.</pre></template
+          ><template id="exercise-js-operators-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const precio = 18;
+const cantidad = 3;
+const total = precio * cantidad;
+console.log(&quot;Total:&quot;, total);
+console.log(&quot;Supera 50:&quot;, total &gt; 50);
+console.log(&quot;Comparación estricta:&quot;, 5 === &quot;5&quot;);</pre>
+          </template>
+          <article id="js-leccion-conditionals" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 4 DE 11</p>
+            <h3>Condicionales: if / else</h3>
+            <p>
+              if ejecuta un bloque cuando una condición es verdadera; else
+              ejecuta la alternativa.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Muestra un mensaje distinto si la edad es mayor o igual que 18.
+              Cambia la edad y vuelve a ejecutar.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Usa >= en la condición y llaves para cada bloque.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const edad = 17;
+if (edad &gt;= 18) {
+  console.log(&quot;Mayor de edad&quot;);
+} else {
+  console.log(&quot;Menor de edad&quot;);
+}</code></pre>
+              <p>
+                Con 17 verás Menor de edad; con 18 se ejecutará la primera rama.
+              </p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar Condicionales: if / else"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-conditionals"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-conditionals-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#referencia">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-conditionals">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Escribe una condición con dos alternativas.</pre></template
+          ><template id="exercise-js-conditionals-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const edad = 17;
+if (edad &gt;= 18) {
+  console.log(&quot;Mayor de edad&quot;);
+} else {
+  console.log(&quot;Menor de edad&quot;);
+}</pre>
+          </template>
+          <article id="js-leccion-functions" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 5 DE 11</p>
+            <h3>Funciones</h3>
+            <p>
+              Una función agrupa instrucciones. Los parámetros son entradas y
+              return devuelve un resultado y termina esa ejecución.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>Escribe sumar(a, b) y muestra el resultado de sumar(4, 6).</p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Devuelve a + b. Llama a la función para obtener el valor.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>function sumar(a, b) {
+  return a + b;
+}
+console.log(sumar(4, 6));</code></pre>
+              <p>
+                Obtendrás 10. Declarar la función no es lo mismo que ejecutarla.
+              </p>
+            </details>
+            <nav class="editor-actions" aria-label="Practicar Funciones">
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-functions"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-functions-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#referencia">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-functions">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Declara sumar(a, b) y llama a la función.</pre></template
+          ><template id="exercise-js-functions-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+function sumar(a, b) {
+  return a + b;
+}
+console.log(sumar(4, 6));</pre>
+          </template>
+          <article id="js-leccion-arrays" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 6 DE 11</p>
+            <h3>Arrays</h3>
+            <p>
+              Un array es una colección ordenada. Sus índices empiezan en 0;
+              length cuenta elementos y push añade al final.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Crea tres temas, añade uno más y consulta el primero y la
+              cantidad.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Usa [0], push y length.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const temas = [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JavaScript&quot;];
+temas.push(&quot;Accesibilidad&quot;);
+console.log(&quot;Primero:&quot;, temas[0]);
+console.log(&quot;Cantidad:&quot;, temas.length);
+console.log(temas);</code></pre>
+              <p>
+                El primero es HTML y la cantidad es 4. const permite modificar
+                el array, pero no reasignar su referencia.
+              </p>
+            </details>
+            <nav class="editor-actions" aria-label="Practicar Arrays">
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-arrays"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-arrays-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-array">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-arrays">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Crea temas, añade un elemento y consulta la colección.</pre></template
+          ><template id="exercise-js-arrays-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const temas = [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JavaScript&quot;];
+temas.push(&quot;Accesibilidad&quot;);
+console.log(&quot;Primero:&quot;, temas[0]);
+console.log(&quot;Cantidad:&quot;, temas.length);
+console.log(temas);</pre>
+          </template>
+          <article id="js-leccion-loops" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 7 DE 11</p>
+            <h3>Bucles: for y forEach</h3>
+            <p>
+              for controla inicio, condición y actualización. forEach llama una
+              función por cada elemento de un array y devuelve undefined.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>Recorre los mismos tres temas con for y con forEach.</p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>El índice debe ser menor que length, no menor o igual.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const temas = [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JavaScript&quot;];
+for (let i = 0; i &lt; temas.length; i++) {
+  console.log(&quot;for:&quot;, temas[i]);
+}
+temas.forEach((tema, indice) =&gt; {
+  console.log(&quot;forEach:&quot;, indice, tema);
+});</code></pre>
+              <p>
+                Verás los tres temas dos veces. forEach no admite break ni
+                espera automáticamente callbacks async.
+              </p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar Bucles: for y forEach"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-loops"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-loops-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#referencia">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-loops">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Recorre un array con las dos alternativas.</pre></template
+          ><template id="exercise-js-loops-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const temas = [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JavaScript&quot;];
+for (let i = 0; i &lt; temas.length; i++) {
+  console.log(&quot;for:&quot;, temas[i]);
+}
+temas.forEach((tema, indice) =&gt; {
+  console.log(&quot;forEach:&quot;, indice, tema);
+});</pre>
+          </template>
+          <article id="js-leccion-objects" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 8 DE 11</p>
+            <h3>Objetos (y así vienen las APIs)</h3>
+            <p>
+              Un objeto agrupa propiedades. Muchas APIs devuelven JSON, que se
+              interpreta para obtener objetos o arrays de JavaScript. JSON es
+              texto, no un objeto ya construido.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Consulta nombre y ciudad en un objeto; interpreta después un JSON
+              de ejemplo.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Usa el punto para propiedades y JSON.parse para el texto.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const persona = { nombre: &quot;Ana&quot;, ciudad: &quot;La Paz&quot; };
+console.log(persona.nombre, persona.ciudad);
+const texto = '{&quot;id&quot;:1,&quot;titulo&quot;:&quot;Aprender&quot;,&quot;completada&quot;:false}';
+const tarea = JSON.parse(texto);
+console.log(tarea.titulo, tarea.completada);</code></pre>
+              <p>
+                Observa las propiedades. En JSON las claves y cadenas usan
+                comillas dobles; no todas las APIs utilizan JSON.
+              </p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar Objetos (y así vienen las APIs)"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-objects"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-objects-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-objeto">Consultar referencia</a>
+            </nav>
+          </article>
+          <template id="exercise-js-objects">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Crea un objeto y usa JSON.parse con un texto JSON.</pre></template
+          ><template id="exercise-js-objects-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const persona = { nombre: &quot;Ana&quot;, ciudad: &quot;La Paz&quot; };
+console.log(persona.nombre, persona.ciudad);
+const texto = '{&quot;id&quot;:1,&quot;titulo&quot;:&quot;Aprender&quot;,&quot;completada&quot;:false}';
+const tarea = JSON.parse(texto);
+console.log(tarea.titulo, tarea.completada);</pre>
+          </template>
+          <article id="js-leccion-dom" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 9 DE 11</p>
+            <h3>El DOM</h3>
+            <p>
+              El DOM representa el documento como nodos. querySelector consulta
+              uno; textContent modifica texto sin interpretar etiquetas HTML.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Selecciona #resultado y cambia su texto al ejecutar el programa.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>El elemento ya está en el HTML; usa su id en el selector.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const resultado = document.querySelector(&quot;#resultado&quot;);
+resultado.textContent = &quot;JavaScript cambió este párrafo.&quot;;
+console.log(resultado.tagName);</code></pre>
+              <p>
+                El párrafo cambia en la vista previa. La consola muestra P. Un
+                selector sin coincidencia devuelve null.
+              </p>
+            </details>
+            <nav class="editor-actions" aria-label="Practicar El DOM">
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-dom"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-dom-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-queryselector"
+                >Consultar referencia</a
+              >
+            </nav>
+          </article>
+          <template id="exercise-js-dom">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Busca #resultado y cambia su textContent.</pre></template
+          ><template id="exercise-js-dom-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const resultado = document.querySelector(&quot;#resultado&quot;);
+resultado.textContent = &quot;JavaScript cambió este párrafo.&quot;;
+console.log(resultado.tagName);</pre>
+          </template>
+          <article id="js-leccion-events" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 10 DE 11</p>
+            <h3>Eventos</h3>
+            <p>
+              Un listener registra una función para cuando ocurre un evento.
+              Click e input no son instrucciones que se ejecutan al registrar el
+              callback.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>Haz que #accion cambie el resultado solo cuando lo pulses.</p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Usa addEventListener con click y una función.</p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>const boton = document.querySelector(&quot;#accion&quot;);
+const resultado = document.querySelector(&quot;#resultado&quot;);
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  resultado.textContent = &quot;Evento recibido.&quot;;
+  console.log(&quot;Click recibido&quot;);
+});</code></pre>
+              <p>
+                El texto no cambia hasta pulsar el botón. Prueba también
+                activarlo con teclado.
+              </p>
+            </details>
+            <nav class="editor-actions" aria-label="Practicar Eventos">
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-events"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-events-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#js-addeventlistener"
+                >Consultar referencia</a
+              >
+            </nav>
+          </article>
+          <template id="exercise-js-events">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Registra el evento del botón; no ejecutes la función al registrarla.</pre></template
+          ><template id="exercise-js-events-solution">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+const boton = document.querySelector(&quot;#accion&quot;);
+const resultado = document.querySelector(&quot;#resultado&quot;);
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  resultado.textContent = &quot;Evento recibido.&quot;;
+  console.log(&quot;Click recibido&quot;);
+});</pre>
+          </template>
+          <article id="js-leccion-fetch" class="challenge-card">
+            <p class="eyebrow">LECCIÓN 11 DE 11</p>
+            <h3>fetch + async / await</h3>
+            <p>
+              fetch pide un recurso por red. async permite usar await;
+              response.ok comprueba el estado HTTP y response.json interpreta el
+              JSON. try/catch maneja fallos.
+            </p>
+            <h4>Ahora escribe</h4>
+            <p>
+              Al pulsar #accion, consulta una tarea ficticia de JSONPlaceholder
+              y muestra su título.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>
+                Usa una función async, comprueba response.ok y captura el error.
+              </p>
+            </details>
+            <details>
+              <summary>Ver solución explicada</summary>
+              <pre><code>async function cargarTarea() {
+  const resultado = document.querySelector(&quot;#resultado&quot;);
+  resultado.textContent = &quot;Cargando…&quot;;
+  try {
+    const response = await fetch(&quot;https://jsonplaceholder.typicode.com/todos/1&quot;, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) throw new Error(&quot;HTTP &quot; + response.status);
+    const tarea = await response.json();
+    resultado.textContent = tarea.title;
+    console.log(&quot;Tarea:&quot;, tarea);
+  } catch (error) {
+    resultado.textContent = &quot;No se pudo cargar. Reintenta.&quot;;
+    console.log(error.message);
+  }
+}
+document.querySelector(&quot;#accion&quot;).addEventListener(&quot;click&quot;, cargarTarea);</code></pre>
+              <p>
+                Necesitas internet. Solo este ejercicio habilita conexión a
+                JSONPlaceholder; utiliza datos ficticios y no requiere clave.
+                fetch no rechaza por sí solo un HTTP 404.
+              </p>
+            </details>
+            <nav
+              class="editor-actions"
+              aria-label="Practicar fetch + async / await"
+            >
+              <button
+                class="button primary"
+                type="button"
+                data-load-exercise="js-fetch"
+              >
+                Empezar escribiendo</button
+              ><button
+                class="button secondary"
+                type="button"
+                data-load-exercise="js-fetch-solution"
+              >
+                Probar solución</button
+              ><a href="javascript.html#referencia">Consultar referencia</a>
+            </nav>
+            <p class="note">
+              <a
+                href="https://jsonplaceholder.typicode.com/"
+                target="_blank"
+                rel="noopener"
+                >Documentación de JSONPlaceholder</a
+              >. La consulta se realiza al pulsar el botón del ejemplo.
+            </p>
+          </article>
+          <template id="exercise-js-fetch" data-network="jsonplaceholder">
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+// Crea cargarTarea como función async y conecta el botón.</pre></template
+          ><template
+            id="exercise-js-fetch-solution"
+            data-network="jsonplaceholder"
+          >
+            <pre data-exercise="html">
+&lt;h1&gt;Escribo JavaScript paso a paso&lt;/h1&gt;
+&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;Aquí aparecerá el resultado.&lt;/p&gt;
+&lt;button id=&quot;accion&quot; type=&quot;button&quot;&gt;Probar acción&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+body { font-family: system-ui; padding: 24px; color: #18213a; line-height: 1.6; } button { background: #233de0; color: white; border: 0; border-radius: 8px; padding: 12px 18px; }</pre>
+            <pre data-exercise="js">
+async function cargarTarea() {
+  const resultado = document.querySelector(&quot;#resultado&quot;);
+  resultado.textContent = &quot;Cargando…&quot;;
+  try {
+    const response = await fetch(&quot;https://jsonplaceholder.typicode.com/todos/1&quot;, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) throw new Error(&quot;HTTP &quot; + response.status);
+    const tarea = await response.json();
+    resultado.textContent = tarea.title;
+    console.log(&quot;Tarea:&quot;, tarea);
+  } catch (error) {
+    resultado.textContent = &quot;No se pudo cargar. Reintenta.&quot;;
+    console.log(error.message);
+  }
+}
+document.querySelector(&quot;#accion&quot;).addEventListener(&quot;click&quot;, cargarTarea);</pre>
+          </template>
+        </div>
+      </section>
+      <section id="paso-a-paso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DESDE EL PRIMER ARCHIVO HASTA EL RESULTADO</p>
+          <h2>Conecta JavaScript a la página que construiste.</h2>
+          <p>
+            Cada paso acumula lo anterior. Lee la explicación, observa el
+            resultado y prueba una modificación. El laboratorio adapta los
+            archivos separados a un marco aislado.
+          </p>
+        </header>
+        <div class="walkthrough" data-walkthrough="javascript">
+          <nav class="walk-steps" aria-label="Pasos del tutorial">
+            <ol>
+              <li>
+                <button type="button" data-walk-step="0" aria-current="step">
+                  1. Crea y conecta js/app.js
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="1">
+                  2. Observa un valor en la consola
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="2">
+                  3. Selecciona elementos existentes
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="3">
+                  4. Cambia texto con textContent
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="4">
+                  5. Define un estado y una función
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="5">
+                  6. Reacciona a un evento click
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="6">
+                  7. Añade una acción de reinicio
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="7">
+                  8. Prepara una colección y una función de dibujo
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="8">
+                  9. Captura el formulario y añade una idea
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="9">
+                  10. Añade un patrón de almacenamiento con errores
+                </button>
+              </li>
+            </ol>
+          </nav>
+          <section class="walk-main">
+            <header>
+              <p id="walk-counter" class="eyebrow"></p>
+              <h3 id="walk-title"></h3>
+              <p id="walk-goal"></p>
+            </header>
+            <dl class="walk-explanation">
+              <dt>Qué añadimos</dt>
+              <dd id="walk-change"></dd>
+              <dt>Dónde va y en qué orden</dt>
+              <dd id="walk-order"></dd>
+              <dt>Qué deberías ver</dt>
+              <dd id="walk-expect"></dd>
+            </dl>
+            <nav
+              id="walk-references"
+              aria-label="Referencias de este paso"
+            ></nav>
+            <fieldset class="walk-experiments">
+              <legend>¿Qué pasa si…?</legend>
+              <label
+                ><input id="walk-remove" type="checkbox" /> Quitar la pieza de
+                este paso</label
+              ><label
+                ><input id="walk-move" type="checkbox" /> Mover la pieza al
+                comienzo</label
+              >
+              <p id="walk-experiment-note" role="status"></p>
+            </fieldset>
+            <section class="writing-practice" aria-labelledby="writing-title">
+              <h4 id="writing-title">Escribe antes de mirar la solución</h4>
+              <label
+                ><input id="walk-writing" type="checkbox" checked /> Activar
+                escritura guiada</label
+              >
+              <p>
+                El editor conserva el programa del paso anterior. Completa la
+                nueva parte siguiendo el objetivo y pulsa «Aplicar mis cambios».
+                Observa la consola y prueba los controles de la página.
+              </p>
+              <p id="writing-instruction" role="status"></p>
+              <details>
+                <summary>Ver una pista de código</summary>
+                <pre><code id="writing-hint"></code></pre>
+              </details>
+              <button
+                id="writing-solution"
+                class="button secondary"
+                type="button"
+              >
+                Cargar solución para comparar
+              </button>
+              <p class="note">
+                No necesitas memorizar un fragmento exacto: puede haber otras
+                soluciones válidas. Al cambiar de paso se carga un nuevo punto
+                de partida y se descartan las ediciones de este paso.
+              </p>
+            </section>
+            <div class="walk-editors">
+              <label for="walk-html">index.html · documento acumulado</label
+              ><textarea id="walk-html" spellcheck="false"></textarea
+              ><label for="walk-css">assets/style.css · reglas acumuladas</label
+              ><textarea id="walk-css" spellcheck="false"></textarea
+              ><label for="walk-js">js/app.js · instrucciones acumuladas</label
+              ><textarea id="walk-js" spellcheck="false"></textarea>
+            </div>
+            <div class="editor-actions">
+              <button id="walk-run" type="button" class="button primary">
+                Aplicar mis cambios</button
+              ><button id="walk-reset" type="button" class="button secondary">
+                Restablecer este paso</button
+              ><label for="walk-width">Ancho de ejemplo</label
+              ><select id="walk-width">
+                <option value="fluid">Ajustar al espacio</option>
+                <option value="360">360 px · móvil</option>
+                <option value="1100">1100 px · escritorio</option>
+              </select>
+            </div>
+            <div id="walk-result" class="walk-preview-scroll">
+              <iframe
+                id="walk-frame"
+                title="Resultado del tutorial paso a paso"
+                sandbox="allow-scripts allow-forms"
+              ></iframe>
+            </div>
+            <p id="walk-result-note" role="status"></p>
+            <h4>Consola y comportamiento</h4>
+            <pre id="walk-console" role="log" aria-live="polite"></pre>
+            <details class="explanation">
+              <summary>Ver código usado en la variante</summary>
+              <p>
+                El navegador normaliza el HTML al analizarlo. La vista previa
+                incrusta CSS y JavaScript; en tus archivos mantendrás sus
+                enlaces externos.
+              </p>
+              <h4>HTML</h4>
+              <pre><code id="walk-variant-html"></code></pre>
+              <h4>CSS</h4>
+              <pre><code id="walk-variant-css"></code></pre>
+              <h4>JavaScript</h4>
+              <pre><code id="walk-variant-js"></code></pre>
+            </details>
+            <nav class="walk-pagination" aria-label="Recorrer el tutorial">
+              <button id="walk-prev" type="button" class="button secondary">
+                Paso anterior</button
+              ><button id="walk-next" type="button" class="button primary">
+                Paso siguiente
+              </button>
+              <a href="#walk-result" class="button secondary">Ver resultado</a>
+            </nav>
+          </section>
+        </div>
+        <template
+          id="walk-data-0"
+          data-title="1. Crea y conecta js/app.js"
+          data-goal="Crea js/app.js y añade script con defer dentro de head. Conserva la página construida en HTML y CSS y amplía Mi práctica con los controles de un contador y una lista."
+          data-change="El archivo de comportamiento queda separado del contenido y los estilos."
+          data-order="defer ejecuta el script externo después de analizar el HTML."
+          data-expect="Los botones existen, pero todavía no cambia su resultado."
+          data-remove="Quitar la referencia impide cargar el script en un proyecto real; el laboratorio usa el editor para ejecutar el equivalente."
+          data-move="No hay instrucciones para reordenar todavía."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-script">script</a
+            ><a href="javascript.html#fundamentos">Conectar JavaScript</a>
+          </nav></template
+        ><template
+          id="walk-data-1"
+          data-title="2. Observa un valor en la consola"
+          data-goal="Escribe console.log para comprobar la ejecución."
+          data-change="La consola muestra un mensaje, no una parte visible de la página."
+          data-order="Una instrucción se ejecuta cuando el programa llega a ella."
+          data-expect="Aparece la confirmación de carga en la consola del laboratorio."
+          data-remove="Quitar esta instrucción elimina solo ese mensaje."
+          data-move="Mover un mensaje sin dependencias suele conservar su efecto."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);</pre>
+          <pre data-walk-code="delta">
+console.log(&quot;app.js está funcionando&quot;);</pre>
+          <nav>
+            <a href="javascript.html#js-console-log">console.log</a>
+          </nav></template
+        ><template
+          id="walk-data-2"
+          data-title="3. Selecciona elementos existentes"
+          data-goal="Usa querySelector y guarda referencias con const."
+          data-change="El código encuentra el botón, la salida y el párrafo."
+          data-order="Los elementos deben existir al consultar. Un selector incorrecto devuelve null."
+          data-expect="Seleccionar no cambia todavía la pantalla."
+          data-remove="Quitar una referencia hará fallar código posterior que la necesite."
+          data-move="Si mueves una consulta después de una instrucción que usa su const antes de inicializarla, habrá un error."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);</pre>
+          <pre data-walk-code="delta">
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);</pre>
+          <nav>
+            <a href="javascript.html#js-queryselector">querySelector</a
+            ><a href="javascript.html#js-const">const</a>
+          </nav></template
+        ><template
+          id="walk-data-3"
+          data-title="4. Cambia texto con textContent"
+          data-goal="Asigna un mensaje al párrafo seleccionado."
+          data-change="Un valor de JavaScript actualiza un nodo HTML."
+          data-order="La referencia mensaje debe inicializarse antes."
+          data-expect="El párrafo cambia sin reemplazar toda la página."
+          data-remove="Quitar la asignación conserva el texto original del documento."
+          data-move="Si ejecutas mensaje.textContent antes de declarar mensaje, aparece un error de inicialización."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;</pre>
+          <pre data-walk-code="delta">
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;</pre>
+          <nav>
+            <a href="javascript.html#js-textcontent">textContent</a>
+          </nav></template
+        ><template
+          id="walk-data-4"
+          data-title="5. Define un estado y una función"
+          data-goal="Usa let para puntos y una función que actualiza output."
+          data-change="El dato y la presentación tienen responsabilidades distintas."
+          data-order="La función lee el estado al ejecutarse."
+          data-expect="mostrarPuntos deja el contador en 0."
+          data-remove="Quitar el estado o la función rompe las instrucciones que dependen de ellos."
+          data-move="Una declaración function se puede invocar antes, pero el let que usa debe estar inicializado."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();</pre>
+          <pre data-walk-code="delta">
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();</pre>
+          <nav>
+            <a href="javascript.html#js-let">let</a
+            ><a href="javascript.html#referencia">function</a>
+          </nav></template
+        ><template
+          id="walk-data-5"
+          data-title="6. Reacciona a un evento click"
+          data-goal="Registra un callback que suma y actualiza el contador."
+          data-change="La función se ejecuta al pulsar, no al registrarla."
+          data-order="boton, puntos y mostrarPuntos deben estar disponibles."
+          data-expect="Cada activación aumenta la salida."
+          data-remove="Quitar el listener deja el botón visible pero sin esta acción."
+          data-move="Mover el registro antes de declarar boton provoca un error; moverlo después funciona."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});</pre>
+          <pre data-walk-code="delta">
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});</pre>
+          <nav>
+            <a href="javascript.html#js-addeventlistener">addEventListener</a
+            ><a href="glosario.html#glosario">Callback</a>
+          </nav></template
+        ><template
+          id="walk-data-6"
+          data-title="7. Añade una acción de reinicio"
+          data-goal="Asocia otro botón a restablecer el estado."
+          data-change="La misma función de presentación se reutiliza."
+          data-order="La acción pertenece al evento del botón Reiniciar."
+          data-expect="Reiniciar lleva el contador a 0."
+          data-remove="Quitar este registro no elimina el botón, pero deja de reiniciar."
+          data-move="Moverlo antes de inicializar los datos puede fallar en el registro o al activarlo."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});
+
+document.querySelector(&quot;#reiniciar&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  puntos = 0;
+  mostrarPuntos();
+});</pre>
+          <pre data-walk-code="delta">
+document.querySelector(&quot;#reiniciar&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  puntos = 0;
+  mostrarPuntos();
+});</pre>
+          <nav><a href="javascript.html#referencia">Eventos</a></nav></template
+        ><template
+          id="walk-data-7"
+          data-title="8. Prepara una colección y una función de dibujo"
+          data-goal="Guarda ideas en un array y crea li para mostrarlas."
+          data-change="La estructura de la lista está en HTML; sus entradas son datos dinámicos."
+          data-order="La función puede limpiar la lista y dibujar la colección actual."
+          data-expect="Con un array vacío aún no ves entradas."
+          data-remove="Quitar la colección o la función rompe el flujo que la usa después."
+          data-move="Mover la llamada antes de inicializar ideas provoca un error."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});
+
+document.querySelector(&quot;#reiniciar&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  puntos = 0;
+  mostrarPuntos();
+});
+
+const ideas = [];
+const lista = document.querySelector(&quot;#tareas&quot;);
+function mostrarIdeas() {
+  lista.replaceChildren();
+  ideas.forEach(idea =&gt; {
+    const elemento = document.createElement(&quot;li&quot;);
+    elemento.textContent = idea;
+    lista.append(elemento);
+  });
+}
+mostrarIdeas();</pre>
+          <pre data-walk-code="delta">
+const ideas = [];
+const lista = document.querySelector(&quot;#tareas&quot;);
+function mostrarIdeas() {
+  lista.replaceChildren();
+  ideas.forEach(idea =&gt; {
+    const elemento = document.createElement(&quot;li&quot;);
+    elemento.textContent = idea;
+    lista.append(elemento);
+  });
+}
+mostrarIdeas();</pre>
+          <nav>
+            <a href="javascript.html#js-array">Array</a
+            ><a href="javascript.html#referencia">createElement</a>
+          </nav></template
+        ><template
+          id="walk-data-8"
+          data-title="9. Captura el formulario y añade una idea"
+          data-goal="Gestiona submit, valida un texto y actualiza el array."
+          data-change="preventDefault evita el envío del formulario del ejemplo."
+          data-order="Primero se lee el campo, luego cambia la colección y finalmente se muestra."
+          data-expect="Escribe una idea y pulsa Añadir. No se envía nada fuera del marco."
+          data-remove="Quitar el listener impide añadir desde este flujo. Quitar preventDefault intenta el comportamiento nativo de envío."
+          data-move="Registrar el evento antes de sus dependencias puede fallar cuando se ejecute."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});
+
+document.querySelector(&quot;#reiniciar&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  puntos = 0;
+  mostrarPuntos();
+});
+
+const ideas = [];
+const lista = document.querySelector(&quot;#tareas&quot;);
+function mostrarIdeas() {
+  lista.replaceChildren();
+  ideas.forEach(idea =&gt; {
+    const elemento = document.createElement(&quot;li&quot;);
+    elemento.textContent = idea;
+    lista.append(elemento);
+  });
+}
+mostrarIdeas();
+
+document.querySelector(&quot;#tarea-form&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const campo = document.querySelector(&quot;#tarea&quot;);
+  const idea = campo.value.trim();
+  if (!idea) return;
+  ideas.push(idea);
+  mostrarIdeas();
+  campo.value = &quot;&quot;;
+});</pre>
+          <pre data-walk-code="delta">
+document.querySelector(&quot;#tarea-form&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const campo = document.querySelector(&quot;#tarea&quot;);
+  const idea = campo.value.trim();
+  if (!idea) return;
+  ideas.push(idea);
+  mostrarIdeas();
+  campo.value = &quot;&quot;;
+});</pre>
+          <nav>
+            <a href="javascript.html#referencia">preventDefault</a
+            ><a href="javascript.html#referencia">if</a>
+          </nav></template
+        ><template
+          id="walk-data-9"
+          data-title="10. Añade un patrón de almacenamiento con errores"
+          data-goal="Estudia cómo guardar una colección en localStorage con try/catch."
+          data-change="La persistencia puede fallar y necesita un mensaje claro."
+          data-order="Los datos se serializan con JSON y deben validarse al recuperarse."
+          data-expect="El marco aislado puede bloquear localStorage. El error se explica sin romper la página; en tus archivos locales puede comportarse de otro modo."
+          data-remove="Quitar el bloque elimina la prueba de guardado. La lista de esta visita sigue funcionando."
+          data-move="Moverlo antes de crear ideas impide leer esa variable. Guardar una vez no guarda todos los cambios futuros."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+    &lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p id=&quot;mensaje&quot;&gt;Todavía no has realizado una acción.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica interactiva&lt;/h2&gt;
+    &lt;h3&gt;Contador&lt;/h3&gt;
+    &lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar&lt;/button&gt;
+    &lt;button id=&quot;reiniciar&quot; type=&quot;button&quot;&gt;Reiniciar&lt;/button&gt;
+    &lt;output id=&quot;contador&quot; aria-live=&quot;polite&quot;&gt;0&lt;/output&gt;
+    &lt;h3&gt;Mi lista&lt;/h3&gt;
+    &lt;form id=&quot;tarea-form&quot;&gt;
+      &lt;label for=&quot;tarea&quot;&gt;Una idea para practicar&lt;/label&gt;
+      &lt;input id=&quot;tarea&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Añadir&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;ul id=&quot;tareas&quot;&gt;&lt;/ul&gt;
+    &lt;details&gt;&lt;summary&gt;Ver una pista&lt;/summary&gt;&lt;p&gt;El evento cambia un dato; después actualiza la vista.&lt;/p&gt;&lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }
+output { padding: 20px; font-size: 24px; }
+li { margin: 10px 0; }</pre>
+          <pre data-walk-code="js">
+console.log(&quot;app.js está funcionando&quot;);
+
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#contador&quot;);
+const mensaje = document.querySelector(&quot;#mensaje&quot;);
+
+mensaje.textContent = &quot;La página está lista para practicar.&quot;;
+
+let puntos = 0;
+function mostrarPuntos() {
+  salida.value = puntos;
+}
+mostrarPuntos();
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  mostrarPuntos();
+  console.log(&quot;Puntos:&quot;, puntos);
+});
+
+document.querySelector(&quot;#reiniciar&quot;).addEventListener(&quot;click&quot;, () =&gt; {
+  puntos = 0;
+  mostrarPuntos();
+});
+
+const ideas = [];
+const lista = document.querySelector(&quot;#tareas&quot;);
+function mostrarIdeas() {
+  lista.replaceChildren();
+  ideas.forEach(idea =&gt; {
+    const elemento = document.createElement(&quot;li&quot;);
+    elemento.textContent = idea;
+    lista.append(elemento);
+  });
+}
+mostrarIdeas();
+
+document.querySelector(&quot;#tarea-form&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const campo = document.querySelector(&quot;#tarea&quot;);
+  const idea = campo.value.trim();
+  if (!idea) return;
+  ideas.push(idea);
+  mostrarIdeas();
+  campo.value = &quot;&quot;;
+});
+
+try {
+  localStorage.setItem(&quot;mis-ideas&quot;, JSON.stringify(ideas));
+  console.log(&quot;Colección guardada. Para actualizarla, guarda también tras cada cambio.&quot;);
+} catch (error) {
+  console.log(&quot;Este entorno no permite guardar; la práctica continúa sin persistencia.&quot;);
+}</pre>
+          <pre data-walk-code="delta">
+try {
+  localStorage.setItem(&quot;mis-ideas&quot;, JSON.stringify(ideas));
+  console.log(&quot;Colección guardada. Para actualizarla, guarda también tras cada cambio.&quot;);
+} catch (error) {
+  console.log(&quot;Este entorno no permite guardar; la práctica continúa sin persistencia.&quot;);
+}</pre>
+          <nav>
+            <a href="javascript.html#js-localstorage">localStorage</a
+            ><a href="javascript.html#referencia">try/catch</a
+            ><a href="javascript.html#js-json">JSON</a>
+          </nav></template
+        >
+      </section>
+      <section id="fundamentos" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">FUNDAMENTOS</p>
+          <h2>De una instrucción a un comportamiento.</h2>
+        </header>
+        <div class="two-columns">
+          <article>
+            <h3>¿Qué es JavaScript?</h3>
+            <p>
+              Un lenguaje de programación con tipos dinámicos. En el navegador
+              utiliza APIs web, como DOM y fetch, para interactuar con el
+              documento y la red. Estas APIs no son lo mismo que el lenguaje
+              ECMAScript.
+            </p>
+            <h3>Datos, decisiones y funciones</h3>
+            <pre><code>const nombre = &quot;Ana&quot;;
+let puntos = 0;
+
+function sumarPunto() {
+  puntos += 1;
+  return `${nombre}: ${puntos}`;
+}</code></pre>
+            <p>
+              Un programa combina valores, condiciones, repeticiones y
+              funciones. Los nombres deben comunicar su propósito.
+            </p>
+          </article>
+          <article>
+            <h3>Cómo se conecta a la página</h3>
+            <pre><code>&lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;
+
+// Dentro de app.js
+const boton = document.querySelector(&quot;button&quot;);
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  document.querySelector(&quot;p&quot;).textContent = &quot;Funcionó&quot;;
+});</code></pre>
+            <p>
+              <code>defer</code> permite que el HTML se analice antes de
+              ejecutar el script externo. El evento click no se ejecuta al
+              registrar la función: se ejecuta cuando ocurre la acción.
+            </p>
+            <h3>Errores que ayudan a aprender</h3>
+            <p>
+              Lee la consola, distingue errores de sintaxis y de ejecución, y
+              prueba una modificación cada vez. El código que falla necesita una
+              explicación útil, no una pantalla vacía.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="historia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">UNA HISTORIA DE INTERACCIÓN</p>
+          <h2>De scripts pequeños a aplicaciones.</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <span class="timeline-date">1995</span>
+            <h3>Nacimiento en Netscape</h3>
+            <p>
+              Brendan Eich creó el lenguaje que pasó por los nombres Mocha y
+              LiveScript antes de llamarse JavaScript. Java y JavaScript son
+              lenguajes distintos.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">1997</span>
+            <h3>ECMAScript</h3>
+            <p>
+              Ecma International publicó la primera edición del estándar del
+              lenguaje.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">2009</span>
+            <h3>ECMAScript 5</h3>
+            <p>
+              Añadió herramientas como modo estricto y métodos de arrays
+              ampliamente utilizados.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">2015–hoy</span>
+            <h3>Módulos y evolución continua</h3>
+            <p>
+              ES2015 incorporó let, const, clases, promesas y módulos. TC39
+              continúa desarrollando nuevas características; los motores
+              implementan el estándar.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <p class="eyebrow">OBSERVA EL ESTADO</p>
+          <h2>Un evento cambia un valor.</h2>
+        </header>
+        <div class="two-columns">
+          <section class="counter-demo" aria-labelledby="counter-title">
+            <h3 id="counter-title">Contador interactivo</h3>
+            <output id="counter-value" aria-live="polite">0</output>
+            <div class="counter-actions">
+              <button type="button" class="button secondary" data-count="-1">
+                Restar</button
+              ><button type="button" class="button primary" data-count="1">
+                Sumar</button
+              ><button
+                type="button"
+                class="button secondary"
+                id="counter-reset"
+              >
+                Reiniciar
+              </button>
+            </div>
+            <p>
+              El valor cambia en JavaScript; CSS conserva el estilo y HTML
+              conserva la estructura.
+            </p>
+          </section>
+          <article>
+            <h3>Qué sucede al pulsar</h3>
+            <pre><code>let contador = 0;
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  contador += 1;
+  salida.textContent = contador;
+});</code></pre>
+            <ol>
+              <li>El navegador detecta el evento.</li>
+              <li>La función actualiza el estado.</li>
+              <li>textContent muestra el nuevo valor.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+      <section id="referencia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CONSULTA CUANDO LO NECESITES</p>
+          <h2>Tu referencia de JavaScript</h2>
+          <p>
+            Conceptos del lenguaje, métodos habituales y APIs web importantes.
+            No existe una lista de “etiquetas JavaScript”: se estudian
+            declaraciones, operadores, funciones, objetos y métodos.
+          </p>
+        </header>
+        <search class="reference-search">
+          <label for="reference-search">Buscar en la referencia</label
+          ><input
+            id="reference-search"
+            type="search"
+            placeholder="Escribe un nombre o concepto…"
+          /><label for="reference-category">Categoría</label
+          ><select id="reference-category">
+            <option value="">Todas las categorías</option>
+            <option>Bases</option>
+            <option>Control y funciones</option>
+            <option>Colecciones</option>
+            <option>DOM y eventos</option>
+            <option>Asincronía y errores</option>
+            <option>Organización</option></select
+          ><button type="button" class="button secondary" data-clear-reference>
+            Limpiar
+          </button>
+        </search>
+        <p class="reference-status" role="status"></p>
+        <div class="reference-grid">
+          <article
+            id="js-let"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="let Declara una variable que puede recibir otro valor. Bases"
+          >
+            <details>
+              <summary><code>let</code><span>Bases</span></summary>
+              <div class="reference-content">
+                <p>Declara una variable que puede recibir otro valor.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para estados que cambian.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses let si la referencia nunca se reasigna.</dd>
+                </dl>
+                <pre><code>let contador = 0;
+contador += 1;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-const"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="const Declara una referencia que no se puede reasignar. Bases"
+          >
+            <details>
+              <summary><code>const</code><span>Bases</span></summary>
+              <div class="reference-content">
+                <p>Declara una referencia que no se puede reasignar.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Como opción habitual para valores y referencias estables.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No significa que un objeto o array sea inmutable.</dd>
+                </dl>
+                <pre><code>const persona = { nombre: &quot;Ana&quot; };
+persona.nombre = &quot;Luis&quot;;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-var"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="var Declaración antigua con alcance de función y hoisting. Bases"
+          >
+            <details>
+              <summary><code>var</code><span>Bases</span></summary>
+              <div class="reference-content">
+                <p>Declaración antigua con alcance de función y hoisting.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para comprender código existente.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>En código nuevo suele ser preferible let o const.</dd>
+                </dl>
+                <pre><code>function ejemplo() { var numero = 1; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-tipos-de-datos"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="Tipos de datos Primitivos y objetos definen qué operaciones tienen sentido. Bases"
+          >
+            <details>
+              <summary><code>Tipos de datos</code><span>Bases</span></summary>
+              <div class="reference-content">
+                <p>
+                  Primitivos y objetos definen qué operaciones tienen sentido.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Distingue string, number, boolean, undefined, null, bigint y
+                    symbol.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No asumas que typeof null devuelve null: devuelve object.
+                  </dd>
+                </dl>
+                <pre><code>typeof &quot;hola&quot;; // &quot;string&quot;
+typeof 42; // &quot;number&quot;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-y"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="=== y !== Comparación estricta sin conversión implícita de tipo. Bases"
+          >
+            <details>
+              <summary><code>=== y !==</code><span>Bases</span></summary>
+              <div class="reference-content">
+                <p>Comparación estricta sin conversión implícita de tipo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para comparaciones predecibles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Dos objetos distintos no son iguales aunque sus propiedades
+                    coincidan.
+                  </dd>
+                </dl>
+                <pre><code>5 === &quot;5&quot;; // false</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-conversion-de-tipos"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="Conversión de tipos Transforma explícitamente valores. Bases"
+          >
+            <details>
+              <summary>
+                <code>Conversión de tipos</code><span>Bases</span>
+              </summary>
+              <div class="reference-content">
+                <p>Transforma explícitamente valores.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Al leer entradas de formularios.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Number("") es 0; valida también el texto vacío.</dd>
+                </dl>
+                <pre><code>const numero = Number(&quot;42&quot;);
+Number.isNaN(numero); // false</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-template-literals"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="Template literals Texto entre acentos graves con interpolación. Bases"
+          >
+            <details>
+              <summary>
+                <code>Template literals</code><span>Bases</span>
+              </summary>
+              <div class="reference-content">
+                <p>Texto entre acentos graves con interpolación.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para construir mensajes.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No confundir interpolación con escapar HTML.</dd>
+                </dl>
+                <pre><code>const nombre = &quot;Ana&quot;;
+console.log(`Hola, ${nombre}`);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-operadores-amp-amp-y"
+            class="reference-card"
+            data-reference
+            data-category="Bases"
+            data-keywords="Operadores &amp;&amp;, || y ?? Combinan condiciones o eligen valores alternativos. Bases"
+          >
+            <details>
+              <summary>
+                <code>Operadores &amp;&amp;, || y ??</code><span>Bases</span>
+              </summary>
+              <div class="reference-content">
+                <p>Combinan condiciones o eligen valores alternativos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>?? conserva 0, false y cadena vacía.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>|| reemplaza cualquier valor falsy, no solo null.</dd>
+                </dl>
+                <pre><code>const cantidad = 0;
+console.log(cantidad ?? 10); // 0</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-if-else"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="if / else Ejecuta ramas según una condición. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>if / else</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Ejecuta ramas según una condición.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para decisiones de lógica.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Evita condiciones difíciles de leer o asignaciones
+                    accidentales.
+                  </dd>
+                </dl>
+                <pre><code>if (edad &gt;= 18) { console.log(&quot;Mayor&quot;); } else { console.log(&quot;Menor&quot;); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-switch"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="switch Elige una rama entre casos con comparación estricta. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>switch</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Elige una rama entre casos con comparación estricta.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando hay varios casos discretos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Sin break puede continuar al siguiente caso.</dd>
+                </dl>
+                <pre><code>switch (tipo) {
+  case &quot;html&quot;: console.log(&quot;Estructura&quot;); break;
+  default: console.log(&quot;Otro&quot;);
+}</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-for"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="for Bucle con inicio, condición y actualización. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>for</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Bucle con inicio, condición y actualización.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para repetir con índice.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Una condición que no termina bloquea la ejecución.</dd>
+                </dl>
+                <pre><code>for (let i = 0; i &lt; 3; i++) console.log(i);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-for-of"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="for...of Recorre valores de un iterable. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>for...of</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Recorre valores de un iterable.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para arrays, strings y otras colecciones iterables.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sirve directamente para objetos planos.</dd>
+                </dl>
+                <pre><code>for (const nombre of [&quot;Ana&quot;, &quot;Luis&quot;]) console.log(nombre);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-while"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="while Repite mientras una condición siga siendo verdadera. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>while</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Repite mientras una condición siga siendo verdadera.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando no conoces el número de repeticiones.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Actualiza el estado para evitar bucles infinitos.</dd>
+                </dl>
+                <pre><code>let n = 0;
+while (n &lt; 3) { n++; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-function-y-return"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="function y return Declara una operación reutilizable y puede devolver un resultado. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>function y return</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Declara una operación reutilizable y puede devolver un
+                  resultado.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar responsabilidades.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    return termina la función; sin retorno explícito devuelve
+                    undefined.
+                  </dd>
+                </dl>
+                <pre><code>function sumar(a, b) { return a + b; }
+console.log(sumar(2, 3));</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-funciones-flecha"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="Funciones flecha Sintaxis breve y this léxico. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>Funciones flecha</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Sintaxis breve y this léxico.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para callbacks y funciones pequeñas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No reemplaza métodos que necesitan su propio this ni
+                    constructores.
+                  </dd>
+                </dl>
+                <pre><code>const duplicar = numero =&gt; numero * 2;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-scope"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="Scope Alcance en que un identificador es accesible. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>Scope</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Alcance en que un identificador es accesible.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para mantener variables cerca de su uso.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    let y const dentro de un bloque no existen fuera de él.
+                  </dd>
+                </dl>
+                <pre><code>{ const secreto = 1; }
+// secreto no está disponible aquí.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-closure"
+            class="reference-card"
+            data-reference
+            data-category="Control y funciones"
+            data-keywords="Closure Una función conserva acceso al entorno donde se creó. Control y funciones"
+          >
+            <details>
+              <summary>
+                <code>Closure</code><span>Control y funciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Una función conserva acceso al entorno donde se creó.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para estado privado y callbacks.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No confundas el entorno capturado con una copia congelada
+                    del valor.
+                  </dd>
+                </dl>
+                <pre><code>function crearContador() {
+  let n = 0;
+  return () =&gt; ++n;
+}</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-array"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="Array Colección ordenada de valores. Colecciones"
+          >
+            <details>
+              <summary><code>Array</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Colección ordenada de valores.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para listas, resultados y registros.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Los índices empiezan en 0; length no es el último índice.
+                  </dd>
+                </dl>
+                <pre><code>const temas = [&quot;HTML&quot;, &quot;CSS&quot;, &quot;JS&quot;];
+console.log(temas[0]);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-map"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="map() Devuelve un nuevo array transformando cada elemento. Colecciones"
+          >
+            <details>
+              <summary><code>map()</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Devuelve un nuevo array transformando cada elemento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para producir otra colección.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Si solo haces efectos secundarios usa forEach.</dd>
+                </dl>
+                <pre><code>[1, 2, 3].map(n =&gt; n * 2); // [2, 4, 6]</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-filter"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="filter() Devuelve elementos que pasan una condición. Colecciones"
+          >
+            <details>
+              <summary><code>filter()</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Devuelve elementos que pasan una condición.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para búsquedas y filtros.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No transforma el contenido de cada elemento.</dd>
+                </dl>
+                <pre><code>[1, 2, 3, 4].filter(n =&gt; n % 2 === 0);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-find"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="find() Devuelve la primera coincidencia o undefined. Colecciones"
+          >
+            <details>
+              <summary><code>find()</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Devuelve la primera coincidencia o undefined.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para encontrar un elemento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es un array de todas las coincidencias.</dd>
+                </dl>
+                <pre><code>[2, 5, 8].find(n =&gt; n &gt; 4); // 5</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-reduce"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="reduce() Acumula un resultado recorriendo una colección. Colecciones"
+          >
+            <details>
+              <summary><code>reduce()</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Acumula un resultado recorriendo una colección.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para sumas u otras agregaciones claras.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo uses si un bucle resulta mucho más legible.</dd>
+                </dl>
+                <pre><code>[2, 3, 4].reduce((total, n) =&gt; total + n, 0);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-sort"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="sort() Ordena el array en el lugar. Colecciones"
+          >
+            <details>
+              <summary><code>sort()</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Ordena el array en el lugar.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con comparador para números.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Sin comparador convierte valores para ordenar como texto.
+                  </dd>
+                </dl>
+                <pre><code>[10, 2, 30].sort((a, b) =&gt; a - b);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-objeto"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="Objeto Agrupa propiedades con claves. Colecciones"
+          >
+            <details>
+              <summary><code>Objeto</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Agrupa propiedades con claves.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para representar una entidad o configuración.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No confundas copia superficial con copia profunda.</dd>
+                </dl>
+                <pre><code>const curso = { titulo: &quot;HTML&quot;, nivel: 1 };
+console.log(curso.titulo);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-desestructuracion-y-spread"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="Desestructuración y spread Extrae propiedades o expande colecciones. Colecciones"
+          >
+            <details>
+              <summary>
+                <code>Desestructuración y spread</code><span>Colecciones</span>
+              </summary>
+              <div class="reference-content">
+                <p>Extrae propiedades o expande colecciones.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para código breve con nombres claros.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    spread copia un nivel; los objetos anidados siguen
+                    compartidos.
+                  </dd>
+                </dl>
+                <pre><code>const { titulo } = curso;
+const copia = { ...curso };</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-map-y-set"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="Map y Set Map asocia claves a valores; Set conserva valores únicos. Colecciones"
+          >
+            <details>
+              <summary><code>Map y Set</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>Map asocia claves a valores; Set conserva valores únicos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para diccionarios o eliminar duplicados.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No son equivalentes directos a objetos o arrays en JSON.
+                  </dd>
+                </dl>
+                <pre><code>const unicos = [...new Set([1, 1, 2])];</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-json"
+            class="reference-card"
+            data-reference
+            data-category="Colecciones"
+            data-keywords="JSON Formato de datos; parse convierte texto y stringify produce texto. Colecciones"
+          >
+            <details>
+              <summary><code>JSON</code><span>Colecciones</span></summary>
+              <div class="reference-content">
+                <p>
+                  Formato de datos; parse convierte texto y stringify produce
+                  texto.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para intercambio y almacenamiento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No uses eval para interpretar JSON; parse puede lanzar
+                    errores.
+                  </dd>
+                </dl>
+                <pre><code>const datos = JSON.parse('{&quot;nombre&quot;:&quot;Ana&quot;}');</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-queryselector"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="querySelector() Busca el primer elemento que coincide con un selector CSS. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>querySelector()</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Busca el primer elemento que coincide con un selector CSS.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para conectar una interacción con HTML.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Puede devolver null; revisa la existencia antes de usarlo.
+                  </dd>
+                </dl>
+                <pre><code>const boton = document.querySelector(&quot;button&quot;);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-queryselectorall"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="querySelectorAll() Devuelve una NodeList estática de coincidencias. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>querySelectorAll()</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>Devuelve una NodeList estática de coincidencias.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para aplicar lógica a varios elementos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No es un array ni se actualiza al insertar elementos nuevos.
+                  </dd>
+                </dl>
+                <pre><code>document.querySelectorAll(&quot;button&quot;).forEach(b =&gt; console.log(b));</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-textcontent"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="textContent Lee o asigna texto de un nodo. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>textContent</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>Lee o asigna texto de un nodo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para insertar texto y datos externos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No interpreta etiquetas HTML; eso suele ser una ventaja.
+                  </dd>
+                </dl>
+                <pre><code>document.querySelector(&quot;p&quot;).textContent = &quot;Hola&quot;;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-classlist"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="classList Añade, quita o alterna clases de CSS. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>classList</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>Añade, quita o alterna clases de CSS.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para reflejar estados sin mezclar estilos extensos en JS.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Cambiar una clase no cambia aria-expanded automáticamente.
+                  </dd>
+                </dl>
+                <pre><code>panel.classList.toggle(&quot;activo&quot;);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-addeventlistener"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="addEventListener() Registra una función para un evento. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>addEventListener()</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>Registra una función para un evento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para click, input, submit y teclado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Usa elementos nativos y evita registrar duplicados sin
+                    necesidad.
+                  </dd>
+                </dl>
+                <pre><code>boton.addEventListener(&quot;click&quot;, () =&gt; console.log(&quot;Click&quot;));</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-event-y-preventdefault"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="event y preventDefault() El evento aporta contexto; preventDefault cancela su acción por defecto si es cancelable. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>event y preventDefault()</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  El evento aporta contexto; preventDefault cancela su acción
+                  por defecto si es cancelable.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para gestionar un formulario con JavaScript.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No impide la propagación; eso es otro comportamiento.</dd>
+                </dl>
+                <pre><code>form.addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+});</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-createelement-y-append"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="createElement y append Crean e insertan nodos. DOM y eventos"
+          >
+            <details>
+              <summary>
+                <code>createElement y append</code><span>DOM y eventos</span>
+              </summary>
+              <div class="reference-content">
+                <p>Crean e insertan nodos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando necesitas contenido dinámico.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Para estructura repetida, una plantilla HTML facilita
+                    mantenimiento.
+                  </dd>
+                </dl>
+                <pre><code>const p = document.createElement(&quot;p&quot;);
+p.textContent = &quot;Resultado&quot;;
+document.body.append(p);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-dataset"
+            class="reference-card"
+            data-reference
+            data-category="DOM y eventos"
+            data-keywords="dataset Accede a atributos data-* como cadenas. DOM y eventos"
+          >
+            <details>
+              <summary><code>dataset</code><span>DOM y eventos</span></summary>
+              <div class="reference-content">
+                <p>Accede a atributos data-* como cadenas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para relacionar controles con información propia.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No lo uses para secretos ni olvides convertir números.
+                  </dd>
+                </dl>
+                <pre><code>const id = boton.dataset.id;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-promise"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="Promise Representa un resultado futuro pendiente, resuelto o rechazado. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>Promise</code><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Representa un resultado futuro pendiente, resuelto o
+                  rechazado.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para operaciones asíncronas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No equivale a ejecutar trabajo pesado en otro hilo.</dd>
+                </dl>
+                <pre><code>Promise.resolve(42).then(valor =&gt; console.log(valor));</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-async-await"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="async / await Permite escribir operaciones asíncronas con una secuencia clara. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>async / await</code><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Permite escribir operaciones asíncronas con una secuencia
+                  clara.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para esperar promesas dentro de funciones async.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    await no bloquea todo el navegador, pero las operaciones
+                    síncronas pesadas sí pueden hacerlo.
+                  </dd>
+                </dl>
+                <pre><code>async function cargar() {
+  const valor = await Promise.resolve(42);
+  return valor;
+}</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-fetch"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="fetch() API web que solicita un recurso por red. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>fetch()</code><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>API web que solicita un recurso por red.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para APIs y archivos públicos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Un HTTP 404 no rechaza por sí solo la promesa: comprueba
+                    response.ok.
+                  </dd>
+                </dl>
+                <pre><code>const response = await fetch(&quot;datos.json&quot;);
+if (!response.ok) throw new Error(&quot;No disponible&quot;);
+const datos = await response.json();</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-try-catch-finally-code-span-asincronia-y-errores-span-summary-div-class-reference-content-p-gestiona-errores-y-limpieza-p-dl-dt-cuando-usarlo-dt-dd-para-operaciones-que-pueden-fallar-dd-dt-cuando-evitarlo-dt-dd-no-ocultes-errores-sin-explicar-que-puede-hacer-el-usuario-dd-dl-pre-code-try-json-parse-quot-incorrecto-quot-catch-error-console-log-error-message"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="try / catch / finally Gestiona errores y limpieza. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>try / catch / finally</code
+                ><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Gestiona errores y limpieza.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para operaciones que pueden fallar.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No ocultes errores sin explicar qué puede hacer el usuario.
+                  </dd>
+                </dl>
+                <pre><code>try { JSON.parse(&quot;incorrecto&quot;); }
+catch (error) { console.log(error.message); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-settimeout"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="setTimeout() Programa un callback tras una demora mínima. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>setTimeout()</code><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Programa un callback tras una demora mínima.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para acciones diferidas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No garantiza ejecutar exactamente en ese milisegundo.</dd>
+                </dl>
+                <pre><code>setTimeout(() =&gt; console.log(&quot;Después&quot;), 500);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-promise-all"
+            class="reference-card"
+            data-reference
+            data-category="Asincronía y errores"
+            data-keywords="Promise.all() Espera varias promesas y rechaza si una falla. Asincronía y errores"
+          >
+            <details>
+              <summary>
+                <code>Promise.all()</code><span>Asincronía y errores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Espera varias promesas y rechaza si una falla.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para consultas independientes en paralelo.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Si necesitas resultados parciales considera allSettled.
+                  </dd>
+                </dl>
+                <pre><code>const valores = await Promise.all([Promise.resolve(1), Promise.resolve(2)]);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-import-export"
+            class="reference-card"
+            data-reference
+            data-category="Organización"
+            data-keywords="import / export Comparte código entre módulos. Organización"
+          >
+            <details>
+              <summary>
+                <code>import / export</code><span>Organización</span>
+              </summary>
+              <div class="reference-content">
+                <p>Comparte código entre módulos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar funcionalidades grandes.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    En el navegador requiere script type=module y rutas válidas.
+                  </dd>
+                </dl>
+                <pre><code>export function sumar(a, b) { return a + b; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-class"
+            class="reference-card"
+            data-reference
+            data-category="Organización"
+            data-keywords="class Define una estructura para crear objetos con métodos. Organización"
+          >
+            <details>
+              <summary><code>class</code><span>Organización</span></summary>
+              <div class="reference-content">
+                <p>Define una estructura para crear objetos con métodos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando varias instancias comparten comportamiento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No hace falta una clase para cada función pequeña.</dd>
+                </dl>
+                <pre><code>class Contador {
+  constructor() { this.valor = 0; }
+  sumar() { this.valor++; }
+}</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-localstorage"
+            class="reference-card"
+            data-reference
+            data-category="Organización"
+            data-keywords="localStorage API web de almacenamiento local como cadenas. Organización"
+          >
+            <details>
+              <summary>
+                <code>localStorage</code><span>Organización</span>
+              </summary>
+              <div class="reference-content">
+                <p>API web de almacenamiento local como cadenas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para preferencias o estado local sencillo.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No para contraseñas; puede fallar o no estar disponible.
+                  </dd>
+                </dl>
+                <pre><code>localStorage.setItem(&quot;tema&quot;, &quot;claro&quot;);
+const tema = localStorage.getItem(&quot;tema&quot;);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="js-console-log"
+            class="reference-card"
+            data-reference
+            data-category="Organización"
+            data-keywords="console.log() Muestra información de depuración. Organización"
+          >
+            <details>
+              <summary>
+                <code>console.log()</code><span>Organización</span>
+              </summary>
+              <div class="reference-content">
+                <p>Muestra información de depuración.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para observar valores durante el aprendizaje.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No sustituye mensajes de interfaz ni publiques datos
+                    sensibles.
+                  </dd>
+                </dl>
+                <pre><code>console.log(&quot;Resultado:&quot;, 2 + 3);</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="laboratorio" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CAMBIA · EJECUTA · OBSERVA</p>
+          <h2>Tu laboratorio de JavaScript</h2>
+          <p>
+            Edita el ejemplo y pulsa Ejecutar. El resultado y el código
+            permanecen separados.
+          </p>
+        </header>
+        <div class="playground" data-lab>
+          <section class="editor">
+            <h3>Código editable</h3>
+            <label for="lab-html">HTML</label
+            ><textarea id="lab-html" data-code="html" spellcheck="false">
+&lt;h1&gt;Mi contador&lt;/h1&gt;
+&lt;p id=&quot;salida&quot;&gt;0&lt;/p&gt;
+&lt;button id=&quot;sumar&quot; type=&quot;button&quot;&gt;Sumar un punto&lt;/button&gt;</textarea
+            ><label for="lab-css">CSS</label
+            ><textarea id="lab-css" data-code="css" spellcheck="false">
+body { font-family: sans-serif; padding: 24px; }
+h1 { color: #233de0; }
+button { background: #233de0; color: white; padding: 12px 20px; border: 0; border-radius: 10px; }</textarea
+            ><label for="lab-js">JavaScript</label
+            ><textarea id="lab-js" data-code="js" spellcheck="false">
+let puntos = 0;
+const boton = document.querySelector(&quot;#sumar&quot;);
+const salida = document.querySelector(&quot;#salida&quot;);
+
+boton.addEventListener(&quot;click&quot;, () =&gt; {
+  puntos += 1;
+  salida.textContent = puntos;
+  console.log(&quot;Puntos:&quot;, puntos);
+});</textarea>
+            <div class="editor-actions">
+              <button type="button" class="button primary" data-run>
+                Ejecutar</button
+              ><button type="button" class="button secondary" data-reset>
+                Restablecer
+              </button>
+            </div>
+          </section>
+          <section class="preview">
+            <header>
+              <h3>Resultado en el navegador</h3>
+              <span class="live-label">Vista previa</span>
+            </header>
+            <iframe
+              title="Resultado del ejemplo editable"
+              sandbox="allow-scripts allow-forms"
+            ></iframe>
+            <h4>Consola del ejemplo</h4>
+            <pre class="lab-console" role="log" aria-live="polite"></pre>
+          </section>
+        </div>
+        <p class="note">
+          Solo ejecuta código que entiendas. La vista previa está aislada del
+          sitio. Los cambios del editor no se guardan al cerrar la página.
+        </p>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <h2>Una petición también necesita estados.</h2>
+        </header>
+        <p>
+          Al consultar una API, piensa en carga, éxito, ausencia de resultados y
+          error. La interfaz debe explicar cada estado. Este es un patrón de
+          referencia; no necesita una petición externa para practicar el
+          laboratorio.
+        </p>
+        <pre><code>async function cargarDatos() {
+  mensaje.textContent = &quot;Cargando…&quot;;
+  try {
+    const response = await fetch(&quot;datos.json&quot;);
+    if (!response.ok) throw new Error(&quot;No disponible&quot;);
+    const datos = await response.json();
+    mensaje.textContent = `${datos.length} resultados`;
+  } catch (error) {
+    mensaje.textContent = &quot;No se pudo cargar. Inténtalo de nuevo.&quot;;
+  }
+}</code></pre>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head"><h2>Piensa antes de ejecutar.</h2></header>
+        <form class="quiz" data-answer="1">
+          <fieldset>
+            <legend>¿Qué devuelve [1, 2, 3].map(n => n * 2)?</legend>
+            <label
+              ><input type="radio" name="answer" value="0" required /> El mismo
+              array sin cambios</label
+            ><label
+              ><input type="radio" name="answer" value="1" required /> Un nuevo
+              array [2, 4, 6]</label
+            ><label
+              ><input type="radio" name="answer" value="2" required /> El número
+              6</label
+            >
+          </fieldset>
+          <button class="button primary" type="submit">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="map devuelve una nueva colección con el resultado del callback aplicado a cada elemento."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de javascript">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a href="https://tc39.es/ecma262/" target="_blank" rel="noopener"
+              >ECMAScript</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+              target="_blank"
+              rel="noopener"
+              >MDN · JavaScript</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="javascript" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

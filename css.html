@@ -1,0 +1,3351 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="CSS: estilo, distribución y adaptación: aprende con explicaciones, referencias y ejercicios interactivos en español."
+    />
+    <title>CSS: estilo, distribución y adaptación | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/tutorial.css" />
+    <script src="js/tutorial.js" defer></script>
+  </head>
+  <body data-page="css">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html" aria-current="page">CSS</a
+          ><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="css.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero css-theme">
+        <div class="container">
+          <p class="eyebrow">CAPÍTULO 02 / APRENDE LA WEB</p>
+          <h1>Ahora, dale forma.</h1>
+          <p>
+            CSS transforma la presentación: color, espacio, tipografía y
+            distribución. Una misma estructura puede tener muchos diseños.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#paso-a-paso">Tutorial paso a paso</a>
+            <a href="#fundamentos">Fundamentos</a
+            ><a href="#historia">Historia</a><a href="#referencia">Referencia</a
+            ><a href="#laboratorio">Laboratorio</a><a href="#repaso">Repaso</a>
+          </nav>
+        </div>
+      </header>
+      <section id="paso-a-paso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DESDE EL PRIMER ARCHIVO HASTA EL RESULTADO</p>
+          <h2>Da estilo a la misma página, paso a paso.</h2>
+          <p>
+            Cada paso acumula lo anterior. Lee la explicación, observa el
+            resultado y prueba una modificación. El laboratorio adapta los
+            archivos separados a un marco aislado.
+          </p>
+        </header>
+        <div class="walkthrough" data-walkthrough="css">
+          <nav class="walk-steps" aria-label="Pasos del tutorial">
+            <ol>
+              <li>
+                <button type="button" data-walk-step="0" aria-current="step">
+                  1. Crea y conecta assets/style.css
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="1">
+                  2. Define una base legible
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="2">
+                  3. Controla el modelo de caja
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="3">
+                  4. Construye jerarquía tipográfica
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="4">
+                  5. Organiza espacio y límites
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="5">
+                  6. Añade color y estilos de controles
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="6">
+                  7. Distribuye elementos con Flex y Grid
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="7">
+                  8. Evita recortes y mejora los datos
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="8">
+                  9. Añade foco y adaptación móvil
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="9">
+                  10. Comprueba la cascada con una regla final
+                </button>
+              </li>
+            </ol>
+          </nav>
+          <section class="walk-main">
+            <header>
+              <p id="walk-counter" class="eyebrow"></p>
+              <h3 id="walk-title"></h3>
+              <p id="walk-goal"></p>
+            </header>
+            <dl class="walk-explanation">
+              <dt>Qué añadimos</dt>
+              <dd id="walk-change"></dd>
+              <dt>Dónde va y en qué orden</dt>
+              <dd id="walk-order"></dd>
+              <dt>Qué deberías ver</dt>
+              <dd id="walk-expect"></dd>
+            </dl>
+            <nav
+              id="walk-references"
+              aria-label="Referencias de este paso"
+            ></nav>
+            <fieldset class="walk-experiments">
+              <legend>¿Qué pasa si…?</legend>
+              <label
+                ><input id="walk-remove" type="checkbox" /> Quitar la pieza de
+                este paso</label
+              ><label
+                ><input id="walk-move" type="checkbox" /> Mover la pieza al
+                comienzo</label
+              >
+              <p id="walk-experiment-note" role="status"></p>
+            </fieldset>
+            <div class="walk-editors">
+              <label for="walk-html">index.html · documento acumulado</label
+              ><textarea id="walk-html" spellcheck="false"></textarea
+              ><label for="walk-css">assets/style.css · reglas acumuladas</label
+              ><textarea id="walk-css" spellcheck="false"></textarea>
+            </div>
+            <div class="editor-actions">
+              <button id="walk-run" type="button" class="button primary">
+                Aplicar mis cambios</button
+              ><button id="walk-reset" type="button" class="button secondary">
+                Restablecer este paso</button
+              ><label for="walk-width">Ancho de ejemplo</label
+              ><select id="walk-width">
+                <option value="fluid">Ajustar al espacio</option>
+                <option value="360">360 px · móvil</option>
+                <option value="1100">1100 px · escritorio</option>
+              </select>
+            </div>
+            <div id="walk-result" class="walk-preview-scroll">
+              <iframe
+                id="walk-frame"
+                title="Resultado del tutorial paso a paso"
+                sandbox="allow-scripts allow-forms"
+              ></iframe>
+            </div>
+            <p id="walk-result-note" role="status"></p>
+            <h4>Consola y comportamiento</h4>
+            <pre id="walk-console" role="log" aria-live="polite"></pre>
+            <details class="explanation">
+              <summary>Ver código usado en la variante</summary>
+              <p>
+                El navegador normaliza el HTML al analizarlo. La vista previa
+                incrusta CSS y JavaScript; en tus archivos mantendrás sus
+                enlaces externos.
+              </p>
+              <h4>HTML</h4>
+              <pre><code id="walk-variant-html"></code></pre>
+              <h4>CSS</h4>
+              <pre><code id="walk-variant-css"></code></pre>
+            </details>
+            <nav class="walk-pagination" aria-label="Recorrer el tutorial">
+              <button id="walk-prev" type="button" class="button secondary">
+                Paso anterior</button
+              ><button id="walk-next" type="button" class="button primary">
+                Paso siguiente
+              </button>
+              <a href="#walk-result" class="button secondary">Ver resultado</a>
+            </nav>
+          </section>
+        </div>
+        <template
+          id="walk-data-0"
+          data-title="1. Crea y conecta assets/style.css"
+          data-goal="Crea la carpeta assets y el archivo style.css. Añade link dentro de head."
+          data-change="HTML y CSS quedan separados."
+          data-order="link va dentro de head; no es un enlace visible."
+          data-expect="Sin reglas, el aspecto sigue siendo el nativo."
+          data-remove="Quitar link en un proyecto real desconecta la hoja. El laboratorio incrusta el CSS del editor para poder mostrarlo."
+          data-move="No hay una regla para reordenar todavía."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-link">link</a
+            ><a href="css.html#fundamentos">Conectar CSS</a>
+          </nav></template
+        ><template
+          id="walk-data-1"
+          data-title="2. Define una base legible"
+          data-goal="Configura fuente, márgenes y color de texto."
+          data-change="La base afecta al cuerpo y se hereda donde corresponde."
+          data-order="El selector body apunta al contenedor visible."
+          data-expect="La fuente cambia y el contenido deja de tocar el borde."
+          data-remove="Quitar esta regla devuelve fuente, margen y color a las reglas restantes o a los valores nativos."
+          data-move="Cuando no hay reglas que compitan, cambiar el orden no modifica el resultado."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}</pre>
+          <nav>
+            <a href="css.html#css-font-family">font-family</a
+            ><a href="css.html#css-line-height">line-height</a>
+          </nav></template
+        ><template
+          id="walk-data-2"
+          data-title="3. Controla el modelo de caja"
+          data-goal="Añade border-box a los elementos."
+          data-change="Los tamaños incluyen padding y borde."
+          data-order="La regla global precede normalmente a los componentes."
+          data-expect="Con anchos explícitos las cajas se calculan de forma más predecible."
+          data-remove="Quitar border-box puede hacer que padding y borde se sumen al ancho declarado. Si no hay anchos rígidos, el cambio puede ser poco visible."
+          data-move="Una regla más específica puede conservar otra elección de box-sizing."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">* { box-sizing: border-box; }</pre>
+          <nav><a href="css.html#css-box-sizing">box-sizing</a></nav></template
+        ><template
+          id="walk-data-3"
+          data-title="4. Construye jerarquía tipográfica"
+          data-goal="Estiliza h1, h2 y h3 sin cambiar sus etiquetas."
+          data-change="Se separa tamaño visual de nivel semántico."
+          data-order="Los estilos no cambian el significado de los encabezados."
+          data-expect="El título principal destaca y los niveles inferiores acompañan la lectura."
+          data-remove="Quitar estas reglas devuelve los tamaños de encabezados a las reglas anteriores o nativas."
+          data-move="Con selectores distintos no hay una competición directa por tamaño."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }</pre>
+          <nav>
+            <a href="css.html#css-font-size">font-size</a
+            ><a href="css.html#referencia">clamp</a>
+          </nav></template
+        ><template
+          id="walk-data-4"
+          data-title="5. Organiza espacio y límites"
+          data-goal="Da ancho máximo, márgenes y padding a las regiones."
+          data-change="Aparece un ritmo compartido."
+          data-order="El contenedor limita longitud; el espacio interno no sustituye margin."
+          data-expect="Las regiones se separan y el texto conserva un ancho razonable."
+          data-remove="Quitar el bloque deja la separación que aporten los elementos y reglas restantes."
+          data-move="Sin conflictos, mover el bloque puede conservar el resultado."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }</pre>
+          <nav>
+            <a href="css.html#css-padding">padding</a
+            ><a href="css.html#css-margin">margin</a>
+          </nav></template
+        ><template
+          id="walk-data-5"
+          data-title="6. Añade color y estilos de controles"
+          data-goal="Define fondos, enlaces, campos y botones."
+          data-change="La paleta se aplica por función."
+          data-order="Los controles heredan la fuente y conservan su función nativa."
+          data-expect="La cabecera y la acción principal se distinguen."
+          data-remove="Quitar el bloque no elimina controles: cambia su presentación."
+          data-move="Las reglas posteriores de la misma importancia pueden sobrescribir colores."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }</pre>
+          <nav>
+            <a href="css.html#css-color">color</a
+            ><a href="css.html#css-background">background</a>
+          </nav></template
+        ><template
+          id="walk-data-6"
+          data-title="7. Distribuye elementos con Flex y Grid"
+          data-goal="Organiza los enlaces y la sección Temas."
+          data-change="La distribución deja de depender solo del flujo vertical."
+          data-order="Grid afecta a hijos directos; no reorganiza toda la página automáticamente."
+          data-expect="Temas tiene dos columnas; las piezas ocupan espacios definidos."
+          data-remove="Quitar este bloque hace que esos contenedores vuelvan a su display previo o nativo."
+          data-move="Si otro bloque vuelve a definir display, el orden puede decidir entre declaraciones equivalentes."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }</pre>
+          <nav>
+            <a href="css.html#referencia">Grid</a
+            ><a href="css.html#css-gap">gap</a
+            ><a href="css.html#css-display">display</a>
+          </nav></template
+        ><template
+          id="walk-data-7"
+          data-title="8. Evita recortes y mejora los datos"
+          data-goal="Haz la imagen flexible y añade bordes a la tabla."
+          data-change="El contenido visual y tabular se adapta al espacio."
+          data-order="La imagen conserva su proporción; las celdas tienen límites claros."
+          data-expect="Las piezas no necesitan anchos rígidos para alinearse."
+          data-remove="Quitar estas reglas puede hacer que la imagen use sus dimensiones HTML y que la tabla pierda sus bordes."
+          data-move="Las propiedades independientes no cambian solo por moverse."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }</pre>
+          <nav>
+            <a href="css.html#referencia">width</a
+            ><a href="css.html#css-object-fit">object-fit</a>
+          </nav></template
+        ><template
+          id="walk-data-8"
+          data-title="9. Añade foco y adaptación móvil"
+          data-goal="Define foco visible y una media query."
+          data-change="La distribución cambia cuando falta espacio."
+          data-order="La condición se evalúa según el ancho del documento que muestra el ejemplo."
+          data-expect="El marco puede apilar Temas en una columna. Cambia su ancho para comparar."
+          data-remove="Quitar esta media query conserva las dos columnas incluso con poco espacio."
+          data-move="Una regla global posterior puede competir con las declaraciones de la media query."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }</pre>
+          <nav>
+            <a href="css.html#css-focus-visible">:focus-visible</a
+            ><a href="css.html#css-media">@media</a>
+          </nav></template
+        ><template
+          id="walk-data-9"
+          data-title="10. Comprueba la cascada con una regla final"
+          data-goal="Añade un segundo fondo para la ficha."
+          data-change="Dos reglas de .lesson-card declaran background."
+          data-order="Con el mismo selector y sin otros criterios que decidan, gana la declaración posterior."
+          data-expect="La ficha toma el fondo azul claro. Activa mover al comienzo para ver la diferencia."
+          data-remove="Quitar la última regla deja el fondo blanco del paso 5."
+          data-move="Moverla al comienzo permite que la regla posterior del paso 5 vuelva a ganar."
+          data-target=""
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css">
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #18213a;
+}
+
+* { box-sizing: border-box; }
+
+h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; }
+h2 { font-size: 26px; }
+h3 { font-size: 20px; }
+
+header, nav, main, footer { max-width: 1000px; margin: 0 auto 24px; }
+section { margin-bottom: 32px; }
+.lesson-card { padding: 24px; margin: 16px 0; border: 1px solid #cfd7e8; border-radius: 16px; background: white; }
+
+header { background: #eef1ff; padding: 24px; border-radius: 16px; }
+a { color: #233de0; }
+input, button { font: inherit; padding: 10px; margin: 8px 0; }
+button { background: #233de0; color: white; border: 0; border-radius: 8px; }
+
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+#temas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+#temas &gt; h2, #temas &gt; p { grid-column: 1 / -1; }
+
+img { max-width: 100%; height: auto; }
+figure { margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #cfd7e8; padding: 10px; text-align: left; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) { #temas { grid-template-columns: 1fr; } }
+
+.lesson-card { background: #e5edff; }</pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta">
+.lesson-card { background: #e5edff; }</pre>
+          <nav>
+            <a href="css.html#fundamentos">Cascada</a
+            ><a href="glosario.html#glosario">Especificidad</a>
+          </nav></template
+        >
+      </section>
+      <section id="fundamentos" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">FUNDAMENTOS</p>
+          <h2>Una regla, tres piezas.</h2>
+        </header>
+        <div class="two-columns">
+          <article>
+            <h3>Selector, propiedad y valor</h3>
+            <pre><code>.tarjeta {
+  padding: 24px;
+  color: #233de0;
+}</code></pre>
+            <p>
+              <code>.tarjeta</code> selecciona los elementos;
+              <code>padding</code> nombra la propiedad; <code>24px</code> es el
+              valor. Cada declaración termina con punto y coma.
+            </p>
+            <h3>Cómo se conecta con HTML</h3>
+            <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;</code></pre>
+            <p>
+              El navegador construye el DOM del HTML y aplica las reglas CSS
+              para calcular presentación y distribución. No todas las
+              propiedades se heredan.
+            </p>
+          </article>
+          <article>
+            <h3>La cascada decide qué gana</h3>
+            <ol>
+              <li>Origen, importancia y capas de la cascada.</li>
+              <li>Especificidad del selector entre reglas relevantes.</li>
+              <li>
+                El orden de aparición, si los criterios anteriores empatan.
+              </li>
+            </ol>
+            <p>
+              Una clase pesa más que una etiqueta; un ID pesa más que una clase.
+              <code>:where()</code> no aporta especificidad. La cercanía del
+              selector en el archivo no importa si otro criterio decide primero.
+            </p>
+            <h3>El modelo de caja</h3>
+            <p>
+              Contenido, padding, borde y margin. Con
+              <code>box-sizing: border-box</code>, las dimensiones declaradas
+              incluyen padding y borde, pero no margin.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="historia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DE ESTILOS A SISTEMAS DE DISEÑO</p>
+          <h2>La presentación encontró su propio lenguaje.</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <span class="timeline-date">1994</span>
+            <h3>Una propuesta de hojas de estilo</h3>
+            <p>
+              Håkon Wium Lie propuso separar los estilos del contenido; Bert Bos
+              contribuyó a desarrollar CSS.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">1996</span>
+            <h3>CSS1</h3>
+            <p>
+              W3C publicó una recomendación con reglas para tipografía, colores
+              y espaciado.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">1998</span>
+            <h3>CSS2</h3>
+            <p>
+              Se ampliaron posicionamiento, medios y capacidades de
+              presentación.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">Hoy</span>
+            <h3>Módulos que evolucionan</h3>
+            <p>
+              CSS se desarrolla por módulos: Grid, Flexbox, consultas de
+              contenedor y otras capacidades avanzan con sus propias
+              especificaciones. No existe una única versión CSS3 que lo englobe
+              todo.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <p class="eyebrow">LABORATORIO GUIADO</p>
+          <h2>Mueve el control. Mira la caja.</h2>
+        </header>
+        <div class="two-columns">
+          <form id="css-controls" class="control-panel">
+            <fieldset>
+              <legend>Modelo de caja</legend>
+              <label for="box-padding"
+                >Padding <output id="padding-value">24 px</output></label
+              ><input
+                id="box-padding"
+                type="range"
+                min="0"
+                max="60"
+                value="24"
+              /><label for="box-radius"
+                >Esquinas <output id="radius-value">16 px</output></label
+              ><input
+                id="box-radius"
+                type="range"
+                min="0"
+                max="60"
+                value="16"
+              /><label for="box-color">Color de fondo</label
+              ><input id="box-color" type="color" value="#e9eeff" /><label
+                for="grid-columns"
+                >Columnas de Grid</label
+              ><select id="grid-columns">
+                <option value="1">1 columna</option>
+                <option value="2">2 columnas</option>
+                <option value="3" selected>3 columnas</option></select
+              ><button type="reset" class="button secondary">
+                Restablecer controles
+              </button>
+            </fieldset>
+          </form>
+          <section
+            class="guided-preview"
+            aria-label="Resultado del modelo de caja"
+          >
+            <div id="box-demo">
+              <h3>Una caja, muchas posibilidades.</h3>
+              <p>
+                El padding aumenta el espacio interior. El borde mantiene un
+                límite visible.
+              </p>
+            </div>
+            <div id="grid-demo">
+              <span>1</span><span>2</span><span>3</span><span>4</span
+              ><span>5</span><span>6</span>
+            </div>
+            <pre><code id="css-generated"></code></pre>
+          </section>
+        </div>
+      </section>
+      <section id="referencia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CONSULTA CUANDO LO NECESITES</p>
+          <h2>Tu referencia de CSS</h2>
+          <p>
+            Selectores, propiedades, valores y reglas principales. CSS contiene
+            muchas más propiedades; la referencia enlazada sirve para consultar
+            su sintaxis y compatibilidad completa.
+          </p>
+        </header>
+        <search class="reference-search">
+          <label for="reference-search">Buscar en la referencia</label
+          ><input
+            id="reference-search"
+            type="search"
+            placeholder="Escribe un nombre o concepto…"
+          /><label for="reference-category">Categoría</label
+          ><select id="reference-category">
+            <option value="">Todas las categorías</option>
+            <option>Selectores</option>
+            <option>Caja</option>
+            <option>Distribución</option>
+            <option>Tipografía y color</option>
+            <option>Movimiento</option>
+            <option>Adaptación y herramientas</option></select
+          ><button type="button" class="button secondary" data-clear-reference>
+            Limpiar
+          </button>
+        </search>
+        <p class="reference-status" role="status"></p>
+        <div class="reference-grid">
+          <article
+            id="css-clase"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=".clase Selecciona elementos con una clase compartida. Selectores"
+          >
+            <details>
+              <summary><code>.clase</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>Selecciona elementos con una clase compartida.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para estilos reutilizables.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No uses nombres ligados al color si su propósito puede
+                    cambiar.
+                  </dd>
+                </dl>
+                <pre><code>.tarjeta { padding: 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-id"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="#id Selecciona un identificador único y aporta especificidad alta. Selectores"
+          >
+            <details>
+              <summary><code>#id</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>
+                  Selecciona un identificador único y aporta especificidad alta.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para casos realmente únicos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No lo uses en todos los estilos; clases facilitan
+                    sobrescribir.
+                  </dd>
+                </dl>
+                <pre><code>#resultado { color: navy; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-elemento"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="elemento Selecciona elementos por nombre de etiqueta. Selectores"
+          >
+            <details>
+              <summary><code>elemento</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>Selecciona elementos por nombre de etiqueta.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para reglas base de tipografía o controles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Evita que una regla global afecte componentes sin querer.
+                  </dd>
+                </dl>
+                <pre><code>button { font: inherit; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-atributo"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="[atributo] Selecciona elementos según atributos. Selectores"
+          >
+            <details>
+              <summary><code>[atributo]</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>Selecciona elementos según atributos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para estados declarados en HTML.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No confundas atributos con propiedades CSS.</dd>
+                </dl>
+                <pre><code>[aria-expanded=&quot;true&quot;] { color: blue; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-descendiente-y"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="descendiente y &gt; El espacio selecciona descendientes; &gt; solo hijos directos. Selectores"
+          >
+            <details>
+              <summary>
+                <code>descendiente y &gt;</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  El espacio selecciona descendientes; > solo hijos directos.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para acotar un componente.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Cadenas muy largas crean dependencia de la estructura.
+                  </dd>
+                </dl>
+                <pre><code>.menu &gt; a { padding: 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-y"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="+ y ~ Seleccionan hermanos posteriores adyacentes o generales. Selectores"
+          >
+            <details>
+              <summary><code>+ y ~</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>Seleccionan hermanos posteriores adyacentes o generales.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para relacionar elementos al mismo nivel.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No seleccionan elementos anteriores.</dd>
+                </dl>
+                <pre><code>h2 + p { margin-top: 0; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-hover"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":hover Estado al apuntar con ratón o dispositivo equivalente. Selectores"
+          >
+            <details>
+              <summary><code>:hover</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>Estado al apuntar con ratón o dispositivo equivalente.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para realimentación visual complementaria.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No escondas funciones esenciales detrás del hover.</dd>
+                </dl>
+                <pre><code>a:hover { text-decoration: underline; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-focus-visible"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":focus-visible Foco que necesita indicación visible. Selectores"
+          >
+            <details>
+              <summary>
+                <code>:focus-visible</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Foco que necesita indicación visible.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para navegación con teclado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No elimines outline sin una alternativa visible.</dd>
+                </dl>
+                <pre><code>button:focus-visible { outline: 3px solid blue; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-checked-y-disabled"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":checked y :disabled Estados de controles nativos. Selectores"
+          >
+            <details>
+              <summary>
+                <code>:checked y :disabled</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Estados de controles nativos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para reflejar selección o disponibilidad.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>El estilo no cambia por sí solo el estado funcional.</dd>
+                </dl>
+                <pre><code>input:checked { accent-color: blue; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-nth-child"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":nth-child() Selecciona según posición entre hermanos. Selectores"
+          >
+            <details>
+              <summary>
+                <code>:nth-child()</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Selecciona según posición entre hermanos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para patrones visuales repetidos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No asumas un índice estable si agregas nodos.</dd>
+                </dl>
+                <pre><code>li:nth-child(even) { background: #eee; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-is-y-where"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":is() y :where() Agrupan selectores; :where tiene especificidad cero. Selectores"
+          >
+            <details>
+              <summary>
+                <code>:is() y :where()</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupan selectores; :where tiene especificidad cero.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para reglas base breves.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    :is conserva la especificidad más alta de sus argumentos.
+                  </dd>
+                </dl>
+                <pre><code>:where(h1, h2, h3) { line-height: 1.2; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-has"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords=":has() Selecciona un elemento que cumple una relación con descendientes. Selectores"
+          >
+            <details>
+              <summary><code>:has()</code><span>Selectores</span></summary>
+              <div class="reference-content">
+                <p>
+                  Selecciona un elemento que cumple una relación con
+                  descendientes.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para estados de contenedores en navegadores compatibles.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Revisa soporte y no sustituyas lógica compleja por
+                    selectores frágiles.
+                  </dd>
+                </dl>
+                <pre><code>form:has(input:invalid) { border-color: red; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-before-y-after"
+            class="reference-card"
+            data-reference
+            data-category="Selectores"
+            data-keywords="::before y ::after Generan cajas antes o después del contenido. Selectores"
+          >
+            <details>
+              <summary>
+                <code>::before y ::after</code><span>Selectores</span>
+              </summary>
+              <div class="reference-content">
+                <p>Generan cajas antes o después del contenido.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para decoración no esencial.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No pongas información importante solo en content.</dd>
+                </dl>
+                <pre><code>.nota::before { content: &quot;• &quot;; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-box-sizing"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="box-sizing Decide cómo se calculan width y height. Caja"
+          >
+            <details>
+              <summary><code>box-sizing</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Decide cómo se calculan width y height.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    border-box facilita tamaños que incluyen padding y borde.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No olvides que margin queda fuera.</dd>
+                </dl>
+                <pre><code>* { box-sizing: border-box; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-width-y-height"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="width y height Tamaño de la caja. Caja"
+          >
+            <details>
+              <summary><code>width y height</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Tamaño de la caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando necesitas dimensiones explícitas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Alturas rígidas pueden cortar texto ampliado.</dd>
+                </dl>
+                <pre><code>.foto { width: 100%; height: auto; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-min-width-y-max-width"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="min-width y max-width Límites de anchura. Caja"
+          >
+            <details>
+              <summary>
+                <code>min-width y max-width</code><span>Caja</span>
+              </summary>
+              <div class="reference-content">
+                <p>Límites de anchura.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para contenido legible y adaptable.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Un min-width grande puede causar desbordamiento móvil.
+                  </dd>
+                </dl>
+                <pre><code>.container { width: 100%; max-width: 70rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-min-height-y-max-height"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="min-height y max-height Límites de altura. Caja"
+          >
+            <details>
+              <summary>
+                <code>min-height y max-height</code><span>Caja</span>
+              </summary>
+              <div class="reference-content">
+                <p>Límites de altura.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para áreas de interacción o paneles desplazables.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Revisa texto grande y contenido variable.</dd>
+                </dl>
+                <pre><code>.panel { max-height: 30rem; overflow: auto; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-margin"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="margin Espacio externo; puede colapsar en flujo de bloques. Caja"
+          >
+            <details>
+              <summary><code>margin</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Espacio externo; puede colapsar en flujo de bloques.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar componentes.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No añade fondo ni aumenta el área interna clicable.</dd>
+                </dl>
+                <pre><code>p { margin: 0 0 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-padding"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="padding Espacio entre contenido y borde. Caja"
+          >
+            <details>
+              <summary><code>padding</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Espacio entre contenido y borde.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para aire interior y controles cómodos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No confundir con distancia entre elementos.</dd>
+                </dl>
+                <pre><code>.tarjeta { padding: 1.5rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-border"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="border Borde de la caja. Caja"
+          >
+            <details>
+              <summary><code>border</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Borde de la caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para límites visibles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Cambiar grosor puede cambiar dimensiones si no usas
+                    border-box.
+                  </dd>
+                </dl>
+                <pre><code>.tarjeta { border: 1px solid #ddd; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-border-radius"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="border-radius Redondea esquinas. Caja"
+          >
+            <details>
+              <summary><code>border-radius</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Redondea esquinas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para dar continuidad a una interfaz.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No arregla una imagen que desborda sin overflow apropiado.
+                  </dd>
+                </dl>
+                <pre><code>.tarjeta { border-radius: 16px; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-overflow"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="overflow Controla contenido que supera la caja. Caja"
+          >
+            <details>
+              <summary><code>overflow</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Controla contenido que supera la caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>auto crea desplazamiento cuando es necesario.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>hidden puede ocultar contenido o indicadores de foco.</dd>
+                </dl>
+                <pre><code>.codigo { overflow: auto; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-aspect-ratio"
+            class="reference-card"
+            data-reference
+            data-category="Caja"
+            data-keywords="aspect-ratio Relación entre anchura y altura. Caja"
+          >
+            <details>
+              <summary><code>aspect-ratio</code><span>Caja</span></summary>
+              <div class="reference-content">
+                <p>Relación entre anchura y altura.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para reservar espacio de videos e imágenes.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Puede dejar de controlar si ambas dimensiones son rígidas.
+                  </dd>
+                </dl>
+                <pre><code>.video { aspect-ratio: 16 / 9; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-display"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="display Selecciona el modelo de presentación: block, flex, grid o none. Distribución"
+          >
+            <details>
+              <summary><code>display</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>
+                  Selecciona el modelo de presentación: block, flex, grid o
+                  none.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para definir cómo se distribuyen los hijos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    display:none retira también el contenido del árbol
+                    accesible.
+                  </dd>
+                </dl>
+                <pre><code>.lista { display: grid; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-grid-template-columns"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="grid-template-columns Define columnas de Grid. Distribución"
+          >
+            <details>
+              <summary>
+                <code>grid-template-columns</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>Define columnas de Grid.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para distribuciones de dos dimensiones.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Columnas rígidas pueden romper pantallas pequeñas.</dd>
+                </dl>
+                <pre><code>.grid { display: grid; grid-template-columns: repeat(3, 1fr); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-repeat-minmax-y-auto-fit-code-span-distribucion-span-summary-div-class-reference-content-p-repeticion-limites-de-pista-y-ajuste-automatico-p-dl-dt-cuando-usarlo-dt-dd-para-cuadriculas-adaptables-dd-dt-cuando-evitarlo-dt-dd-un-minimo-mayor-que-el-viewport-desborda-dd-dl-pre-code-grid-grid-template-columns-repeat-auto-fit-minmax-min-100-240px-1fr"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="repeat(), minmax() y auto-fit Repetición, límites de pista y ajuste automático. Distribución"
+          >
+            <details>
+              <summary>
+                <code>repeat(), minmax() y auto-fit</code
+                ><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>Repetición, límites de pista y ajuste automático.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para cuadrículas adaptables.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Un mínimo mayor que el viewport desborda.</dd>
+                </dl>
+                <pre><code>.grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-grid-column-y-grid-row"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="grid-column y grid-row Ubica elementos en pistas. Distribución"
+          >
+            <details>
+              <summary>
+                <code>grid-column y grid-row</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>Ubica elementos en pistas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para hacer que una tarjeta abarque columnas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No cambies el orden visual a costa del orden de lectura.
+                  </dd>
+                </dl>
+                <pre><code>.destacada { grid-column: 1 / -1; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-gap"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="gap Espaciado entre pistas de Grid o elementos Flex. Distribución"
+          >
+            <details>
+              <summary><code>gap</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>Espaciado entre pistas de Grid o elementos Flex.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separación uniforme.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No crea espacio fuera del contenedor.</dd>
+                </dl>
+                <pre><code>.grid { gap: 20px; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-flex-direction"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="flex-direction Eje principal de un contenedor Flex. Distribución"
+          >
+            <details>
+              <summary>
+                <code>flex-direction</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>Eje principal de un contenedor Flex.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para filas o columnas de controles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    column cambia el significado visual de justify-content y
+                    align-items.
+                  </dd>
+                </dl>
+                <pre><code>.acciones { display: flex; flex-direction: row; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-flex-wrap"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="flex-wrap Permite varias líneas Flex. Distribución"
+          >
+            <details>
+              <summary><code>flex-wrap</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>Permite varias líneas Flex.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para controles que deben caber en móvil.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>nowrap puede comprimir o desbordar los hijos.</dd>
+                </dl>
+                <pre><code>.acciones { flex-wrap: wrap; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-flex"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="flex Forma corta de crecimiento, reducción y base. Distribución"
+          >
+            <details>
+              <summary><code>flex</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>Forma corta de crecimiento, reducción y base.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para repartir espacio flexible.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No implica que todo texto largo pueda encogerse; revisa
+                    min-width.
+                  </dd>
+                </dl>
+                <pre><code>.campo { flex: 1 1 200px; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-justify-content"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="justify-content Distribuye elementos en el eje principal de Flex y la cuadrícula en Grid. Distribución"
+          >
+            <details>
+              <summary>
+                <code>justify-content</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Distribuye elementos en el eje principal de Flex y la
+                  cuadrícula en Grid.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para centrar o repartir espacio.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No siempre actúa si no hay espacio libre.</dd>
+                </dl>
+                <pre><code>.acciones { justify-content: space-between; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-align-items"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="align-items Alineación de los hijos en el eje transversal de Flex o dentro de sus áreas Grid. Distribución"
+          >
+            <details>
+              <summary>
+                <code>align-items</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Alineación de los hijos en el eje transversal de Flex o dentro
+                  de sus áreas Grid.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para centrar elementos o evitar estiramiento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>stretch puede crear tarjetas altas con zonas vacías.</dd>
+                </dl>
+                <pre><code>.grid { align-items: start; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-position"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="position Selecciona posicionamiento static, relative, absolute, fixed o sticky. Distribución"
+          >
+            <details>
+              <summary><code>position</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>
+                  Selecciona posicionamiento static, relative, absolute, fixed o
+                  sticky.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para casos que necesitan anclaje o superposición.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses absolute para maquetar una página completa.</dd>
+                </dl>
+                <pre><code>.menu { position: sticky; top: 0; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-top-right-bottom-y-left"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="top, right, bottom y left Desplazamientos de elementos posicionados. Distribución"
+          >
+            <details>
+              <summary>
+                <code>top, right, bottom y left</code><span>Distribución</span>
+              </summary>
+              <div class="reference-content">
+                <p>Desplazamientos de elementos posicionados.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para fijar bordes de una caja.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No afectan normalmente position:static.</dd>
+                </dl>
+                <pre><code>.aviso { position: fixed; right: 1rem; bottom: 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-z-index"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="z-index Orden de apilamiento dentro de contextos. Distribución"
+          >
+            <details>
+              <summary><code>z-index</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>Orden de apilamiento dentro de contextos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para overlays y cabeceras.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Un valor enorme no escapa al contexto de apilamiento padre.
+                  </dd>
+                </dl>
+                <pre><code>.cabecera { position: sticky; z-index: 10; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-float"
+            class="reference-card"
+            data-reference
+            data-category="Distribución"
+            data-keywords="float Permite que texto fluya alrededor de una caja. Distribución"
+          >
+            <details>
+              <summary><code>float</code><span>Distribución</span></summary>
+              <div class="reference-content">
+                <p>Permite que texto fluya alrededor de una caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para envolver imágenes en texto.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para layout general usa Grid o Flex.</dd>
+                </dl>
+                <pre><code>img { float: left; margin-right: 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-font-family"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="font-family Familia de fuentes y alternativas. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>font-family</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Familia de fuentes y alternativas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un sistema tipográfico consistente.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No dependas de que una fuente remota esté disponible.</dd>
+                </dl>
+                <pre><code>body { font-family: system-ui, sans-serif; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-font-size"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="font-size Tamaño de texto. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>font-size</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Tamaño de texto.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con rem o escalas adaptables para lectura.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Evita tamaños demasiado pequeños o impedir zoom.</dd>
+                </dl>
+                <pre><code>body { font-size: 1rem; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-font-weight"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="font-weight Peso de la fuente. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>font-weight</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Peso de la fuente.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para jerarquía visual.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No todas las fuentes contienen todos los pesos.</dd>
+                </dl>
+                <pre><code>h1 { font-weight: 700; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-line-height"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="line-height Altura de línea. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>line-height</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Altura de línea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para separación legible; sin unidad suele heredar mejor.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Una altura muy pequeña solapa caracteres.</dd>
+                </dl>
+                <pre><code>p { line-height: 1.7; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-letter-spacing"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="letter-spacing Espaciado entre letras. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>letter-spacing</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Espaciado entre letras.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con moderación en etiquetas cortas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Evita valores excesivos en párrafos.</dd>
+                </dl>
+                <pre><code>.etiqueta { letter-spacing: .08em; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-text-align"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="text-align Alineación del contenido en línea. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>text-align</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Alineación del contenido en línea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para texto y elementos en línea.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No centra cajas de bloque por sí solo.</dd>
+                </dl>
+                <pre><code>h1 { text-align: center; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-text-decoration"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="text-decoration Líneas decorativas del texto. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>text-decoration</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Líneas decorativas del texto.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para enlaces reconocibles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No retires el subrayado sin otro indicio claro.</dd>
+                </dl>
+                <pre><code>a { text-decoration: underline; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-color"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="color Color del texto y valor de currentColor. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>color</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Color del texto y valor de currentColor.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para contraste y jerarquía.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No comuniques estados solo con color.</dd>
+                </dl>
+                <pre><code>p { color: #253247; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-background"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="background Fondos, imágenes y gradientes. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>background</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fondos, imágenes y gradientes.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para diferenciar superficies.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Las imágenes de fondo no tienen alt; no pongas allí
+                    contenido esencial.
+                  </dd>
+                </dl>
+                <pre><code>.hero { background: linear-gradient(120deg, #eef2ff, white); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-opacity"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="opacity Transparencia de la caja completa y sus hijos. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>opacity</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Transparencia de la caja completa y sus hijos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para efectos visuales complementarios.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>opacity:0 conserva interacción y espacio.</dd>
+                </dl>
+                <pre><code>.suave { opacity: .7; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-box-shadow"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="box-shadow Sombra de una caja. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>box-shadow</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Sombra de una caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para elevación visual moderada.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituye límites y contraste suficientes.</dd>
+                </dl>
+                <pre><code>.tarjeta { box-shadow: 0 8px 24px #0001; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-object-fit"
+            class="reference-card"
+            data-reference
+            data-category="Tipografía y color"
+            data-keywords="object-fit Ajuste de imágenes o videos dentro de una caja. Tipografía y color"
+          >
+            <details>
+              <summary>
+                <code>object-fit</code><span>Tipografía y color</span>
+              </summary>
+              <div class="reference-content">
+                <p>Ajuste de imágenes o videos dentro de una caja.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>contain conserva todo; cover puede recortar.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No cambia el archivo ni su resolución.</dd>
+                </dl>
+                <pre><code>img { width: 200px; height: 150px; object-fit: cover; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-transform"
+            class="reference-card"
+            data-reference
+            data-category="Movimiento"
+            data-keywords="transform Transformación visual: trasladar, rotar o escalar. Movimiento"
+          >
+            <details>
+              <summary><code>transform</code><span>Movimiento</span></summary>
+              <div class="reference-content">
+                <p>Transformación visual: trasladar, rotar o escalar.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para animación sin cambiar el flujo normal.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>El espacio original permanece reservado.</dd>
+                </dl>
+                <pre><code>.tarjeta:hover { transform: translateY(-4px); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-transition"
+            class="reference-card"
+            data-reference
+            data-category="Movimiento"
+            data-keywords="transition Interpola cambios entre valores. Movimiento"
+          >
+            <details>
+              <summary><code>transition</code><span>Movimiento</span></summary>
+              <div class="reference-content">
+                <p>Interpola cambios entre valores.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para cambios breves y comprensibles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses transition:all indiscriminadamente.</dd>
+                </dl>
+                <pre><code>button { transition: background-color .2s; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-animation-y-keyframes"
+            class="reference-card"
+            data-reference
+            data-category="Movimiento"
+            data-keywords="animation y @keyframes Animación con etapas nombradas. Movimiento"
+          >
+            <details>
+              <summary>
+                <code>animation y @keyframes</code><span>Movimiento</span>
+              </summary>
+              <div class="reference-content">
+                <p>Animación con etapas nombradas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para comunicar actividad o cambios.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Respeta prefers-reduced-motion y evita distracciones.</dd>
+                </dl>
+                <pre><code>@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+.aviso { animation: aparecer .3s; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-media"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="@media Aplica reglas bajo condiciones. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>@media</code><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Aplica reglas bajo condiciones.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para viewport, impresión y preferencias de movimiento.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No diseñes únicamente para modelos de dispositivos
+                    concretos.
+                  </dd>
+                </dl>
+                <pre><code>@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-container"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="@container Consulta dimensiones de un contenedor habilitado. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>@container</code><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Consulta dimensiones de un contenedor habilitado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para componentes adaptables a su espacio.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Declara container-type y comprueba compatibilidad.</dd>
+                </dl>
+                <pre><code>.zona { container-type: inline-size; }
+@container (max-width: 400px) { .tarjeta { padding: 1rem; } }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-supports"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="@supports Comprueba si el navegador reconoce una característica. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>@supports</code><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Comprueba si el navegador reconoce una característica.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para mejoras progresivas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No prueba todos los comportamientos posibles.</dd>
+                </dl>
+                <pre><code>@supports (display: grid) { .lista { display: grid; } }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-layer"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="@layer Ordena capas de la cascada. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>@layer</code><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Ordena capas de la cascada.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar base, componentes y utilidades.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Las reglas normales sin capa tienen prioridad sobre reglas
+                    normales en capas.
+                  </dd>
+                </dl>
+                <pre><code>@layer base, components;
+@layer base { body { margin: 0; } }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-variables-y-var-code-span-adaptacion-y-herramientas-span-summary-div-class-reference-content-p-propiedades-personalizadas-que-participan-en-la-cascada-p-dl-dt-cuando-usarlo-dt-dd-para-colores-espacios-y-temas-compartidos-dd-dt-cuando-evitarlo-dt-dd-incluye-fallback-cuando-la-variable-puede-faltar-dd-dl-pre-code-root-color-blue-a-color-var-color-navy"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="Variables y var() Propiedades personalizadas que participan en la cascada. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>Variables y var()</code
+                ><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Propiedades personalizadas que participan en la cascada.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para colores, espacios y temas compartidos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Incluye fallback cuando la variable puede faltar.</dd>
+                </dl>
+                <pre><code>:root { --color: blue; }
+a { color: var(--color, navy); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-rem-em-vw-y-vh-code-span-adaptacion-y-herramientas-span-summary-div-class-reference-content-p-unidades-relativas-a-raiz-fuente-referencia-o-viewport-p-dl-dt-cuando-usarlo-dt-dd-para-tamanos-que-responden-al-contexto-dd-dt-cuando-evitarlo-dt-dd-un-porcentaje-de-altura-necesita-una-referencia-definida-en-muchos-casos-dd-dl-pre-code-h1-font-size-2rem-main-width-90"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="rem, em, %, vw y vh Unidades relativas a raíz, fuente, referencia o viewport. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>rem, em, %, vw y vh</code
+                ><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Unidades relativas a raíz, fuente, referencia o viewport.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para tamaños que responden al contexto.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Un porcentaje de altura necesita una referencia definida en
+                    muchos casos.
+                  </dd>
+                </dl>
+                <pre><code>h1 { font-size: 2rem; }
+main { width: 90%; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-calc-y-clamp-code-span-adaptacion-y-herramientas-span-summary-div-class-reference-content-p-calculo-de-valores-y-limites-adaptables-p-dl-dt-cuando-usarlo-dt-dd-para-combinar-unidades-y-escalas-fluidas-dd-dt-cuando-evitarlo-dt-dd-no-sustituyen-todas-las-decisiones-de-layout-dd-dl-pre-code-h1-font-size-clamp-2rem-5vw-4rem"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="calc() y clamp() Cálculo de valores y límites adaptables. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>calc() y clamp()</code
+                ><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Cálculo de valores y límites adaptables.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para combinar unidades y escalas fluidas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituyen todas las decisiones de layout.</dd>
+                </dl>
+                <pre><code>h1 { font-size: clamp(2rem, 5vw, 4rem); }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="css-important"
+            class="reference-card"
+            data-reference
+            data-category="Adaptación y herramientas"
+            data-keywords="!important Cambia la prioridad de una declaración en la cascada. Adaptación y herramientas"
+          >
+            <details>
+              <summary>
+                <code>!important</code><span>Adaptación y herramientas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Cambia la prioridad de una declaración en la cascada.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para excepciones deliberadas y justificadas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No lo uses como solución rutinaria a selectores mal
+                    organizados.
+                  </dd>
+                </dl>
+                <pre><code>[hidden] { display: none !important; }</code></pre>
+                <a
+                  href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="laboratorio" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CAMBIA · EJECUTA · OBSERVA</p>
+          <h2>Tu laboratorio de CSS</h2>
+          <p>
+            Edita el ejemplo y pulsa Ejecutar. El resultado y el código
+            permanecen separados.
+          </p>
+        </header>
+        <div class="playground" data-lab>
+          <section class="editor">
+            <h3>Código editable</h3>
+            <label for="lab-html">HTML</label
+            ><textarea id="lab-html" data-code="html" spellcheck="false">
+&lt;section class=&quot;tarjetas&quot;&gt;
+  &lt;article&gt;Primera tarjeta&lt;/article&gt;
+  &lt;article&gt;Segunda tarjeta&lt;/article&gt;
+  &lt;article&gt;Tercera tarjeta&lt;/article&gt;
+&lt;/section&gt;</textarea
+            ><label for="lab-css">CSS</label
+            ><textarea id="lab-css" data-code="css" spellcheck="false">
+body { font-family: sans-serif; padding: 20px; }
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+article { background: #e9eeff; padding: 24px; border-radius: 16px; }
+@media (max-width: 500px) {
+  .tarjetas { grid-template-columns: 1fr; }
+}</textarea>
+            <div class="editor-actions">
+              <button type="button" class="button primary" data-run>
+                Ejecutar</button
+              ><button type="button" class="button secondary" data-reset>
+                Restablecer
+              </button>
+            </div>
+          </section>
+          <section class="preview">
+            <header>
+              <h3>Resultado en el navegador</h3>
+              <span class="live-label">Vista previa</span>
+            </header>
+            <iframe
+              title="Resultado del ejemplo editable"
+              sandbox="allow-scripts allow-forms"
+            ></iframe>
+            <h4>Consola del ejemplo</h4>
+            <pre class="lab-console" role="log" aria-live="polite"></pre>
+          </section>
+        </div>
+        <p class="note">
+          Solo ejecuta código que entiendas. La vista previa está aislada del
+          sitio. Los cambios del editor no se guardan al cerrar la página.
+        </p>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head">
+          <h2>La caja también se entiende razonando.</h2>
+        </header>
+        <form class="quiz" data-answer="0">
+          <fieldset>
+            <legend>
+              Con width:200px, padding:20px y borde de 2px por lado, ¿qué ancho
+              ocupa una caja border-box sin margin?
+            </legend>
+            <label
+              ><input type="radio" name="answer" value="0" required /> 200
+              px</label
+            ><label
+              ><input type="radio" name="answer" value="1" required /> 240
+              px</label
+            ><label
+              ><input type="radio" name="answer" value="2" required /> 244
+              px</label
+            >
+          </fieldset>
+          <button class="button primary" type="submit">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="border-box incluye el contenido, el padding y el borde dentro del width declarado."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de css">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.w3.org/Style/CSS/"
+              target="_blank"
+              rel="noopener"
+              >W3C · CSS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+              target="_blank"
+              rel="noopener"
+              >MDN · CSS</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="css" /> Marcar esta página como
+          estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

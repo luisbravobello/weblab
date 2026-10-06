@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Elegir componentes con criterio: ejercicios, explicaciones y documentación para estudiar desarrollo web."
+    />
+    <title>Elegir componentes con criterio | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="componentes">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html" aria-current="page">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">APRENDER ES PONER A PRUEBA</p>
+          <h1>El componente sigue a la tarea.</h1>
+          <p>
+            Compara opciones, prueba su comportamiento y reconoce cuándo una
+            solución añade dificultad innecesaria.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#comparar">Comparación</a><a href="#ejemplos">Ejemplos</a>
+          </nav>
+        </div>
+      </header>
+      <section id="comparar" class="section container">
+        <header class="section-head">
+          <h2>Qué usar y cuándo evitarlo.</h2>
+          <p>
+            El nombre de un componente no garantiza accesibilidad. Prefiere HTML
+            nativo cuando resuelve la tarea.
+          </p>
+        </header>
+        <div class="reference-grid">
+          <article class="reference-card">
+            <details>
+              <summary>Pestañas</summary>
+              <div class="reference-content">
+                <p>Vistas alternativas de una misma zona.</p>
+                <dl>
+                  <dt>Úsalo cuando</dt>
+                  <dd>
+                    Pocas secciones relacionadas que no necesitan verse juntas.
+                  </dd>
+                  <dt>Evítalo cuando</dt>
+                  <dd>
+                    Procesos secuenciales o información que deba compararse
+                    simultáneamente.
+                  </dd>
+                  <dt>Comportamiento</dt>
+                  <dd>
+                    Izquierda y derecha cambian el foco; Home y End van a los
+                    extremos.
+                  </dd>
+                </dl>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/"
+                  target="_blank"
+                  rel="noopener"
+                  >Documentación del patrón</a
+                >
+              </div>
+            </details>
+          </article>
+          <article class="reference-card">
+            <details>
+              <summary>Acordeón</summary>
+              <div class="reference-content">
+                <p>Contenido expandible por bloques.</p>
+                <dl>
+                  <dt>Úsalo cuando</dt>
+                  <dd>
+                    Respuestas o detalles secundarios, con títulos claros.
+                  </dd>
+                  <dt>Evítalo cuando</dt>
+                  <dd>
+                    Pasos esenciales que el usuario no debería buscar ocultos.
+                  </dd>
+                  <dt>Comportamiento</dt>
+                  <dd>
+                    details y summary ofrecen interacción nativa sin recrear
+                    todos los estados.
+                  </dd>
+                </dl>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/"
+                  target="_blank"
+                  rel="noopener"
+                  >Documentación del patrón</a
+                >
+              </div>
+            </details>
+          </article>
+          <article class="reference-card">
+            <details>
+              <summary>Modal</summary>
+              <div class="reference-content">
+                <p>Una tarea o explicación que interrumpe el contexto.</p>
+                <dl>
+                  <dt>Úsalo cuando</dt>
+                  <dd>Una acción breve y necesaria, con cierre claro.</dd>
+                  <dt>Evítalo cuando</dt>
+                  <dd>Contenido extenso o navegación rutinaria.</dd>
+                  <dt>Comportamiento</dt>
+                  <dd>
+                    El foco entra, permanece en el diálogo y vuelve al botón de
+                    origen.
+                  </dd>
+                </dl>
+                <a
+                  href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+                  target="_blank"
+                  rel="noopener"
+                  >Documentación del patrón</a
+                >
+              </div>
+            </details>
+          </article>
+          <article class="reference-card">
+            <details>
+              <summary>Tabla</summary>
+              <div class="reference-content">
+                <p>Datos comparables en filas y columnas.</p>
+                <dl>
+                  <dt>Úsalo cuando</dt>
+                  <dd>Precios, características o registros con encabezados.</dd>
+                  <dt>Evítalo cuando</dt>
+                  <dd>
+                    Maquetar una página o mostrar tarjetas sin relaciones
+                    tabulares.
+                  </dd>
+                  <dt>Comportamiento</dt>
+                  <dd>
+                    caption y th comunican relaciones; el desplazamiento puede
+                    ser interno.
+                  </dd>
+                </dl>
+                <a
+                  href="https://www.w3.org/WAI/tutorials/tables/"
+                  target="_blank"
+                  rel="noopener"
+                  >Documentación del patrón</a
+                >
+              </div>
+            </details>
+          </article>
+          <article class="reference-card">
+            <details>
+              <summary>Lista</summary>
+              <div class="reference-content">
+                <p>Colección de elementos relacionados.</p>
+                <dl>
+                  <dt>Úsalo cuando</dt>
+                  <dd>Pasos, recursos, tareas o resultados sencillos.</dd>
+                  <dt>Evítalo cuando</dt>
+                  <dd>
+                    Cuando los datos necesitan relaciones entre varias columnas.
+                  </dd>
+                  <dt>Comportamiento</dt>
+                  <dd>
+                    ol para secuencia; ul cuando el orden no es significativo.
+                  </dd>
+                </dl>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul"
+                  target="_blank"
+                  rel="noopener"
+                  >Documentación del patrón</a
+                >
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section id="ejemplos" class="section container">
+        <header class="section-head">
+          <h2>Prueba los patrones con teclado.</h2>
+          <p>
+            Los ejemplos muestran alternativas para organizar información, no
+            productos conectados a servicios reales.
+          </p>
+        </header>
+        <section class="component-demo">
+          <h3>Pestañas</h3>
+          <div role="tablist" aria-label="Enfoques de implementación">
+            <button
+              role="tab"
+              id="tab-html"
+              aria-controls="panel-html"
+              aria-selected="true"
+              tabindex="0"
+            >
+              HTML</button
+            ><button
+              role="tab"
+              id="tab-css"
+              aria-controls="panel-css"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              CSS</button
+            ><button
+              role="tab"
+              id="tab-js"
+              aria-controls="panel-js"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              JavaScript
+            </button>
+          </div>
+          <section
+            id="panel-html"
+            role="tabpanel"
+            aria-labelledby="tab-html"
+            tabindex="0"
+          >
+            <h4>Contenido y significado</h4>
+            <p>Empieza por la estructura y los controles nativos.</p>
+          </section>
+          <section
+            id="panel-css"
+            role="tabpanel"
+            aria-labelledby="tab-css"
+            tabindex="0"
+            hidden
+          >
+            <h4>Presentación</h4>
+            <p>Define espaciado, jerarquía y estados visibles.</p>
+          </section>
+          <section
+            id="panel-js"
+            role="tabpanel"
+            aria-labelledby="tab-js"
+            tabindex="0"
+            hidden
+          >
+            <h4>Interacción</h4>
+            <p>Actualiza el estado, el foco y los atributos accesibles.</p>
+          </section>
+        </section>
+        <section class="component-demo">
+          <h3>Acordeón nativo</h3>
+          <details>
+            <summary>¿Necesito siempre JavaScript?</summary>
+            <p>
+              No. details y summary resuelven un desplegable básico sin scripts.
+            </p>
+          </details>
+          <details>
+            <summary>¿Cuándo usar un diálogo?</summary>
+            <p>
+              Cuando una tarea breve necesita atención y conserva el contexto
+              anterior.
+            </p>
+          </details>
+        </section>
+        <section class="component-demo">
+          <h3>Diálogo</h3>
+          <button
+            id="component-dialog-open"
+            class="button primary"
+            type="button"
+          >
+            Abrir ejemplo de modal
+          </button>
+          <dialog
+            id="component-dialog"
+            aria-labelledby="component-dialog-title"
+          >
+            <h2 id="component-dialog-title">Una tarea breve</h2>
+            <p>Este ejemplo no pide datos ni realiza acciones externas.</p>
+            <form method="dialog">
+              <button class="button primary">Cerrar</button>
+            </form>
+          </dialog>
+        </section>
+        <section class="component-demo">
+          <h3>Tabla o lista</h3>
+          <table class="comparison-table">
+            <caption>
+              Qué relación representa cada opción
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Contenido</th>
+                <th scope="col">Opción inicial</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pasos para instalar</td>
+                <td>Lista ordenada</td>
+              </tr>
+              <tr>
+                <td>Planes frente a características</td>
+                <td>Tabla</td>
+              </tr>
+              <tr>
+                <td>Preguntas con respuestas secundarias</td>
+                <td>details</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de componentes">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+              target="_blank"
+              rel="noopener"
+              >W3C APG · Patrones</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/tutorials/tables/"
+              target="_blank"
+              rel="noopener"
+              >W3C WAI · Tablas</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="componentes" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

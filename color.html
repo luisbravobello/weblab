@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Color y paletas aplicadas: fundamentos y ejemplos interactivos de diseño visual en español."
+    />
+    <title>Color y paletas aplicadas | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <script src="js/design-data.js" defer></script>
+    <script src="js/design.js" defer></script>
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="color">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html" aria-current="page">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="color.html#paletas">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">DISEÑO VISUAL · 03</p>
+          <h1>El color necesita contexto.</h1>
+          <p>
+            Explora tonos, compara paletas y distribuye cada color por función.
+            Una marca necesita intención, consistencia y legibilidad.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#tonos">Tonos</a><a href="#teoria">Teoría</a
+            ><a href="#paletas">Negocios</a><a href="#proporciones">60–30–10</a
+            ><a href="#contraste">Contraste</a>
+          </nav>
+        </div>
+      </header>
+      <section id="tonos" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Cada tono puede sugerir algo.</h2>
+          <p>
+            Las asociaciones varían con cultura, audiencia, luz y saturación.
+            Son hipótesis que debes probar, no mensajes universales.
+          </p>
+        </header>
+        <div id="tone-buttons" class="tone-buttons">
+          <button
+            type="button"
+            data-tone="rojo"
+            aria-pressed="true"
+            style="--tone: #bd2633"
+          >
+            <span aria-hidden="true"></span>Rojo</button
+          ><button
+            type="button"
+            data-tone="azul"
+            aria-pressed="false"
+            style="--tone: #244cb4"
+          >
+            <span aria-hidden="true"></span>Azul</button
+          ><button
+            type="button"
+            data-tone="verde"
+            aria-pressed="false"
+            style="--tone: #176c49"
+          >
+            <span aria-hidden="true"></span>Verde</button
+          ><button
+            type="button"
+            data-tone="amarillo"
+            aria-pressed="false"
+            style="--tone: #f5cc39"
+          >
+            <span aria-hidden="true"></span>Amarillo</button
+          ><button
+            type="button"
+            data-tone="naranja"
+            aria-pressed="false"
+            style="--tone: #b94e13"
+          >
+            <span aria-hidden="true"></span>Naranja</button
+          ><button
+            type="button"
+            data-tone="violeta"
+            aria-pressed="false"
+            style="--tone: #7541a8"
+          >
+            <span aria-hidden="true"></span>Violeta</button
+          ><button
+            type="button"
+            data-tone="rosa"
+            aria-pressed="false"
+            style="--tone: #b42b72"
+          >
+            <span aria-hidden="true"></span>Rosa</button
+          ><button
+            type="button"
+            data-tone="negro"
+            aria-pressed="false"
+            style="--tone: #202124"
+          >
+            <span aria-hidden="true"></span>Negro</button
+          ><button
+            type="button"
+            data-tone="blanco"
+            aria-pressed="false"
+            style="--tone: #ffffff"
+          >
+            <span aria-hidden="true"></span>Blanco</button
+          ><button
+            type="button"
+            data-tone="tierra"
+            aria-pressed="false"
+            style="--tone: #80543b"
+          >
+            <span aria-hidden="true"></span>Tierra
+          </button>
+        </div>
+        <div class="two-columns">
+          <article class="tone-description">
+            <h3 id="tone-title"></h3>
+            <p id="tone-voice"></p>
+            <p id="tone-meaning"></p>
+            <p id="tone-care"></p>
+            <p id="tone-brands"></p>
+            <a id="tone-source" target="_blank" rel="noopener" hidden
+              >Consultar fuente de marca</a
+            >
+          </article>
+          <article id="tone-preview" class="business-preview">
+            <p class="preview-eyebrow">MARCA DE EJEMPLO</p>
+            <h3>Una idea. Otra sensación.</h3>
+            <p>
+              La estructura permanece. Cambia el tono del acento y observa la
+              voz visual de la marca.
+            </p>
+            <button type="button" disabled>Conocer la propuesta</button
+            ><small id="tone-hex"></small>
+          </article>
+        </div>
+        <p class="note">
+          Las muestras son educativas. Los colores hex de este laboratorio no
+          representan especificaciones oficiales de las marcas citadas.
+        </p>
+      </section>
+      <section id="teoria" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Teoría de color aplicada.</h2>
+          <p>
+            Distingue tono, saturación y luminosidad. Elegir una combinación es
+            decidir relaciones, no acumular colores.
+          </p>
+        </header>
+        <div class="design-three">
+          <article>
+            <h3>Tono</h3>
+            <p>
+              La posición en un círculo cromático: rojo, verde, azul… En HSL se
+              expresa como un ángulo.
+            </p>
+          </article>
+          <article>
+            <h3>Saturación</h3>
+            <p>
+              Intensidad del tono. Al reducirla, la muestra se acerca a un gris
+              con la misma luminosidad HSL.
+            </p>
+          </article>
+          <article>
+            <h3>Luminosidad</h3>
+            <p>
+              En HSL, va de negro a blanco. No equivale a la luminancia relativa
+              usada para comprobar contraste.
+            </p>
+          </article>
+        </div>
+        <div class="two-columns">
+          <form class="control-panel">
+            <fieldset>
+              <legend>Armonía cromática</legend>
+              <label for="color-hue"
+                >Tono base <output id="hue-value">220°</output></label
+              ><input
+                id="color-hue"
+                type="range"
+                min="0"
+                max="360"
+                value="220"
+              /><label for="color-saturation"
+                >Saturación <output id="saturation-value">65 %</output></label
+              ><input
+                id="color-saturation"
+                type="range"
+                min="0"
+                max="100"
+                value="65"
+              /><label for="color-lightness"
+                >Luminosidad <output id="lightness-value">45 %</output></label
+              ><input
+                id="color-lightness"
+                type="range"
+                min="15"
+                max="85"
+                value="45"
+              /><label for="color-harmony">Relación</label
+              ><select id="color-harmony">
+                <option value="mono">Monocromática · mismo tono</option>
+                <option value="analogous">Análoga · tonos vecinos</option>
+                <option value="complementary">
+                  Complementaria · oposición
+                </option>
+                <option value="triadic">Triádica · tres posiciones</option>
+              </select>
+            </fieldset>
+          </form>
+          <section aria-label="Muestras de armonía">
+            <div id="harmony-swatches" class="harmony-swatches">
+              <figure>
+                <span></span>
+                <figcaption></figcaption>
+              </figure>
+              <figure>
+                <span></span>
+                <figcaption></figcaption>
+              </figure>
+              <figure>
+                <span></span>
+                <figcaption></figcaption>
+              </figure>
+            </div>
+            <p id="harmony-description" role="status"></p>
+            <pre><code id="harmony-code"></code></pre>
+          </section>
+        </div>
+        <p class="note">
+          Una armonía no garantiza legibilidad ni accesibilidad. El círculo HSL
+          es útil para experimentar, pero no es una escala perceptualmente
+          uniforme.
+        </p>
+      </section>
+      <section id="paletas" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>La misma idea, otro negocio.</h2>
+          <p>
+            Mantén la composición y cambia base, superficie y acento. Después
+            ajusta la paleta a tu marca: no hay un color obligatorio para cada
+            sector.
+          </p>
+        </header>
+        <div class="two-columns">
+          <form id="palette-controls" class="control-panel">
+            <fieldset>
+              <legend>Paleta aplicada</legend>
+              <label for="palette-business">Contexto</label
+              ><select id="palette-business">
+                <option value="restaurante">Restaurante</option>
+                <option value="tecnologia">Tecnología / app</option>
+                <option value="lujo">Lujo / moda</option>
+                <option value="infantil">Infantil / diversión</option>
+                <option value="legal">Legal / corporativo</option>
+                <option value="deporte">Deportes / fitness</option>
+                <option value="salud">Salud / bienestar</option>
+                <option value="inmobiliaria">Inmobiliaria</option>
+                <option value="editorial">Editorial / blog</option>
+                <option value="boda">Boda / evento</option>
+                <option value="arte">Arte / creativo</option>
+                <option value="tienda">Tienda / comercio</option>
+                <option value="educacion">Educación</option>
+                <option value="gastronomia">Cafetería / artesanía</option>
+                <option value="social">Proyecto social</option></select
+              ><label for="palette-base">Base · superficies amplias</label
+              ><input id="palette-base" type="color" value="#fff9f1" /><label
+                for="palette-secondary"
+                >Secundario · grupos de contenido</label
+              ><input
+                id="palette-secondary"
+                type="color"
+                value="#f0dcc4"
+              /><label for="palette-accent">Acento · acción principal</label
+              ><input id="palette-accent" type="color" value="#87361d" /><label
+                for="palette-name"
+                >Nombre de tu negocio</label
+              ><input
+                id="palette-name"
+                type="text"
+                value="Tu próxima experiencia"
+                maxlength="48"
+              />
+            </fieldset>
+          </form>
+          <article id="palette-preview" class="palette-preview">
+            <header>
+              <p id="palette-business-label">Restaurante</p>
+              <h3 id="palette-brand-name">Tu próxima experiencia</h3>
+            </header>
+            <p>
+              Una propuesta clara, una experiencia cuidada y un siguiente paso
+              sencillo.
+            </p>
+            <section>
+              <h4>Lo que nos diferencia</h4>
+              <p>Detalles que ayudan a decidir sin perder el foco.</p>
+            </section>
+            <button type="button" disabled>Conocer la propuesta</button
+            ><small id="palette-contrast-note"></small>
+          </article>
+        </div>
+        <pre><code id="palette-code"></code></pre>
+      </section>
+      <section id="proporciones" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>60–30–10: asigna funciones.</h2>
+          <p>
+            Una pauta aproximada de predominio: base dominante, secundario de
+            apoyo y acento pequeño. No se trata de medir cada píxel ni de
+            incluir el color del texto en la proporción.
+          </p>
+        </header>
+        <div
+          class="ratio-bar"
+          role="img"
+          aria-label="Proporción orientativa: 60 por ciento base, 30 secundario y 10 acento"
+        >
+          <span>60 %<small>Base</small></span
+          ><span>30 %<small>Secundario</small></span
+          ><span>10 %<small>Acento</small></span>
+        </div>
+        <div class="design-three">
+          <article>
+            <h3>60 % · Base</h3>
+            <p>
+              Fondo y grandes superficies. Aporta estabilidad y deja respirar el
+              contenido.
+            </p>
+          </article>
+          <article>
+            <h3>30 % · Secundario</h3>
+            <p>
+              Tarjetas, secciones o bandas que agrupen información. Debe
+              convivir con la base.
+            </p>
+          </article>
+          <article>
+            <h3>10 % · Acento</h3>
+            <p>
+              Acción principal, selección y detalles clave. Si todas las
+              acciones llevan acento, la prioridad desaparece.
+            </p>
+          </article>
+        </div>
+        <p class="note">
+          La proporción se aplica a la intención de las superficies. Una
+          interfaz puede necesitar menos acento o más neutros; primero comprueba
+          la tarea y la legibilidad.
+        </p>
+      </section>
+      <section id="contraste" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Comprueba el contraste, no lo adivines.</h2>
+          <p>
+            El contraste mide luminancia relativa entre texto y fondo. El
+            cálculo no sustituye pruebas de lectura, tamaño, peso y estados.
+          </p>
+        </header>
+        <div class="two-columns">
+          <form class="control-panel">
+            <fieldset>
+              <legend>Texto y fondo</legend>
+              <label for="contrast-text">Color del texto</label
+              ><input id="contrast-text" type="color" value="#18213a" /><label
+                for="contrast-background"
+                >Color del fondo</label
+              ><input id="contrast-background" type="color" value="#ffffff" />
+            </fieldset>
+          </form>
+          <section id="contrast-preview" class="contrast-preview">
+            <h3>Un texto que se puede leer.</h3>
+            <p>
+              Lee esta frase en un tamaño normal. Prueba blanco sobre amarillo y
+              compara con un texto oscuro.
+            </p>
+            <output id="contrast-ratio"></output>
+            <p id="contrast-result" role="status"></p>
+          </section>
+        </div>
+        <p class="note">
+          WCAG AA requiere al menos 4.5:1 para texto normal y 3:1 para texto
+          grande (24 px normal o aproximadamente 18.67 px en negrita). No
+          redondees al decidir si cumple.
+          <a
+            href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+            target="_blank"
+            rel="noopener"
+            >Consultar el criterio oficial</a
+          >.
+        </p>
+        <div class="callout">
+          <h3>Los estados necesitan más que color</h3>
+          <p>
+            Una alerta debe tener texto claro. Un filtro seleccionado puede
+            tener borde, icono y estado accesible. El color puede apoyar el
+            mensaje, pero no debe ser la única señal.
+          </p>
+        </div>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">PIENSA ANTES DE APLICAR</p>
+          <h2>Comprueba tu criterio.</h2>
+        </header>
+        <form class="quiz" data-answer="1">
+          <fieldset>
+            <legend>
+              ¿Qué papel suele tener el acento en una pauta 60–30–10?
+            </legend>
+            <label
+              ><input type="radio" name="answer" value="0" required />Cubrir el
+              fondo de toda la página</label
+            ><label
+              ><input type="radio" name="answer" value="1" required />Destacar
+              prioridades y acciones</label
+            ><label
+              ><input type="radio" name="answer" value="2" required />Reemplazar
+              el texto de los errores</label
+            >
+          </fieldset>
+          <button type="submit" class="button primary">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="El acento se reserva para prioridades. Los estados importantes también necesitan texto, iconos o señales adicionales."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de color">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+              target="_blank"
+              rel="noopener"
+              >W3C · Contraste</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors"
+              target="_blank"
+              rel="noopener"
+              >MDN · Colores CSS</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="color" /> Marcar esta página
+          como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+      <section class="section container">
+        <h2>Da el siguiente paso: una página completa.</h2>
+        <p>
+          Aplica tu paleta a 31 tipos de página y modifica los colores en tiempo
+          real.
+        </p>
+        <a class="button primary" href="paletas.html"
+          >Abrir creador de paletas</a
+        >
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

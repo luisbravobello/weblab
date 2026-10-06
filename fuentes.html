@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Documentación y fuentes: ejercicios, explicaciones y documentación para estudiar desarrollo web."
+    />
+    <title>Documentación y fuentes | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="fuentes">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html" aria-current="page">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">APRENDER ES PONER A PRUEBA</p>
+          <h1>Aprende y comprueba la fuente.</h1>
+          <p>
+            Distingue una especificación, una guía técnica y una orientación de
+            diseño. Aquí puedes ver qué documento apoya cada bloque de estudio.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#estandares">Estándares</a><a href="#guias">Guías</a
+            ><a href="#diseno">Diseño</a><a href="#historia">Historia</a
+            ><a href="#criterio">Criterio</a>
+          </nav>
+        </div>
+      </header>
+      <section id="estandares" class="section container">
+        <header class="section-head">
+          <h2>Estándares oficiales</h2>
+          <p>Abre el documento de origen o vuelve al tema que lo utiliza.</p>
+        </header>
+        <div class="source-grid">
+          <article class="source-card">
+            <span>Estándar vivo</span>
+            <h3>WHATWG · HTML Living Standard</h3>
+            <p>
+              <strong>Apoya:</strong> HTML. Elementos, atributos, semántica y
+              comportamiento normativo.
+            </p>
+            <nav aria-label="Enlaces de WHATWG · HTML Living Standard">
+              <a
+                href="https://html.spec.whatwg.org/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="html.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Especificaciones por módulos</span>
+            <h3>W3C · CSS</h3>
+            <p>
+              <strong>Apoya:</strong> CSS. Módulos, estados de especificación y
+              referencias del lenguaje.
+            </p>
+            <nav aria-label="Enlaces de W3C · CSS">
+              <a
+                href="https://www.w3.org/Style/CSS/Overview.en.html"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="css.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Estándar</span>
+            <h3>Ecma International · ECMA-262</h3>
+            <p>
+              <strong>Apoya:</strong> JavaScript. Ediciones y estándar
+              ECMAScript; no incluye todas las APIs del navegador.
+            </p>
+            <nav aria-label="Enlaces de Ecma International · ECMA-262">
+              <a
+                href="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="javascript.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Texto del lenguaje y borradores</span>
+            <h3>TC39 · ECMAScript</h3>
+            <p>
+              <strong>Apoya:</strong> JavaScript. Sintaxis y comportamiento del
+              lenguaje. Revisa si estás leyendo un borrador.
+            </p>
+            <nav aria-label="Enlaces de TC39 · ECMAScript">
+              <a href="https://tc39.es/ecma262/" target="_blank" rel="noopener"
+                >Documento de origen</a
+              ><a href="javascript.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Recomendación normativa</span>
+            <h3>W3C · WCAG 2.2</h3>
+            <p>
+              <strong>Apoya:</strong> Accesibilidad. Criterios de accesibilidad;
+              los ejercicios no prueban conformidad completa.
+            </p>
+            <nav aria-label="Enlaces de W3C · WCAG 2.2">
+              <a
+                href="https://www.w3.org/TR/WCAG22/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="accesibilidad.html">Estudiar el tema</a>
+            </nav>
+          </article>
+        </div>
+      </section>
+      <section id="guias" class="section container">
+        <header class="section-head">
+          <h2>Guías de implementación</h2>
+          <p>Abre el documento de origen o vuelve al tema que lo utiliza.</p>
+        </header>
+        <div class="source-grid">
+          <article class="source-card">
+            <span>Referencia técnica</span>
+            <h3>MDN · Elementos HTML</h3>
+            <p>
+              <strong>Apoya:</strong> HTML. Descripción, uso, ejemplos y
+              compatibilidad de elementos.
+            </p>
+            <nav aria-label="Enlaces de MDN · Elementos HTML">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="html.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Referencia técnica</span>
+            <h3>MDN · Referencia CSS</h3>
+            <p>
+              <strong>Apoya:</strong> CSS. Propiedades, selectores y funciones.
+            </p>
+            <nav aria-label="Enlaces de MDN · Referencia CSS">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/CSS/Reference"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="css.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Guía técnica</span>
+            <h3>MDN · Guía JavaScript</h3>
+            <p>
+              <strong>Apoya:</strong> JavaScript. Conceptos del lenguaje y
+              ejemplos introductorios.
+            </p>
+            <nav aria-label="Enlaces de MDN · Guía JavaScript">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="javascript.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Guía práctica</span>
+            <h3>W3C WAI · Tutoriales</h3>
+            <p>
+              <strong>Apoya:</strong> Accesibilidad. Estructura, imágenes,
+              formularios, tablas y navegación.
+            </p>
+            <nav aria-label="Enlaces de W3C WAI · Tutoriales">
+              <a
+                href="https://www.w3.org/WAI/tutorials/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="accesibilidad.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Guía de implementación</span>
+            <h3>W3C APG · Patrones</h3>
+            <p>
+              <strong>Apoya:</strong> Componentes. Patrones de interacción y
+              teclado; no es un sustituto de pruebas.
+            </p>
+            <nav aria-label="Enlaces de W3C APG · Patrones">
+              <a
+                href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="componentes.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Guía técnica</span>
+            <h3>MDN · Responsive design</h3>
+            <p>
+              <strong>Apoya:</strong> Diseño adaptable. Flujo, medios, imágenes
+              y distribución adaptable.
+            </p>
+            <nav aria-label="Enlaces de MDN · Responsive design">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="adaptable.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Explicación de WCAG</span>
+            <h3>W3C · Contrast minimum</h3>
+            <p>
+              <strong>Apoya:</strong> Contraste. Umbrales, definición de texto
+              grande y luminancia relativa.
+            </p>
+            <nav aria-label="Enlaces de W3C · Contrast minimum">
+              <a
+                href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="color.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>API web</span>
+            <h3>MDN · localStorage</h3>
+            <p>
+              <strong>Apoya:</strong> Progreso local. Almacenamiento por origen
+              y limitaciones.
+            </p>
+            <nav aria-label="Enlaces de MDN · localStorage">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="practicas.html#progreso">Estudiar el tema</a>
+            </nav>
+          </article>
+        </div>
+      </section>
+      <section id="diseno" class="section container">
+        <header class="section-head">
+          <h2>Fuentes de diseño</h2>
+          <p>Abre el documento de origen o vuelve al tema que lo utiliza.</p>
+        </header>
+        <div class="source-grid">
+          <article class="source-card">
+            <span>Material educativo</span>
+            <h3>Google Fonts Knowledge</h3>
+            <p>
+              <strong>Apoya:</strong> Tipografía. Anatomía, familias y criterios
+              para elegir fuentes.
+            </p>
+            <nav aria-label="Enlaces de Google Fonts Knowledge">
+              <a
+                href="https://fonts.google.com/knowledge"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="tipografia.html">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Libro y ficha editorial</span>
+            <h3>Robin Williams · The Non-Designer’s Design Book</h3>
+            <p>
+              <strong>Apoya:</strong> Composición. Contraste, repetición,
+              alineación y proximidad. Los ejemplos de WebLab son propios.
+            </p>
+            <nav
+              aria-label="Enlaces de Robin Williams · The Non-Designer’s Design Book"
+            >
+              <a
+                href="https://www.peachpit.com/store/non-designers-design-book-design-and-typographic-principles-9780133966152"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="composicion.html#principios">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Fuente de marca</span>
+            <h3>Coca-Cola · Color corporativo</h3>
+            <p>
+              <strong>Apoya:</strong> Marcas. Ejemplo documentado de uso de
+              rojo; no demuestra un efecto psicológico universal.
+            </p>
+            <nav aria-label="Enlaces de Coca-Cola · Color corporativo">
+              <a
+                href="https://www.coca-cola.com/es/es/about-us/faq/por-que-el-color-corporativo-de-coca-cola-es-rojo"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="color.html#tonos">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Guía de marca</span>
+            <h3>Spotify · Design guidelines</h3>
+            <p>
+              <strong>Apoya:</strong> Marcas. Identidad y uso del verde. Los hex
+              de las muestras no son valores oficiales.
+            </p>
+            <nav aria-label="Enlaces de Spotify · Design guidelines">
+              <a
+                href="https://developer.spotify.com/documentation/design"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="color.html#tonos">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Fuente de marca</span>
+            <h3>IKEA · Historia del logo</h3>
+            <p>
+              <strong>Apoya:</strong> Marcas. Ejemplo de combinación azul y
+              amarillo.
+            </p>
+            <nav aria-label="Enlaces de IKEA · Historia del logo">
+              <a
+                href="https://www.ikea.com/ph/en/this-is-ikea/about-us/the-ikea-logo-history-and-design-pub55d85f50/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="color.html#tonos">Estudiar el tema</a>
+            </nav>
+          </article>
+        </div>
+      </section>
+      <section id="historia" class="section container">
+        <header class="section-head">
+          <h2>Historia y contexto</h2>
+          <p>Abre el documento de origen o vuelve al tema que lo utiliza.</p>
+        </header>
+        <div class="source-grid">
+          <article class="source-card">
+            <span>Fuente histórica institucional</span>
+            <h3>CERN · The birth of the Web</h3>
+            <p>
+              <strong>Apoya:</strong> Historia de la web. Origen de la web y
+              trabajo de Tim Berners-Lee.
+            </p>
+            <nav aria-label="Enlaces de CERN · The birth of the Web">
+              <a
+                href="https://home.cern/science/computing/the-birth-of-the-web/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="html.html#historia">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Página histórica del grupo</span>
+            <h3>W3C · CSS history</h3>
+            <p>
+              <strong>Apoya:</strong> Historia de CSS. Contexto y enlace a la
+              historia de Håkon Wium Lie y Bert Bos.
+            </p>
+            <nav aria-label="Enlaces de W3C · CSS history">
+              <a
+                href="https://www.w3.org/Style/CSS/Overview.en.html"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="css.html#historia">Estudiar el tema</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Archivo de estándares</span>
+            <h3>Ecma · Archivo ECMA-262</h3>
+            <p>
+              <strong>Apoya:</strong> Historia del estándar JS. Fechas de
+              ediciones de ECMAScript.
+            </p>
+            <nav aria-label="Enlaces de Ecma · Archivo ECMA-262">
+              <a
+                href="https://ecma-international.org/publications-and-standards/standards/ecma-262/"
+                target="_blank"
+                rel="noopener"
+                >Documento de origen</a
+              ><a href="javascript.html#historia">Estudiar el tema</a>
+            </nav>
+          </article>
+        </div>
+      </section>
+      <section id="criterio" class="section container">
+        <header class="section-head">
+          <h2>Qué es una fuente y qué es un ejemplo.</h2>
+          <p>
+            Documentación revisada el 6 de octubre de 2026. Los enlaces y
+            estándares pueden evolucionar.
+          </p>
+        </header>
+        <dl class="design-definitions">
+          <dt>Estándares</dt>
+          <dd>
+            Definen el comportamiento normativo. Distingue versiones publicadas
+            de borradores en evolución.
+          </dd>
+          <dt>Documentación</dt>
+          <dd>
+            Explica uso y compatibilidad. Consulta el detalle del elemento o
+            propiedad cuando un caso concreto lo necesite.
+          </dd>
+          <dt>Ejemplos propios</dt>
+          <dd>
+            Las muestras, retos, diagramas y proyectos de WebLab son ejercicios
+            originales; no se presentan como capturas de los sitios citados.
+          </dd>
+          <dt>Heurísticas</dt>
+          <dd>
+            La escala de 8 puntos, la retícula de 12 y la pauta 60–30–10 son
+            herramientas prácticas, no estándares obligatorios.
+          </dd>
+          <dt>Color y tipografía</dt>
+          <dd>
+            Las asociaciones por negocio son propuestas educativas dependientes
+            del público y contexto. No se afirma que un tono garantice una
+            emoción o resultado.
+          </dd>
+          <dt>Alcance</dt>
+          <dd>
+            Las referencias y ejercicios no reemplazan una auditoría de
+            accesibilidad ni una documentación exhaustiva de todas las APIs.
+          </dd>
+        </dl>
+        <p>
+          Si encuentras un dato dudoso, consulta el enlace del bloque y
+          contrástalo con el estándar o la fuente institucional. Antes de usar
+          código en un producto real, prueba sus errores, estados y
+          compatibilidad.
+        </p>
+      </section>
+      <section id="herramientas-color" class="section container">
+        <header class="section-head">
+          <h2>Herramientas de paletas</h2>
+          <p>
+            Fuentes de las recomendaciones del nuevo laboratorio. Consulta cada
+            sitio para conocer sus funciones actuales.
+          </p>
+        </header>
+        <div class="source-grid">
+          <article class="source-card">
+            <span>Herramienta · sitio de origen</span>
+            <h3>Coolors</h3>
+            <p>Generador y colecciones de paletas.</p>
+            <nav>
+              <a href="https://coolors.co/" target="_blank" rel="noopener"
+                >Abrir herramienta</a
+              ><a href="paletas.html#herramientas">Recomendación en WebLab</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Herramienta · sitio de origen</span>
+            <h3>Adobe Color</h3>
+            <p>Armonías, extracción y exploración de color.</p>
+            <nav>
+              <a href="https://color.adobe.com/" target="_blank" rel="noopener"
+                >Abrir herramienta</a
+              ><a href="paletas.html#herramientas">Recomendación en WebLab</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Herramienta · sitio de origen</span>
+            <h3>Realtime Colors</h3>
+            <p>Colores y fuentes aplicados a una web de ejemplo.</p>
+            <nav>
+              <a
+                href="https://www.realtimecolors.com/"
+                target="_blank"
+                rel="noopener"
+                >Abrir herramienta</a
+              ><a href="paletas.html#herramientas">Recomendación en WebLab</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Herramienta · sitio de origen</span>
+            <h3>Happy Hues</h3>
+            <p>Paletas seleccionadas y aplicadas a elementos de interfaz.</p>
+            <nav>
+              <a href="https://www.happyhues.co/" target="_blank" rel="noopener"
+                >Abrir herramienta</a
+              ><a href="paletas.html#herramientas">Recomendación en WebLab</a>
+            </nav>
+          </article>
+          <article class="source-card">
+            <span>Herramienta · sitio de origen</span>
+            <h3>Color Hunt</h3>
+            <p>Colecciones para inspiración cromática.</p>
+            <nav>
+              <a href="https://colorhunt.co/" target="_blank" rel="noopener"
+                >Abrir herramienta</a
+              ><a href="paletas.html#herramientas">Recomendación en WebLab</a>
+            </nav>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

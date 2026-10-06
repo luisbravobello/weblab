@@ -1,0 +1,230 @@
+/* TUTORIALES · DOCUMENTOS ACUMULADOS Y EXPERIMENTOS */
+.js-lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 30px;
+}
+.js-lesson-grid .challenge-card {
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+.js-lesson-grid .editor-actions {
+  font-size: 0.85rem;
+}
+.js-lesson-grid .editor-actions button {
+  font-size: 0.8rem;
+}
+@media (max-width: 750px) {
+  .js-lesson-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.writing-practice {
+  padding: 24px;
+  background: #fff9e5;
+  border: 1px solid #eadcae;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+.writing-practice h4 {
+  font-size: 1.2rem;
+  margin: 0 0 18px;
+}
+.writing-practice label {
+  display: block;
+  margin-bottom: 15px;
+}
+.writing-practice input {
+  accent-color: var(--blue);
+}
+.writing-practice p {
+  font-size: 0.9rem;
+}
+.writing-practice details {
+  margin: 20px 0;
+}
+.walkthrough {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+.walk-steps {
+  position: sticky;
+  top: calc(var(--header-height) + 18px);
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--soft);
+}
+.walk-steps ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.walk-steps li + li {
+  margin-top: 5px;
+}
+.walk-steps button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.walk-steps button[aria-current="step"] {
+  color: white;
+  background: var(--blue);
+}
+.walk-main {
+  min-width: 0;
+}
+.walk-main > header h3 {
+  font-size: 1.8rem;
+}
+.walk-explanation {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 14px 22px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.walk-explanation dt {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.walk-explanation dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+#walk-references {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 18px 0 25px;
+}
+#walk-references a {
+  padding: 7px 12px;
+  background: #eef1ff;
+  color: var(--blue);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 800;
+}
+.walk-experiments {
+  padding: 22px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+.walk-experiments label {
+  display: block;
+  margin: 12px 0;
+}
+.walk-experiments input {
+  accent-color: var(--blue);
+}
+.walk-experiments p {
+  margin: 15px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.walk-editors label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 800;
+}
+.walk-editors textarea {
+  width: 100%;
+  min-height: 240px;
+  max-height: 600px;
+  resize: vertical;
+  border: 1px solid #d1d9e8;
+  border-radius: 12px;
+  padding: 18px;
+  color: #22324b;
+  background: #fbfcff;
+  font:
+    0.8rem/1.7 "JetBrains Mono",
+    monospace;
+  tab-size: 2;
+}
+.walk-main .editor-actions {
+  align-items: center;
+  margin-bottom: 24px;
+}
+#walk-width {
+  max-width: 210px;
+}
+.walk-preview-scroll {
+  max-width: 100%;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  background: var(--soft);
+}
+#walk-frame {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 0;
+  background: white;
+}
+#walk-result-note {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 15px;
+}
+#walk-console {
+  min-height: 80px;
+  max-height: 260px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.walk-pagination {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+@media (max-width: 850px) {
+  .walkthrough {
+    grid-template-columns: 1fr;
+  }
+  .walk-steps {
+    position: static;
+    max-height: 240px;
+  }
+  .walk-explanation {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .walk-explanation dd {
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .walk-experiments,
+  .walk-explanation {
+    padding: 18px;
+  }
+  .walk-editors textarea {
+    padding: 12px;
+    font-size: 0.75rem;
+  }
+}

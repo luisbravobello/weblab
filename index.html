@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Aprende HTML, CSS y JavaScript: aprende con explicaciones, referencias y ejercicios interactivos en español."
+    />
+    <title>Aprende HTML, CSS y JavaScript | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="index">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html" aria-current="page">Inicio</a
+          ><a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="home-hero container">
+        <header>
+          <p class="eyebrow">DE LA PRIMERA ETIQUETA A LA PRIMERA INTERACCIÓN</p>
+          <h1>La web se aprende<br /><span>construyéndola.</span></h1>
+          <p class="hero-description">
+            Una guía para entender HTML, CSS y JavaScript. Lee, prueba y
+            descubre cómo cada pieza cambia lo que ves.
+          </p>
+          <nav class="hero-actions" aria-label="Comenzar">
+            <a class="button primary" href="html.html">Empezar con HTML</a
+            ><a class="text-link" href="#recorrido">Ver el recorrido</a>
+          </nav>
+          <p class="hero-meta">
+            Sin frameworks · Ejemplos editables · A tu ritmo
+          </p>
+        </header>
+        <figure class="browser-demo">
+          <figcaption>
+            <span class="browser-dots" aria-hidden="true">● ● ●</span
+            ><span>tu-primera-web.html</span>
+          </figcaption>
+          <div class="demo-screen">
+            <span class="demo-label">ASÍ SE CONECTAN</span>
+            <h2>Hola, mundo.</h2>
+            <p id="home-message">Tu idea empieza con una estructura.</p>
+            <button id="home-demo" type="button">Prueba la interacción</button>
+          </div>
+          <ol class="code-layers">
+            <li>
+              <span>HTML</span><code>&lt;h1&gt;Hola, mundo.&lt;/h1&gt;</code>
+            </li>
+            <li><span>CSS</span><code>color: #233de0;</code></li>
+            <li><span>JS</span><code>button.addEventListener(...);</code></li>
+          </ol>
+        </figure>
+      </section>
+      <section id="recorrido" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">TRES LENGUAJES. UNA MISMA PÁGINA.</p>
+          <h2>Construye una base que entiendas.</h2>
+          <p>
+            Empieza por el contenido, dale forma y después añade comportamiento.
+          </p>
+        </header>
+        <div class="course-grid">
+          <article class="course-card html-course">
+            <span class="chapter-number">01</span
+            ><span class="course-symbol" aria-hidden="true">&lt;/&gt;</span>
+            <h3>HTML</h3>
+            <p>El significado y la estructura.</p>
+            <ul>
+              <li>Historia y anatomía del documento</li>
+              <li>Referencia de etiquetas</li>
+              <li>Semántica, formularios y accesibilidad</li>
+            </ul>
+            <a href="html.html">Estudiar HTML</a>
+          </article>
+          <article class="course-card css-course">
+            <span class="chapter-number">02</span
+            ><span class="course-symbol" aria-hidden="true">{ }</span>
+            <h3>CSS</h3>
+            <p>El diseño y la distribución.</p>
+            <ul>
+              <li>Cascada, selectores y caja</li>
+              <li>Grid, Flexbox y diseño móvil</li>
+              <li>Controles con resultados visuales</li>
+            </ul>
+            <a href="css.html">Estudiar CSS</a>
+          </article>
+          <article class="course-card js-course">
+            <span class="chapter-number">03</span
+            ><span class="course-symbol" aria-hidden="true">JS</span>
+            <h3>JavaScript</h3>
+            <p>La lógica y la interacción.</p>
+            <ul>
+              <li>Variables, funciones y colecciones</li>
+              <li>DOM, eventos y asincronía</li>
+              <li>Código editable con consola</li>
+            </ul>
+            <a href="javascript.html">Estudiar JavaScript</a>
+          </article>
+        </div>
+      </section>
+      <section class="study-method section">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">UN MÉTODO SENCILLO</p>
+            <h2>No memorices sin probar.</h2>
+          </header>
+          <ol class="method-grid">
+            <li>
+              <span>01</span>
+              <h3>Comprende</h3>
+              <p>Lee qué hace cada elemento y qué problema resuelve.</p>
+            </li>
+            <li>
+              <span>02</span>
+              <h3>Experimenta</h3>
+              <p>
+                Cambia una propiedad o una instrucción y compara el resultado.
+              </p>
+            </li>
+            <li>
+              <span>03</span>
+              <h3>Decide</h3>
+              <p>
+                Revisa cuándo usarlo, cuándo evitarlo y qué alternativa existe.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <p class="eyebrow">ANTES DE EMPEZAR</p>
+          <h2>Tus primeras preguntas.</h2>
+        </header>
+        <div class="faq">
+          <details>
+            <summary>¿Necesito instalar algo?</summary>
+            <p>
+              Para leer y practicar aquí basta un navegador moderno. Para
+              trabajar con tus propios archivos puedes usar un editor y un
+              servidor local, como Live Server.
+            </p>
+          </details>
+          <details>
+            <summary>¿HTML, CSS y JavaScript hacen lo mismo?</summary>
+            <p>
+              No. HTML expresa estructura y significado; CSS decide la
+              presentación; JavaScript maneja lógica e interacciones. Se
+              complementan.
+            </p>
+          </details>
+          <details>
+            <summary>¿Está todo el lenguaje explicado?</summary>
+            <p>
+              HTML contiene una referencia amplia de elementos vigentes y una
+              lista de obsoletos. CSS y JavaScript cubren las bases y los
+              recursos principales; sus estándares y APIs son mucho más extensos
+              y enlazamos la referencia completa.
+            </p>
+          </details>
+          <details>
+            <summary>¿En qué orden estudio?</summary>
+            <p>
+              HTML, CSS y JavaScript. Construye primero una página sencilla,
+              hazla adaptable y después añade una interacción pequeña. Puedes
+              volver a las referencias cuando lo necesites.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DEL CÓDIGO A LA COMPOSICIÓN</p>
+          <h2>Aprende también a diseñar.</h2>
+          <p>Da intención a tus páginas: orden, ritmo, tipografía y color.</p>
+        </header>
+        <div class="course-grid">
+          <article class="course-card">
+            <span class="chapter-number">04</span>
+            <h3>Composición</h3>
+            <p>
+              Jerarquía, retícula de 12 columnas, distribuciones, 8 puntos y
+              C.R.A.P.
+            </p>
+            <a href="composicion.html">Estudiar composición</a>
+          </article>
+          <article class="course-card">
+            <span class="chapter-number">05</span>
+            <h3>Tipografía</h3>
+            <p>
+              12 fuentes reales, seis familias, elección por contexto y escala
+              interactiva.
+            </p>
+            <a href="tipografia.html">Estudiar tipografía</a>
+          </article>
+          <article class="course-card">
+            <span class="chapter-number">06</span>
+            <h3>Color</h3>
+            <p>Tonos, armonías, paletas por negocio, 60–30–10 y contraste.</p>
+            <a href="color.html">Estudiar color</a>
+          </article>
+        </div>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CONVIERTE LA TEORÍA EN CRITERIO</p>
+          <h2>Ahora comprueba lo que sabes.</h2>
+          <p>
+            Practica un reto, prueba una interfaz y consulta su documentación.
+          </p>
+        </header>
+        <div class="course-grid">
+          <article class="course-card">
+            <h3>Prueba la interfaz</h3>
+            <p>Teclado, formularios, componentes y anchos de pantalla.</p>
+            <a href="accesibilidad.html">Estudiar accesibilidad</a>
+            <p><a href="adaptable.html">Probar diseño adaptable</a></p>
+          </article>
+          <article class="course-card">
+            <h3>Construye y corrige</h3>
+            <p>
+              Seis retos, seis errores y un proyecto guiado en cuatro etapas.
+            </p>
+            <a href="practicas.html">Ir a las prácticas</a>
+            <p><a href="proyecto.html">Construir el proyecto</a></p>
+          </article>
+          <article class="course-card">
+            <h3>Consulta y registra</h3>
+            <p>Glosario, fuentes por tema y progreso local.</p>
+            <a href="fuentes.html">Consultar documentación</a>
+            <p><a href="practicas.html#progreso">Ver mi progreso</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

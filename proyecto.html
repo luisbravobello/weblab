@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Proyecto guiado de principio a fin: ejercicios, explicaciones y documentación para estudiar desarrollo web."
+    />
+    <title>Proyecto guiado de principio a fin | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="proyecto">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html" aria-current="page">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">APRENDER ES PONER A PRUEBA</p>
+          <h1>Una página. Cuatro etapas.</h1>
+          <p>
+            Construye la web de un estudio ficticio: estructura, estilo,
+            adaptación e interacción. Estudia las decisiones antes de copiar el
+            resultado.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#etapas">Etapas</a
+            ><a href="#laboratorio">Proyecto editable</a
+            ><a href="#revision">Revisión</a>
+          </nav>
+        </div>
+      </header>
+      <section id="etapas" class="section container">
+        <header class="section-head">
+          <h2>Construye en orden.</h2>
+          <p>
+            Cada etapa carga un punto de partida completo en el editor. Puedes
+            cambiar el código, probarlo y volver a cargar una etapa.
+          </p>
+        </header>
+        <ol class="project-stages">
+          <li>
+            <h3>1. Estructura</h3>
+            <p>
+              Reconoce header, nav, main, section, article y footer. El
+              contenido debe tener sentido sin estilos.
+            </p>
+            <button
+              class="button primary"
+              data-load-exercise="estructura"
+              type="button"
+            >
+              Cargar etapa</button
+            ><template id="exercise-estructura">
+              <pre data-exercise="html">
+&lt;header&gt;&lt;a href=&quot;#&quot;&gt;Estudio Claro&lt;/a&gt;&lt;nav&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;
+&lt;main&gt;&lt;section&gt;&lt;h1&gt;Diseño para ideas claras.&lt;/h1&gt;&lt;p&gt;Una página sencilla, adaptable y fácil de usar.&lt;/p&gt;&lt;/section&gt;&lt;section id=&quot;servicios&quot;&gt;&lt;h2&gt;Servicios&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Estructura&lt;/h3&gt;&lt;p&gt;Contenido con sentido.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Diseño&lt;/h3&gt;&lt;p&gt;Un sistema consistente.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Interacción&lt;/h3&gt;&lt;p&gt;Controles comprensibles.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;contacto&quot;&gt;&lt;h2&gt;Consulta local&lt;/h2&gt;&lt;form id=&quot;consulta&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/section&gt;&lt;/main&gt;
+&lt;footer&gt;Proyecto de estudio. No envía datos.&lt;/footer&gt;</pre>
+              <pre data-exercise="css"></pre>
+              <pre data-exercise="js"></pre>
+            </template>
+          </li>
+          <li>
+            <h3>2. Sistema visual</h3>
+            <p>
+              Añade tipografía, espacio, colores y Grid. Repite los mismos
+              estilos en componentes equivalentes.
+            </p>
+            <button
+              class="button primary"
+              data-load-exercise="estilo"
+              type="button"
+            >
+              Cargar etapa</button
+            ><template id="exercise-estilo">
+              <pre data-exercise="html">
+&lt;header&gt;&lt;a href=&quot;#&quot;&gt;Estudio Claro&lt;/a&gt;&lt;nav&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;
+&lt;main&gt;&lt;section&gt;&lt;h1&gt;Diseño para ideas claras.&lt;/h1&gt;&lt;p&gt;Una página sencilla, adaptable y fácil de usar.&lt;/p&gt;&lt;/section&gt;&lt;section id=&quot;servicios&quot;&gt;&lt;h2&gt;Servicios&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Estructura&lt;/h3&gt;&lt;p&gt;Contenido con sentido.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Diseño&lt;/h3&gt;&lt;p&gt;Un sistema consistente.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Interacción&lt;/h3&gt;&lt;p&gt;Controles comprensibles.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;contacto&quot;&gt;&lt;h2&gt;Consulta local&lt;/h2&gt;&lt;form id=&quot;consulta&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/section&gt;&lt;/main&gt;
+&lt;footer&gt;Proyecto de estudio. No envía datos.&lt;/footer&gt;</pre>
+              <pre data-exercise="css">
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui; color: #18213a; line-height: 1.6; }
+header, main, footer { padding: 24px; max-width: 1100px; margin: auto; }
+header { display: flex; justify-content: space-between; gap: 16px; }
+nav { display: flex; gap: 16px; }
+section { margin: 32px 0; }
+h1 { font-size: clamp(28px, 5vw, 48px); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }
+input, button { padding: 12px; border-radius: 8px; margin: 8px; }
+button { background: #233de0; color: white; border: 0; }
+:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }</pre>
+              <pre data-exercise="js"></pre>
+            </template>
+          </li>
+          <li>
+            <h3>3. Adaptación</h3>
+            <p>
+              Apila los servicios y la cabecera cuando el contenido pierde
+              espacio.
+            </p>
+            <button
+              class="button primary"
+              data-load-exercise="responsive"
+              type="button"
+            >
+              Cargar etapa</button
+            ><template id="exercise-responsive">
+              <pre data-exercise="html">
+&lt;header&gt;&lt;a href=&quot;#&quot;&gt;Estudio Claro&lt;/a&gt;&lt;nav&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;
+&lt;main&gt;&lt;section&gt;&lt;h1&gt;Diseño para ideas claras.&lt;/h1&gt;&lt;p&gt;Una página sencilla, adaptable y fácil de usar.&lt;/p&gt;&lt;/section&gt;&lt;section id=&quot;servicios&quot;&gt;&lt;h2&gt;Servicios&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Estructura&lt;/h3&gt;&lt;p&gt;Contenido con sentido.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Diseño&lt;/h3&gt;&lt;p&gt;Un sistema consistente.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Interacción&lt;/h3&gt;&lt;p&gt;Controles comprensibles.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;contacto&quot;&gt;&lt;h2&gt;Consulta local&lt;/h2&gt;&lt;form id=&quot;consulta&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/section&gt;&lt;/main&gt;
+&lt;footer&gt;Proyecto de estudio. No envía datos.&lt;/footer&gt;</pre>
+              <pre data-exercise="css">
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui; color: #18213a; line-height: 1.6; }
+header, main, footer { padding: 24px; max-width: 1100px; margin: auto; }
+header { display: flex; justify-content: space-between; gap: 16px; }
+nav { display: flex; gap: 16px; }
+section { margin: 32px 0; }
+h1 { font-size: clamp(28px, 5vw, 48px); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }
+input, button { padding: 12px; border-radius: 8px; margin: 8px; }
+button { background: #233de0; color: white; border: 0; }
+:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) {
+  header { flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}</pre>
+              <pre data-exercise="js"></pre>
+            </template>
+          </li>
+          <li>
+            <h3>4. Interacción</h3>
+            <p>
+              Captura el envío del formulario y explica el resultado. Es una
+              demostración, no un canal de contacto real.
+            </p>
+            <button
+              class="button primary"
+              data-load-exercise="interaccion"
+              type="button"
+            >
+              Cargar etapa</button
+            ><template id="exercise-interaccion">
+              <pre data-exercise="html">
+&lt;header&gt;&lt;a href=&quot;#&quot;&gt;Estudio Claro&lt;/a&gt;&lt;nav&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;
+&lt;main&gt;&lt;section&gt;&lt;h1&gt;Diseño para ideas claras.&lt;/h1&gt;&lt;p&gt;Una página sencilla, adaptable y fácil de usar.&lt;/p&gt;&lt;/section&gt;&lt;section id=&quot;servicios&quot;&gt;&lt;h2&gt;Servicios&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Estructura&lt;/h3&gt;&lt;p&gt;Contenido con sentido.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Diseño&lt;/h3&gt;&lt;p&gt;Un sistema consistente.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Interacción&lt;/h3&gt;&lt;p&gt;Controles comprensibles.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;contacto&quot;&gt;&lt;h2&gt;Consulta local&lt;/h2&gt;&lt;form id=&quot;consulta&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/section&gt;&lt;/main&gt;
+&lt;footer&gt;Proyecto de estudio. No envía datos.&lt;/footer&gt;</pre>
+              <pre data-exercise="css">
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui; color: #18213a; line-height: 1.6; }
+header, main, footer { padding: 24px; max-width: 1100px; margin: auto; }
+header { display: flex; justify-content: space-between; gap: 16px; }
+nav { display: flex; gap: 16px; }
+section { margin: 32px 0; }
+h1 { font-size: clamp(28px, 5vw, 48px); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }
+input, button { padding: 12px; border-radius: 8px; margin: 8px; }
+button { background: #233de0; color: white; border: 0; }
+:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) {
+  header { flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}</pre>
+              <pre data-exercise="js">
+document.querySelector(&quot;#consulta&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const nombre = document.querySelector(&quot;#nombre&quot;).value.trim();
+  document.querySelector(&quot;#resultado&quot;).textContent = nombre ? `Hola, ${nombre}. Esta consulta es un ejemplo local.` : &quot;Escribe un nombre.&quot;;
+});</pre>
+            </template>
+          </li>
+        </ol>
+      </section>
+      <section id="laboratorio" class="section container">
+        <header class="section-head">
+          <h2>Prueba tu solución.</h2>
+          <p>
+            Elige un reto o una etapa; edita el código y pulsa Ejecutar. El
+            ejemplo está aislado y no envía datos.
+          </p>
+        </header>
+        <div class="playground" data-lab>
+          <section class="editor">
+            <h3>Editor</h3>
+            <label for="lab-html">HTML</label
+            ><textarea id="lab-html" data-code="html" spellcheck="false">
+&lt;header&gt;&lt;a href=&quot;#&quot;&gt;Estudio Claro&lt;/a&gt;&lt;nav&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;
+&lt;main&gt;&lt;section&gt;&lt;h1&gt;Diseño para ideas claras.&lt;/h1&gt;&lt;p&gt;Una página sencilla, adaptable y fácil de usar.&lt;/p&gt;&lt;/section&gt;&lt;section id=&quot;servicios&quot;&gt;&lt;h2&gt;Servicios&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;article&gt;&lt;h3&gt;Estructura&lt;/h3&gt;&lt;p&gt;Contenido con sentido.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Diseño&lt;/h3&gt;&lt;p&gt;Un sistema consistente.&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;h3&gt;Interacción&lt;/h3&gt;&lt;p&gt;Controles comprensibles.&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;contacto&quot;&gt;&lt;h2&gt;Consulta local&lt;/h2&gt;&lt;form id=&quot;consulta&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;resultado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/section&gt;&lt;/main&gt;
+&lt;footer&gt;Proyecto de estudio. No envía datos.&lt;/footer&gt;</textarea
+            ><label for="lab-css">CSS</label
+            ><textarea id="lab-css" data-code="css" spellcheck="false">
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui; color: #18213a; line-height: 1.6; }
+header, main, footer { padding: 24px; max-width: 1100px; margin: auto; }
+header { display: flex; justify-content: space-between; gap: 16px; }
+nav { display: flex; gap: 16px; }
+section { margin: 32px 0; }
+h1 { font-size: clamp(28px, 5vw, 48px); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }
+input, button { padding: 12px; border-radius: 8px; margin: 8px; }
+button { background: #233de0; color: white; border: 0; }
+:focus-visible { outline: 3px solid #b74619; outline-offset: 3px; }
+@media (max-width: 700px) {
+  header { flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}</textarea
+            ><label for="lab-js">JavaScript</label
+            ><textarea id="lab-js" data-code="js" spellcheck="false">
+document.querySelector(&quot;#consulta&quot;).addEventListener(&quot;submit&quot;, event =&gt; {
+  event.preventDefault();
+  const nombre = document.querySelector(&quot;#nombre&quot;).value.trim();
+  document.querySelector(&quot;#resultado&quot;).textContent = nombre ? `Hola, ${nombre}. Esta consulta es un ejemplo local.` : &quot;Escribe un nombre.&quot;;
+});</textarea>
+            <div class="editor-actions">
+              <button class="button primary" data-run type="button">
+                Ejecutar</button
+              ><button class="button secondary" data-reset type="button">
+                Restablecer
+              </button>
+            </div>
+          </section>
+          <section class="preview">
+            <h3>Resultado</h3>
+            <iframe
+              title="Resultado del ejemplo editable"
+              sandbox="allow-scripts allow-forms"
+            ></iframe>
+            <h4>Consola</h4>
+            <pre class="lab-console" role="log" aria-live="polite"></pre>
+          </section>
+        </div>
+      </section>
+      <section id="revision" class="section container">
+        <header class="section-head">
+          <h2>Revisa el resultado como una persona usuaria.</h2>
+          <p>
+            La revisión final requiere contexto, no solo que el código no tenga
+            errores.
+          </p>
+        </header>
+        <ul>
+          <li>¿La propuesta se entiende sin una explicación externa?</li>
+          <li>¿El orden de títulos y el recorrido con teclado son lógicos?</li>
+          <li>¿El texto y los controles caben en una pantalla pequeña?</li>
+          <li>
+            ¿La acción explica lo que ocurrió y no promete un envío inexistente?
+          </li>
+          <li>¿Puedes cambiar una sección sin duplicar estilos o eventos?</li>
+        </ul>
+        <p>
+          Como siguiente práctica, añade un cuarto servicio, modifica la escala
+          de espacios o incluye una instrucción del formulario. Comprueba
+          después el resultado en distintos anchos.
+        </p>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de proyecto guiado">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+              target="_blank"
+              rel="noopener"
+              >MDN · Estructurar contenido</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout"
+              target="_blank"
+              rel="noopener"
+              >MDN · CSS layout</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.w3.org/WAI/tutorials/forms/"
+              target="_blank"
+              rel="noopener"
+              >WAI · Formularios</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="proyecto" /> Marcar esta página
+          como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

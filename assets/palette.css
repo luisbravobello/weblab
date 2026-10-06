@@ -1,0 +1,138 @@
+/* CREACIÓN DE PALETAS · INTERFAZ DEL LABORATORIO */
+.palette-method {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+.palette-method li {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--soft);
+  min-width: 0;
+}
+.palette-method h3 {
+  font-size: 1.1rem;
+}
+.palette-method p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+.palette-workspace {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+#theme-controls {
+  min-width: 0;
+  padding: 22px;
+}
+#theme-controls fieldset + fieldset {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 25px;
+}
+#theme-controls label {
+  font-size: 0.8rem;
+}
+#theme-controls output {
+  font:
+    400 0.75rem "JetBrains Mono",
+    monospace;
+}
+#theme-controls label:has(input[type="checkbox"]) {
+  display: block;
+  line-height: 1.6;
+}
+#theme-controls input[type="checkbox"] {
+  accent-color: var(--blue);
+}
+#theme-controls button {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 15px;
+}
+#theme-controls input[type="color"]:disabled {
+  opacity: 0.6;
+}
+.theme-preview-zone {
+  min-width: 0;
+}
+.theme-preview-zone > header {
+  margin-bottom: 18px;
+}
+.theme-preview-zone > header h3 {
+  font-size: 1.3rem;
+}
+.theme-frame-scroll {
+  max-width: 100%;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--soft);
+  padding: 14px;
+}
+#theme-frame {
+  display: block;
+  width: 1100px;
+  height: 800px;
+  border: 0;
+  background: white;
+}
+.theme-contrast {
+  font-size: 0.875rem;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-top: 18px;
+  background: white;
+}
+.theme-contrast.failed {
+  border-color: #aa2431;
+  color: #8e1f2c;
+}
+.palette-export {
+  margin-top: 30px;
+}
+#theme-copy-status {
+  font-size: 0.875rem;
+  margin: 15px 0;
+}
+@media (max-width: 1100px) {
+  .palette-method {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 800px) {
+  .palette-method {
+    grid-template-columns: 1fr;
+  }
+  .palette-workspace {
+    grid-template-columns: 1fr;
+  }
+  #theme-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  #theme-controls fieldset + fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #theme-controls p {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 500px) {
+  #theme-controls {
+    grid-template-columns: 1fr;
+  }
+  .theme-frame-scroll {
+    padding: 8px;
+  }
+}

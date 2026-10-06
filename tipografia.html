@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Tipografía con sistema: fundamentos y ejemplos interactivos de diseño visual en español."
+    />
+    <title>Tipografía con sistema | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <script src="js/design-data.js" defer></script>
+    <script src="js/design.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Caveat&family=Dancing+Script&family=IBM+Plex+Mono&family=Inter&family=Lora&family=Playfair+Display&family=Roboto+Slab&family=Zilla+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="tipografia">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html" aria-current="page">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="tipografia.html#contextos">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">DISEÑO VISUAL · 02</p>
+          <h1>Cada letra tiene una voz.</h1>
+          <p>
+            Compara fuentes reales, elige según el contexto y construye una
+            escala que puedas repetir en toda la página.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#familias">Familias</a><a href="#contextos">Contextos</a
+            ><a href="#sistema">Escala</a><a href="#lectura">Lectura</a>
+          </nav>
+        </div>
+      </header>
+      <section id="familias" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Seis familias para empezar.</h2>
+          <p>
+            Estas categorías son una guía práctica y se solapan: slab es una
+            clase de serif, y display describe un uso. Mira formas, proporciones
+            y legibilidad, no solo la etiqueta.
+          </p>
+        </header>
+        <label for="font-sample">Texto de la muestra</label
+        ><input id="font-sample" type="text" value="Sabor" maxlength="40" />
+        <p id="fonts-status" role="status" class="note">
+          Cargando tipografías; si una no llega se muestra su alternativa.
+        </p>
+        <div class="font-family-grid">
+          <article class="font-family-card">
+            <p class="font-family-name">SERIF · Lora</p>
+            <p class="font-aa" style="font-family: &quot;Lora&quot;, serif">
+              Aa
+            </p>
+            <p class="font-word" style="font-family: &quot;Lora&quot;, serif">
+              Sabor
+            </p>
+            <h3>Clásica, editorial, cálida.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Restaurantes,
+              lectura extensa, marcas con tradición.
+            </p>
+            <p class="note">
+              Una serif robusta puede ser muy legible en pantalla; prueba
+              tamaños pequeños y su contraste.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Lora"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">SERIF · Playfair Display</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Playfair Display&quot;, serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Playfair Display&quot;, serif"
+            >
+              Sabor
+            </p>
+            <h3>Elegante, con contraste y voz editorial.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Moda, portadas,
+              títulos de marcas refinadas.
+            </p>
+            <p class="note">
+              Sus detalles finos necesitan tamaño y contraste suficientes.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Playfair+Display"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">SANS-SERIF · Inter</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Inter&quot;, sans-serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Inter&quot;, sans-serif"
+            >
+              Sabor
+            </p>
+            <h3>Neutral, funcional, centrada en interfaz.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Apps, paneles,
+              servicios y texto de pantalla.
+            </p>
+            <p class="note">
+              Neutral no significa sin personalidad; peso y espaciado cambian su
+              tono.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Inter"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">SANS-SERIF · Manrope</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Manrope&quot;, sans-serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Manrope&quot;, sans-serif"
+            >
+              Sabor
+            </p>
+            <h3>Moderna, geométrica, abierta.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Tecnología,
+              educación, portafolios.
+            </p>
+            <p class="note">
+              Una fuente geométrica debe probarse con párrafos reales, no solo
+              logos.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Manrope"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">SLAB SERIF · Roboto Slab</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Roboto Slab&quot;, serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Roboto Slab&quot;, serif"
+            >
+              Sabor
+            </p>
+            <h3>Robusta, estable, con remates marcados.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Titulares, blogs y
+              marcas con presencia.
+            </p>
+            <p class="note">
+              No asumas que todas las slab se comportan igual en cuerpo.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Roboto+Slab"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">SLAB SERIF · Zilla Slab</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Zilla Slab&quot;, serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Zilla Slab&quot;, serif"
+            >
+              Sabor
+            </p>
+            <h3>Editorial, cercana, con carácter.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Publicaciones,
+              cultura, marcas expresivas.
+            </p>
+            <p class="note">Revisa la densidad visual cuando subes el peso.</p>
+            <a
+              href="https://fonts.google.com/specimen/Zilla+Slab"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">DISPLAY · Bebas Neue</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Bebas Neue&quot;, sans-serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Bebas Neue&quot;, sans-serif"
+            >
+              Sabor
+            </p>
+            <h3>Condensada, directa, enérgica.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Deportes, campañas y
+              titulares cortos.
+            </p>
+            <p class="note">
+              No es una elección cómoda para párrafos; principalmente
+              mayúsculas.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Bebas+Neue"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">DISPLAY · Abril Fatface</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Abril Fatface&quot;, serif"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Abril Fatface&quot;, serif"
+            >
+              Sabor
+            </p>
+            <h3>Dramática, contrastada, protagonista.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Portadas, cultura,
+              titulares de gran tamaño.
+            </p>
+            <p class="note">
+              Display es una función: puede ser serif o sans. Reserva su
+              protagonismo.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Abril+Fatface"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">MANUSCRITA · Caveat</p>
+            <p class="font-aa" style="font-family: &quot;Caveat&quot;, cursive">
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Caveat&quot;, cursive"
+            >
+              Sabor
+            </p>
+            <h3>Espontánea, informal, personal.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Notas cortas,
+              educación creativa, eventos.
+            </p>
+            <p class="note">
+              No para formularios, datos críticos o párrafos largos.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Caveat"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">MANUSCRITA · Dancing Script</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;Dancing Script&quot;, cursive"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;Dancing Script&quot;, cursive"
+            >
+              Sabor
+            </p>
+            <h3>Festiva, fluida, ceremonial.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Bodas, invitaciones
+              y detalles de marca.
+            </p>
+            <p class="note">
+              Comprueba nombres, números y legibilidad antes de elegir.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/Dancing+Script"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">MONOESPACIADA · JetBrains Mono</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;JetBrains Mono&quot;, monospace"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;JetBrains Mono&quot;, monospace"
+            >
+              Sabor
+            </p>
+            <h3>Técnica, organizada, de código.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Editores, código y
+              estética de desarrollo.
+            </p>
+            <p class="note">
+              Todos los caracteres ocupan el mismo ancho; puede cansar en
+              lectura extensa.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/JetBrains+Mono"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+          <article class="font-family-card">
+            <p class="font-family-name">MONOESPACIADA · IBM Plex Mono</p>
+            <p
+              class="font-aa"
+              style="font-family: &quot;IBM Plex Mono&quot;, monospace"
+            >
+              Aa
+            </p>
+            <p
+              class="font-word"
+              style="font-family: &quot;IBM Plex Mono&quot;, monospace"
+            >
+              Sabor
+            </p>
+            <h3>Precisa, sobria, tecnológica.</h3>
+            <p>
+              <strong>Ideal como punto de partida:</strong> Datos técnicos,
+              etiquetas y documentación.
+            </p>
+            <p class="note">
+              Para alinear cifras en una sans también existen números tabulares.
+            </p>
+            <a
+              href="https://fonts.google.com/specimen/IBM+Plex+Mono"
+              target="_blank"
+              rel="noopener"
+              >Ver familia y licencia</a
+            >
+          </article>
+        </div>
+        <div class="callout">
+          <h3>Más allá de seis etiquetas</h3>
+          <p>
+            También puedes estudiar serif de estilo antiguo, transicionales y
+            didonas; sans humanistas, grotescas y geométricas; fuentes variables
+            y familias con muchos idiomas. Una fuente variable permite ajustar
+            ejes como peso o ancho, pero solo los que la familia ofrece.
+          </p>
+        </div>
+      </section>
+      <section id="contextos" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Elige según la tarea y el contexto.</h2>
+          <p>
+            Una combinación recomendada es un punto de partida, no una norma de
+            sector. Comprueba público, idioma, legibilidad, licencia y tono de
+            marca.
+          </p>
+        </header>
+        <div class="two-columns">
+          <form class="control-panel">
+            <fieldset>
+              <legend>Una marca, dos papeles tipográficos</legend>
+              <label for="font-context">Tipo de negocio</label
+              ><select id="font-context">
+                <option value="restaurante">Restaurante</option>
+                <option value="tecnologia">Tecnología / app</option>
+                <option value="lujo">Lujo / moda</option>
+                <option value="infantil">Infantil / diversión</option>
+                <option value="legal">Legal / corporativo</option>
+                <option value="deporte">Deportes / fitness</option>
+                <option value="salud">Salud / bienestar</option>
+                <option value="inmobiliaria">Inmobiliaria</option>
+                <option value="editorial">Editorial / blog</option>
+                <option value="boda">Boda / evento</option>
+                <option value="arte">Arte / creativo</option>
+                <option value="tienda">Tienda / comercio</option>
+                <option value="educacion">Educación</option>
+                <option value="gastronomia">Cafetería / artesanía</option>
+                <option value="social">Proyecto social</option></select
+              ><label for="font-head-size"
+                >Título <output id="font-head-value">40 px</output></label
+              ><input
+                id="font-head-size"
+                type="range"
+                min="24"
+                max="64"
+                step="2"
+                value="40"
+              />
+              <p id="font-pair-description" class="note" role="status"></p>
+              <p id="font-pair-care" class="note"></p>
+            </fieldset>
+          </form>
+          <article id="font-context-preview" class="business-preview">
+            <p class="preview-eyebrow">UNA MISMA IDEA</p>
+            <h3 id="font-context-title">Una experiencia que se recuerda.</h3>
+            <p>
+              Descubre una propuesta pensada para ti. Información clara,
+              detalles cuidados y un siguiente paso sencillo.
+            </p>
+            <button type="button" disabled>Conocer la propuesta</button
+            ><small id="font-pair-label"></small>
+          </article>
+        </div>
+        <pre><code id="font-pair-code"></code></pre>
+      </section>
+      <section id="sistema" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Tipografía con sistema, no tamaños al azar.</h2>
+          <p>
+            Define funciones: etiqueta, cuerpo, subtítulo y título. Una escala
+            modular aporta relaciones, pero puedes ajustarlas ópticamente.
+          </p>
+        </header>
+        <div class="two-columns">
+          <form class="control-panel">
+            <fieldset>
+              <legend>Construye una escala</legend>
+              <label for="type-base"
+                >Base <output id="type-base-value">16 px</output></label
+              ><input
+                id="type-base"
+                type="range"
+                min="16"
+                max="22"
+                value="16"
+              /><label for="type-ratio">Relación de escala</label
+              ><select id="type-ratio">
+                <option value="1.125">1.125 · contraste suave</option>
+                <option value="1.2" selected>1.2 · equilibrada</option>
+                <option value="1.25">1.25 · marcada</option>
+                <option value="1.333">1.333 · editorial</option></select
+              ><label for="type-leading"
+                >Interlínea de cuerpo
+                <output id="type-leading-value">1.6</output></label
+              ><input
+                id="type-leading"
+                type="range"
+                min="1.3"
+                max="2"
+                step="0.1"
+                value="1.6"
+              />
+            </fieldset>
+          </form>
+          <section
+            id="type-scale-preview"
+            class="type-scale-preview"
+            aria-label="Muestra de escala"
+          >
+            <p class="scale-label">ETIQUETA / CONTEXTO</p>
+            <h3 class="scale-title">Una jerarquía que se entiende.</h3>
+            <h4 class="scale-subtitle">Un subtítulo ordena la lectura.</h4>
+            <p class="scale-body">
+              Un cuerpo legible necesita espacio entre líneas y una medida
+              cómoda. No escales todos los textos del mismo modo: títulos,
+              botones, tablas y notas tienen tareas distintas.
+            </p>
+            <p class="scale-small">Nota secundaria, con tamaño legible.</p>
+          </section>
+        </div>
+        <pre><code id="type-scale-code"></code></pre>
+        <dl class="design-definitions">
+          <dt>Familias</dt>
+          <dd>
+            Una o dos suelen bastar. Si usas más, asigna una función estable a
+            cada una.
+          </dd>
+          <dt>Pesos</dt>
+          <dd>
+            Selecciona los necesarios; cargar muchos archivos aumenta el coste
+            de la página.
+          </dd>
+          <dt>Medida</dt>
+          <dd>
+            Un ancho aproximado de 45–75 caracteres puede servir como punto de
+            partida para párrafos; pruébalo con tu fuente y contenido.
+          </dd>
+          <dt>Escala</dt>
+          <dd>
+            Usa rem para tamaños base y clamp para titulares adaptables, sin
+            impedir el zoom.
+          </dd>
+        </dl>
+      </section>
+      <section id="lectura" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>La prueba real está en el contenido.</h2>
+          <p>
+            “Aa” ayuda a ver formas; un párrafo, un precio y una dirección
+            ayudan a decidir si sirven.
+          </p>
+        </header>
+        <div class="design-three">
+          <article>
+            <h3>Idioma y cobertura</h3>
+            <p>
+              Prueba ñ, tildes, ¿?, ¡!, símbolos monetarios, números y nombres
+              propios. Una alternativa puede cambiar la medida del texto.
+            </p>
+          </article>
+          <article>
+            <h3>Contexto de lectura</h3>
+            <p>
+              Compara móvil y escritorio, texto largo y controles. Prueba tamaño
+              ampliado y conexión lenta.
+            </p>
+          </article>
+          <article>
+            <h3>Accesibilidad</h3>
+            <p>
+              No uses pesos excesivamente finos ni color tenue para información
+              esencial. La elección debe facilitar la lectura.
+            </p>
+          </article>
+        </div>
+        <details class="explanation">
+          <summary>Una receta que puedes copiar</summary>
+          <pre><code>:root {
+  --font-body: &quot;Inter&quot;, system-ui, sans-serif;
+  --font-heading: &quot;Lora&quot;, Georgia, serif;
+}
+body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-heading); line-height: 1.15; }
+h1 { font-size: clamp(2rem, 5vw, 4rem); }
+.texto { max-width: 65ch; }</code></pre>
+        </details>
+        <p class="note">
+          Consulta
+          <a
+            href="https://fonts.google.com/knowledge"
+            target="_blank"
+            rel="noopener"
+            >Google Fonts Knowledge</a
+          >
+          para profundizar en anatomía, clasificación y selección.
+        </p>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">PIENSA ANTES DE APLICAR</p>
+          <h2>Comprueba tu criterio.</h2>
+        </header>
+        <form class="quiz" data-answer="1">
+          <fieldset>
+            <legend>
+              ¿Dónde resulta más razonable empezar a probar una fuente display?
+            </legend>
+            <label
+              ><input type="radio" name="answer" value="0" required />En todos
+              los párrafos de un contrato</label
+            ><label
+              ><input type="radio" name="answer" value="1" required />En títulos
+              grandes y breves</label
+            ><label
+              ><input type="radio" name="answer" value="2" required />En todos
+              los precios y campos del formulario</label
+            >
+          </fieldset>
+          <button type="submit" class="button primary">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="Display describe un uso de exhibición. Su carácter y sus formas necesitan espacio; verifica siempre la legibilidad."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de tipografia">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://fonts.google.com/knowledge"
+              target="_blank"
+              rel="noopener"
+              >Google Fonts Knowledge</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts"
+              target="_blank"
+              rel="noopener"
+              >MDN · CSS fonts</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="tipografia" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

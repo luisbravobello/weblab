@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Retos, errores y progreso: ejercicios, explicaciones y documentación para estudiar desarrollo web."
+    />
+    <title>Retos, errores y progreso | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="practicas">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html" aria-current="page">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">APRENDER ES PONER A PRUEBA</p>
+          <h1>Practica una idea cada vez.</h1>
+          <p>
+            Seis retos pequeños, seis ejercicios para detectar errores y un
+            registro de estudio guardado en este navegador.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#retos">Retos</a><a href="#errores">Encuentra el error</a
+            ><a href="#laboratorio">Editor</a><a href="#progreso">Progreso</a>
+          </nav>
+        </div>
+      </header>
+      <section id="retos" class="section container">
+        <header class="section-head">
+          <h2>Construye, prueba y compara.</h2>
+          <p>
+            Cada reto tiene un objetivo, una pista y una solución de referencia.
+            No hay una única forma correcta de resolverlo.
+          </p>
+        </header>
+        <div class="challenge-grid">
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 1</p>
+            <h3>Tarjeta semántica</h3>
+            <p>
+              Construye una ficha con título, descripción y enlace. Distingue
+              acción y navegación.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Un article funciona si la ficha tiene sentido por sí sola.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;article&gt;&lt;h2&gt;Mi curso&lt;/h2&gt;&lt;p&gt;Aprende una idea cada día.&lt;/p&gt;&lt;a href=&quot;#&quot;&gt;Leer más&lt;/a&gt;&lt;/article&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="card"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-card" /> Lo practiqué
+              y lo entendí</label
+            >
+          </article>
+          <template id="exercise-card">
+            <pre data-exercise="html">
+&lt;article&gt;&lt;h2&gt;Mi curso&lt;/h2&gt;&lt;p&gt;Aprende una idea cada día.&lt;/p&gt;&lt;a href=&quot;#&quot;&gt;Leer más&lt;/a&gt;&lt;/article&gt;</pre>
+            <pre data-exercise="css">
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }</pre>
+            <pre data-exercise="js"></pre>
+          </template>
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 2</p>
+            <h3>Formulario etiquetado</h3>
+            <p>
+              Añade una etiqueta, una instrucción y un campo requerido. Explica
+              el resultado del envío local.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Asocia label y control por id y for.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;form id=&quot;form&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;respuesta&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>input, button { padding: 12px; margin: 8px; }</code></pre>
+              <h4>JavaScript</h4>
+              <pre><code>document.querySelector(&quot;#form&quot;).addEventListener(&quot;submit&quot;, e =&gt; { e.preventDefault(); document.querySelector(&quot;#respuesta&quot;).textContent = &quot;Formulario válido. No se envían datos.&quot;; });</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="form"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-form" /> Lo practiqué
+              y lo entendí</label
+            >
+          </article>
+          <template id="exercise-form">
+            <pre data-exercise="html">
+&lt;form id=&quot;form&quot;&gt;&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; required&gt;&lt;button&gt;Comprobar&lt;/button&gt;&lt;p id=&quot;respuesta&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;/form&gt;</pre>
+            <pre data-exercise="css">
+input, button { padding: 12px; margin: 8px; }</pre>
+            <pre data-exercise="js">
+document.querySelector(&quot;#form&quot;).addEventListener(&quot;submit&quot;, e =&gt; { e.preventDefault(); document.querySelector(&quot;#respuesta&quot;).textContent = &quot;Formulario válido. No se envían datos.&quot;; });</pre>
+          </template>
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 3</p>
+            <h3>Galería adaptable</h3>
+            <p>
+              Muestra tres tarjetas y apílalas cuando el espacio sea pequeño.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Prueba repeat, minmax y auto-fit.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;section class=&quot;grid&quot;&gt;&lt;article&gt;Uno&lt;/article&gt;&lt;article&gt;Dos&lt;/article&gt;&lt;article&gt;Tres&lt;/article&gt;&lt;/section&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 16px; } article { padding: 24px; background: #eef1ff; }</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="grid"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-grid" /> Lo practiqué
+              y lo entendí</label
+            >
+          </article>
+          <template id="exercise-grid">
+            <pre data-exercise="html">
+&lt;section class=&quot;grid&quot;&gt;&lt;article&gt;Uno&lt;/article&gt;&lt;article&gt;Dos&lt;/article&gt;&lt;article&gt;Tres&lt;/article&gt;&lt;/section&gt;</pre>
+            <pre data-exercise="css">
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 16px; } article { padding: 24px; background: #eef1ff; }</pre>
+            <pre data-exercise="js"></pre>
+          </template>
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 4</p>
+            <h3>Menú desplegable</h3>
+            <p>Haz que un botón muestre una lista y actualice aria-expanded.</p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Cambia el estado y la presentación juntos.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;button id=&quot;menu&quot; aria-controls=&quot;enlaces&quot; aria-expanded=&quot;false&quot;&gt;Menú&lt;/button&gt;&lt;nav id=&quot;enlaces&quot; hidden&gt;&lt;a href=&quot;#&quot;&gt;Inicio&lt;/a&gt;&lt;a href=&quot;#&quot;&gt;Ayuda&lt;/a&gt;&lt;/nav&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>button, a { padding: 12px; } a { display: block; } [hidden] { display: none; }</code></pre>
+              <h4>JavaScript</h4>
+              <pre><code>const boton = document.querySelector(&quot;#menu&quot;); const nav = document.querySelector(&quot;#enlaces&quot;); boton.addEventListener(&quot;click&quot;, () =&gt; { const abierto = boton.getAttribute(&quot;aria-expanded&quot;) !== &quot;true&quot;; boton.setAttribute(&quot;aria-expanded&quot;, abierto); nav.hidden = !abierto; });</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="menu"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-menu" /> Lo practiqué
+              y lo entendí</label
+            >
+          </article>
+          <template id="exercise-menu">
+            <pre data-exercise="html">
+&lt;button id=&quot;menu&quot; aria-controls=&quot;enlaces&quot; aria-expanded=&quot;false&quot;&gt;Menú&lt;/button&gt;&lt;nav id=&quot;enlaces&quot; hidden&gt;&lt;a href=&quot;#&quot;&gt;Inicio&lt;/a&gt;&lt;a href=&quot;#&quot;&gt;Ayuda&lt;/a&gt;&lt;/nav&gt;</pre>
+            <pre data-exercise="css">
+button, a { padding: 12px; } a { display: block; } [hidden] { display: none; }</pre>
+            <pre data-exercise="js">
+const boton = document.querySelector(&quot;#menu&quot;); const nav = document.querySelector(&quot;#enlaces&quot;); boton.addEventListener(&quot;click&quot;, () =&gt; { const abierto = boton.getAttribute(&quot;aria-expanded&quot;) !== &quot;true&quot;; boton.setAttribute(&quot;aria-expanded&quot;, abierto); nav.hidden = !abierto; });</pre>
+          </template>
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 5</p>
+            <h3>Contador con estado</h3>
+            <p>
+              Suma, resta y reinicia un número. Mantén el estado en una
+              variable.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Primero cambia el valor; después actualiza output.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;button id=&quot;menos&quot;&gt;Restar&lt;/button&gt;&lt;output id=&quot;valor&quot;&gt;0&lt;/output&gt;&lt;button id=&quot;mas&quot;&gt;Sumar&lt;/button&gt;&lt;button id=&quot;reset&quot;&gt;Reiniciar&lt;/button&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>button { padding: 12px; } output { padding: 20px; font-size: 32px; }</code></pre>
+              <h4>JavaScript</h4>
+              <pre><code>let n = 0; const salida = document.querySelector(&quot;#valor&quot;); function mostrar() { salida.value = n; } document.querySelector(&quot;#mas&quot;).onclick = () =&gt; { n++; mostrar(); }; document.querySelector(&quot;#menos&quot;).onclick = () =&gt; { n--; mostrar(); }; document.querySelector(&quot;#reset&quot;).onclick = () =&gt; { n = 0; mostrar(); };</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="counter"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-counter" /> Lo
+              practiqué y lo entendí</label
+            >
+          </article>
+          <template id="exercise-counter">
+            <pre data-exercise="html">
+&lt;button id=&quot;menos&quot;&gt;Restar&lt;/button&gt;&lt;output id=&quot;valor&quot;&gt;0&lt;/output&gt;&lt;button id=&quot;mas&quot;&gt;Sumar&lt;/button&gt;&lt;button id=&quot;reset&quot;&gt;Reiniciar&lt;/button&gt;</pre>
+            <pre data-exercise="css">
+button { padding: 12px; } output { padding: 20px; font-size: 32px; }</pre>
+            <pre data-exercise="js">
+let n = 0; const salida = document.querySelector(&quot;#valor&quot;); function mostrar() { salida.value = n; } document.querySelector(&quot;#mas&quot;).onclick = () =&gt; { n++; mostrar(); }; document.querySelector(&quot;#menos&quot;).onclick = () =&gt; { n--; mostrar(); }; document.querySelector(&quot;#reset&quot;).onclick = () =&gt; { n = 0; mostrar(); };</pre>
+          </template>
+          <article class="challenge-card">
+            <p class="eyebrow">RETO 6</p>
+            <h3>Lista con buscador</h3>
+            <p>
+              Filtra una lista al escribir, sin distinguir mayúsculas. Añade un
+              estado sin resultados.
+            </p>
+            <details>
+              <summary>Ver pista</summary>
+              <p>Lee el texto del control y compara cada elemento.</p>
+            </details>
+            <details>
+              <summary>Ver solución de referencia</summary>
+              <h4>HTML</h4>
+              <pre><code>&lt;label&gt;Buscar &lt;input id=&quot;buscar&quot;&gt;&lt;/label&gt;&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;li&gt;JavaScript&lt;/li&gt;&lt;/ul&gt;&lt;p id=&quot;estado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;</code></pre>
+              <h4>CSS</h4>
+              <pre><code>input { padding: 12px; } li { padding: 8px; }</code></pre>
+              <h4>JavaScript</h4>
+              <pre><code>document.querySelector(&quot;#buscar&quot;).addEventListener(&quot;input&quot;, e =&gt; { let total = 0; document.querySelectorAll(&quot;li&quot;).forEach(li =&gt; { li.hidden = !li.textContent.toLowerCase().includes(e.target.value.toLowerCase()); if (!li.hidden) total++; }); document.querySelector(&quot;#estado&quot;).textContent = total ? `${total} resultados` : &quot;Sin resultados&quot;; });</code></pre>
+            </details>
+            <button
+              class="button primary"
+              type="button"
+              data-load-exercise="filter"
+            >
+              Probar este reto</button
+            ><label class="completion-label"
+              ><input type="checkbox" data-progress="reto-filter" /> Lo
+              practiqué y lo entendí</label
+            >
+          </article>
+          <template id="exercise-filter">
+            <pre data-exercise="html">
+&lt;label&gt;Buscar &lt;input id=&quot;buscar&quot;&gt;&lt;/label&gt;&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;li&gt;JavaScript&lt;/li&gt;&lt;/ul&gt;&lt;p id=&quot;estado&quot; role=&quot;status&quot;&gt;&lt;/p&gt;</pre>
+            <pre data-exercise="css">
+input { padding: 12px; } li { padding: 8px; }</pre>
+            <pre data-exercise="js">
+document.querySelector(&quot;#buscar&quot;).addEventListener(&quot;input&quot;, e =&gt; { let total = 0; document.querySelectorAll(&quot;li&quot;).forEach(li =&gt; { li.hidden = !li.textContent.toLowerCase().includes(e.target.value.toLowerCase()); if (!li.hidden) total++; }); document.querySelector(&quot;#estado&quot;).textContent = total ? `${total} resultados` : &quot;Sin resultados&quot;; });</pre>
+          </template>
+        </div>
+      </section>
+      <section id="errores" class="section container">
+        <header class="section-head">
+          <h2>Encuentra el error antes de copiarlo.</h2>
+          <p>
+            Lee el fragmento y elige una mejora. La explicación distingue el
+            problema de los cambios puramente visuales.
+          </p>
+        </header>
+        <div class="error-grid">
+          <article>
+            <h3>Un div que parece un botón</h3>
+            <pre><code>&lt;div onclick=&quot;abrir()&quot;&gt;Abrir ayuda&lt;/div&gt;</code></pre>
+            <form class="quiz" data-answer="1">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="0"
+                    required
+                  />Dejarlo igual y añadir color</label
+                ><label
+                  ><input type="radio" name="answer" value="1" required />Usar
+                  button type=button con un evento</label
+                ><label
+                  ><input type="radio" name="answer" value="2" required />Añadir
+                  una etiqueta h1</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="button aporta significado, foco y activación mediante teclado."
+              ></p>
+            </form>
+          </article>
+          <article>
+            <h3>Un campo sin nombre accesible</h3>
+            <pre><code>&lt;input placeholder=&quot;Correo&quot;&gt;</code></pre>
+            <form class="quiz" data-answer="1">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input type="radio" name="answer" value="0" required />El
+                  placeholder siempre basta</label
+                ><label
+                  ><input type="radio" name="answer" value="1" required />Añadir
+                  label asociado y type=email</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="2"
+                    required
+                  />Cambiar el color del borde</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="El placeholder desaparece al escribir y no sustituye una etiqueta."
+              ></p>
+            </form>
+          </article>
+          <article>
+            <h3>Una galería que desborda</h3>
+            <pre><code>.grid { width: 1000px; }</code></pre>
+            <form class="quiz" data-answer="1">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input type="radio" name="answer" value="0" required />Dar al
+                  body overflow:hidden</label
+                ><label
+                  ><input type="radio" name="answer" value="1" required />Usar
+                  un ancho flexible y comprobar los hijos</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="2"
+                    required
+                  />Eliminar todas las media queries</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="Ocultar el desbordamiento no resuelve el contenido que queda fuera."
+              ></p>
+            </form>
+          </article>
+          <article>
+            <h3>Una variable const reasignada</h3>
+            <pre><code>const puntos = 0;
+puntos += 1;</code></pre>
+            <form class="quiz" data-answer="0">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input type="radio" name="answer" value="0" required />Usar
+                  let porque el valor cambia</label
+                ><label
+                  ><input type="radio" name="answer" value="1" required />Añadir
+                  un punto y coma</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="2"
+                    required
+                  />Cambiar el nombre a PUNTOS</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="const no permite reasignar la referencia; let permite este estado cambiante."
+              ></p>
+            </form>
+          </article>
+          <article>
+            <h3>Orden numérico inesperado</h3>
+            <pre><code>[10, 2, 30].sort();</code></pre>
+            <form class="quiz" data-answer="1">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input type="radio" name="answer" value="0" required />sort
+                  siempre ordena por número</label
+                ><label
+                  ><input type="radio" name="answer" value="1" required />Usar
+                  sort((a, b) => a - b)</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="2"
+                    required
+                  />Convertir todo a texto</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="El orden predeterminado compara representaciones de texto."
+              ></p>
+            </form>
+          </article>
+          <article>
+            <h3>Una petición que ignora HTTP 404</h3>
+            <pre><code>const r = await fetch(&quot;datos.json&quot;);
+const datos = await r.json();</code></pre>
+            <form class="quiz" data-answer="1">
+              <fieldset>
+                <legend>¿Qué cambiarías?</legend>
+                <label
+                  ><input type="radio" name="answer" value="0" required />fetch
+                  rechaza automáticamente cualquier 404</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="1"
+                    required
+                  />Comprobar r.ok y gestionar errores</label
+                ><label
+                  ><input
+                    type="radio"
+                    name="answer"
+                    value="2"
+                    required
+                  />Eliminar await</label
+                >
+              </fieldset>
+              <button type="submit" class="button primary">
+                Comprobar respuesta
+              </button>
+              <p
+                class="quiz-result"
+                role="status"
+                data-reason="fetch no rechaza solo por un estado HTTP de error; comprueba response.ok."
+              ></p>
+            </form>
+          </article>
+        </div>
+      </section>
+      <section id="laboratorio" class="section container">
+        <header class="section-head">
+          <h2>Prueba tu solución.</h2>
+          <p>
+            Elige un reto o una etapa; edita el código y pulsa Ejecutar. El
+            ejemplo está aislado y no envía datos.
+          </p>
+        </header>
+        <div class="playground" data-lab>
+          <section class="editor">
+            <h3>Editor</h3>
+            <label for="lab-html">HTML</label
+            ><textarea id="lab-html" data-code="html" spellcheck="false">
+&lt;article&gt;&lt;h2&gt;Mi curso&lt;/h2&gt;&lt;p&gt;Aprende una idea cada día.&lt;/p&gt;&lt;a href=&quot;#&quot;&gt;Leer más&lt;/a&gt;&lt;/article&gt;</textarea
+            ><label for="lab-css">CSS</label
+            ><textarea id="lab-css" data-code="css" spellcheck="false">
+article { padding: 24px; border: 1px solid #ddd; border-radius: 16px; }</textarea
+            ><label for="lab-js">JavaScript</label
+            ><textarea id="lab-js" data-code="js" spellcheck="false"></textarea>
+            <div class="editor-actions">
+              <button class="button primary" data-run type="button">
+                Ejecutar</button
+              ><button class="button secondary" data-reset type="button">
+                Restablecer
+              </button>
+            </div>
+          </section>
+          <section class="preview">
+            <h3>Resultado</h3>
+            <iframe
+              title="Resultado del ejemplo editable"
+              sandbox="allow-scripts allow-forms"
+            ></iframe>
+            <h4>Consola</h4>
+            <pre class="lab-console" role="log" aria-live="polite"></pre>
+          </section>
+        </div>
+      </section>
+      <section id="progreso" class="section container">
+        <header class="section-head">
+          <h2>Tu avance, en este navegador.</h2>
+          <p>
+            Marca los temas que estudiaste. Este registro es una autoevaluación;
+            no comprueba dominio ni se sincroniza con otros dispositivos.
+          </p>
+        </header>
+        <progress
+          id="study-progress-bar"
+          value="0"
+          max="18"
+          aria-label="Temas y retos marcados"
+        ></progress>
+        <p id="study-progress-count" role="status"></p>
+        <ul class="study-checklist">
+          <li>
+            <label><input type="checkbox" data-progress="html" />HTML</label>
+          </li>
+          <li>
+            <label><input type="checkbox" data-progress="css" />CSS</label>
+          </li>
+          <li>
+            <label
+              ><input
+                type="checkbox"
+                data-progress="javascript"
+              />JavaScript</label
+            >
+          </li>
+          <li>
+            <label
+              ><input
+                type="checkbox"
+                data-progress="composicion"
+              />Composición</label
+            >
+          </li>
+          <li>
+            <label
+              ><input
+                type="checkbox"
+                data-progress="tipografia"
+              />Tipografía</label
+            >
+          </li>
+          <li>
+            <label><input type="checkbox" data-progress="color" />Color</label>
+          </li>
+          <li>
+            <label
+              ><input
+                type="checkbox"
+                data-progress="accesibilidad"
+              />Accesibilidad</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" data-progress="adaptable" />Diseño
+              adaptable</label
+            >
+          </li>
+          <li>
+            <label
+              ><input
+                type="checkbox"
+                data-progress="componentes"
+              />Componentes</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" data-progress="proyecto" />Proyecto
+              guiado</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" data-progress="practicas" />Retos y
+              errores</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" data-progress="glosario" />Glosario</label
+            >
+          </li>
+        </ul>
+        <button
+          id="reset-study-progress"
+          class="button secondary"
+          type="button"
+        >
+          Reiniciar mi progreso
+        </button>
+        <p id="study-storage-note" class="note"></p>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de prácticas">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+              target="_blank"
+              rel="noopener"
+              >MDN · Aprender desarrollo web</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+              target="_blank"
+              rel="noopener"
+              >MDN · localStorage</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="practicas" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

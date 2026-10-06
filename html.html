@@ -1,0 +1,4531 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="HTML: estructura y significado: aprende con explicaciones, referencias y ejercicios interactivos en español."
+    />
+    <title>HTML: estructura y significado | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/tutorial.css" />
+    <script src="js/tutorial.js" defer></script>
+  </head>
+  <body data-page="html">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a
+          ><a href="html.html" aria-current="page">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero html-theme">
+        <div class="container">
+          <p class="eyebrow">CAPÍTULO 01 / APRENDE LA WEB</p>
+          <h1>Primero, el significado.</h1>
+          <p>
+            HTML describe el contenido. Las etiquetas cuentan al navegador qué
+            es un título, un enlace, un formulario o una sección.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#paso-a-paso">Tutorial paso a paso</a>
+            <a href="#fundamentos">Fundamentos</a
+            ><a href="#historia">Historia</a><a href="#referencia">Referencia</a
+            ><a href="#laboratorio">Laboratorio</a><a href="#repaso">Repaso</a>
+          </nav>
+        </div>
+      </header>
+      <section id="paso-a-paso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DESDE EL PRIMER ARCHIVO HASTA EL RESULTADO</p>
+          <h2>Construye tu index.html, paso a paso.</h2>
+          <p>
+            Cada paso acumula lo anterior. Lee la explicación, observa el
+            resultado y prueba una modificación. El laboratorio adapta los
+            archivos separados a un marco aislado.
+          </p>
+        </header>
+        <div class="walkthrough" data-walkthrough="html">
+          <nav class="walk-steps" aria-label="Pasos del tutorial">
+            <ol>
+              <li>
+                <button type="button" data-walk-step="0" aria-current="step">
+                  1. Crea index.html
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="1">
+                  2. Escribe la estructura inicial
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="2">
+                  3. Añade un título visible
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="3">
+                  4. Añade un párrafo
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="4">
+                  5. Agrupa y divide la página
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="5">
+                  6. Añade navegación y enlaces
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="6">
+                  7. Organiza una lista
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="7">
+                  8. Crea una ficha independiente
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="8">
+                  9. Incluye una imagen y su leyenda
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="9">
+                  10. Compara datos con una tabla
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="10">
+                  11. Añade un formulario
+                </button>
+              </li>
+              <li>
+                <button type="button" data-walk-step="11">
+                  12. Termina con una interacción nativa
+                </button>
+              </li>
+            </ol>
+          </nav>
+          <section class="walk-main">
+            <header>
+              <p id="walk-counter" class="eyebrow"></p>
+              <h3 id="walk-title"></h3>
+              <p id="walk-goal"></p>
+            </header>
+            <dl class="walk-explanation">
+              <dt>Qué añadimos</dt>
+              <dd id="walk-change"></dd>
+              <dt>Dónde va y en qué orden</dt>
+              <dd id="walk-order"></dd>
+              <dt>Qué deberías ver</dt>
+              <dd id="walk-expect"></dd>
+            </dl>
+            <nav
+              id="walk-references"
+              aria-label="Referencias de este paso"
+            ></nav>
+            <fieldset class="walk-experiments">
+              <legend>¿Qué pasa si…?</legend>
+              <label
+                ><input id="walk-remove" type="checkbox" /> Quitar la pieza de
+                este paso</label
+              ><label
+                ><input id="walk-move" type="checkbox" /> Mover la pieza al
+                final de su contenedor</label
+              >
+              <p id="walk-experiment-note" role="status"></p>
+            </fieldset>
+            <div class="walk-editors">
+              <label for="walk-html">index.html · documento acumulado</label
+              ><textarea id="walk-html" spellcheck="false"></textarea>
+            </div>
+            <div class="editor-actions">
+              <button id="walk-run" type="button" class="button primary">
+                Aplicar mis cambios</button
+              ><button id="walk-reset" type="button" class="button secondary">
+                Restablecer este paso</button
+              ><label for="walk-width">Ancho de ejemplo</label
+              ><select id="walk-width">
+                <option value="fluid">Ajustar al espacio</option>
+                <option value="360">360 px · móvil</option>
+                <option value="1100">1100 px · escritorio</option>
+              </select>
+            </div>
+            <div id="walk-result" class="walk-preview-scroll">
+              <iframe
+                id="walk-frame"
+                title="Resultado del tutorial paso a paso"
+                sandbox="allow-scripts allow-forms"
+              ></iframe>
+            </div>
+            <p id="walk-result-note" role="status"></p>
+            <h4>Consola y comportamiento</h4>
+            <pre id="walk-console" role="log" aria-live="polite"></pre>
+            <details class="explanation">
+              <summary>Ver código usado en la variante</summary>
+              <p>
+                El navegador normaliza el HTML al analizarlo. La vista previa
+                incrusta CSS y JavaScript; en tus archivos mantendrás sus
+                enlaces externos.
+              </p>
+              <h4>HTML</h4>
+              <pre><code id="walk-variant-html"></code></pre>
+            </details>
+            <nav class="walk-pagination" aria-label="Recorrer el tutorial">
+              <button id="walk-prev" type="button" class="button secondary">
+                Paso anterior</button
+              ><button id="walk-next" type="button" class="button primary">
+                Paso siguiente
+              </button>
+              <a href="#walk-result" class="button secondary">Ver resultado</a>
+            </nav>
+          </section>
+        </div>
+        <template
+          id="walk-data-0"
+          data-title="1. Crea index.html"
+          data-goal="Crea una carpeta y un archivo de texto llamado index.html. Ábrelo con un servidor local como Live Server."
+          data-change="Todavía no escribimos contenido. El nombre facilita encontrar la entrada del proyecto."
+          data-order="La extensión .html identifica el documento; no cambia el orden de su contenido."
+          data-expect="Un archivo vacío puede verse como una pantalla en blanco: aún no hay nada que mostrar."
+          data-remove="No hay una pieza visible que quitar. Si eliminas el archivo, esa ruta no tendrá un documento."
+          data-move="No hay elementos para mover."
+          data-target=""
+        >
+          <pre data-walk-code="html"></pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#fundamentos">Anatomía y estructura</a>
+          </nav></template
+        ><template
+          id="walk-data-1"
+          data-title="2. Escribe la estructura inicial"
+          data-goal="Añade doctype, html, head y body. Indica el idioma, la codificación, el viewport y el título."
+          data-change="El documento ya tiene estructura y metadatos. El body sigue vacío."
+          data-order="doctype va al comienzo. head agrupa metadatos; body contiene lo visible."
+          data-expect="El título pertenece a la pestaña. En el marco del ejemplo no verás un título dibujado en el cuerpo."
+          data-remove="Quitar title no elimina contenido visible: afecta al nombre del documento. Quitar metadatos puede cambiar interpretación o adaptación."
+          data-move="Mover title al body no es una forma correcta de crear un título visible. Usa h1 para eso."
+          data-target="title"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-html">html</a
+            ><a href="html.html#elemento-head">head</a
+            ><a href="html.html#elemento-body">body</a
+            ><a href="html.html#elemento-title">title</a>
+          </nav></template
+        ><template
+          id="walk-data-2"
+          data-title="3. Añade un título visible"
+          data-goal="Escribe un h1 dentro de body."
+          data-change="Aparece el primer contenido visible."
+          data-order="h1 va en el cuerpo, no dentro de head. Es el título principal de esta página."
+          data-expect="El navegador le da un tamaño y márgenes predeterminados. Ese aspecto se puede cambiar después con CSS."
+          data-remove="Si quitas h1, el documento vuelve a no tener contenido visible."
+          data-move="Con un único elemento visible, moverlo al final no cambia su posición relativa."
+          data-target="h1"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav><a href="html.html#elemento-h1">h1</a></nav></template
+        ><template
+          id="walk-data-3"
+          data-title="4. Añade un párrafo"
+          data-goal="Coloca un p después del h1."
+          data-change="La explicación sigue al título."
+          data-order="Los elementos aparecen en el flujo en el mismo orden del documento."
+          data-expect="El párrafo tiene sus propios márgenes y tamaño predeterminados."
+          data-remove="Si quitas el párrafo, desaparece la explicación, pero queda el título."
+          data-move="Si mueves el párrafo al final y ya era el último elemento, nada cambia. Prueba moverlo antes del h1 en el editor."
+          data-target="p"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+&lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav><a href="html.html#elemento-p">p</a></nav></template
+        ><template
+          id="walk-data-4"
+          data-title="5. Agrupa y divide la página"
+          data-goal="Añade header, main con una sección y footer."
+          data-change="El contenido tiene regiones con funciones claras."
+          data-order="Cabecera al inicio, contenido principal después y footer al final; el orden refleja el recorrido."
+          data-expect="Sin CSS algunas etiquetas no tienen un aspecto diferente. Su significado sigue siendo importante."
+          data-remove="Quitar header como nodo también quita lo que contiene; quitar solo su etiqueta deja sus hijos. Son operaciones distintas."
+          data-move="Mover la cabecera después del footer cambia el orden visual y de lectura. No es recomendable para esta estructura."
+          data-target="header"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-header">header</a
+            ><a href="html.html#elemento-main">main</a
+            ><a href="html.html#elemento-section">section</a
+            ><a href="html.html#elemento-footer">footer</a>
+          </nav></template
+        ><template
+          id="walk-data-5"
+          data-title="6. Añade navegación y enlaces"
+          data-goal="Incluye nav con enlaces a los id de las secciones."
+          data-change="Los enlaces permiten llegar a Temas y Contacto."
+          data-order="La navegación precede al contenido central. href con # necesita un id existente."
+          data-expect="Los enlaces tienen apariencia nativa. Al activarlos el navegador cambia de fragmento y busca el destino."
+          data-remove="Si quitas nav, las secciones siguen existiendo, pero pierdes esos accesos. Si cambias un id, revisa su enlace."
+          data-move="Mover nav al final pone los accesos después de la lectura principal."
+          data-target="nav"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-nav">nav</a
+            ><a href="html.html#elemento-a">a</a>
+          </nav></template
+        ><template
+          id="walk-data-6"
+          data-title="7. Organiza una lista"
+          data-goal="Añade una lista ordenada con li dentro de ol."
+          data-change="El recorrido de aprendizaje es una secuencia."
+          data-order="La lista pertenece a la sección Temas. Sus elementos conservan el orden escrito."
+          data-expect="El navegador añade numeración y una sangría."
+          data-remove="Quitar ol elimina la lista completa. Si dejas li sin su lista, la estructura deja de ser correcta."
+          data-move="Al mover la lista dentro de su sección cambia su posición relativa a los párrafos."
+          data-target="ol"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-ol">ol</a
+            ><a href="html.html#elemento-li">li</a
+            ><a href="html.html#elemento-ul">ul</a>
+          </nav></template
+        ><template
+          id="walk-data-7"
+          data-title="8. Crea una ficha independiente"
+          data-goal="Añade article con h3 y p."
+          data-change="Una unidad independiente tiene su propio título."
+          data-order="h3 es un nivel subordinado al h2 de la sección. No eliges el nivel por el tamaño visual."
+          data-expect="La ficha sigue el flujo de la sección. El navegador no dibuja una tarjeta: eso será CSS."
+          data-remove="Quitar article retira la ficha y sus hijos."
+          data-move="Mover article al final de su sección puede no cambiar nada si ya era el último. Prueba colocarlo antes de la lista."
+          data-target="article"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-article">article</a
+            ><a href="html.html#elemento-h3">h3</a>
+          </nav></template
+        ><template
+          id="walk-data-8"
+          data-title="9. Incluye una imagen y su leyenda"
+          data-goal="Añade figure, img y figcaption."
+          data-change="La imagen tiene una ruta, dimensiones y una alternativa textual."
+          data-order="img es un elemento vacío. figcaption describe la figura; no reemplaza siempre a alt."
+          data-expect="La imagen aparece donde escribiste figure. Si falla la ruta, el navegador puede mostrar la alternativa."
+          data-remove="Quitar figure elimina imagen y leyenda. Quitar solo img conserva la leyenda."
+          data-move="Mover la figura al final de la sección la coloca después de la ficha."
+          data-target="figure"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-img">img</a
+            ><a href="html.html#elemento-figure">figure</a
+            ><a href="html.html#elemento-figcaption">figcaption</a>
+          </nav></template
+        ><template
+          id="walk-data-9"
+          data-title="10. Compara datos con una tabla"
+          data-goal="Añade caption, filas y encabezados."
+          data-change="Las relaciones entre columnas son explícitas."
+          data-order="Los datos van en td; los encabezados en th. No usas table para distribuir toda la página."
+          data-expect="La tabla se ve sencilla sin CSS: los bordes no aparecen automáticamente en todas sus celdas."
+          data-remove="Si quitas la tabla, desaparece la comparación. Quitar un encabezado pierde contexto para esa columna."
+          data-move="Mover la tabla al final de la sección cambia la secuencia; su estructura interna sigue siendo tabular."
+          data-target="table"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-table">table</a
+            ><a href="html.html#elemento-caption">caption</a
+            ><a href="html.html#elemento-th">th</a>
+          </nav></template
+        ><template
+          id="walk-data-10"
+          data-title="11. Añade un formulario"
+          data-goal="Incluye label, input y button."
+          data-change="Los controles ya se pueden enfocar y escribir."
+          data-order="for coincide con id. name participa en un envío real; required activa validación nativa."
+          data-expect="Prueba enviarlo vacío: el navegador pide el campo. En este marco se evita cualquier envío real."
+          data-remove="Quitar form retira sus controles. Quitar solo label deja el control sin su nombre visible."
+          data-move="Mover form al final de su sección no altera la relación entre label e input, pero puede cambiar el recorrido."
+          data-target="form"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-form">form</a
+            ><a href="html.html#elemento-label">label</a
+            ><a href="html.html#elemento-input">input</a
+            ><a href="html.html#elemento-button">button</a>
+          </nav></template
+        ><template
+          id="walk-data-11"
+          data-title="12. Termina con una interacción nativa"
+          data-goal="Añade details y summary, y revisa el documento completo."
+          data-change="Un desplegable funciona sin escribir JavaScript."
+          data-order="summary va primero dentro de details. La pista pertenece a la sección de práctica."
+          data-expect="Pulsa la pista con ratón o teclado. El navegador mantiene el estado del desplegable."
+          data-remove="Si quitas details, pierdes la pista. Si quitas solo summary, cambia la etiqueta que el navegador ofrece."
+          data-move="Mover details antes del formulario hace que la pista se lea antes de completar el campo."
+          data-target="details"
+        >
+          <pre data-walk-code="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Estoy aprendiendo a construir una página con sentido.&lt;/p&gt;
+&lt;/header&gt;
+&lt;nav aria-label=&quot;Principal&quot;&gt;
+  &lt;a href=&quot;#temas&quot;&gt;Temas&lt;/a&gt;
+  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section id=&quot;temas&quot;&gt;
+    &lt;h2&gt;Lo que quiero aprender&lt;/h2&gt;
+    &lt;p&gt;Primero estructura, después estilo y finalmente interacción.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTML: contenido&lt;/li&gt;
+      &lt;li&gt;CSS: presentación&lt;/li&gt;
+      &lt;li&gt;JavaScript: interacción&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;figure&gt;
+      &lt;img src=&quot;assets/tutorial-grid.svg&quot; alt=&quot;Diagrama con tres áreas iguales&quot; width=&quot;360&quot; height=&quot;120&quot;&gt;
+      &lt;figcaption&gt;Tres áreas que se pueden distribuir.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;article class=&quot;lesson-card&quot;&gt;
+      &lt;h3&gt;Mi primera ficha&lt;/h3&gt;
+      &lt;p&gt;Una idea que puedo consultar de forma independiente.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;table&gt;
+      &lt;caption&gt;Qué aporta cada lenguaje&lt;/caption&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Lenguaje&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Función&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Estructura&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;Presentación&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/section&gt;
+  &lt;section id=&quot;practica&quot;&gt;
+    &lt;h2&gt;Mi práctica&lt;/h2&gt;
+    &lt;form&gt;
+      &lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;
+      &lt;input id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Comprobar&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Ver una pista&lt;/summary&gt;
+      &lt;p&gt;Empieza por la estructura; después añade estilos.&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer id=&quot;contacto&quot;&gt;
+  &lt;p&gt;Un proyecto para practicar cada día.&lt;/p&gt;
+&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <pre data-walk-code="css"></pre>
+          <pre data-walk-code="js"></pre>
+          <pre data-walk-code="delta"></pre>
+          <nav>
+            <a href="html.html#elemento-details">details</a
+            ><a href="html.html#elemento-summary">summary</a>
+          </nav></template
+        >
+      </section>
+      <section id="fundamentos" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">FUNDAMENTOS</p>
+          <h2>Una etiqueta es una decisión.</h2>
+        </header>
+        <div class="two-columns">
+          <article>
+            <h3>¿Qué es HTML?</h3>
+            <p>
+              HyperText Markup Language es un lenguaje de marcado. No calcula ni
+              controla por sí solo la lógica de un programa: estructura
+              contenido y conecta documentos mediante enlaces.
+            </p>
+            <h3>Cómo se construye un elemento</h3>
+            <pre><code>&lt;a href=&quot;css.html&quot;&gt;Aprender CSS&lt;/a&gt;</code></pre>
+            <dl class="definition-list">
+              <dt>&lt;a&gt;</dt>
+              <dd>Etiqueta de apertura.</dd>
+              <dt>href</dt>
+              <dd>Atributo que define el destino.</dd>
+              <dt>Aprender CSS</dt>
+              <dd>Contenido del enlace.</dd>
+              <dt>&lt;/a&gt;</dt>
+              <dd>Etiqueta de cierre.</dd>
+            </dl>
+            <p>
+              Los elementos vacíos, como img, input y meta, no tienen etiqueta
+              de cierre. En HTML no necesitan una barra final.
+            </p>
+          </article>
+          <article>
+            <h3>Tu primer documento</h3>
+            <pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;Hola, mundo&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;&lt;p&gt;Estoy aprendiendo HTML.&lt;/p&gt;&lt;/main&gt;
+    &lt;footer&gt;&lt;p&gt;Mi proyecto&lt;/p&gt;&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p class="note">
+              DOCTYPE activa el modo estándar; no es una etiqueta de contenido.
+              La sangría facilita la lectura, pero no cambia la jerarquía real
+              de elementos.
+            </p>
+          </article>
+        </div>
+        <section class="callout">
+          <h3>Buenas prácticas desde el principio</h3>
+          <p>
+            Usa encabezados en orden lógico, etiquetas asociadas a controles,
+            alt útil en imágenes e identificadores únicos. Un div es válido para
+            agrupar sin significado específico; evita usarlo como sustituto de
+            un botón o una sección.
+          </p>
+        </section>
+        <details class="explanation">
+          <summary>Atributos que verás a menudo</summary>
+          <dl class="definition-list">
+            <dt>id y class</dt>
+            <dd>
+              Identifican un elemento único o agrupan elementos para estilos y
+              consultas.
+            </dd>
+            <dt>lang y dir</dt>
+            <dd>Indican idioma y dirección del texto.</dd>
+            <dt>data-*</dt>
+            <dd>Guarda datos propios; JavaScript accede mediante dataset.</dd>
+            <dt>hidden</dt>
+            <dd>Oculta contenido que no corresponde mostrar en ese estado.</dd>
+            <dt>aria-*</dt>
+            <dd>
+              Describe estados o relaciones cuando la semántica nativa no basta;
+              no sustituye un elemento correcto.
+            </dd>
+            <dt>name, value y required</dt>
+            <dd>
+              Participan en la captura, envío y validación de formularios.
+            </dd>
+          </dl>
+        </details>
+      </section>
+      <section id="historia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CÓMO LLEGAMOS AQUÍ</p>
+          <h2>De documentos enlazados a la web actual.</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <span class="timeline-date">1989–1991</span>
+            <h3>La propuesta de la web</h3>
+            <p>
+              Tim Berners-Lee desarrolló la idea de documentos conectados
+              mediante hipertexto en CERN; HTML nació como una de sus piezas.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">1995</span>
+            <h3>HTML 2.0</h3>
+            <p>
+              Se formalizó una especificación temprana que incluía las
+              capacidades básicas de la web de la época.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">1997–1999</span>
+            <h3>HTML 3.2 y 4</h3>
+            <p>
+              La estructura de documentos se amplió. La separación entre
+              contenido y presentación ganó importancia con CSS.
+            </p>
+          </li>
+          <li>
+            <span class="timeline-date">2014–hoy</span>
+            <h3>HTML5 y Living Standard</h3>
+            <p>
+              Elementos semánticos, multimedia y APIs modernas. WHATWG mantiene
+              un estándar vivo que sigue evolucionando.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section id="referencia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CONSULTA CUANDO LO NECESITES</p>
+          <h2>Referencia de elementos HTML</h2>
+          <p>
+            Elementos agrupados por función. Abre una ficha para ver
+            descripción, uso, errores frecuentes y un ejemplo. SVG y MathML son
+            lenguajes integrados, no elementos HTML ordinarios.
+          </p>
+        </header>
+        <search class="reference-search">
+          <label for="reference-search">Buscar en la referencia</label
+          ><input
+            id="reference-search"
+            type="search"
+            placeholder="Escribe un nombre o concepto…"
+          /><label for="reference-category">Categoría</label
+          ><select id="reference-category">
+            <option value="">Todas las categorías</option>
+            <option>Documento</option>
+            <option>Semántica y estructura</option>
+            <option>Texto y listas</option>
+            <option>Multimedia e integración</option>
+            <option>Formularios</option>
+            <option>Tablas e interacción</option>
+            <option>Scripts y componentes</option></select
+          ><button type="button" class="button secondary" data-clear-reference>
+            Limpiar
+          </button>
+        </search>
+        <p class="reference-status" role="status"></p>
+        <div class="reference-grid">
+          <article
+            id="elemento-html"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;html&gt; Raíz del documento; lang identifica el idioma. Documento"
+          >
+            <details>
+              <summary><code>&lt;html&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Raíz del documento; lang identifica el idioma.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para envolver todo el documento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No crees varias raíces ni omitas lang.</dd>
+                </dl>
+                <pre><code>&lt;html lang=&quot;es&quot;&gt;…&lt;/html&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-head"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;head&gt; Agrupa metadatos y recursos del documento. Documento"
+          >
+            <details>
+              <summary><code>&lt;head&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Agrupa metadatos y recursos del documento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para título, descripción y enlaces a CSS.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No pongas aquí contenido visible.</dd>
+                </dl>
+                <pre><code>&lt;head&gt;&lt;title&gt;Mi página&lt;/title&gt;&lt;/head&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-title"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;title&gt; Nombre del documento en pestañas y resultados de búsqueda. Documento"
+          >
+            <details>
+              <summary>
+                <code>&lt;title&gt;</code><span>Documento</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Nombre del documento en pestañas y resultados de búsqueda.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Un título específico por página.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo confundas con el h1 visible.</dd>
+                </dl>
+                <pre><code>&lt;title&gt;Guía de HTML | WebLab&lt;/title&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/title"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-meta"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;meta&gt; Define metadatos, codificación y viewport. Documento"
+          >
+            <details>
+              <summary><code>&lt;meta&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Define metadatos, codificación y viewport.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para charset, descripción y adaptación móvil.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No uses etiquetas de palabras clave esperando mejorar el
+                    posicionamiento.
+                  </dd>
+                </dl>
+                <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-link"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;link&gt; Relaciona recursos externos con el documento. Documento"
+          >
+            <details>
+              <summary><code>&lt;link&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Relaciona recursos externos con el documento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para hojas de estilo, iconos o canonical real.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es un enlace de navegación; usa a.</dd>
+                </dl>
+                <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-style"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;style&gt; Contiene reglas CSS internas. Documento"
+          >
+            <details>
+              <summary>
+                <code>&lt;style&gt;</code><span>Documento</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contiene reglas CSS internas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para ejemplos aislados o estilos específicos pequeños.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    En proyectos mantenibles usa una hoja externa compartida.
+                  </dd>
+                </dl>
+                <pre><code>&lt;style&gt;p { color: navy; }&lt;/style&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-base"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;base&gt; Cambia la URL base de todos los enlaces relativos. Documento"
+          >
+            <details>
+              <summary><code>&lt;base&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Cambia la URL base de todos los enlaces relativos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando necesitas una base común deliberada.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo añadas sin revisar rutas, formularios y anclas.</dd>
+                </dl>
+                <pre><code>&lt;base href=&quot;https://example.com/docs/&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-body"
+            class="reference-card"
+            data-reference
+            data-category="Documento"
+            data-keywords="&lt;body&gt; Contiene el contenido de la página. Documento"
+          >
+            <details>
+              <summary><code>&lt;body&gt;</code><span>Documento</span></summary>
+              <div class="reference-content">
+                <p>Contiene el contenido de la página.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Un body por documento.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No distribuyas el contenido en varios body.</dd>
+                </dl>
+                <pre><code>&lt;body&gt;&lt;main&gt;Contenido&lt;/main&gt;&lt;/body&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/body"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-main"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;main&gt; Contenido principal único de la página. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;main&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido principal único de la página.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para la tarea o información central.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No incluyas la navegación global repetida.</dd>
+                </dl>
+                <pre><code>&lt;main id=&quot;contenido&quot;&gt;&lt;h1&gt;Guía&lt;/h1&gt;&lt;/main&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-header"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;header&gt; Introducción de una página o sección. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;header&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Introducción de una página o sección.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para título, marca o navegación contextual.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo uses solo por estar visualmente arriba.</dd>
+                </dl>
+                <pre><code>&lt;header&gt;&lt;h1&gt;Mi artículo&lt;/h1&gt;&lt;/header&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/header"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-footer"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;footer&gt; Pie de la página o de una sección. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;footer&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Pie de la página o de una sección.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para autoría, fuentes o navegación final.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No significa cualquier contenido colocado abajo.</dd>
+                </dl>
+                <pre><code>&lt;footer&gt;&lt;p&gt;Autor: Ana&lt;/p&gt;&lt;/footer&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/footer"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-nav"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;nav&gt; Grupo importante de enlaces de navegación. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;nav&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Grupo importante de enlaces de navegación.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para menú principal o índice.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No envuelvas cada enlace aislado con nav.</dd>
+                </dl>
+                <pre><code>&lt;nav aria-label=&quot;Principal&quot;&gt;&lt;a href=&quot;index.html&quot;&gt;Inicio&lt;/a&gt;&lt;/nav&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-section"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;section&gt; Agrupa un tema del documento. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;section&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupa un tema del documento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para una sección con un encabezado identificable.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para agrupar solo por estilo suele bastar div.</dd>
+                </dl>
+                <pre><code>&lt;section&gt;&lt;h2&gt;Historia&lt;/h2&gt;&lt;p&gt;…&lt;/p&gt;&lt;/section&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/section"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-article"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;article&gt; Contenido independiente que tiene sentido por sí solo. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;article&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido independiente que tiene sentido por sí solo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para publicaciones, reseñas o fichas autónomas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No cualquier columna es un article.</dd>
+                </dl>
+                <pre><code>&lt;article&gt;&lt;h2&gt;Una noticia&lt;/h2&gt;&lt;p&gt;…&lt;/p&gt;&lt;/article&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/article"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-aside"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;aside&gt; Información complementaria al contenido principal. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;aside&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Información complementaria al contenido principal.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para notas relacionadas o referencias laterales.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No elijas aside solo porque está a la derecha.</dd>
+                </dl>
+                <pre><code>&lt;aside&gt;&lt;h2&gt;Para saber más&lt;/h2&gt;&lt;p&gt;…&lt;/p&gt;&lt;/aside&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-address"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;address&gt; Información de contacto del autor de página o artículo. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;address&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Información de contacto del autor de página o artículo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para correo o contacto del responsable.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No para cualquier dirección postal sin relación con la
+                    autoría.
+                  </dd>
+                </dl>
+                <pre><code>&lt;address&gt;&lt;a href=&quot;mailto:ana@example.com&quot;&gt;Ana&lt;/a&gt;&lt;/address&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/address"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-hgroup"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;hgroup&gt; Agrupa un título con contenido secundario relacionado. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;hgroup&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupa un título con contenido secundario relacionado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para título acompañado de subtítulo o entradilla.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituye la jerarquía de encabezados.</dd>
+                </dl>
+                <pre><code>&lt;hgroup&gt;&lt;h1&gt;WebLab&lt;/h1&gt;&lt;p&gt;Aprende construyendo&lt;/p&gt;&lt;/hgroup&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hgroup"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-search"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;search&gt; Región de búsqueda o filtrado. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;search&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>Región de búsqueda o filtrado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para controles que buscan contenido.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo uses como formulario genérico de registro.</dd>
+                </dl>
+                <pre><code>&lt;search&gt;&lt;form&gt;&lt;label&gt;Buscar &lt;input type=&quot;search&quot;&gt;&lt;/label&gt;&lt;/form&gt;&lt;/search&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/search"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h1"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h1&gt; Encabezado de nivel 1; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h1&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 1; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para el título principal de la página.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h1"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h2"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h2&gt; Encabezado de nivel 2; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h2&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 2; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un nivel subordinado al anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h2&gt;Título de sección&lt;/h2&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h2"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h3"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h3&gt; Encabezado de nivel 3; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h3&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 3; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un nivel subordinado al anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h3&gt;Título de sección&lt;/h3&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h3"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h4"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h4&gt; Encabezado de nivel 4; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h4&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 4; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un nivel subordinado al anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h4&gt;Título de sección&lt;/h4&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h4"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h5"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h5&gt; Encabezado de nivel 5; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h5&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 5; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un nivel subordinado al anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h5&gt;Título de sección&lt;/h5&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h5"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-h6"
+            class="reference-card"
+            data-reference
+            data-category="Semántica y estructura"
+            data-keywords="&lt;h6&gt; Encabezado de nivel 6; define jerarquía, no tamaño visual. Semántica y estructura"
+          >
+            <details>
+              <summary>
+                <code>&lt;h6&gt;</code><span>Semántica y estructura</span>
+              </summary>
+              <div class="reference-content">
+                <p>
+                  Encabezado de nivel 6; define jerarquía, no tamaño visual.
+                </p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un nivel subordinado al anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No elijas el nivel para conseguir una fuente más pequeña.
+                  </dd>
+                </dl>
+                <pre><code>&lt;h6&gt;Título de sección&lt;/h6&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/h6"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-p"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;p&gt; Párrafo de texto. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;p&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Párrafo de texto.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para una idea redactada.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo uses como contenedor de listas o secciones.</dd>
+                </dl>
+                <pre><code>&lt;p&gt;Aprender requiere práctica.&lt;/p&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/p"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-div"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;div&gt; Contenedor genérico de contenido en bloque. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;div&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenedor genérico de contenido en bloque.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando no hay un elemento semántico apropiado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No reemplaza automáticamente main, nav o article.</dd>
+                </dl>
+                <pre><code>&lt;div class=&quot;layout&quot;&gt;…&lt;/div&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-span"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;span&gt; Contenedor genérico de texto en línea. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;span&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenedor genérico de texto en línea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para aplicar un estilo sin añadir significado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Si hay importancia usa strong; si hay énfasis usa em.</dd>
+                </dl>
+                <pre><code>&lt;p&gt;Texto &lt;span class=&quot;color&quot;&gt;destacado visualmente&lt;/span&gt;.&lt;/p&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-a"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;a&gt; Enlace a una URL o fragmento. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;a&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Enlace a una URL o fragmento.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para navegar a un destino.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para ejecutar una acción usa button.</dd>
+                </dl>
+                <pre><code>&lt;a href=&quot;#laboratorio&quot;&gt;Ir al laboratorio&lt;/a&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-strong"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;strong&gt; Importancia, seriedad o urgencia. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;strong&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Importancia, seriedad o urgencia.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para información relevante en el significado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No solo para poner texto en negrita.</dd>
+                </dl>
+                <pre><code>&lt;strong&gt;Guarda tus cambios.&lt;/strong&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/strong"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-em"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;em&gt; Énfasis que modifica el sentido al leer. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;em&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Énfasis que modifica el sentido al leer.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para enfatizar una palabra.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No solo para escribir cursiva.</dd>
+                </dl>
+                <pre><code>Lo hizo &lt;em&gt;hoy&lt;/em&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/em"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-b"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;b&gt; Llama la atención sin añadir importancia. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;b&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Llama la atención sin añadir importancia.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para palabras clave cuando no corresponde strong.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No implica urgencia.</dd>
+                </dl>
+                <pre><code>&lt;b&gt;HTML&lt;/b&gt; y &lt;b&gt;CSS&lt;/b&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/b"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-i"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;i&gt; Voz alternativa o término especial. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;i&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Voz alternativa o término especial.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para términos técnicos o expresiones en otro idioma.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituye em para énfasis.</dd>
+                </dl>
+                <pre><code>El término &lt;i lang=&quot;en&quot;&gt;layout&lt;/i&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/i"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-u"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;u&gt; Anotación no textual, como una falta ortográfica. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;u&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Anotación no textual, como una falta ortográfica.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando el subrayado expresa esa anotación.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Evita que parezca un enlace.</dd>
+                </dl>
+                <pre><code>&lt;u class=&quot;error&quot;&gt;ortografia&lt;/u&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/u"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-s"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;s&gt; Contenido que ya no es exacto o relevante. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;s&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido que ya no es exacto o relevante.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un precio anterior.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para una edición eliminada usa del.</dd>
+                </dl>
+                <pre><code>&lt;s&gt;20 €&lt;/s&gt; Ahora 15 €</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/s"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-small"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;small&gt; Comentarios secundarios, aclaraciones o letra pequeña. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;small&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Comentarios secundarios, aclaraciones o letra pequeña.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para notas legales o atribución secundaria.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para reducir el tamaño del contenido principal.</dd>
+                </dl>
+                <pre><code>&lt;small&gt;Condiciones aplicables.&lt;/small&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/small"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-mark"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;mark&gt; Relevancia en el contexto actual. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;mark&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Relevancia en el contexto actual.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para resaltar coincidencias de una búsqueda.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No indica importancia permanente.</dd>
+                </dl>
+                <pre><code>Aprende &lt;mark&gt;HTML&lt;/mark&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/mark"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-abbr"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;abbr&gt; Abreviación que puede tener una expansión. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;abbr&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Abreviación que puede tener una expansión.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para explicar siglas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No dependas solo del tooltip para información esencial.
+                  </dd>
+                </dl>
+                <pre><code>&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/abbr"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-br"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;br&gt; Salto de línea necesario en el contenido. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;br&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Salto de línea necesario en el contenido.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>En poemas o direcciones.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para crear márgenes entre párrafos.</dd>
+                </dl>
+                <pre><code>Calle Uno&lt;br&gt;Ciudad</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/br"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-wbr"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;wbr&gt; Punto permitido de corte de línea. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;wbr&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Punto permitido de corte de línea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>En identificadores o palabras muy largas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No produce un salto obligatorio.</dd>
+                </dl>
+                <pre><code>palabra&lt;wbr&gt;larguísima</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/wbr"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-hr"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;hr&gt; Cambio temático entre contenidos. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;hr&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Cambio temático entre contenidos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar temas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para una línea decorativa usa border en CSS.</dd>
+                </dl>
+                <pre><code>&lt;p&gt;Tema uno&lt;/p&gt;&lt;hr&gt;&lt;p&gt;Tema dos&lt;/p&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-pre"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;pre&gt; Texto preformateado; respeta espacios y saltos. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;pre&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Texto preformateado; respeta espacios y saltos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para bloques de código o texto alineado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses espacios para diseñar columnas de la página.</dd>
+                </dl>
+                <pre><code>&lt;pre&gt;&lt;code&gt;const n = 1;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/pre"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-code"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;code&gt; Fragmento de código. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;code&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fragmento de código.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para etiquetas, funciones o comandos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No implica ejecución.</dd>
+                </dl>
+                <pre><code>&lt;code&gt;document.querySelector()&lt;/code&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-kbd"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;kbd&gt; Entrada del usuario. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;kbd&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Entrada del usuario.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para teclas o comandos que debe escribir.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para resultados del programa.</dd>
+                </dl>
+                <pre><code>Pulsa &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/kbd"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-samp"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;samp&gt; Salida de un programa. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;samp&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Salida de un programa.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un mensaje de consola o respuesta.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para instrucciones de entrada.</dd>
+                </dl>
+                <pre><code>&lt;samp&gt;Archivo guardado&lt;/samp&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/samp"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-var"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;var&gt; Variable o parámetro en una expresión. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;var&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Variable o parámetro en una expresión.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para notación técnica.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No declara una variable JavaScript.</dd>
+                </dl>
+                <pre><code>El valor &lt;var&gt;x&lt;/var&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/var"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-sub"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;sub&gt; Subíndice con significado. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;sub&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Subíndice con significado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>En fórmulas químicas o notación.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para mover texto decorativamente.</dd>
+                </dl>
+                <pre><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/sub"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-sup"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;sup&gt; Superíndice con significado. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;sup&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Superíndice con significado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Exponentes o llamadas a notas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para posiciones visuales usa CSS.</dd>
+                </dl>
+                <pre><code>x&lt;sup&gt;2&lt;/sup&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/sup"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-blockquote"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;blockquote&gt; Cita extensa de otra fuente. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;blockquote&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Cita extensa de otra fuente.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para contenido citado en bloque.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo uses para sangrar cualquier texto.</dd>
+                </dl>
+                <pre><code>&lt;blockquote cite=&quot;https://example.com&quot;&gt;&lt;p&gt;Cita.&lt;/p&gt;&lt;/blockquote&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-q"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;q&gt; Cita breve en línea. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;q&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Cita breve en línea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para palabras citadas dentro de un párrafo.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para destacar una opinión propia.</dd>
+                </dl>
+                <pre><code>Dijo &lt;q&gt;practica cada día&lt;/q&gt;.</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-cite"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;cite&gt; Título de una obra citada. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;cite&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Título de una obra citada.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para libros, artículos o piezas creativas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es el nombre de cualquier persona.</dd>
+                </dl>
+                <pre><code>&lt;cite&gt;Una guía de la web&lt;/cite&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/cite"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-dfn"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;dfn&gt; Término que se define en el contexto. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;dfn&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Término que se define en el contexto.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>En una definición o glosario.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No marca todas las apariciones del término.</dd>
+                </dl>
+                <pre><code>&lt;p&gt;&lt;dfn&gt;DOM&lt;/dfn&gt; es un modelo de objetos del documento.&lt;/p&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dfn"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-time"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;time&gt; Fecha, hora o duración legible por máquinas. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;time&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fecha, hora o duración legible por máquinas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para publicaciones o eventos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No pongas un datetime inválido.</dd>
+                </dl>
+                <pre><code>&lt;time datetime=&quot;2026-10-06&quot;&gt;6 de octubre de 2026&lt;/time&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-data"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;data&gt; Asocia un valor legible por máquinas a un texto. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;data&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Asocia un valor legible por máquinas a un texto.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para códigos de productos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para fechas usa time.</dd>
+                </dl>
+                <pre><code>&lt;data value=&quot;42&quot;&gt;Producto azul&lt;/data&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/data"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-bdi"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;bdi&gt; Aísla la dirección de texto desconocido. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;bdi&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Aísla la dirección de texto desconocido.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para nombres introducidos por usuarios en distintos idiomas.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No cambia por sí solo la dirección de todo el documento.
+                  </dd>
+                </dl>
+                <pre><code>Usuario: &lt;bdi&gt;اسم&lt;/bdi&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/bdi"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-bdo"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;bdo&gt; Sobrescribe la dirección de escritura. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;bdo&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Sobrescribe la dirección de escritura.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para casos explícitos de presentación bidireccional.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No inviertas textos normales sin necesidad.</dd>
+                </dl>
+                <pre><code>&lt;bdo dir=&quot;rtl&quot;&gt;Texto&lt;/bdo&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/bdo"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-ruby"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;ruby&gt; Anotación de pronunciación o lectura. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;ruby&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Anotación de pronunciación o lectura.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para anotaciones de escritura asiática.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como tooltip genérico.</dd>
+                </dl>
+                <pre><code>&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ruby"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-rt"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;rt&gt; Texto de anotación de ruby. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;rt&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Texto de anotación de ruby.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de ruby.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No fuera de una anotación ruby.</dd>
+                </dl>
+                <pre><code>&lt;ruby&gt;字&lt;rt&gt;ji&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/rt"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-rp"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;rp&gt; Paréntesis de respaldo para ruby. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;rp&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Paréntesis de respaldo para ruby.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de ruby para navegadores sin soporte.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como paréntesis independiente.</dd>
+                </dl>
+                <pre><code>&lt;ruby&gt;字&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;ji&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/rp"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-ul"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;ul&gt; Lista sin orden significativo. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;ul&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Lista sin orden significativo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para colecciones o navegación.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Si la secuencia importa usa ol.</dd>
+                </dl>
+                <pre><code>&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;/ul&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-ol"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;ol&gt; Lista con orden significativo. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;ol&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Lista con orden significativo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para instrucciones y rankings.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No solo para obtener números decorativos.</dd>
+                </dl>
+                <pre><code>&lt;ol&gt;&lt;li&gt;Lee&lt;/li&gt;&lt;li&gt;Practica&lt;/li&gt;&lt;/ol&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-li"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;li&gt; Elemento de lista. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;li&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Elemento de lista.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Como hijo de ul, ol o menu.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo dejes sin su lista.</dd>
+                </dl>
+                <pre><code>&lt;ul&gt;&lt;li&gt;Un recurso&lt;/li&gt;&lt;/ul&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-menu"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;menu&gt; Lista de comandos o elementos de menú. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;menu&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Lista de comandos o elementos de menú.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para grupos de acciones; requiere li.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para navegación principal suele ser nav con ul.</dd>
+                </dl>
+                <pre><code>&lt;menu&gt;&lt;li&gt;&lt;button&gt;Copiar&lt;/button&gt;&lt;/li&gt;&lt;/menu&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/menu"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-dl"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;dl&gt; Lista de términos y descripciones. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;dl&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Lista de términos y descripciones.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para glosarios o pares de información.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para cualquier diseño de dos columnas.</dd>
+                </dl>
+                <pre><code>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Estructura&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-dt"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;dt&gt; Término de una lista descriptiva. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;dt&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Término de una lista descriptiva.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de dl.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como encabezado general.</dd>
+                </dl>
+                <pre><code>&lt;dl&gt;&lt;dt&gt;Autor&lt;/dt&gt;&lt;dd&gt;Ana&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dt"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-dd"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;dd&gt; Descripción de un término de dl. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;dd&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Descripción de un término de dl.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Después del término relacionado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No fuera de dl.</dd>
+                </dl>
+                <pre><code>&lt;dl&gt;&lt;dt&gt;CSS&lt;/dt&gt;&lt;dd&gt;Presentación&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dd"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-figure"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;figure&gt; Contenido autónomo ilustrativo. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;figure&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido autónomo ilustrativo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Imágenes, ejemplos o diagramas con posible leyenda.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No cualquier imagen necesita figure.</dd>
+                </dl>
+                <pre><code>&lt;figure&gt;&lt;img src=&quot;foto.jpg&quot; alt=&quot;Montaña&quot;&gt;&lt;figcaption&gt;Una montaña&lt;/figcaption&gt;&lt;/figure&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-figcaption"
+            class="reference-card"
+            data-reference
+            data-category="Texto y listas"
+            data-keywords="&lt;figcaption&gt; Leyenda de una figure. Texto y listas"
+          >
+            <details>
+              <summary>
+                <code>&lt;figcaption&gt;</code><span>Texto y listas</span>
+              </summary>
+              <div class="reference-content">
+                <p>Leyenda de una figure.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Como primer o último hijo de figure.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No fuera de figure.</dd>
+                </dl>
+                <pre><code>&lt;figure&gt;&lt;pre&gt;Ejemplo&lt;/pre&gt;&lt;figcaption&gt;Resultado&lt;/figcaption&gt;&lt;/figure&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figcaption"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-img"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;img&gt; Imagen integrada; alt describe su función. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;img&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Imagen integrada; alt describe su función.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Para contenido visual informativo; alt vacío si es
+                    decorativo.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No omitas alt ni incluyas texto esencial solo como imagen.
+                  </dd>
+                </dl>
+                <pre><code>&lt;img src=&quot;foto.jpg&quot; alt=&quot;Un bosque&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-picture-code-span-multimedia-e-integracion-span-summary-div-class-reference-content-p-selecciona-imagenes-por-formato-o-condicion-p-dl-dt-cuando-usarlo-dt-dd-para-direccion-artistica-y-formatos-alternativos-dd-dt-cuando-evitarlo-dt-dd-no-reemplaza-al-img-final-obligatorio-dd-dl-pre-code-picturesource-srcset-quot-foto-webp-quot-type-quot-image-webp-quot-img-src-quot-foto-jpg-quot-alt-quot-bosque-quot-picture"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;picture&gt; Selecciona imágenes por formato o condición. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;picture&gt;</code
+                ><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Selecciona imágenes por formato o condición.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para dirección artística y formatos alternativos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No reemplaza al img final obligatorio.</dd>
+                </dl>
+                <pre><code>&lt;picture&gt;&lt;source srcset=&quot;foto.webp&quot; type=&quot;image/webp&quot;&gt;&lt;img src=&quot;foto.jpg&quot; alt=&quot;Bosque&quot;&gt;&lt;/picture&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-source"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;source&gt; Fuente alternativa de picture, audio o video. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;source&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fuente alternativa de picture, audio o video.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro del elemento multimedia apropiado.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No muestra por sí mismo un recurso.</dd>
+                </dl>
+                <pre><code>&lt;video controls&gt;&lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-audio"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;audio&gt; Reproductor de audio. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;audio&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Reproductor de audio.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con controles y alternativa textual apropiada.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Evita reproducción automática inesperada.</dd>
+                </dl>
+                <pre><code>&lt;audio controls src=&quot;audio.mp3&quot;&gt;&lt;/audio&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-video"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;video&gt; Reproductor de video. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;video&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Reproductor de video.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Con controles, dimensiones y subtítulos cuando corresponde.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No dependas del sonido para comunicar toda la información.
+                  </dd>
+                </dl>
+                <pre><code>&lt;video controls width=&quot;320&quot; src=&quot;video.mp4&quot;&gt;&lt;/video&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-track"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;track&gt; Pistas de texto para audio o video. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;track&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Pistas de texto para audio o video.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Subtítulos, descripciones o capítulos en WebVTT.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituye el archivo de video.</dd>
+                </dl>
+                <pre><code>&lt;video controls&gt;&lt;track kind=&quot;subtitles&quot; src=&quot;es.vtt&quot; srclang=&quot;es&quot; label=&quot;Español&quot;&gt;&lt;/video&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/track"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-iframe"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;iframe&gt; Documento externo o vista previa incrustada. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;iframe&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Documento externo o vista previa incrustada.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para videos o contenido aislado, con title.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Evita contenido no confiable sin sandbox apropiado.</dd>
+                </dl>
+                <pre><code>&lt;iframe title=&quot;Ejemplo&quot; sandbox src=&quot;ejemplo.html&quot;&gt;&lt;/iframe&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-embed"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;embed&gt; Recurso externo incrustado. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;embed&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Recurso externo incrustado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para contenido que requiere integración específica.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    Prefiere elementos nativos como video o iframe cuando
+                    sirven.
+                  </dd>
+                </dl>
+                <pre><code>&lt;embed src=&quot;documento.pdf&quot; type=&quot;application/pdf&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/embed"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-object"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;object&gt; Recurso externo con contenido alternativo. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;object&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Recurso externo con contenido alternativo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para un recurso que necesita fallback.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No dependas de plugins antiguos.</dd>
+                </dl>
+                <pre><code>&lt;object data=&quot;documento.pdf&quot; type=&quot;application/pdf&quot;&gt;&lt;a href=&quot;documento.pdf&quot;&gt;Abrir PDF&lt;/a&gt;&lt;/object&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/object"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-canvas"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;canvas&gt; Superficie de dibujo controlada por scripts. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;canvas&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Superficie de dibujo controlada por scripts.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para gráficos dinámicos, juegos o dibujo.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para texto esencial sin alternativa accesible.</dd>
+                </dl>
+                <pre><code>&lt;canvas width=&quot;300&quot; height=&quot;150&quot;&gt;Descripción alternativa&lt;/canvas&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/canvas"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-map"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;map&gt; Define un mapa de áreas enlazables. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;map&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Define un mapa de áreas enlazables.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando una imagen necesita regiones interactivas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para mapas geográficos dinámicos complejos.</dd>
+                </dl>
+                <pre><code>&lt;map name=&quot;zonas&quot;&gt;&lt;area shape=&quot;rect&quot; coords=&quot;0,0,100,100&quot; href=&quot;zona.html&quot; alt=&quot;Zona&quot;&gt;&lt;/map&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/map"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-area"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;area&gt; Zona enlazable dentro de map. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;area&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Zona enlazable dentro de map.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con forma, coordenadas, destino y alt.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No fuera de map.</dd>
+                </dl>
+                <pre><code>&lt;area shape=&quot;circle&quot; coords=&quot;50,50,20&quot; href=&quot;info.html&quot; alt=&quot;Información&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/area"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-svg"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;svg&gt; Raíz de gráficos vectoriales; pertenece al espacio SVG. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;svg&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Raíz de gráficos vectoriales; pertenece al espacio SVG.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para iconos y diagramas escalables.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo consideres una etiqueta HTML de texto normal.</dd>
+                </dl>
+                <pre><code>&lt;svg viewBox=&quot;0 0 24 24&quot; aria-label=&quot;Círculo&quot; role=&quot;img&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;8&quot;/&gt;&lt;/svg&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/svg"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-math"
+            class="reference-card"
+            data-reference
+            data-category="Multimedia e integración"
+            data-keywords="&lt;math&gt; Raíz de fórmulas MathML. Multimedia e integración"
+          >
+            <details>
+              <summary>
+                <code>&lt;math&gt;</code><span>Multimedia e integración</span>
+              </summary>
+              <div class="reference-content">
+                <p>Raíz de fórmulas MathML.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para expresiones matemáticas con estructura.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para gráficos generales.</dd>
+                </dl>
+                <pre><code>&lt;math&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/math"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-form"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;form&gt; Agrupa controles para enviar datos. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;form&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupa controles para enviar datos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con método y destino reales o interacción manejada.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No anides formularios.</dd>
+                </dl>
+                <pre><code>&lt;form action=&quot;/buscar&quot; method=&quot;get&quot;&gt;&lt;input name=&quot;q&quot;&gt;&lt;button&gt;Buscar&lt;/button&gt;&lt;/form&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-label"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;label&gt; Nombre accesible de un control. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;label&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Nombre accesible de un control.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Asociado por for e id o envolviendo el control.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Placeholder no sustituye label.</dd>
+                </dl>
+                <pre><code>&lt;label for=&quot;nombre&quot;&gt;Nombre&lt;/label&gt;&lt;input id=&quot;nombre&quot; name=&quot;nombre&quot;&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-input"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;input&gt; Control de entrada según su type. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;input&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Control de entrada según su type.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para texto, correo, número, selección y más.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No uses type=number para teléfonos o códigos postales.
+                  </dd>
+                </dl>
+                <pre><code>&lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-button"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;button&gt; Acción o envío de formulario. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;button&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Acción o envío de formulario.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para acciones; type=button si no debe enviar.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No lo sustituyas por un div clicable.</dd>
+                </dl>
+                <pre><code>&lt;button type=&quot;button&quot;&gt;Mostrar ayuda&lt;/button&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-textarea"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;textarea&gt; Entrada de texto multilínea. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;textarea&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Entrada de texto multilínea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Mensajes, comentarios o editores.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para contraseñas.</dd>
+                </dl>
+                <pre><code>&lt;label&gt;Mensaje&lt;textarea name=&quot;mensaje&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-select"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;select&gt; Selección entre opciones. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;select&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Selección entre opciones.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para listas de opciones conocidas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No fuerces listas enormes sin búsqueda alternativa.</dd>
+                </dl>
+                <pre><code>&lt;select name=&quot;tema&quot;&gt;&lt;option value=&quot;html&quot;&gt;HTML&lt;/option&gt;&lt;/select&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-option"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;option&gt; Una opción de select o datalist. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;option&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Una opción de select o datalist.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de esos controles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como botón independiente.</dd>
+                </dl>
+                <pre><code>&lt;select&gt;&lt;option value=&quot;css&quot;&gt;CSS&lt;/option&gt;&lt;/select&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-optgroup"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;optgroup&gt; Grupo de opciones de select. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;optgroup&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Grupo de opciones de select.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para separar categorías con label.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No contiene otros optgroup anidados.</dd>
+                </dl>
+                <pre><code>&lt;select&gt;&lt;optgroup label=&quot;Lenguajes&quot;&gt;&lt;option&gt;HTML&lt;/option&gt;&lt;/optgroup&gt;&lt;/select&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/optgroup"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-datalist"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;datalist&gt; Sugerencias para un input. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;datalist&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Sugerencias para un input.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Cuando admites entradas distintas de las sugeridas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No es equivalente a select ni garantiza una elección fija.
+                  </dd>
+                </dl>
+                <pre><code>&lt;input list=&quot;temas&quot;&gt;&lt;datalist id=&quot;temas&quot;&gt;&lt;option value=&quot;HTML&quot;&gt;&lt;/datalist&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-fieldset"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;fieldset&gt; Agrupa controles relacionados. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;fieldset&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupa controles relacionados.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para opciones de una misma pregunta.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como caja decorativa sin relación de campos.</dd>
+                </dl>
+                <pre><code>&lt;fieldset&gt;&lt;legend&gt;Preferencias&lt;/legend&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;Avisos&lt;/label&gt;&lt;/fieldset&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-legend"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;legend&gt; Título accesible de un fieldset. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;legend&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Título accesible de un fieldset.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Como primer hijo de fieldset.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es un título genérico de sección.</dd>
+                </dl>
+                <pre><code>&lt;fieldset&gt;&lt;legend&gt;Contacto&lt;/legend&gt;…&lt;/fieldset&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/legend"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-output"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;output&gt; Resultado de un cálculo o acción. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;output&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Resultado de un cálculo o acción.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para resultados asociados a controles.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es un control editable.</dd>
+                </dl>
+                <pre><code>&lt;output for=&quot;a b&quot;&gt;42&lt;/output&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/output"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-progress"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;progress&gt; Progreso de una tarea. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;progress&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Progreso de una tarea.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con value y max, o indeterminado sin value.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Para una medida estática usa meter.</dd>
+                </dl>
+                <pre><code>&lt;label&gt;Descarga &lt;progress value=&quot;30&quot; max=&quot;100&quot;&gt;30 %&lt;/progress&gt;&lt;/label&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/progress"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-meter"
+            class="reference-card"
+            data-reference
+            data-category="Formularios"
+            data-keywords="&lt;meter&gt; Medida dentro de un rango conocido. Formularios"
+          >
+            <details>
+              <summary>
+                <code>&lt;meter&gt;</code><span>Formularios</span>
+              </summary>
+              <div class="reference-content">
+                <p>Medida dentro de un rango conocido.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para capacidad o nivel, con etiqueta.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para indicar carga de una tarea.</dd>
+                </dl>
+                <pre><code>&lt;label&gt;Uso &lt;meter min=&quot;0&quot; max=&quot;100&quot; value=&quot;65&quot;&gt;65 %&lt;/meter&gt;&lt;/label&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-table"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;table&gt; Datos con relaciones entre filas y columnas. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;table&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Datos con relaciones entre filas y columnas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para comparaciones y datos tabulares.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para maquetar toda la página.</dd>
+                </dl>
+                <pre><code>&lt;table&gt;&lt;caption&gt;Notas&lt;/caption&gt;&lt;tr&gt;&lt;th&gt;Alumno&lt;/th&gt;&lt;th&gt;Nota&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-caption"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;caption&gt; Título de una tabla. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;caption&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Título de una tabla.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Como primer hijo de table.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No sustituye los encabezados de columnas.</dd>
+                </dl>
+                <pre><code>&lt;table&gt;&lt;caption&gt;Resultados&lt;/caption&gt;…&lt;/table&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/caption"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-thead"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;thead&gt; Grupo de filas de encabezado. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;thead&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Grupo de filas de encabezado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para organizar encabezados de table.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No implica por sí mismo celdas th.</dd>
+                </dl>
+                <pre><code>&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Nombre&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/thead"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-tbody"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;tbody&gt; Grupo de filas de datos. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;tbody&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Grupo de filas de datos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para el cuerpo de table.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como lista general fuera de table.</dd>
+                </dl>
+                <pre><code>&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-tfoot"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;tfoot&gt; Grupo de filas de resumen. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;tfoot&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Grupo de filas de resumen.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para totales o notas tabulares.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No es el footer de la página.</dd>
+                </dl>
+                <pre><code>&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tfoot"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-tr"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;tr&gt; Fila de una tabla. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;tr&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fila de una tabla.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de table o sus grupos de filas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para filas visuales de Grid.</dd>
+                </dl>
+                <pre><code>&lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tr"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-th"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;th&gt; Celda de encabezado. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;th&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Celda de encabezado.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con scope o asociaciones de encabezados apropiadas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses td en todos los encabezados.</dd>
+                </dl>
+                <pre><code>&lt;th scope=&quot;col&quot;&gt;Precio&lt;/th&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/th"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-td"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;td&gt; Celda de datos. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;td&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Celda de datos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de tr.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para títulos de columna.</dd>
+                </dl>
+                <pre><code>&lt;td&gt;15 €&lt;/td&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/td"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-colgroup"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;colgroup&gt; Agrupa columnas para aplicar propiedades limitadas. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;colgroup&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Agrupa columnas para aplicar propiedades limitadas.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de table antes de los grupos de filas.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>
+                    No permite estilizar todas las propiedades de las celdas.
+                  </dd>
+                </dl>
+                <pre><code>&lt;colgroup&gt;&lt;col span=&quot;2&quot;&gt;&lt;/colgroup&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/colgroup"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-col"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;col&gt; Representa columnas de una tabla. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;col&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Representa columnas de una tabla.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de colgroup.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No contiene celdas ni texto.</dd>
+                </dl>
+                <pre><code>&lt;colgroup&gt;&lt;col class=&quot;precio&quot;&gt;&lt;/colgroup&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/col"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-details"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;details&gt; Contenido expandible nativo. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;details&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido expandible nativo.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para información secundaria consultable.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No ocultes pasos esenciales sin motivo.</dd>
+                </dl>
+                <pre><code>&lt;details&gt;&lt;summary&gt;Más información&lt;/summary&gt;&lt;p&gt;Contenido&lt;/p&gt;&lt;/details&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-summary"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;summary&gt; Etiqueta que abre o cierra details. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;summary&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Etiqueta que abre o cierra details.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Como primer hijo de details.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No como botón genérico fuera de details.</dd>
+                </dl>
+                <pre><code>&lt;details&gt;&lt;summary&gt;Ver ejemplo&lt;/summary&gt;&lt;p&gt;Ejemplo&lt;/p&gt;&lt;/details&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/summary"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-dialog"
+            class="reference-card"
+            data-reference
+            data-category="Tablas e interacción"
+            data-keywords="&lt;dialog&gt; Diálogo o ventana modal. Tablas e interacción"
+          >
+            <details>
+              <summary>
+                <code>&lt;dialog&gt;</code><span>Tablas e interacción</span>
+              </summary>
+              <div class="reference-content">
+                <p>Diálogo o ventana modal.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Con showModal() para modal y cierre accesible.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No uses solo open esperando bloqueo modal.</dd>
+                </dl>
+                <pre><code>&lt;dialog id=&quot;aviso&quot;&gt;&lt;p&gt;Información&lt;/p&gt;&lt;form method=&quot;dialog&quot;&gt;&lt;button&gt;Cerrar&lt;/button&gt;&lt;/form&gt;&lt;/dialog&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-script"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;script&gt; Carga o contiene código o datos estructurados. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;script&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Carga o contiene código o datos estructurados.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>
+                    Con defer para scripts clásicos externos o type=module.
+                  </dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No insertes código externo no confiable.</dd>
+                </dl>
+                <pre><code>&lt;script src=&quot;js/app.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-noscript"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;noscript&gt; Alternativa cuando los scripts no están activos. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;noscript&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Alternativa cuando los scripts no están activos.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para informar de una funcionalidad dependiente de JS.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No reemplaza accesibilidad o contenido básico.</dd>
+                </dl>
+                <pre><code>&lt;noscript&gt;Activa JavaScript para el laboratorio.&lt;/noscript&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/noscript"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-template"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;template&gt; Fragmento inerte que puede clonarse. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;template&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Fragmento inerte que puede clonarse.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para estructura repetida con datos dinámicos.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No esperes verlo hasta insertarlo en el documento.</dd>
+                </dl>
+                <pre><code>&lt;template id=&quot;tarjeta&quot;&gt;&lt;article&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/article&gt;&lt;/template&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-slot"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;slot&gt; Punto de inserción en Shadow DOM. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;slot&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Punto de inserción en Shadow DOM.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Dentro de componentes web.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No funciona como hueco normal fuera de Shadow DOM.</dd>
+                </dl>
+                <pre><code>&lt;slot name=&quot;titulo&quot;&gt;Título predeterminado&lt;/slot&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/slot"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-ins"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;ins&gt; Contenido añadido en una edición. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;ins&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido añadido en una edición.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para marcar cambios con contexto.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>No para cualquier texto subrayado.</dd>
+                </dl>
+                <pre><code>&lt;p&gt;Versión &lt;ins datetime=&quot;2026-10-06&quot;&gt;actualizada&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ins"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+          <article
+            id="elemento-del"
+            class="reference-card"
+            data-reference
+            data-category="Scripts y componentes"
+            data-keywords="&lt;del&gt; Contenido eliminado en una edición. Scripts y componentes"
+          >
+            <details>
+              <summary>
+                <code>&lt;del&gt;</code><span>Scripts y componentes</span>
+              </summary>
+              <div class="reference-content">
+                <p>Contenido eliminado en una edición.</p>
+                <dl>
+                  <dt>Cuándo usarlo</dt>
+                  <dd>Para revisiones y comparaciones.</dd>
+                  <dt>Cuándo evitarlo</dt>
+                  <dd>Si solo dejó de ser relevante usa s.</dd>
+                </dl>
+                <pre><code>&lt;del&gt;Texto anterior&lt;/del&gt; &lt;ins&gt;Texto nuevo&lt;/ins&gt;</code></pre>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/del"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar documentación</a
+                >
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section class="section container">
+        <header class="section-head">
+          <h2>Lo que no conviene usar hoy.</h2>
+          <p>
+            Elementos históricos obsoletos o no conformes. Estúdialos para
+            reconocer código antiguo, no para escribir código nuevo.
+          </p>
+        </header>
+        <div class="callout">
+          <p>
+            <code
+              >acronym, applet, basefont, bgsound, big, blink, center, content,
+              dir, font, frame, frameset, image, isindex, keygen, listing,
+              marquee, menuitem, multicol, nextid, nobr, noembed, noframes,
+              param, plaintext, rb, rtc, shadow, spacer, strike, tt, xmp</code
+            >
+          </p>
+          <p>
+            Prefiere CSS para la presentación, iframe con cuidado para
+            documentos incrustados, abbr para abreviaciones y los controles
+            modernos de formulario. Revisa la alternativa de cada elemento en la
+            referencia oficial antes de migrar código.
+          </p>
+        </div>
+      </section>
+      <section id="laboratorio" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">CAMBIA · EJECUTA · OBSERVA</p>
+          <h2>Tu laboratorio de HTML</h2>
+          <p>
+            Edita el ejemplo y pulsa Ejecutar. El resultado y el código
+            permanecen separados.
+          </p>
+        </header>
+        <div class="playground" data-lab>
+          <section class="editor">
+            <h3>Código editable</h3>
+            <label for="lab-html">HTML</label
+            ><textarea id="lab-html" data-code="html" spellcheck="false">
+&lt;article&gt;
+  &lt;h1&gt;Mi diario de aprendizaje&lt;/h1&gt;
+  &lt;p&gt;Hoy aprendí a dar significado al contenido.&lt;/p&gt;
+  &lt;details&gt;
+    &lt;summary&gt;Mi consejo&lt;/summary&gt;
+    &lt;p&gt;Usa un botón para acciones y un enlace para navegar.&lt;/p&gt;
+  &lt;/details&gt;
+&lt;/article&gt;</textarea
+            ><label for="lab-css">CSS</label
+            ><textarea id="lab-css" data-code="css" spellcheck="false">
+body { font-family: sans-serif; padding: 24px; }
+h1 { color: #b74619; }
+details { padding: 16px; background: #fff2e9; }</textarea>
+            <div class="editor-actions">
+              <button type="button" class="button primary" data-run>
+                Ejecutar</button
+              ><button type="button" class="button secondary" data-reset>
+                Restablecer
+              </button>
+            </div>
+          </section>
+          <section class="preview">
+            <header>
+              <h3>Resultado en el navegador</h3>
+              <span class="live-label">Vista previa</span>
+            </header>
+            <iframe
+              title="Resultado del ejemplo editable"
+              sandbox="allow-scripts allow-forms"
+            ></iframe>
+            <h4>Consola del ejemplo</h4>
+            <pre class="lab-console" role="log" aria-live="polite"></pre>
+          </section>
+        </div>
+        <p class="note">
+          Solo ejecuta código que entiendas. La vista previa está aislada del
+          sitio. Los cambios del editor no se guardan al cerrar la página.
+        </p>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head">
+          <h2>Comprueba lo que entendiste.</h2>
+        </header>
+        <form class="quiz" data-answer="1">
+          <fieldset>
+            <legend>
+              Quieres abrir una ventana de ayuda sin navegar. ¿Qué elemento
+              eliges?
+            </legend>
+            <label
+              ><input type="radio" name="answer" value="0" required /> Un enlace
+              sin destino</label
+            ><label
+              ><input type="radio" name="answer" value="1" required /> Un button
+              de tipo button</label
+            ><label
+              ><input type="radio" name="answer" value="2" required /> Un div
+              con un evento click</label
+            >
+          </fieldset>
+          <button class="button primary" type="submit">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="button aporta semántica, foco y activación mediante teclado. Un enlace corresponde a navegación."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de html">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://html.spec.whatwg.org/"
+              target="_blank"
+              rel="noopener"
+              >WHATWG · HTML</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements"
+              target="_blank"
+              rel="noopener"
+              >MDN · HTML</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://home.cern/science/computing/the-birth-of-the-web/"
+              target="_blank"
+              rel="noopener"
+              >CERN · Historia de la web</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="html" /> Marcar esta página
+          como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

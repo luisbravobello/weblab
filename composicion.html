@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Composición, retícula y jerarquía: fundamentos y ejemplos interactivos de diseño visual en español."
+    />
+    <title>Composición, retícula y jerarquía | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <script src="js/design-data.js" defer></script>
+    <script src="js/design.js" defer></script>
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+  </head>
+  <body data-page="composicion">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html" aria-current="page"
+                >Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="composicion.html#reticula">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">DISEÑO VISUAL · 01</p>
+          <h1>Ordena lo que importa.</h1>
+          <p>
+            Una página comunica antes de que leas cada palabra. Aprende a
+            dirigir la mirada con tamaño, espacio, alineación y estructura.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#jerarquia">Jerarquía</a><a href="#reticula">12 columnas</a
+            ><a href="#distribuciones">Distribuciones</a
+            ><a href="#espaciado">8 puntos</a><a href="#principios">C.R.A.P.</a>
+          </nav>
+        </div>
+      </header>
+      <section id="jerarquia" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Con jerarquía. Sin jerarquía.</h2>
+          <p>
+            El contenido es el mismo. Cambia cómo reconoces la prioridad, el
+            grupo y la acción.
+          </p>
+        </header>
+        <div class="comparison-grid">
+          <figure class="hierarchy-example flat">
+            <figcaption>Sin jerarquía visual</figcaption>
+            <article>
+              <p class="mini-kicker">ESTUDIO DE DISEÑO</p>
+              <h3>Ideas que se convierten en experiencias.</h3>
+              <p>
+                Diseñamos sitios claros para que tus visitantes encuentren lo
+                que necesitan.
+              </p>
+              <p class="mini-meta">Consulta inicial · 30 minutos</p>
+              <button type="button" disabled>Solicitar información</button>
+            </article>
+          </figure>
+          <figure class="hierarchy-example ordered">
+            <figcaption>Con jerarquía visual</figcaption>
+            <article>
+              <p class="mini-kicker">ESTUDIO DE DISEÑO</p>
+              <h3>Ideas que se convierten en experiencias.</h3>
+              <p>
+                Diseñamos sitios claros para que tus visitantes encuentren lo
+                que necesitan.
+              </p>
+              <p class="mini-meta">Consulta inicial · 30 minutos</p>
+              <button type="button" disabled>Solicitar información</button>
+            </article>
+          </figure>
+        </div>
+        <p class="note">
+          Los botones son muestras visuales, no envían datos. La jerarquía
+          visual no sustituye la jerarquía semántica: h1, h2 y h3 deben
+          conservar un orden lógico.
+        </p>
+        <div class="design-three">
+          <article>
+            <h3>Tamaño y peso</h3>
+            <p>
+              Un título relevante puede ser mayor y más pesado que el texto. Si
+              todo grita, nada destaca.
+            </p>
+          </article>
+          <article>
+            <h3>Espacio y agrupación</h3>
+            <p>
+              Acerca una etiqueta a su campo y separa grupos distintos. El
+              espacio crea relaciones.
+            </p>
+          </article>
+          <article>
+            <h3>Color y posición</h3>
+            <p>
+              Reserva el acento para prioridades. Coloca primero la información
+              necesaria para actuar; el patrón de lectura depende del contenido
+              y del idioma.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="reticula" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>La retícula de 12 columnas.</h2>
+          <p>
+            12 se divide entre 2, 3, 4 y 6: permite mitades, tercios y cuartos.
+            Es una herramienta de organización, no una obligación.
+          </p>
+        </header>
+        <div class="two-columns">
+          <form id="grid12-controls" class="control-panel">
+            <fieldset>
+              <legend>Diseña las proporciones</legend>
+              <label for="grid12-split">Distribución</label
+              ><select id="grid12-split">
+                <option value="8,4">8 + 4 · contenido y lateral</option>
+                <option value="6,6">6 + 6 · dos mitades</option>
+                <option value="4,4,4">4 + 4 + 4 · tres tarjetas</option>
+                <option value="3,3,3,3">3 + 3 + 3 + 3 · cuatro tarjetas</option>
+                <option value="12">12 · ancho completo</option>
+                <option value="2,8,2">
+                  2 + 8 + 2 · contenido centrado
+                </option></select
+              ><label for="grid12-gap"
+                >Gutter <output id="grid12-gap-value">16 px</output></label
+              ><input
+                type="range"
+                id="grid12-gap"
+                min="0"
+                max="40"
+                step="8"
+                value="16"
+              /><label
+                ><input id="grid12-overlay" type="checkbox" checked /> Mostrar
+                guías de columnas</label
+              >
+            </fieldset>
+          </form>
+          <section class="grid12-stage" aria-label="Retícula interactiva">
+            <div class="column-ruler" aria-hidden="true">
+              <span>1</span><span>2</span><span>3</span><span>4</span
+              ><span>5</span><span>6</span><span>7</span><span>8</span
+              ><span>9</span><span>10</span><span>11</span><span>12</span>
+            </div>
+            <div id="grid12-preview"></div>
+            <p id="grid12-explanation" role="status"></p>
+          </section>
+        </div>
+        <pre><code>.reticula {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+.contenido { grid-column: span 8; }
+.lateral { grid-column: span 4; }
+@media (max-width: 700px) {
+  .contenido, .lateral { grid-column: 1 / -1; }
+}</code></pre>
+        <div class="callout">
+          <h3>Contenedor, columnas y gutters</h3>
+          <p>
+            El contenedor limita el ancho; las columnas definen las áreas; los
+            gutters separan áreas. Los márgenes exteriores son otra decisión. En
+            móvil puedes apilar el contenido: no necesitas comprimir doce
+            columnas de texto.
+          </p>
+        </div>
+        <template id="grid12-block"
+          ><article class="grid12-block">
+            <h3></h3>
+            <p></p></article
+        ></template>
+      </section>
+      <section id="distribuciones" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Distribuciones de página completas.</h2>
+          <p>
+            Cada estructura resuelve una tarea distinta. Observa el recorrido
+            antes de elegir la distribución.
+          </p>
+        </header>
+        <label for="layout-kind">Tipo de página</label
+        ><select id="layout-kind">
+          <option value="landing">Landing de servicios</option>
+          <option value="editorial">Artículo editorial</option>
+          <option value="shop">Catálogo / tienda</option>
+          <option value="dashboard">Panel de trabajo</option>
+          <option value="portfolio">Portafolio</option>
+          <option value="docs">Documentación</option>
+          <optgroup label="Comercio y contratación">
+            <option
+              value="product"
+              data-layout="portfolio"
+              data-description="Presenta imágenes y especificaciones junto a la decisión de compra. Añade variantes, entrega y devoluciones cerca de la acción."
+              data-feature="Galería del producto"
+              data-title="Descripción y especificaciones"
+              data-body="Características, medidas y preguntas."
+              data-aside="Precio, variantes y compra"
+            >
+              Ficha de producto
+            </option>
+            <option
+              value="cart"
+              data-layout="shop"
+              data-description="Permite revisar productos, cantidades y coste antes de pagar. Muestra cambios y totales sin sorpresas."
+              data-feature="Productos seleccionados"
+              data-title="Revisar el pedido"
+              data-body="Cantidades, disponibilidad y eliminación."
+              data-aside="Resumen y continuar"
+            >
+              Carrito de compra
+            </option>
+            <option
+              value="checkout"
+              data-layout="shop"
+              data-description="Centra el recorrido en datos, envío y pago. Reduce distracciones y ofrece un resumen persistente y errores concretos."
+              data-feature="Datos de contacto y envío"
+              data-title="Método de pago"
+              data-body="Campos etiquetados y validación útil."
+              data-aside="Resumen del pedido"
+            >
+              Checkout / pago
+            </option>
+            <option
+              value="pricing"
+              data-layout="landing"
+              data-description="Compara opciones con criterios equivalentes. Explica límites, periodicidad y coste; una opción recomendada no debe ocultar las demás."
+              data-feature="Propuesta y periodicidad"
+              data-title="Comparación de planes"
+              data-body="Prestaciones, límites y precios claros."
+              data-aside="Preguntas y condiciones"
+            >
+              Planes y precios
+            </option>
+            <option
+              value="booking"
+              data-layout="shop"
+              data-description="Expone servicio, fecha, hora y disponibilidad. El resumen mantiene contexto y confirma zona horaria cuando corresponde."
+              data-feature="Servicio y disponibilidad"
+              data-title="Elegir fecha y hora"
+              data-body="Calendario, duración y datos del visitante."
+              data-aside="Resumen de reserva"
+            >
+              Reservas / citas
+            </option>
+          </optgroup>
+          <optgroup label="Servicios y marcas">
+            <option
+              value="corporate"
+              data-layout="landing"
+              data-description="Explica actividad, propuesta y credenciales. Facilita encontrar servicios y contacto, con una navegación estable."
+              data-feature="Propuesta de la empresa"
+              data-title="Servicios y proyectos"
+              data-body="Evidencia, equipo y trayectoria."
+              data-aside="Contacto y credenciales"
+            >
+              Web corporativa
+            </option>
+            <option
+              value="restaurant"
+              data-layout="portfolio"
+              data-description="Prioriza carta, horarios, ubicación y reservas. Las fotos apoyan la decisión; no deben sustituir precios ni información."
+              data-feature="Cocina y ambiente"
+              data-title="Carta y especialidades"
+              data-body="Platos, precios y opciones alimentarias."
+              data-aside="Horarios y reservar"
+            >
+              Restaurante / cafetería
+            </option>
+            <option
+              value="realestate"
+              data-layout="portfolio"
+              data-description="Permite inspeccionar imágenes, ubicación y características antes de contactar. Expone precio y datos esenciales juntos."
+              data-feature="Galería del inmueble"
+              data-title="Detalles y distribución"
+              data-body="Superficie, habitaciones y condiciones."
+              data-aside="Precio y solicitar visita"
+            >
+              Ficha inmobiliaria
+            </option>
+            <option
+              value="contact"
+              data-layout="shop"
+              data-description="Relaciona un formulario breve con alternativas de contacto. Explica qué ocurre tras el envío y pide solo los datos necesarios."
+              data-feature="Motivo de contacto"
+              data-title="Formulario de consulta"
+              data-body="Nombre, contacto y mensaje."
+              data-aside="Canales y horario"
+            >
+              Contacto / presupuesto
+            </option>
+            <option
+              value="about"
+              data-layout="editorial"
+              data-description="Cuenta quién trabaja y cómo, con hechos y ejemplos. Mantén la historia legible y los datos complementarios bien agrupados."
+              data-feature="Historia y propósito"
+              data-title="Equipo y forma de trabajar"
+              data-body="Trayectoria, procesos y proyectos reales."
+              data-aside="Datos y contacto"
+            >
+              Sobre nosotros / equipo
+            </option>
+            <option
+              value="event"
+              data-layout="landing"
+              data-description="Muestra qué ocurre, cuándo y dónde. Después programa, participantes y registro, con requisitos y accesibilidad explícitos."
+              data-feature="Evento, fecha y lugar"
+              data-title="Programa y participantes"
+              data-body="Agenda, entradas y ubicación."
+              data-aside="Registro y logística"
+            >
+              Evento / conferencia
+            </option>
+            <option
+              value="nonprofit"
+              data-layout="landing"
+              data-description="Explica la causa con evidencia y transparencia. Separa donar, participar e informarse y muestra el impacto de cada acción."
+              data-feature="Causa e impacto"
+              data-title="Proyectos y resultados"
+              data-body="Evidencia, participación y transparencia."
+              data-aside="Donar o colaborar"
+            >
+              Proyecto social / ONG
+            </option>
+          </optgroup>
+          <optgroup label="Contenido y aprendizaje">
+            <option
+              value="blog"
+              data-layout="portfolio"
+              data-description="Organiza publicaciones por tema y actualidad. Distingue el contenido destacado del archivo y deja categorías visibles."
+              data-feature="Artículo destacado"
+              data-title="Publicaciones recientes"
+              data-body="Tarjetas con título, autor, fecha y resumen."
+              data-aside="Temas y archivo"
+            >
+              Portada de blog / revista
+            </option>
+            <option
+              value="course"
+              data-layout="docs"
+              data-description="Conecta índice de módulos, lección y recursos. Haz visible el progreso sin interrumpir el aprendizaje."
+              data-feature="Lección y objetivo"
+              data-title="Contenido y ejercicios"
+              data-body="Explicación, ejemplos y evaluación."
+              data-aside="Recursos y progreso"
+            >
+              Curso / aula virtual
+            </option>
+            <option
+              value="faq"
+              data-layout="editorial"
+              data-description="Agrupa preguntas por intención del usuario. Usa búsqueda y desplegables cuando ayudan; no escondas condiciones esenciales."
+              data-feature="Buscar una respuesta"
+              data-title="Preguntas por categoría"
+              data-body="Respuestas breves y enlaces relacionados."
+              data-aside="Ayuda adicional"
+            >
+              Preguntas frecuentes
+            </option>
+            <option
+              value="knowledge"
+              data-layout="docs"
+              data-description="Expone búsqueda, categorías y artículos de soporte. Mantén rutas de navegación y un canal humano para casos no resueltos."
+              data-feature="Buscar ayuda"
+              data-title="Artículos y guías"
+              data-body="Pasos, soluciones y contenido relacionado."
+              data-aside="Contactar soporte"
+            >
+              Centro de ayuda
+            </option>
+            <option
+              value="search"
+              data-layout="shop"
+              data-description="Mantiene la consulta, los filtros y el total de resultados visibles. Ofrece orden, paginación y un estado vacío útil."
+              data-feature="Consulta y total"
+              data-title="Resultados de búsqueda"
+              data-body="Coincidencias con contexto y orden."
+              data-aside="Filtros y refinamiento"
+            >
+              Resultados de búsqueda
+            </option>
+          </optgroup>
+          <optgroup label="Comunidad y áreas de usuario">
+            <option
+              value="profile"
+              data-layout="dashboard"
+              data-description="Distingue identidad, datos editables, preferencias y acciones sensibles. Guarda cambios con confirmación y errores claros."
+              data-feature="Identidad del usuario"
+              data-title="Información y preferencias"
+              data-body="Datos, actividad y ajustes de cuenta."
+              data-aside="Estado y ayuda"
+            >
+              Perfil / cuenta
+            </option>
+            <option
+              value="login"
+              data-layout="shop"
+              data-description="Centra la tarea en un formulario corto y ayuda de recuperación. Evita navegación que distraiga y condiciones difíciles de encontrar."
+              data-feature="Bienvenida y contexto"
+              data-title="Formulario de acceso"
+              data-body="Credenciales, recuperación y mensajes."
+              data-aside="Ayuda y privacidad"
+            >
+              Acceso / registro
+            </option>
+            <option
+              value="community"
+              data-layout="shop"
+              data-description="Ordena conversaciones por categorías y actividad. Hace reconocibles títulos, autorías y reglas de participación."
+              data-feature="Conversaciones destacadas"
+              data-title="Temas y respuestas"
+              data-body="Actividad, autores y búsqueda."
+              data-aside="Categorías y normas"
+            >
+              Comunidad / foro
+            </option>
+            <option
+              value="chat"
+              data-layout="dashboard"
+              data-description="Relaciona lista de conversaciones, hilo activo y contexto del contacto. El foco de teclado y los nuevos mensajes requieren estados claros."
+              data-feature="Conversación activa"
+              data-title="Mensajes y respuesta"
+              data-body="Historial, escritura y estados de envío."
+              data-aside="Contacto y detalles"
+            >
+              Mensajería / chat
+            </option>
+          </optgroup>
+          <optgroup label="Páginas de estado y soporte">
+            <option
+              value="comingsoon"
+              data-layout="landing"
+              data-description="Explica qué llegará y cuándo si la fecha es real. Ofrece una sola acción útil y no inventes contadores o urgencia."
+              data-feature="Propuesta del lanzamiento"
+              data-title="Información disponible"
+              data-body="Qué esperar y cómo recibir novedades."
+              data-aside="Contacto o notificación"
+            >
+              Próximamente / lanzamiento
+            </option>
+            <option
+              value="confirmation"
+              data-layout="editorial"
+              data-description="Confirma la acción con datos concretos y un siguiente paso. No obliga a repetir el proceso para saber si terminó."
+              data-feature="Confirmación de la acción"
+              data-title="Resumen y siguiente paso"
+              data-body="Referencia, instrucciones y seguimiento."
+              data-aside="Ayuda relacionada"
+            >
+              Confirmación / éxito
+            </option>
+            <option
+              value="error"
+              data-layout="landing"
+              data-description="Explica la ausencia de forma breve y ofrece rutas de recuperación: inicio, búsqueda o sección relevante."
+              data-feature="Página no encontrada"
+              data-title="Opciones para continuar"
+              data-body="Buscar, volver al inicio o consultar ayuda."
+              data-aside="Contacto de soporte"
+            >
+              Error 404 / página no encontrada
+            </option>
+            <option
+              value="status"
+              data-layout="editorial"
+              data-description="Muestra estado actual, incidentes y actualizaciones fechadas. Distingue mantenimiento planificado de fallos activos."
+              data-feature="Estado del servicio"
+              data-title="Incidentes y actualizaciones"
+              data-body="Componentes afectados y progreso."
+              data-aside="Historial y soporte"
+            >
+              Estado del servicio
+            </option>
+          </optgroup>
+        </select>
+        <p id="layout-description" class="note" role="status"></p>
+        <section
+          id="layout-preview"
+          class="layout-preview layout-landing"
+          aria-label="Ejemplo de distribución completa"
+        >
+          <header>Cabecera / marca</header>
+          <nav aria-label="Navegación de ejemplo">Navegación</nav>
+          <article class="layout-feature">Contenido destacado</article>
+          <aside>Información complementaria</aside>
+          <section class="layout-content">
+            <h3>Contenido principal</h3>
+            <p>Textos, servicios o resultados.</p>
+          </section>
+          <footer>Footer / enlaces finales</footer>
+        </section>
+        <div class="design-three">
+          <article>
+            <h3>Landing</h3>
+            <p>
+              Problema, propuesta, evidencia y acción. Una portada breve puede
+              dar contexto; no tapes la tarea principal con un hero enorme.
+            </p>
+          </article>
+          <article>
+            <h3>Panel o catálogo</h3>
+            <p>
+              Controles y resultados visibles pronto. La navegación permanece
+              clara y los filtros conservan contexto.
+            </p>
+          </article>
+          <article>
+            <h3>Editorial o documentación</h3>
+            <p>
+              Texto con medida cómoda, índice cuando haga falta y elementos
+              secundarios que no interrumpan la lectura.
+            </p>
+          </article>
+        </div>
+        <details class="explanation">
+          <summary>Cómo traducir la distribución a HTML</summary>
+          <pre><code>&lt;header&gt;Marca y navegación global&lt;/header&gt;
+&lt;main&gt;
+  &lt;section aria-labelledby=&quot;titulo&quot;&gt;
+    &lt;h1 id=&quot;titulo&quot;&gt;Contenido principal&lt;/h1&gt;
+    &lt;article&gt;Una unidad independiente&lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt;Información relacionada&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Fuentes y enlaces&lt;/footer&gt;</code></pre>
+          <p>
+            La posición visual no determina la etiqueta: una columna no es
+            automáticamente un aside. El significado del contenido decide.
+          </p>
+        </details>
+      </section>
+      <section id="espaciado" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>Un sistema de 8 puntos.</h2>
+          <p>
+            Usa una escala de espacios repetible: 8, 16, 24, 32, 48 y 64 px.
+            Mantiene un ritmo común entre componentes.
+          </p>
+        </header>
+        <div class="spacing-scale">
+          <figure>
+            <span style="width: 8px"></span>
+            <figcaption>8 px</figcaption>
+          </figure>
+          <figure>
+            <span style="width: 16px"></span>
+            <figcaption>16 px</figcaption>
+          </figure>
+          <figure>
+            <span style="width: 24px"></span>
+            <figcaption>24 px</figcaption>
+          </figure>
+          <figure>
+            <span style="width: 32px"></span>
+            <figcaption>32 px</figcaption>
+          </figure>
+          <figure>
+            <span style="width: 48px"></span>
+            <figcaption>48 px</figcaption>
+          </figure>
+          <figure>
+            <span style="width: 64px"></span>
+            <figcaption>64 px</figcaption>
+          </figure>
+        </div>
+        <div class="two-columns">
+          <form class="control-panel">
+            <fieldset>
+              <legend>Ritmo de una tarjeta</legend>
+              <label for="space-unit">Unidad base</label
+              ><select id="space-unit">
+                <option value="8">8 px</option>
+                <option value="4">4 px · detalle fino</option></select
+              ><label for="space-padding">Padding (unidades)</label
+              ><input
+                id="space-padding"
+                type="range"
+                min="1"
+                max="6"
+                value="3"
+              /><label for="space-gap">Separación (unidades)</label
+              ><input id="space-gap" type="range" min="1" max="5" value="2" />
+            </fieldset>
+          </form>
+          <article id="spacing-card">
+            <p class="eyebrow">UN MISMO RITMO</p>
+            <h3>Un poco de aire cambia la lectura.</h3>
+            <p>
+              El padding separa el contenido del borde. El gap separa los
+              elementos entre sí.
+            </p>
+            <button type="button" disabled>Acción de ejemplo</button>
+          </article>
+        </div>
+        <pre><code id="spacing-code"></code></pre>
+        <p class="note">
+          8 puntos no significa que toda medida deba ser múltiplo de 8. Bordes
+          de 1 px, ajustes ópticos e iconos pueden necesitar otras medidas. En
+          web también puedes expresar la escala en rem para respetar ajustes de
+          fuente.
+        </p>
+      </section>
+      <section id="principios" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">DISEÑO QUE PUEDES PROBAR</p>
+          <h2>C.R.A.P.: cuatro decisiones conectadas.</h2>
+          <p>
+            Contraste, repetición, alineación y proximidad ayudan a revisar una
+            composición. Son principios de diseño, no una garantía porcentual ni
+            un criterio automático de calidad.
+          </p>
+        </header>
+        <p class="note">
+          Estos cuatro principios se popularizaron en
+          <a
+            href="https://www.peachpit.com/store/non-designers-design-book-design-and-typographic-principles-9780133966152"
+            target="_blank"
+            rel="noopener"
+            ><cite>The Non-Designer’s Design Book</cite>, de Robin Williams</a
+          >. Los ejemplos de este capítulo son propios.
+        </p>
+        <div class="principle-grid">
+          <article>
+            <span>C</span>
+            <h3>Contraste</h3>
+            <p>
+              Haz distinguibles las prioridades con tamaño, peso, espacio y
+              color. No basta cambiar dos tonos casi idénticos.
+            </p>
+          </article>
+          <article>
+            <span>R</span>
+            <h3>Repetición</h3>
+            <p>
+              Repite patrones de tipografía, botones, espacios y estados.
+              Reutilizar un sistema permite reconocer acciones.
+            </p>
+          </article>
+          <article>
+            <span>A</span>
+            <h3>Alineación</h3>
+            <p>
+              Comparte bordes y ejes. La retícula aporta relaciones visibles sin
+              tener que dibujar cada línea.
+            </p>
+          </article>
+          <article>
+            <span>P</span>
+            <h3>Proximidad</h3>
+            <p>
+              Acerca lo relacionado; separa lo que pertenece a grupos distintos.
+              La distancia comunica estructura.
+            </p>
+          </article>
+        </div>
+        <div class="two-columns">
+          <form id="crap-controls" class="control-panel">
+            <fieldset>
+              <legend>Activa los principios</legend>
+              <label
+                ><input type="checkbox" data-principle="contrast" checked />
+                Contraste</label
+              ><label
+                ><input type="checkbox" data-principle="repetition" checked />
+                Repetición</label
+              ><label
+                ><input type="checkbox" data-principle="alignment" checked />
+                Alineación</label
+              ><label
+                ><input type="checkbox" data-principle="proximity" checked />
+                Proximidad</label
+              >
+            </fieldset>
+          </form>
+          <section
+            id="crap-preview"
+            class="crap-preview contrast repetition alignment proximity"
+            aria-label="Comparación de principios"
+          >
+            <h3>Tu próximo proyecto</h3>
+            <p class="crap-lead">Una idea clara necesita un diseño claro.</p>
+            <article>
+              <h4>Diseño web</h4>
+              <p>Estructura, estilo y comportamiento.</p>
+            </article>
+            <article>
+              <h4>Identidad visual</h4>
+              <p>Un sistema que se reconoce.</p>
+            </article>
+            <div class="crap-actions">
+              <button type="button" disabled>Conocer servicios</button
+              ><button type="button" disabled>Ver proyectos</button>
+            </div>
+          </section>
+        </div>
+        <section class="callout">
+          <h3>Antes de dar una página por terminada</h3>
+          <ul>
+            <li>¿Hay una prioridad clara en cada pantalla?</li>
+            <li>¿Lo relacionado se percibe como grupo?</li>
+            <li>¿Los bordes y espacios siguen un sistema?</li>
+            <li>¿Los estados tienen texto o iconos además de color?</li>
+            <li>
+              ¿La composición sigue siendo usable con teclado, zoom y móvil?
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section id="repaso" class="section container">
+        <header class="section-head">
+          <p class="eyebrow">PIENSA ANTES DE APLICAR</p>
+          <h2>Comprueba tu criterio.</h2>
+        </header>
+        <form class="quiz" data-answer="1">
+          <fieldset>
+            <legend>
+              ¿Qué significa que dos bloques ocupen 8 y 4 columnas?
+            </legend>
+            <label
+              ><input type="radio" name="answer" value="0" required />Cada uno
+              debe medir 8 y 4 píxeles</label
+            ><label
+              ><input type="radio" name="answer" value="1" required />Reparten
+              las 12 pistas de la retícula</label
+            ><label
+              ><input type="radio" name="answer" value="2" required />Siempre
+              conservan esas proporciones en móvil</label
+            >
+          </fieldset>
+          <button type="submit" class="button primary">
+            Comprobar respuesta
+          </button>
+          <p
+            class="quiz-result"
+            role="status"
+            data-reason="Las columnas son pistas del contenedor, no píxeles fijos. En móvil puedes apilar los bloques."
+          ></p>
+        </form>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de composicion">
+        <h2>Fuentes de este tema</h2>
+        <p>Explicaciones y ejemplos propios apoyados en estas referencias:</p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout"
+              target="_blank"
+              rel="noopener"
+              >MDN · Grid</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.peachpit.com/store/non-designers-design-book-design-and-typographic-principles-9780133966152"
+              target="_blank"
+              rel="noopener"
+              >Robin Williams · Ficha editorial</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html">Ver documentación y criterio de fuentes</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="composicion" /> Marcar esta
+          página como estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>
