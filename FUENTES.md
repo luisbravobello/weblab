@@ -104,3 +104,18 @@ Tema: [JSON con ejemplos](json.html). Ejemplos propios de Pokémon y editor loca
 - [MDN · Trabajar con JSON](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON)
 - [MDN · JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 - [MDN · JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+
+## SEO con Google
+
+Tema: [SEO paso a paso](seo.html). Ejemplos propios. Fuentes oficiales de Google Search Central consultadas el 6 de octubre de 2026:
+
+- [Google · Guía SEO para principiantes](https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es)
+- [Google · Cómo funciona la Búsqueda](https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es)
+- [Google · Enlaces de título](https://developers.google.com/search/docs/appearance/title-link?hl=es)
+- [Google · Descripciones y fragmentos](https://developers.google.com/search/docs/appearance/snippet?hl=es)
+- [Google · Sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=es)
+- [Google · robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=es)
+- [Google · noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=es)
+- [Google · URLs canónicas](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=es)
+- [Google · Datos estructurados](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=es)
+- [Google · Search Console](https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=es)

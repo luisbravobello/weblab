@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Aprende SEO con documentación oficial de Google: contenido, títulos, descripciones, rastreo, indexación y Search Console."
+    />
+    <title>SEO con Google paso a paso | WebLab</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="assets/design.css" />
+    <link rel="stylesheet" href="assets/study.css" />
+    <script src="js/study.js" defer></script>
+    <link rel="stylesheet" href="assets/seo.css" />
+    <script type="module" src="js/seo.js"></script>
+  </head>
+  <body data-page="seo">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="seo.html" aria-current="page">SEO con Google</a>
+              <a href="json.html">JSON y datos</a>
+              <a href="redes.html">DNS, HTTP y HTTPS</a>
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <header class="lesson-hero design-theme">
+        <div class="container">
+          <p class="eyebrow">PUBLICAR Y SER ENCONTRADO</p>
+          <h1>SEO para que Google entienda tu web.</h1>
+          <p>
+            Aprende a organizar contenido útil, facilitar su descubrimiento y
+            medir lo que ocurre en Google. Trabaja con ejemplos de PokéAtlas y
+            las referencias oficiales de Google Search Central.
+          </p>
+          <nav class="chapter-nav" aria-label="En esta página">
+            <a href="#busqueda">Cómo funciona</a
+            ><a href="#contenido-seo">Contenido y HTML</a
+            ><a href="#laboratorio">Títulos y descripción</a
+            ><a href="#rastreo">Rastreo e indexación</a
+            ><a href="#search-console">Search Console</a
+            ><a href="#revision">Revisión</a>
+          </nav>
+        </div>
+      </header>
+      <section
+        id="busqueda"
+        class="section container"
+        aria-labelledby="search-title"
+      >
+        <header class="section-head">
+          <h2 id="search-title">1. Distingue tres etapas</h2>
+          <p>
+            SEO significa optimización para motores de búsqueda. Ayuda a
+            descubrir y entender tu contenido; no garantiza aparecer ni ocupar
+            la primera posición.
+          </p>
+        </header>
+        <ol class="seo-stages">
+          <li>
+            <h3>Rastreo</h3>
+            <p>
+              Googlebot descubre direcciones y descarga recursos. Los enlaces
+              entre páginas ayudan a encontrarlas.
+            </p>
+          </li>
+          <li>
+            <h3>Indexación</h3>
+            <p>
+              Google analiza la página y decide si la incorpora a su índice. Una
+              URL rastreada no tiene por qué estar indexada.
+            </p>
+          </li>
+          <li>
+            <h3>Resultados</h3>
+            <p>
+              Ante una búsqueda, Google selecciona resultados según la consulta
+              y otros factores. Una página indexada no aparece siempre en todas
+              las búsquedas.
+            </p>
+          </li>
+        </ol>
+        <p>
+          Los cambios tardan en reflejarse y el efecto varía. Evalúa tendencias;
+          no prometas posiciones por cambiar una etiqueta.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · Cómo funciona la Búsqueda</a
+          >
+        </p>
+      </section>
+      <section
+        id="contenido-seo"
+        class="section container"
+        aria-labelledby="content-title"
+      >
+        <header class="section-head">
+          <h2 id="content-title">2. Empieza por la pregunta de la persona</h2>
+          <p>
+            Una guía de «medallas de Kanto» debe resolver esa consulta con
+            claridad: líder, ciudad y medalla, en lugar de repetir palabras
+            clave.
+          </p>
+        </header>
+        <div class="seo-grid">
+          <article>
+            <h3>Contenido útil</h3>
+            <p>
+              Escribe explicaciones propias, identifica fuentes y revisa la
+              información. Organiza cada página alrededor de un tema claro.
+            </p>
+            <p>
+              En PokéAtlas, una guía de gimnasios tiene un propósito diferente
+              de una ficha de Pokémon.
+            </p>
+          </article>
+          <article>
+            <h3>HTML con sentido</h3>
+            <p>
+              Usa un título principal claro y encabezados que organicen los
+              apartados. <code>main</code>, <code>nav</code>,
+              <code>article</code> y <code>section</code> expresan la
+              estructura; no son atajos para subir posiciones.
+            </p>
+          </article>
+          <article>
+            <h3>Enlaces y direcciones</h3>
+            <p>
+              Utiliza
+              <code
+                >&lt;a href=&quot;gimnasios-kanto.html&quot;&gt;Gimnasios de
+                Kanto&lt;/a&gt;</code
+              >
+              para conectar páginas. El texto del enlace explica el destino.
+            </p>
+            <p>Prefiere rutas comprensibles y evita enlaces rotos.</p>
+          </article>
+          <article>
+            <h3>Imágenes y uso móvil</h3>
+            <p>
+              Describe las imágenes informativas con <code>alt</code>; deja
+              <code>alt=""</code> para las decorativas. Comprime los recursos y
+              comprueba la lectura y navegación en móvil.
+            </p>
+          </article>
+        </div>
+        <p>
+          <strong>Evita:</strong> texto oculto para buscadores, repeticiones
+          forzadas y contenido creado solo para atraer visitas. La etiqueta
+          <code>meta keywords</code> no se utiliza para posicionar en Google.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · Guía de SEO para principiantes</a
+          >
+        </p>
+      </section>
+      <!-- HTML contiene la lección y los ejemplos; JS actualiza la vista y el código. -->
+      <section
+        id="laboratorio"
+        class="section container"
+        aria-labelledby="seo-lab-title"
+      >
+        <header class="section-head">
+          <h2 id="seo-lab-title">3. Escribe un título y una descripción</h2>
+          <p>
+            El título identifica la página. La descripción resume lo que ofrece.
+            Ambos deben ser específicos y coherentes con el contenido.
+          </p>
+        </header>
+        <div class="seo-grid seo-lab">
+          <form id="seo-form">
+            <label for="seo-title">Título de la página</label
+            ><input
+              id="seo-title"
+              maxlength="200"
+              value="Gimnasios de Kanto y sus medallas | PokéAtlas"
+            />
+            <label for="seo-description">Descripción</label
+            ><textarea id="seo-description" rows="4" maxlength="500">
+Consulta los ocho líderes de Kanto, sus ciudades y las medallas que otorgan en Pokémon Rojo Fuego y Verde Hoja.</textarea>
+            <label for="seo-url">URL pública del ejemplo</label
+            ><input
+              id="seo-url"
+              type="url"
+              value="https://pokeatlas.test/gimnasios-kanto.html"
+              aria-describedby="seo-url-help"
+            />
+            <p id="seo-url-help">
+              Usa el dominio definitivo al publicar. El dominio .test es
+              ficticio; el ejercicio no visita ni publica esa dirección.
+            </p>
+            <button class="button secondary" id="seo-reset" type="button">
+              Restablecer ejemplo
+            </button>
+          </form>
+          <article class="seo-result" aria-labelledby="seo-preview-title">
+            <h3 id="seo-preview-title">Vista didáctica de un resultado</h3>
+            <div class="seo-preview">
+              <p class="seo-site">PokéAtlas</p>
+              <p id="seo-preview-url"></p>
+              <h4 id="seo-preview-heading"></h4>
+              <p id="seo-preview-description"></p>
+            </div>
+            <p id="seo-feedback" role="status"></p>
+            <p>
+              Esto es una simulación. Google puede generar un título o fragmento
+              diferente y recortarlo según el contexto y el dispositivo. No
+              existe un número de caracteres que garantice un resultado
+              concreto.
+            </p>
+          </article>
+        </div>
+        <h3>El código que pondrías en el head</h3>
+        <pre class="seo-code"><code id="seo-head-code"></code></pre>
+        <p>
+          <code>rel="canonical"</code> señala la URL preferida de una página
+          cuando hay variantes o duplicados. Es una señal para Google; no
+          publica la página ni obliga a seleccionarla.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/appearance/title-link?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · Enlaces de título</a
+          >
+          ·
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/appearance/snippet?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · Descripciones y fragmentos</a
+          >
+        </p>
+      </section>
+      <section
+        id="rastreo"
+        class="section container"
+        aria-labelledby="crawl-title"
+      >
+        <header class="section-head">
+          <h2 id="crawl-title">4. Facilita el acceso a tus páginas</h2>
+          <p>
+            Google necesita una dirección pública accesible. Tu servidor local
+            sirve para practicar; publicarlo es un paso distinto.
+          </p>
+        </header>
+        <div class="seo-grid">
+          <article>
+            <h3>Sitemap: lista de URLs</h3>
+            <p>
+              Ayuda a descubrir páginas importantes. No sustituye a los enlaces
+              ni garantiza indexación. Incluye URLs públicas que quieras
+              mostrar.
+            </p>
+            <pre
+              class="seo-code"
+            ><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://pokeatlas.test/gimnasios-kanto.html&lt;/loc&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;</code></pre>
+            <p>
+              Ejemplo de <code>sitemap.xml</code>: reemplaza .test por tu
+              dominio publicado.
+            </p>
+          </article>
+          <article>
+            <h3>robots.txt: control del rastreo</h3>
+            <p>
+              Se coloca en la raíz del sitio. Estas líneas no bloquean rutas y
+              señalan el sitemap de ejemplo.
+            </p>
+            <pre class="seo-code"><code>User-agent: *
+Disallow:
+Sitemap: https://pokeatlas.test/sitemap.xml</code></pre>
+            <p>
+              Bloquear una URL con <code>Disallow</code> no asegura que
+              desaparezca del índice. robots.txt tampoco protege archivos
+              privados.
+            </p>
+          </article>
+        </div>
+        <h3>noindex: impedir la indexación</h3>
+        <pre
+          class="seo-code"
+        ><code>&lt;meta name="robots" content="noindex" /&gt;</code></pre>
+        <p>
+          Google debe poder rastrear la página para leer esta instrucción. No la
+          añadas a una página que quieres posicionar y no la combines con un
+          bloqueo de rastreo esperando que Google la lea.
+        </p>
+        <h3>Datos estructurados: describir contenido</h3>
+        <p>
+          El marcado compatible puede ayudar a Google a entender la página y
+          hacerla apta para ciertas apariencias enriquecidas. Debe representar
+          el contenido visible y cumplir sus requisitos; no garantiza un
+          resultado enriquecido.
+        </p>
+        <p>
+          Al estudiar JSON-LD, empieza por
+          <a class="text-link" href="json.html">la sintaxis de JSON</a> y
+          consulta el tipo admitido por Google para tu contenido.
+        </p>
+        <p>
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · Sitemaps</a
+          >
+          ·
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · robots.txt</a
+          >
+          ·
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Google · noindex</a
+          >
+        </p>
+      </section>
+      <section
+        id="search-console"
+        class="section container"
+        aria-labelledby="console-title"
+      >
+        <header class="section-head">
+          <h2 id="console-title">5. Mide con Google Search Console</h2>
+          <p>
+            Después de publicar, utiliza la herramienta para conocer el estado y
+            el rendimiento del sitio. Este tutorial no configura una cuenta ni
+            verifica un dominio.
+          </p>
+        </header>
+        <ol class="seo-steps">
+          <li>
+            <strong>Añade tu propiedad.</strong> Elige dominio o prefijo de URL
+            según el alcance que necesites.
+          </li>
+          <li>
+            <strong>Verifica que controlas el sitio.</strong> Sigue el método
+            que indique Google, por ejemplo un registro DNS para una propiedad
+            de dominio. <a href="redes.html#dns">Repasa DNS</a>.
+          </li>
+          <li>
+            <strong>Inspecciona una URL publicada.</strong> Compara su estado de
+            indexación con la prueba de acceso actual. Pedir indexación no
+            garantiza que ocurra.
+          </li>
+          <li>
+            <strong>Envía el sitemap si lo tienes.</strong> Revisa posibles
+            errores y las páginas detectadas.
+          </li>
+          <li>
+            <strong>Observa el rendimiento.</strong> Compara consultas, páginas,
+            impresiones, clics, CTR y posición media durante periodos
+            comparables.
+          </li>
+        </ol>
+        <p>
+          Una impresión no equivale a un clic. La posición media resume datos;
+          no es una posición fija para cada persona.
+        </p>
+        <p>
+          <a
+            class="button primary"
+            href="https://search.google.com/search-console/about"
+            target="_blank"
+            rel="noopener"
+            >Conocer Search Console</a
+          >
+          <a
+            class="text-link"
+            href="https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=es"
+            target="_blank"
+            rel="noopener"
+            >Guía oficial</a
+          >
+        </p>
+      </section>
+      <section
+        id="revision"
+        class="section container"
+        aria-labelledby="seo-review-title"
+      >
+        <header class="section-head">
+          <h2 id="seo-review-title">6. Revisa tu página antes de publicar</h2>
+          <p>
+            Marca cada punto después de comprobarlo. La lista es un ejercicio;
+            no es una auditoría automática ni una puntuación de posicionamiento.
+          </p>
+        </header>
+        <fieldset class="seo-checklist">
+          <legend>Revisión práctica</legend>
+          <label
+            ><input type="checkbox" data-seo-check /> La página responde una
+            pregunta con información útil y fuentes.</label
+          >
+          <label
+            ><input type="checkbox" data-seo-check /> El título y la descripción
+            corresponden al contenido.</label
+          >
+          <label
+            ><input type="checkbox" data-seo-check /> Los encabezados, enlaces y
+            textos alternativos tienen sentido.</label
+          >
+          <label
+            ><input type="checkbox" data-seo-check /> La navegación funciona en
+            móvil y con teclado.</label
+          >
+          <label
+            ><input type="checkbox" data-seo-check /> La URL pública funciona y
+            no tiene un noindex accidental.</label
+          >
+          <label
+            ><input type="checkbox" data-seo-check /> Los enlaces y recursos
+            importantes no devuelven errores.</label
+          >
+        </fieldset>
+        <p id="seo-check-status" role="status">
+          0 de 6 puntos revisados durante esta visita.
+        </p>
+        <p>
+          <strong>Reto:</strong> compara el título «Inicio» con «Gimnasios de
+          Kanto y sus medallas | PokéAtlas». Explica cuál ayuda más a entender
+          el destino y comprueba que la página cumple esa promesa.
+        </p>
+      </section>
+      <aside class="topic-sources" aria-label="Fuentes de SEO">
+        <h2>Fuentes oficiales de Google</h2>
+        <p>
+          Explicaciones y ejemplos propios. Documentación consultada el 6 de
+          octubre de 2026.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Guía de SEO para principiantes</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Cómo funciona la Búsqueda</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/appearance/title-link?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Enlaces de título</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/appearance/snippet?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Fragmentos y descripciones</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Sitemaps</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/crawling-indexing/robots/intro?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · robots.txt</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · noindex</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · URLs canónicas</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Datos estructurados</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=es"
+              target="_blank"
+              rel="noopener"
+              >Google · Search Console</a
+            >
+          </li>
+        </ul>
+        <a href="fuentes.html#seo">Ver la documentación del tema</a>
+      </aside>
+      <aside class="lesson-completion container">
+        <label
+          ><input type="checkbox" data-progress="seo" /> Marcar esta página como
+          estudiada</label
+        >
+        <p class="progress-feedback" role="status"></p>
+        <a href="practicas.html#progreso">Ver mi progreso</a>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="seo.html">SEO y posicionamiento</a>
+          <a href="json.html">JSON con ejemplos</a>
+          <a href="redes.html">Cómo funciona la web</a>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

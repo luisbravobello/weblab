@@ -1,12 +1,13 @@
 # WebLab
 
-Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 16 páginas de estudio, ejercicios y documentación.
+Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 17 páginas de estudio, ejercicios y documentación.
 
 ## Páginas
 
 | Archivo | Contenido |
 | --- | --- |
 | `index.html` | Portada, recorrido de aprendizaje y ejemplo interactivo |
+| `seo.html` | SEO con Google, simulador de títulos, rastreo, indexación, sitemap, robots, canonical y Search Console |
 | `json.html` | JSON con datos de Pokémon, objetos, listas, tipos, parse, stringify y editor local con validación |
 | `redes.html` | URL, DNS, HTTP, HTTPS, métodos, estados, diagnóstico, recorrido simulado y actividad de repaso |
 | `html.html` | Anatomía del documento, semántica, atributos, referencia de elementos y laboratorio |
@@ -20,7 +21,7 @@ Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y prác
 | `practicas.html` | Seis retos, seis ejercicios de errores y progreso local |
 | `componentes.html` | Pestañas, acordeones, modal, tablas y listas |
 | `proyecto.html` | Proyecto completo y editable en cuatro etapas |
-| `glosario.html` | Treinta y tres términos con búsqueda y documentación |
+| `glosario.html` | Treinta y cuatro términos con búsqueda y documentación |
 | `fuentes.html` | Fuentes, estándares, guías y criterio editorial |
 | `paletas.html` | Creador de paletas aplicado a 31 tipos de página con 12 plantillas completas |
 
@@ -172,3 +173,7 @@ Un iframe srcdoc utiliza modo estándar incluso sin DOCTYPE: el tutorial identif
 ## JSON con ejemplos
 
 `json.html` incluye un editor de texto, tres ejemplos y una vista de Pokémon. `JSON.parse()` valida la sintaxis y los campos se comprueban antes de mostrarlos. `JSON.stringify()` produce la vista con sangría. JavaScript solo actualiza plantillas y textos: no utiliza `eval` ni envía el contenido. Archivos separados: `assets/json-lab.css` y `js/json-lab.js`. Acceso desde el menú, footer, portada y glosario; progreso guardado con los otros temas.
+
+## SEO con Google
+
+`seo.html` incluye fundamentos y referencias oficiales de Google Search Central. El editor genera ejemplos de title, meta description y canonical y una vista didáctica de resultado. No consulta Google, no publica datos y no predice posiciones. La lista de revisión es manual; sus casillas se reinician al recargar. El tema se integra con el progreso de estudio, el menú, footer, portada, glosario y documentación. Estilos e interacción separados: `assets/seo.css` y `js/seo.js`.
