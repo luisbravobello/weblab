@@ -5,18 +5,27 @@
 const desktopDropdowns = matchMedia("(min-width:941px) and (hover:hover)");
 const headerDropdowns = [...document.querySelectorAll("#main-nav > details")];
 headerDropdowns.forEach((dropdown) => {
-  dropdown.addEventListener("pointerenter", () => {
-    if (!desktopDropdowns.matches) return;
+  dropdown.addEventListener("pointerenter", (event) => {
+    if (!desktopDropdowns.matches || event.pointerType !== "mouse") return;
     headerDropdowns.forEach((other) => {
       other.open = other === dropdown;
     });
   });
-  dropdown.addEventListener("pointerleave", () => {
-    if (desktopDropdowns.matches && !dropdown.contains(document.activeElement))
+  dropdown.addEventListener("pointerleave", (event) => {
+    if (
+      desktopDropdowns.matches &&
+      event.pointerType === "mouse" &&
+      !dropdown.contains(document.activeElement)
+    )
       dropdown.open = false;
   });
-  dropdown.addEventListener("focusout", (event) => {
-    if (!dropdown.contains(event.relatedTarget)) dropdown.open = false;
+  // No cerramos por focusout: Safari puede desenfocar antes de emitir el clic
+  // del enlace. Los enlaces mantienen su navegación HTML nativa mediante href.
+  dropdown.addEventListener("toggle", () => {
+    if (!dropdown.open) return;
+    headerDropdowns.forEach((other) => {
+      if (other !== dropdown) other.open = false;
+    });
   });
 });
 document.addEventListener("keydown", (event) => {

@@ -7,23 +7,23 @@ Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y prác
 | Archivo | Contenido |
 | --- | --- |
 | `index.html` | Portada, recorrido de aprendizaje y ejemplo interactivo |
-| `seo.html` | SEO con Google, simulador de títulos, rastreo, indexación, sitemap, robots, canonical y Search Console |
-| `json.html` | JSON con datos de Pokémon, objetos, listas, tipos, parse, stringify y editor local con validación |
-| `redes.html` | URL, DNS, HTTP, HTTPS, métodos, estados, diagnóstico, recorrido simulado y actividad de repaso |
-| `html.html` | Anatomía del documento, semántica, atributos, referencia de elementos y laboratorio |
-| `css.html` | Cascada, modelo de caja, selectores, propiedades y controles visuales |
-| `javascript.html` | Datos, funciones, DOM, eventos, asincronía, contador y consola |
-| `composicion.html` | Jerarquía, retícula de 12 columnas, distribuciones, sistema de 8 puntos y C.R.A.P. |
-| `tipografia.html` | Seis familias, 12 fuentes reales, 15 contextos y escalas tipográficas |
-| `color.html` | Diez tonos, armonías HSL, 15 paletas, regla 60–30–10 y contraste |
-| `accesibilidad.html` | Teclado, foco, formularios, imágenes y revisión |
-| `adaptable.html` | Simulador de anchos y detección de desbordamiento |
-| `practicas.html` | Seis retos, seis ejercicios de errores y progreso local |
-| `componentes.html` | Pestañas, acordeones, modal, tablas y listas |
-| `proyecto.html` | Proyecto completo y editable en cuatro etapas |
-| `glosario.html` | Treinta y cuatro términos con búsqueda y documentación |
-| `fuentes.html` | Fuentes, estándares, guías y criterio editorial |
-| `paletas.html` | Creador de paletas aplicado a 31 tipos de página con 12 plantillas completas |
+| `pages/seo.html` | SEO con Google, simulador de títulos, rastreo, indexación, sitemap, robots, canonical y Search Console |
+| `pages/json.html` | JSON con datos de Pokémon, objetos, listas, tipos, parse, stringify y editor local con validación |
+| `pages/redes.html` | URL, DNS, HTTP, HTTPS, métodos, estados, diagnóstico, recorrido simulado y actividad de repaso |
+| `pages/html.html` | Anatomía del documento, semántica, atributos, referencia de elementos y laboratorio |
+| `pages/css.html` | Cascada, modelo de caja, selectores, propiedades y controles visuales |
+| `pages/javascript.html` | Datos, funciones, DOM, eventos, asincronía, contador y consola |
+| `pages/composicion.html` | Jerarquía, retícula de 12 columnas, distribuciones, sistema de 8 puntos y C.R.A.P. |
+| `pages/tipografia.html` | Seis familias, 12 fuentes reales, 15 contextos y escalas tipográficas |
+| `pages/color.html` | Diez tonos, armonías HSL, 15 paletas, regla 60–30–10 y contraste |
+| `pages/accesibilidad.html` | Teclado, foco, formularios, imágenes y revisión |
+| `pages/adaptable.html` | Simulador de anchos y detección de desbordamiento |
+| `pages/practicas.html` | Seis retos, seis ejercicios de errores y progreso local |
+| `pages/componentes.html` | Pestañas, acordeones, modal, tablas y listas |
+| `pages/proyecto.html` | Proyecto completo y editable en cuatro etapas |
+| `pages/glosario.html` | Treinta y cuatro términos con búsqueda y documentación |
+| `pages/fuentes.html` | Fuentes, estándares, guías y criterio editorial |
+| `pages/paletas.html` | Creador de paletas aplicado a 31 tipos de página con 12 plantillas completas |
 
 ## Cómo estudiar
 
@@ -58,38 +58,51 @@ El progreso marcado sí se conserva mediante localStorage para el mismo origen y
 ```text
 weblab/
 ├── index.html
-├── html.html
-├── css.html
-├── javascript.html
-├── composicion.html
-├── tipografia.html
-├── color.html
-├── accesibilidad.html
-├── adaptable.html
-├── practicas.html
-├── componentes.html
-├── proyecto.html
-├── glosario.html
-├── fuentes.html
-├── paletas.html
 ├── README.md
-├── FUENTES.md
+├── pages/
+│   ├── accesibilidad.html
+│   ├── adaptable.html
+│   ├── color.html
+│   ├── componentes.html
+│   ├── composicion.html
+│   ├── css.html
+│   ├── fuentes.html
+│   ├── glosario.html
+│   ├── html.html
+│   ├── javascript.html
+│   ├── json.html
+│   ├── paletas.html
+│   ├── practicas.html
+│   ├── proyecto.html
+│   ├── redes.html
+│   ├── seo.html
+│   └── tipografia.html
+├── docs/
+│   └── FUENTES.md
 ├── assets/
-│   ├── style.css
 │   ├── design.css
-│   ├── study.css
-│   ├── palette.css
+│   ├── json-lab.css
+│   ├── network.css
 │   ├── palette-preview.css
-│   ├── tutorial.css
-│   └── tutorial-grid.svg
+│   ├── palette.css
+│   ├── seo.css
+│   ├── study.css
+│   ├── style.css
+│   ├── tutorial-grid.svg
+│   └── tutorial.css
 └── js/
     ├── app.js
     ├── design-data.js
     ├── design.js
-    ├── study.js
+    ├── json-lab.js
+    ├── network.js
     ├── palette.js
+    ├── seo.js
+    ├── study.js
     └── tutorial.js
 ```
+
+Las 17 páginas de estudio están en `pages/`; las fuentes en Markdown están en `docs/FUENTES.md`. `index.html` permanece en la raíz como entrada del alojamiento estático. Publica la carpeta `weblab/` completa, con sus subcarpetas. Las rutas de las lecciones cambian a `/pages/nombre.html`; actualiza los enlaces externos que apunten a las rutas anteriores.
 
 El contenido y la estructura están en HTML. CSS controla el diseño adaptable, las tipografías y los estados visuales. JavaScript maneja navegación móvil, búsqueda local, laboratorios, contador y comprobación de respuestas.
 
@@ -123,7 +136,7 @@ Las fichas son explicaciones educativas breves. Consulta los enlaces de document
 
 ## Creador de paletas en páginas completas
 
-El laboratorio de `paletas.html` permite combinar tipo de página y contexto de negocio. Sus 31 opciones comparten 12 plantillas visuales completas: landing, portafolio, editorial, catálogo, panel, documentación, producto, proceso con formulario, precios, chat, perfil y estado.
+El laboratorio de `pages/paletas.html` permite combinar tipo de página y contexto de negocio. Sus 31 opciones comparten 12 plantillas visuales completas: landing, portafolio, editorial, catálogo, panel, documentación, producto, proceso con formulario, precios, chat, perfil y estado.
 
 Puedes ajustar fondo, superficie, acento y texto en tiempo real, probar tres anchos de viewport, generar superficies desde un acento mediante relaciones HSL, comprobar contraste y copiar el CSS. Los botones de las maquetas están desactivados: no son tiendas ni servicios reales. El cambio de paleta conserva la vista; cambiar de plantilla reinicia el documento del ejemplo.
 
@@ -131,7 +144,7 @@ La página enlaza Coolors, Adobe Color, Realtime Colors, Happy Hues y Color Hunt
 
 ## Fuentes de consulta
 
-Consulta [FUENTES.md](FUENTES.md) para conocer el criterio editorial y [fuentes.html](fuentes.html) para acceder a las referencias desde la web. Cada capítulo enlaza las fuentes relacionadas; el footer incluye accesos rápidos a estudio y documentación.
+Consulta [FUENTES.md](docs/FUENTES.md) para conocer el criterio editorial y [fuentes.html](pages/fuentes.html) para acceder a las referencias desde la web. Cada capítulo enlaza las fuentes relacionadas; el footer incluye accesos rápidos a estudio y documentación.
 
 - [HTML Living Standard](https://html.spec.whatwg.org/)
 - [Referencia HTML en MDN](https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements)
@@ -168,15 +181,15 @@ Un iframe srcdoc utiliza modo estándar incluso sin DOCTYPE: el tutorial identif
 
 ## DNS y HTTP
 
-`redes.html` explica el recorrido desde una URL hasta su representación. La simulación permite elegir HTTP o HTTPS y respuestas 200, 404 y 500; sus controles solo muestran contenido ya definido en HTML. No realiza consultas DNS ni peticiones HTTP reales. Incluye una actividad de repaso y se integra con el progreso local. Estilos: `assets/network.css`. Interacción: `js/network.js`. Referencias enlazadas en el tema, la documentación y el footer.
+`pages/redes.html` explica el recorrido desde una URL hasta su representación. La simulación permite elegir HTTP o HTTPS y respuestas 200, 404 y 500; sus controles solo muestran contenido ya definido en HTML. No realiza consultas DNS ni peticiones HTTP reales. Incluye una actividad de repaso y se integra con el progreso local. Estilos: `assets/network.css`. Interacción: `js/network.js`. Referencias enlazadas en el tema, la documentación y el footer.
 
 ## JSON con ejemplos
 
-`json.html` incluye un editor de texto, tres ejemplos y una vista de Pokémon. `JSON.parse()` valida la sintaxis y los campos se comprueban antes de mostrarlos. `JSON.stringify()` produce la vista con sangría. JavaScript solo actualiza plantillas y textos: no utiliza `eval` ni envía el contenido. Archivos separados: `assets/json-lab.css` y `js/json-lab.js`. Acceso desde el menú, footer, portada y glosario; progreso guardado con los otros temas.
+`pages/json.html` incluye un editor de texto, tres ejemplos y una vista de Pokémon. `JSON.parse()` valida la sintaxis y los campos se comprueban antes de mostrarlos. `JSON.stringify()` produce la vista con sangría. JavaScript solo actualiza plantillas y textos: no utiliza `eval` ni envía el contenido. Archivos separados: `assets/json-lab.css` y `js/json-lab.js`. Acceso desde el menú, footer, portada y glosario; progreso guardado con los otros temas.
 
 ## SEO con Google
 
-`seo.html` incluye fundamentos y referencias oficiales de Google Search Central. El editor genera ejemplos de title, meta description y canonical y una vista didáctica de resultado. No consulta Google, no publica datos y no predice posiciones. La lista de revisión es manual; sus casillas se reinician al recargar. El tema se integra con el progreso de estudio, el menú, footer, portada, glosario y documentación. Estilos e interacción separados: `assets/seo.css` y `js/seo.js`.
+`pages/seo.html` incluye fundamentos y referencias oficiales de Google Search Central. El editor genera ejemplos de title, meta description y canonical y una vista didáctica de resultado. No consulta Google, no publica datos y no predice posiciones. La lista de revisión es manual; sus casillas se reinician al recargar. El tema se integra con el progreso de estudio, el menú, footer, portada, glosario y documentación. Estilos e interacción separados: `assets/seo.css` y `js/seo.js`.
 
 ### SEO dentro de HTML
 

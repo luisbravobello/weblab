@@ -2,7 +2,7 @@
 
 Revisión de documentación: **6 de octubre de 2026**.
 
-La página [Documentación y fuentes](fuentes.html) relaciona cada referencia con el tema que apoya. Los capítulos también incluyen una sección de fuentes, y el footer ofrece accesos rápidos a la documentación.
+La página [Documentación y fuentes](../pages/fuentes.html) relaciona cada referencia con el tema que apoya. Los capítulos también incluyen una sección de fuentes, y el footer ofrece accesos rápidos a la documentación.
 
 ## Qué se considera una fuente
 
@@ -84,7 +84,7 @@ Las páginas no constituyen una auditoría completa, una certificación, ni una 
 
 ## DNS, HTTP y HTTPS
 
-Tema: [Cómo funciona la web](redes.html). Recorrido y ejemplos propios; los dominios e IP de la simulación son de documentación. Referencias consultadas el 6 de octubre de 2026:
+Tema: [Cómo funciona la web](../pages/redes.html). Recorrido y ejemplos propios; los dominios e IP de la simulación son de documentación. Referencias consultadas el 6 de octubre de 2026:
 
 - [MDN · Cómo funciona la web](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works)
 - [MDN · DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS)
@@ -99,7 +99,7 @@ Tema: [Cómo funciona la web](redes.html). Recorrido y ejemplos propios; los dom
 
 ## JSON y datos
 
-Tema: [JSON con ejemplos](json.html). Ejemplos propios de Pokémon y editor local. Referencias consultadas el 6 de octubre de 2026:
+Tema: [JSON con ejemplos](../pages/json.html). Ejemplos propios de Pokémon y editor local. Referencias consultadas el 6 de octubre de 2026:
 
 - [MDN · Trabajar con JSON](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON)
 - [MDN · JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
@@ -107,7 +107,7 @@ Tema: [JSON con ejemplos](json.html). Ejemplos propios de Pokémon y editor loca
 
 ## SEO con Google
 
-Tema: [SEO paso a paso](seo.html). Ejemplos propios. Fuentes oficiales de Google Search Central consultadas el 6 de octubre de 2026:
+Tema: [SEO paso a paso](../pages/seo.html). Ejemplos propios. Fuentes oficiales de Google Search Central consultadas el 6 de octubre de 2026:
 
 - [Google · Guía SEO para principiantes](https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es)
 - [Google · Cómo funciona la Búsqueda](https://developers.google.com/search/docs/fundamentals/how-search-works?hl=es)

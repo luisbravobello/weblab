@@ -114,7 +114,7 @@ function renderThemePage() {
   const holder = document.createElement("div");
   holder.append(fragment);
   const run = ++themeRun;
-  const stylesheet = new URL("assets/palette-preview.css", location.href).href;
+  const stylesheet = new URL("../assets/palette-preview.css", location.href).href;
   const bridge = `window.addEventListener('message',event=>{if(event.source!==parent||event.data?.type!=='weblab-theme'||event.data.run!==${run})return;const allowed=['background','surface','accent','text','surface-text','button-text'];allowed.forEach(role=>{const value=event.data.colors?.[role];if(/^#[0-9a-f]{6}$/i.test(value||''))document.documentElement.style.setProperty('--'+role,value);});document.querySelectorAll('[data-brand]').forEach(brand=>brand.textContent=String(event.data.brand).slice(0,45));});window.addEventListener('load',()=>parent.postMessage({type:'weblab-theme-ready',run:${run}},'*'));`;
   themeFrame.srcdoc = `<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${location.origin}; script-src 'unsafe-inline'; form-action 'none'"><link rel="stylesheet" href="${stylesheet}"></head><body>${holder.innerHTML}<script>${bridge}<\/script></body></html>`;
   themeFrame.style.width = paletteNode("theme-width").value + "px";

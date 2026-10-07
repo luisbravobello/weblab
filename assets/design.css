@@ -32,6 +32,10 @@
   box-shadow: 0 16px 40px #18213a18;
   border-radius: 14px;
 }
+/* Safari: los enlaces cerrados no deben quedar visibles ni recibir toques. */
+.design-nav:not([open]) > nav {
+  display: none;
+}
 .design-nav nav::before {
   content: "";
   position: absolute;

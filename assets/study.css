@@ -298,7 +298,9 @@ dialog::backdrop {
   }
 }
 @media (max-width: 940px) {
-  .design-nav nav::before { display: none; }
+  .design-nav nav::before {
+    display: none;
+  }
   .nav-inner {
     min-height: 72px;
     display: grid;
@@ -324,6 +326,11 @@ dialog::backdrop {
   }
   #main-nav.is-open {
     display: grid;
+    /* Mantiene todas las opciones accesibles en pantallas bajas y en iPhone. */
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   #main-nav a {
     padding: 10px;
@@ -333,6 +340,8 @@ dialog::backdrop {
   }
   .design-nav summary {
     padding: 10px;
+    min-height: 44px;
+    touch-action: manipulation;
   }
   .design-nav nav {
     position: static;

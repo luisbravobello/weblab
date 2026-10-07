@@ -163,7 +163,9 @@ function renderWalk() {
     /<\/body>$/,
     `${scriptInHead ? "" : `<script>${safeJs}<\/script>`}</body>`,
   );
-  const previewHtml = `${doctype}${htmlTag}<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="${csp}"><base href="${location.href}">${head}<style>${safeCss}</style><script>${bridge}${focusPractice}${modeReport}<\/script>${scriptInHead ? `<script>${safeJs}<\/script>` : ""}</head>${bodyWithScripts}</html>`;
+  // Los ejemplos enseñan un index.html en la raíz; sus recursos parten de allí.
+  const exampleBase = new URL("../", location.href).href;
+  const previewHtml = `${doctype}${htmlTag}<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="${csp}"><base href="${exampleBase}">${head}<style>${safeCss}</style><script>${bridge}${focusPractice}${modeReport}<\/script>${scriptInHead ? `<script>${safeJs}<\/script>` : ""}</head>${bodyWithScripts}</html>`;
   walkFrame.removeAttribute("src");
   walkFrame.srcdoc = previewHtml;
   walkFrame.style.width =
