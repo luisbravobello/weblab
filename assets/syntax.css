@@ -1,0 +1,47 @@
+/* A consistent, high-contrast editor palette in both page themes. */
+html body .syntax-block,
+html body .syntax-editor{
+ --code-text:#e4ebf7;--code-muted:#a3b1c7;--code-tag:#ff9fac;
+ --code-attr:#8cdcf7;--code-value:#b2e7a3;--code-key:#d6b0ff;
+ --code-function:#f4d88c;--code-number:#ffc18e;
+ background:#0e1625;color:var(--code-text);border:1px solid #35435c;
+ border-radius:12px;box-shadow:0 4px 12px #0e16250a;
+}
+html body .syntax-block{border-left:3px solid #819bdb;line-height:1.85;tab-size:2;text-shadow:none}
+html body .syntax-block[data-syntax=markup]{border-left-color:#e9a1b1}
+html body .syntax-block[data-syntax=css]{border-left-color:#91cbe8}
+html body .syntax-block[data-syntax=javascript]{border-left-color:#dec27e}
+html body .syntax-block :is(code,.syntax-code){color:inherit;background:none;padding:0;border:0;font-size:inherit;font-weight:400;text-shadow:none}
+:is(.syntax-block,.syntax-editor) .token{background:none;font-style:normal;font-weight:400;text-shadow:none}
+:is(.syntax-block,.syntax-editor) :is(.comment,.prolog,.doctype,.cdata){color:var(--code-muted)}
+:is(.syntax-block,.syntax-editor) :is(.tag,.deleted){color:var(--code-tag)}
+:is(.syntax-block,.syntax-editor) :is(.attr-name,.property,.selector){color:var(--code-attr)}
+:is(.syntax-block,.syntax-editor) :is(.string,.attr-value,.char,.inserted){color:var(--code-value)}
+:is(.syntax-block,.syntax-editor) :is(.keyword,.atrule,.boolean,.important){color:var(--code-key)}
+:is(.syntax-block,.syntax-editor) :is(.function,.class-name){color:var(--code-function)}
+:is(.syntax-block,.syntax-editor) :is(.number,.constant,.regex){color:var(--code-number)}
+:is(.syntax-block,.syntax-editor) :is(.punctuation,.operator,.entity,.url){color:#c0cce1}
+.syntax-inline{--inline-key:#6b269b;--inline-value:#226336;--inline-tag:#9b304d;--inline-attr:#175e7a;--inline-number:#884518}
+.syntax-inline .token{background:none;font-weight:500}
+.syntax-inline :is(.keyword,.atrule,.boolean){color:var(--inline-key)}
+.syntax-inline :is(.string,.attr-value){color:var(--inline-value)}
+.syntax-inline .tag{color:var(--inline-tag)}
+.syntax-inline :is(.attr-name,.property){color:var(--inline-attr)}
+.syntax-inline .number{color:var(--inline-number)}
+[data-theme=dark] .syntax-inline{--inline-key:#d6b0ff;--inline-value:#b2e7a3;--inline-tag:#ffb3be;--inline-attr:#8cdcf7;--inline-number:#ffc18e}
+html body .syntax-editor{position:relative;min-width:0;overflow:hidden;border:0;box-shadow:none;margin:0}
+html body .syntax-editor textarea,
+html body .syntax-editor .syntax-mirror{
+ box-sizing:border-box;margin:0;padding:18px;font:400 13px/1.8 "JetBrains Mono",monospace;
+ font-variant-ligatures:none;letter-spacing:normal;text-align:left;text-indent:0;
+ tab-size:2;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;
+}
+html body .syntax-editor textarea{position:relative;z-index:1;display:block;width:100%;background:transparent!important;border-color:#35435c;border-radius:12px}
+html body .syntax-editor textarea.syntax-ready{color:transparent!important;-webkit-text-fill-color:transparent;caret-color:#f1f5ff}
+html body .syntax-editor textarea::placeholder{color:#a3b1c7;-webkit-text-fill-color:#a3b1c7}
+html body .syntax-editor textarea::selection{background:#38538388}
+html body .syntax-editor .syntax-mirror{position:absolute;z-index:0;pointer-events:none;overflow:hidden;border:0;border-radius:0;background:transparent;color:var(--code-text);max-height:none;min-height:0;box-shadow:none}
+html body .syntax-editor:focus-within{outline:3px solid #819bdb;outline-offset:4px}
+html body .syntax-editor textarea:focus-visible{outline:0}
+@media(forced-colors:active){html body .syntax-editor .syntax-mirror{display:none}html body .syntax-editor textarea.syntax-ready{color:CanvasText!important;-webkit-text-fill-color:CanvasText;caret-color:CanvasText}}
+@media print{html body .syntax-block{background:#fff;color:#111;border-color:#555}html body .syntax-block .token{color:#111}html body .syntax-editor .syntax-mirror{display:none}html body .syntax-editor textarea.syntax-ready{color:#111!important;-webkit-text-fill-color:#111;background:#fff!important}}

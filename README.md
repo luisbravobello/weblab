@@ -1,6 +1,6 @@
 # WebLab
 
-Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 17 páginas de estudio, ejercicios y documentación.
+Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y práctica**, creada sin frameworks. Incluye una portada y 18 páginas de estudio, ejercicios y documentación.
 
 ## Páginas
 
@@ -8,6 +8,7 @@ Web de estudio en español sobre **HTML, CSS, JavaScript, diseño visual y prác
 | --- | --- |
 | `index.html` | Portada, recorrido de aprendizaje y ejemplo interactivo |
 | `pages/seo.html` | SEO con Google, simulador de títulos, rastreo, indexación, sitemap, robots, canonical y Search Console |
+| `pages/repaso.html` | Repaso ISW-312: 50 preguntas, 50 ejercicios con soluciones y 50 casos razonados |
 | `pages/json.html` | JSON con datos de Pokémon, objetos, listas, tipos, parse, stringify y editor local con validación |
 | `pages/redes.html` | URL, DNS, HTTP, HTTPS, métodos, estados, diagnóstico, recorrido simulado y actividad de repaso |
 | `pages/html.html` | Anatomía del documento, semántica, atributos, referencia de elementos y laboratorio |
@@ -102,7 +103,23 @@ weblab/
     └── tutorial.js
 ```
 
-Las 17 páginas de estudio están en `pages/`; las fuentes en Markdown están en `docs/FUENTES.md`. `index.html` permanece en la raíz como entrada del alojamiento estático. Publica la carpeta `weblab/` completa, con sus subcarpetas. Las rutas de las lecciones cambian a `/pages/nombre.html`; actualiza los enlaces externos que apunten a las rutas anteriores.
+Las 18 páginas de estudio están en `pages/`; las fuentes en Markdown están en `docs/FUENTES.md`. `index.html` permanece en la raíz como entrada del alojamiento estático. Publica la carpeta `weblab/` completa, con sus subcarpetas. Las rutas de las lecciones cambian a `/pages/nombre.html`; actualiza los enlaces externos que apunten a las rutas anteriores.
+
+## Repaso preparcial ISW-312
+
+Integrado desde `repaso-preparcial-isw312 (1).html`. El archivo original, sin modificar, está en `material/repaso-preparcial-original.html`. La versión integrada adapta las 20 preguntas diagnósticas y los 7 ejercicios de partida, y añade 30 preguntas y 43 ejercicios hasta llegar a **50 preguntas, 50 ejercicios y 50 casos**. Aclara const y mutabilidad, encabezados y SEO, metadatos, ejes de flex, mínimos del grid y manejo de fetch. `js/review-data.js` contiene los datos adaptados, `js/review-extra.js` las ampliaciones; `assets/review.css` y `js/review.js` presentan e interactúan con el repaso.
+
+`js/case-bank.js` contiene exactamente 50 casos distintos: 7 de fundamentos, 8 de HTML/SEO, 9 de CSS, 10 de JavaScript, 10 de APIs y 6 de diseño. Los casos 35, 36, 45, 46 y 47 adaptan las cinco situaciones del original; los otros 45 son nuevos. Incluyen planteamiento, reto, espacio de respuesta, solución razonada, código cuando corresponde y forma de comprobar el resultado. Los ejemplos de código son texto y no se ejecutan.
+
+Los bancos tienen búsqueda por texto sin distinguir tildes, filtros por bloque y páginas de cinco elementos. Los casos añaden filtro de avance y selección al azar dentro del filtro. Las respuestas de casos y ejercicios y las marcas de revisión se guardan en `weblab-preparcial-v1`, sin modificar el registro anterior de estudio. El diagnóstico se reinicia al recargar y su resultado por bloque no se presenta como prueba completa de dominio. No hay calificación automática de texto libre ni envíos de respuestas a servicios externos.
+
+## Apariencia en las 19 páginas
+
+La cabecera incluye un icono de sol/luna que alterna **claro / oscuro negro con un solo clic**, sin ventanas ni confirmaciones. La primera visita sigue el tema del dispositivo hasta que se elige uno manualmente. `js/appearance.js` aplica la elección antes de dibujar la página y la conserva en `weblab-appearance-v1`, independiente de las respuestas de estudio. `assets/appearance.css` adapta fondos, controles, estados de error/éxito y texto secundario. En oscuro el texto general tiene peso 500.
+
+Los ejemplos de jerarquía, C.R.A.P., retícula, tipografía y paletas conservan una paleta local clara coherente para no mezclar fondos de muestra con texto de interfaz. Las vistas aisladas del editor conservan su propio CSS. El ejemplo de caja con selector de color elige texto negro o blanco según la luminancia de su fondo. Se revisaron las 19 páginas en modo oscuro y sus textos representativos; esa comprobación de contraste no equivale a una auditoría integral de accesibilidad de todos los estados o de colores que el estudiante decida probar.
+
+`assets/spacing.css` mantiene una separación de 36 px entre bloques consecutivos de las secciones, y 28 px en móvil, con espacios consistentes en tarjetas, controles y botones. Los experimentos que permiten cambiar padding o gap conservan sus propios valores dentro de la muestra. En Color separa específicamente las tarjetas de tono/saturación/luminosidad del laboratorio de armonía.
 
 El contenido y la estructura están en HTML. CSS controla el diseño adaptable, las tipografías y los estados visuales. JavaScript maneja navegación móvil, búsqueda local, laboratorios, contador y comprobación de respuestas.
 
@@ -198,3 +215,11 @@ La página HTML incluye la sección `#seo-html`: head completo, meta description
 ### Errores HTTP
 
 La lección DNS y HTTP incluye una referencia desplegable de 17 códigos de error, ejemplos, pasos de diagnóstico y diferencias con DNS, TLS, CORS y errores de JavaScript. Los desplegables usan HTML nativo.
+
+### Comprobación de apariencia y espacios
+
+Revisadas las 19 páginas a 390 px sin desbordamiento horizontal de la página. Separación de 36 px entre bloques de estudio (28 px en móvil), etiqueta de muestra sobre su campo con 12 px de margen y paletas locales legibles para los ejemplos claros. El icono de tema tiene un área de 44 px y nombre accesible que indica la acción.
+
+### Código con color
+
+Los ejemplos HTML, CSS, JavaScript y JSON usan PrismJS 1.30.0, incluido localmente con su licencia MIT en `js/vendor/`. `js/syntax.js` mantiene el resaltado cuando cambian los ejemplos y añade una capa visual a los editores sin cambiar su valor. `assets/syntax.css` distingue etiquetas, atributos, cadenas, propiedades, funciones, palabras clave y comentarios sobre un fondo de código oscuro, también al estudiar en modo claro. No se evalúa código para colorearlo.

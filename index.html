@@ -8,6 +8,7 @@
       content="Aprende HTML, CSS y JavaScript: aprende con explicaciones, referencias y ejercicios interactivos en español."
     />
     <title>Aprende HTML, CSS y JavaScript | WebLab</title>
+<script src="js/appearance.js?v=20261019-5"></script>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
@@ -19,11 +20,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    <script src="js/app.js" defer></script>
+    <script src="js/app.js?v=20261019-2" defer></script>
     <link rel="stylesheet" href="assets/design.css" />
-    <link rel="stylesheet" href="assets/study.css" />
+    <link rel="stylesheet" href="assets/study.css?v=20261019-1" />
     <script src="js/study.js" defer></script>
-  </head>
+  <link rel="stylesheet" href="assets/appearance.css?v=20261019-5">
+<link rel="stylesheet" href="assets/spacing.css?v=20261019-2">
+<link rel="stylesheet" href="assets/syntax.css?v=20261019-2">
+<script src="js/vendor/prism.js" data-manual defer></script>
+<script src="js/syntax.js?v=20261019-3" defer></script>
+</head>
   <body data-page="index">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
@@ -58,6 +64,7 @@
           <details class="design-nav practice-nav">
             <summary>Estudio</summary>
             <nav aria-label="Estudio y práctica">
+              <a href="pages/repaso.html">Repaso y 50 casos</a>
               <a href="pages/seo.html">SEO con Google</a>
               <a href="pages/json.html">JSON y datos</a>
               <a href="pages/redes.html">DNS, HTTP y HTTPS</a>
@@ -327,7 +334,8 @@
         </header>
         <a class="button primary" href="pages/seo.html">Aprender SEO con Google</a>
       </section>
-    </main>
+    <section class="section container"><div class="review-home-card"><p class="eyebrow">NUEVO / PREPARA EL PARCIAL</p><h2>Un repaso. Cincuenta decisiones.</h2><p>Diagnóstico de 50 preguntas, 50 ejercicios con código y 50 casos sobre fundamentos web, HTML, CSS, JavaScript, APIs y diseño.</p><a class="button primary" href="pages/repaso.html">Abrir repaso y casos →</a></div></section>
+</main>
     <footer class="site-footer">
       <div class="footer-grid expanded-footer">
         <section>
@@ -350,6 +358,7 @@
         </nav>
         <nav aria-label="Accesos rápidos de práctica">
           <h2>Practica</h2>
+          <a href="pages/repaso.html">Repaso ISW-312 y 50 casos</a>
           <a href="pages/accesibilidad.html">Accesibilidad</a
           ><a href="pages/adaptable.html">Diseño adaptable</a
           ><a href="pages/practicas.html#retos">Retos pequeños</a

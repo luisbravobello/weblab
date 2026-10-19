@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Repaso de Tecnología de Internet II: diagnóstico de 50 preguntas, 50 ejercicios y 50 casos con respuestas razonadas."
+    />
+    <title>Repaso ISW-312 y 50 casos prácticos | WebLab</title>
+<script src="../js/appearance.js?v=20261019-5"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23233de0'/%3E%3Cpath d='m12 9-7 7 7 7m8-14 7 7-7 7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script src="../js/app.js?v=20261019-2" defer></script>
+    <link rel="stylesheet" href="../assets/design.css" />
+    <link rel="stylesheet" href="../assets/study.css?v=20261019-1" />
+    <script src="../js/study.js" defer></script>
+  <link rel="stylesheet" href="../assets/review.css?v=20261019-1">
+<script type="module" src="../js/review.js?v=20261019-3"></script>
+<link rel="stylesheet" href="../assets/appearance.css?v=20261019-5">
+<link rel="stylesheet" href="../assets/spacing.css?v=20261019-2">
+<link rel="stylesheet" href="../assets/syntax.css?v=20261019-2">
+<script src="../js/vendor/prism.js" data-manual defer></script>
+<script src="../js/syntax.js?v=20261019-3" defer></script>
+</head>
+  <body data-page="repaso">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="../index.html"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg
+          >Web<span>Lab</span></a
+        ><button
+          class="menu-button"
+          aria-label="Abrir menú"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav id="main-nav" aria-label="Principal">
+          <a href="../index.html">Inicio</a><a href="html.html">HTML</a
+          ><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+          <details class="design-nav">
+            <summary>Diseño</summary>
+            <nav aria-label="Diseño visual">
+              <a href="composicion.html">Composición y retícula</a
+              ><a href="tipografia.html">Tipografía</a
+              ><a href="color.html">Color y paletas</a
+              ><a href="paletas.html">Creador de paletas</a>
+            </nav>
+          </details>
+          <details class="design-nav practice-nav">
+            <summary>Estudio</summary>
+            <nav aria-label="Estudio y práctica">
+              <a href="repaso.html" aria-current="page">Repaso y 50 casos</a>
+              <a href="seo.html">SEO con Google</a>
+              <a href="json.html">JSON y datos</a>
+              <a href="redes.html">DNS, HTTP y HTTPS</a>
+              <a href="accesibilidad.html">Accesibilidad</a
+              ><a href="adaptable.html">Diseño adaptable</a
+              ><a href="practicas.html">Retos y progreso</a
+              ><a href="componentes.html">Componentes</a
+              ><a href="proyecto.html">Proyecto guiado</a
+              ><a href="glosario.html">Glosario</a
+              ><a href="fuentes.html">Documentación</a>
+            </nav>
+          </details>
+        </nav>
+        <a class="nav-practice" href="html.html#laboratorio">Practicar</a>
+      </div>
+    </header>
+    <main id="contenido">
+<header class="lesson-hero review-hero"><div class="container"><p class="eyebrow">REPASO PREPARCIAL / TECNOLOGÍA DE INTERNET II · ISW-312</p><h1>Entiende el caso.<br>Explica tu decisión.</h1><p>Tu repaso integrado en WebLab: revisa conceptos, encuentra qué falla y justifica cómo lo resolverías. Escribe antes de mirar la referencia.</p><nav class="chapter-nav" aria-label="En esta página"><a href="#bloques">Los seis bloques</a><a href="#diagnostico">Diagnóstico</a><a href="#ejercicios">50 ejercicios</a><a href="#casos">50 casos</a><a href="#fuente">Material de partida</a></nav><div class="review-stats"><div><strong>50</strong><span>preguntas de diagnóstico</span></div><div><strong>50</strong><span>ejercicios con código</span></div><div><strong>50</strong><span>casos de análisis</span></div></div></div></header>
+<section class="section container" id="bloques" aria-labelledby="blocks-title"><div class="section-head"><p class="eyebrow">01 / UBÍCATE</p><h2 id="blocks-title">Seis bloques, un mismo proyecto.</h2><p>Usa cada bloque para volver a la explicación de WebLab y luego comprueba lo que puedes aplicar.</p></div><div class="review-blocks">
+<article><span>B1</span><h3>Fundamentos de la web</h3><p>El cliente pide y el servidor responde. DNS ayuda a resolver nombres; un fallo DNS no equivale a una respuesta HTTP 404.</p><a href="redes.html">Repasar DNS, HTTP y HTTPS →</a></article>
+<article><span>B2</span><h3>HTML semántico y SEO</h3><p>Organiza contenido, jerarquía y formularios. Distingue el título del documento, los encabezados visibles y el texto alternativo.</p><a href="html.html">Repasar HTML →</a> · <a href="seo.html">SEO →</a></article>
+<article><span>B3</span><h3>CSS</h3><p>Comprende cajas, cascada, variables, flex y grid. Elige nombres por función y prueba el espacio disponible.</p><a href="css.html">Repasar CSS →</a></article>
+<article><span>B4</span><h3>JavaScript</h3><p>Revisa tipos, funciones, arrays, DOM y eventos. Una función declarada no se ejecuta sola; el selector debe encontrar un elemento.</p><a href="javascript.html">Repasar JavaScript →</a></article>
+<article><span>B5</span><h3>fetch y APIs</h3><p>Espera la respuesta y el cuerpo, comprueba el estado y la forma de datos, y representa carga, vacío y error.</p><a href="javascript.html#ruta-javascript">JavaScript →</a> · <a href="json.html">JSON →</a></article>
+<article><span>B6</span><h3>Diseño y UI</h3><p>Jerarquía, espacio, retícula, tipografía y color. C.R.A.P. y 60–30–10 orientan decisiones; no sustituyen comprobar accesibilidad.</p><a href="composicion.html">Repasar composición →</a></article>
+</div></section>
+<section class="section container" id="diagnostico" aria-labelledby="diagnostic-title"><div class="section-head"><p class="eyebrow">02 / COMPRUEBA LA BASE</p><h2 id="diagnostic-title">Diagnóstico de 50 preguntas.</h2><p>Elige una opción y revisa su explicación. Al terminar verás los aciertos por bloque. Es una práctica orientativa, no una medición completa de dominio.</p></div><div class="diagnostic-panel"><div id="diagnostic-welcome"><p>Las respuestas del diagnóstico se reinician al recargar. Tus respuestas escritas en ejercicios y casos se guardan por separado.</p><button class="button primary" id="diagnostic-start" type="button">Comenzar diagnóstico</button></div><div id="diagnostic-question" hidden></div><div id="diagnostic-results" hidden></div></div></section>
+<section class="section container" id="ejercicios" aria-labelledby="exercises-title"><div class="section-head"><p class="eyebrow">03 / ESCRIBE UNA SOLUCIÓN</p><h2 id="exercises-title">50 ejercicios de aplicación.</h2><p>Abre un ejercicio, escribe el código y compara con la referencia. Los fragmentos de esta página se muestran como texto: no se ejecutan ni consultan servicios externos.</p></div><p id="exercise-written" class="review-help" aria-live="polite">0 de 50 ejercicios con respuesta escrita</p><div class="case-controls exercise-controls"><label for="exercise-search">Buscar ejercicio<input id="exercise-search" type="search" placeholder="Por ejemplo: formulario o productos"></label><label for="exercise-block">Bloque<select id="exercise-block"><option value="all">Todos los bloques</option></select></label></div><output id="exercise-count" aria-live="polite"></output><p class="review-help">Cinco ejercicios por página. Tus respuestas se conservan al buscar, filtrar o cambiar de página.</p><div id="exercise-list"></div><nav class="case-pagination" aria-label="Páginas de ejercicios"><button class="button secondary" id="exercise-prev" type="button">← Anteriores</button><span id="exercise-page" aria-live="polite"></span><button class="button primary" id="exercise-next" type="button">Siguientes →</button></nav></section>
+<section class="section container" id="casos" aria-labelledby="cases-title"><div class="section-head"><p class="eyebrow">04 / RAZONA EL CASO</p><h2 id="cases-title" tabindex="-1">50 casos para pensar antes de responder.</h2><p>Incluyen cinco situaciones del documento adaptadas y 45 nuevas. Identifica el problema, explica qué harías y di cómo comprobarías el resultado. Puede haber varias soluciones válidas si respetan el requisito.</p></div><div class="case-progress" aria-live="polite"><span id="case-written">0 respuestas escritas</span><span id="case-reviewed">0 de 50 revisados</span></div><div class="case-controls"><label for="case-search">Buscar caso<input id="case-search" type="search" placeholder="Por ejemplo: fetch, formulario o grid"></label><label for="case-block">Bloque<select id="case-block"><option value="all">Todos los bloques</option></select></label><label for="case-status">Mi avance<select id="case-status"><option value="all">Todos los casos</option><option value="pending">Por revisar</option><option value="written">Con respuesta escrita</option><option value="reviewed">Ya revisados</option></select></label></div><div class="case-list-tools"><output id="case-count" aria-live="polite"></output><button class="button secondary" id="case-random" type="button">Elegir un caso al azar</button></div><p class="review-help">Se muestran 5 casos por página. Las soluciones se abren solo cuando tú las despliegas. «Ya puedo explicarlo» es una marca manual, sin calificación automática.</p><div id="case-list"></div><nav class="case-pagination" aria-label="Páginas de casos"><button class="button secondary" id="case-prev" type="button">← Anteriores</button><span id="case-page" aria-live="polite"></span><button class="button primary" id="case-next" type="button">Siguientes →</button></nav><p id="review-storage" role="status">Tus respuestas y marcas se guardan en este navegador cuando permite almacenamiento local.</p></section>
+<aside class="section container review-source" id="fuente"><h2>Material de partida y precisiones.</h2><p>Integrado a partir de tu archivo «repaso-preparcial-isw312 (1).html». Se adaptaron sus 20 preguntas y 7 ejercicios y se añadieron 30 preguntas y 43 ejercicios para llegar a 50 de cada tipo; los cinco casos de partida están adaptados dentro del banco de 50.</p><p><a href="../material/repaso-preparcial-original.html" target="_blank" rel="noopener">Abrir el HTML original sin modificar →</a></p><ul><li>El proyecto recomienda una jerarquía clara de encabezados. Varios h1 no prueban por sí solos una penalización de SEO.</li><li>const impide reasignar la variable; no congela automáticamente las propiedades de un objeto.</li><li>fetch requiere comprobar los estados HTTP y gestionar lectura, esquema y errores; no trata automáticamente un 404 como rechazo de la promesa.</li><li>title y meta description pueden influir en el resultado de búsqueda; no obligan a Google a mostrarlos ni garantizan posiciones.</li></ul><p>Referencias para estas precisiones: <a href="https://html.spec.whatwg.org/multipage/sections.html#headings-and-outlines" target="_blank" rel="noopener">HTML Standard</a> · <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google Search Central</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noopener">Uso de fetch</a>.</p></aside>
+</main>
+    <footer class="site-footer">
+      <div class="footer-grid expanded-footer">
+        <section>
+          <a class="brand" href="../index.html">Web<span>Lab</span></a>
+          <p>Lee, prueba y comprueba.<br />El criterio también se practica.</p>
+          <a href="practicas.html#progreso">Mi progreso de estudio</a
+          ><a href="glosario.html">Glosario buscable</a>
+        </section>
+        <nav aria-label="Accesos rápidos de fundamentos">
+          <h2>Fundamentos</h2>
+          <a href="seo.html">SEO y posicionamiento</a>
+          <a href="json.html">JSON con ejemplos</a>
+          <a href="redes.html">Cómo funciona la web</a>
+          <a href="html.html">HTML</a><a href="css.html">CSS</a
+          ><a href="javascript.html">JavaScript</a
+          ><a href="composicion.html">Composición y retícula</a
+          ><a href="tipografia.html">Tipografía</a
+          ><a href="color.html">Color y paletas</a
+          ><a href="paletas.html">Paletas en páginas completas</a>
+        </nav>
+        <nav aria-label="Accesos rápidos de práctica">
+          <h2>Practica</h2>
+          <a href="repaso.html">Repaso ISW-312 y 50 casos</a>
+          <a href="accesibilidad.html">Accesibilidad</a
+          ><a href="adaptable.html">Diseño adaptable</a
+          ><a href="practicas.html#retos">Retos pequeños</a
+          ><a href="practicas.html#errores">Encuentra el error</a
+          ><a href="componentes.html">Elegir componentes</a
+          ><a href="proyecto.html">Proyecto guiado</a>
+        </nav>
+        <nav aria-label="Documentación y fuentes">
+          <h2>Documentación</h2>
+          <a href="fuentes.html">Todas las fuentes</a>
+          <a href="../docs/FUENTES.md" download>Fuentes en Markdown</a
+          ><a href="fuentes.html#estandares">Estándares oficiales</a
+          ><a href="fuentes.html#guias">Guías de implementación</a
+          ><a href="fuentes.html#diseno">Fuentes de diseño</a
+          ><a href="fuentes.html#criterio">Cómo usar las fuentes</a>
+        </nav>
+      </div>
+      <p class="footer-note">
+        Contenido educativo en español · Ejemplos propios · Fuentes
+        identificadas · Progreso local
+      </p>
+    </footer>
+  </body>
+</html>

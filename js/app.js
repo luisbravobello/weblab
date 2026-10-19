@@ -146,6 +146,14 @@ if (cssControls) {
     box.style.padding = padding + "px";
     box.style.borderRadius = radius + "px";
     box.style.backgroundColor = color;
+    // This lesson lets the student pick any color: adapt its sample text too.
+    const rgb = [1, 3, 5].map((start) => parseInt(color.slice(start, start + 2), 16) / 255);
+    const linear = rgb.map((value) => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
+    const luminance = linear[0] * 0.2126 + linear[1] * 0.7152 + linear[2] * 0.0722;
+    const sampleInk = luminance > 0.179 ? "#000000" : "#ffffff";
+    box.style.color = sampleInk;
+    box.style.setProperty("--ink", sampleInk);
+    box.style.setProperty("--muted", sampleInk);
     document.querySelector("#grid-demo").style.gridTemplateColumns =
       `repeat(${columns}, minmax(0, 1fr))`;
     document.querySelector("#padding-value").value = padding + " px";

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repaso pre-parcial · Tecnología de Internet II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blanco:#ffffff;--papel:#f6f5f3;--panel:#eceae6;--tinta:#1b1a18;--texto:#4a4844;
+    --tenue:#8a867e;--linea:#dcd9d2;--acento:#2a2825;
+    --ok-bg:#e9ede7;--ok-tx:#2f3b2f;--rev-bg:#efe9e6;--rev-tx:#473a36;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--blanco);color:var(--tinta);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;line-height:1.2;font-weight:700}
+  code,pre,.mono{font-family:'JetBrains Mono',monospace}
+  :focus-visible{outline:2px solid var(--acento);outline-offset:3px;border-radius:3px}
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;background:var(--acento)}
+
+  /* sticky tabs */
+  .tabs{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+  .tabs-inner{max-width:900px;margin:0 auto;padding:0 22px;display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+  .tabbtn{font-family:'Inter';font-weight:600;font-size:14px;cursor:pointer;background:none;border:none;border-bottom:2px solid transparent;color:var(--tenue);padding:16px 18px;transition:.15s}
+  .tabbtn:hover{color:var(--tinta)}
+  .tabbtn.sel{color:var(--tinta);border-bottom-color:var(--acento)}
+  .tabbtn .mono{font-family:'JetBrains Mono';font-size:11px;color:var(--tenue);display:block;font-weight:400}
+
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  .view{display:none;padding:40px 0 70px}
+  .view.sel{display:block}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  .eyebrow{font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tenue);margin:0 0 12px}
+  h1.page{font-size:clamp(28px,5vw,42px);margin:0 0 12px}
+  .lead{font-size:17px;color:var(--texto);max-width:64ch}
+  .lead b{color:var(--tinta)}
+
+  /* start screen */
+  .start{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:30px;margin-top:24px}
+  .start h2{font-size:22px;margin:0 0 10px}
+  .start ul{margin:14px 0 0;padding-left:20px;color:var(--texto)}
+  .start li{margin-bottom:6px}
+  .start .blocks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .bchip{font-family:'JetBrains Mono';font-size:11px;background:var(--panel);border:1px solid var(--linea);border-radius:100px;padding:5px 12px;color:var(--texto)}
+  .btn{font-family:'Inter';font-weight:600;font-size:15px;cursor:pointer;border-radius:10px;padding:13px 24px;border:1px solid var(--acento);background:var(--acento);color:#fff;transition:.14s}
+  .btn:hover{background:#000}
+  .btn:active{transform:translateY(1px)}
+  .btn.sec{background:#fff;color:var(--tinta)}
+  .btn.sec:hover{background:var(--papel)}
+
+  /* quiz */
+  .qmeta{display:flex;align-items:center;gap:14px;margin:0 0 18px;font-family:'JetBrains Mono';font-size:12.5px;color:var(--tenue)}
+  .qmeta .bar{flex:1;height:7px;border-radius:5px;background:var(--panel);overflow:hidden}
+  .qmeta .bar span{display:block;height:100%;width:0;background:var(--acento);transition:width .35s}
+  .qcard{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:26px;box-shadow:0 12px 32px -26px rgba(0,0,0,.4)}
+  .qtag{display:inline-block;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tenue);border:1px solid var(--linea);border-radius:100px;padding:4px 11px;margin-bottom:14px}
+  .qtext{font-family:Georgia,serif;font-size:21px;font-weight:700;line-height:1.3;margin:0 0 18px}
+  .qtext code{font-family:'JetBrains Mono';font-size:.82em;background:var(--panel);padding:1px 6px;border-radius:4px;font-weight:400}
+  .opts{display:grid;gap:9px}
+  .opt{text-align:left;background:var(--papel);border:1px solid var(--linea);border-radius:10px;padding:13px 16px;cursor:pointer;font:inherit;font-size:15px;color:var(--tinta);transition:.12s;display:flex;gap:11px;align-items:flex-start}
+  .opt:hover:not(:disabled){border-color:var(--acento)}
+  .opt:disabled{cursor:default}
+  .opt .lt{font-family:'JetBrains Mono';font-weight:700;color:var(--tenue);flex:none}
+  .opt.correct{background:var(--ok-bg);border-color:#bcc8ba}.opt.correct .lt{color:var(--ok-tx)}
+  .opt.wrong{background:var(--rev-bg);border-color:#d8c9c0}.opt.wrong .lt{color:var(--rev-tx)}
+  .expl{margin-top:16px;padding:15px 17px;border-radius:10px;background:var(--panel);border-left:3px solid var(--acento);font-size:14.5px;color:var(--texto);display:none}
+  .expl.show{display:block}
+  .expl b{color:var(--tinta)}
+  .qnav{display:flex;justify-content:flex-end;margin-top:18px}
+
+  /* results */
+  .results{display:none}
+  .results.show{display:block}
+  .score{font-family:Georgia,serif;font-size:60px;font-weight:700;line-height:1}
+  .score small{font-size:18px;color:var(--tenue);font-family:'Inter';font-weight:500}
+  .mapa{margin-top:26px;display:grid;gap:12px}
+  .mrow{display:grid;grid-template-columns:180px 1fr auto;gap:14px;align-items:center}
+  .mrow .mb{font-size:14px;font-weight:600}
+  .mrow .track{height:12px;border-radius:7px;background:var(--panel);overflow:hidden}
+  .mrow .track span{display:block;height:100%;border-radius:7px;background:var(--acento)}
+  .mrow .lab{font-family:'JetBrains Mono';font-size:11px;padding:3px 9px;border-radius:100px;white-space:nowrap}
+  .lab.dom{background:var(--ok-bg);color:var(--ok-tx)}
+  .lab.casi{background:var(--panel);color:var(--texto)}
+  .lab.rep{background:var(--rev-bg);color:var(--rev-tx)}
+  .priority{margin-top:26px;background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:22px}
+  .priority h3{margin:0 0 10px;font-size:18px}
+  .priority ol{margin:0;padding-left:20px;color:var(--texto)} .priority li{margin-bottom:7px} .priority li b{color:var(--tinta)}
+  @media(max-width:560px){.mrow{grid-template-columns:1fr;gap:5px}.mrow .lab{justify-self:start}}
+
+  /* ejercicios + casos */
+  .item{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:24px;margin-bottom:20px}
+  .inum{font-family:'JetBrains Mono';font-size:12px;color:var(--tenue)}
+  .ititle{font-family:Georgia,serif;font-size:21px;font-weight:700;margin:4px 0 12px}
+  .ireq{background:var(--papel);border:1px solid var(--linea);border-radius:10px;padding:14px 16px;margin:12px 0}
+  .ireq .h{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tenue);margin-bottom:7px}
+  .ireq ul{margin:0;padding-left:18px;font-size:14px;color:var(--texto)} .ireq li{margin-bottom:4px}
+  .yoursol{width:100%;min-height:90px;background:var(--papel);border:1px dashed var(--linea);border-radius:10px;padding:13px;font-family:'JetBrains Mono';font-size:13px;color:var(--tinta);resize:vertical;margin:6px 0 0}
+  .yoursol:focus{outline:none;border-color:var(--acento);border-style:solid}
+  .yourlabel{font-family:'JetBrains Mono';font-size:11px;color:var(--tenue);margin-top:14px}
+  .sol{display:none;margin-top:16px}
+  .sol.show{display:block}
+  .why{margin-top:14px;padding:15px 17px;border-radius:10px;background:var(--panel);border-left:3px solid var(--acento);font-size:14.5px;color:var(--texto)}
+  .why .h{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);font-weight:700;margin-bottom:6px;display:block}
+  .pista{margin:12px 0;padding:13px 16px;border-radius:10px;background:var(--papel);border:1px solid var(--linea);font-size:14px;color:var(--texto)}
+  .pista b{color:var(--tinta)}
+  .modelnote{font-size:12.5px;color:var(--tenue);margin-top:10px;font-style:italic}
+
+  /* code blocks: dark, monochrome highlight */
+  .code{margin:14px 0 0;border-radius:11px;overflow:hidden;border:1px solid #30302c;background:#1716140}
+  .code{background:#171614}
+  .code .cbar{display:flex;align-items:center;justify-content:space-between;padding:8px 13px;background:#201f1c;border-bottom:1px solid #30302c}
+  .code .lng{font-family:'JetBrains Mono';font-size:11px;color:#9b968c;letter-spacing:.05em;text-transform:uppercase}
+  .code pre{margin:0;padding:14px 15px;overflow-x:auto;font-size:12.5px;line-height:1.7;color:#cfcabf}
+  .kw{color:#ffffff;font-weight:700}
+  .cm{color:#7d7a72;font-style:italic}
+  .st{color:#b8b3a8}
+  footer{border-top:1px solid var(--linea)}
+  .foot{max-width:900px;margin:0 auto;padding:26px 22px 50px;color:var(--tenue);font-size:13px}
+  .foot b{color:var(--tinta)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tabbtn sel" data-v="diag">Diagnóstico<span class="mono">mide tu dominio</span></button>
+    <button class="tabbtn" data-v="ejer">Ejercicios prácticos<span class="mono">con solución</span></button>
+    <button class="tabbtn" data-v="casos">Casos de análisis<span class="mono">plantear y comparar</span></button>
+  </div>
+</nav>
+
+<!-- ===================== DIAGNÓSTICO ===================== -->
+<section class="view sel" id="v-diag">
+  <div class="wrap">
+    <div id="diag-start">
+      <p class="eyebrow">Tecnología de Internet II · ISW-312 · repaso pre-parcial</p>
+      <h1 class="page">Diagnóstico de dominio</h1>
+      <p class="lead">Veinte preguntas de opción múltiple, una a la vez, con explicación inmediata del porqué. <b>No es un examen con nota</b>: es una herramienta para que usted detecte sus vacíos antes del parcial. Al terminar verá un mapa de dominio por bloque y qué repasar con prioridad.</p>
+      <div class="start">
+        <h2>Antes de empezar</h2>
+        <ul>
+          <li>Son <b>20 preguntas</b> que cubren los seis bloques del parcial, de forma pareja.</li>
+          <li>Al responder, se marca la correcta y se explica <b>por qué</b>; lea la explicación aunque acierte.</li>
+          <li>Hay preguntas de concepto y de diagnóstico (un caso corto que interpretar).</li>
+        </ul>
+        <div class="blocks">
+          <span class="bchip">Fundamentos de la web</span>
+          <span class="bchip">HTML semántico y SEO</span>
+          <span class="bchip">CSS</span>
+          <span class="bchip">JavaScript</span>
+          <span class="bchip">fetch y APIs</span>
+          <span class="bchip">Diseño y UI</span>
+        </div>
+        <div style="margin-top:22px"><button class="btn" id="diag-go">Comenzar diagnóstico</button></div>
+      </div>
+    </div>
+
+    <div id="diag-quiz" style="display:none">
+      <div class="qmeta"><span>Pregunta <b id="qidx">1</b> / 20</span><span class="bar"><span id="qbar"></span></span><span id="qscore">0 correctas</span></div>
+      <div class="qcard">
+        <span class="qtag" id="qtag">—</span>
+        <h2 class="qtext" id="qtext">—</h2>
+        <div class="opts" id="qopts"></div>
+        <div class="expl" id="qexpl"></div>
+        <div class="qnav"><button class="btn" id="qnext" style="display:none">Siguiente →</button></div>
+      </div>
+    </div>
+
+    <div class="results" id="diag-results">
+      <p class="eyebrow">Resultados del diagnóstico</p>
+      <div class="score"><span id="pct">0</span>%<small> &nbsp;(<span id="raw">0</span>/20 correctas)</small></div>
+      <h2 style="margin:24px 0 0;font-size:22px">Mapa de dominio por bloque</h2>
+      <div class="mapa" id="mapa"></div>
+      <div class="priority" id="priority"></div>
+      <div style="margin-top:24px"><button class="btn sec" id="diag-retry">Reiniciar diagnóstico</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EJERCICIOS ===================== -->
+<section class="view" id="v-ejer">
+  <div class="wrap">
+    <p class="eyebrow">Tecnología de Internet II · ISW-312</p>
+    <h1 class="page">Ejercicios prácticos</h1>
+    <p class="lead">Siete ejercicios de aplicación. Intente resolver cada uno en el recuadro <b>antes</b> de revelar la solución; luego compare y lea el "por qué" de las decisiones.</p>
+    <div id="ejer-list" style="margin-top:26px"></div>
+  </div>
+</section>
+
+<!-- ===================== CASOS ===================== -->
+<section class="view" id="v-casos">
+  <div class="wrap">
+    <p class="eyebrow">Tecnología de Internet II · ISW-312</p>
+    <h1 class="page">Casos de análisis</h1>
+    <p class="lead">Cinco problemas abiertos, sin una única respuesta correcta. Plantee su solución, luego revele la solución modelo para compararla. <b>Su enfoque puede diferir y seguir siendo válido</b> si lo justifica bien.</p>
+    <div id="casos-list" style="margin-top:26px"></div>
+  </div>
+</section>
+
+<footer><div class="foot"><b>Tecnología de Internet II · ISW-312</b> — Universidad Central del Este. Repaso pre-parcial interactivo. Lo que confirma dominio es poder dar el <b>porqué</b> con sus propias palabras, no repetir la respuesta.</div></footer>
+
+<script>
+  // ---------------- datos ----------------
+  const BLOQUES={B1:'Fundamentos de la web',B2:'HTML semántico y SEO',B3:'CSS',B4:'JavaScript',B5:'fetch y APIs',B6:'Diseño y UI'};
+
+  const PREG=[
+    {b:'B1',q:'¿Cuál es la función principal del sistema DNS?',o:[
+      'Cifrar los datos que viajan entre el cliente y el servidor.',
+      'Guardar las páginas ya visitadas para cargarlas más rápido.',
+      'Traducir un nombre de dominio a su dirección IP.',
+      'Repartir la carga de visitas entre varios servidores.'],c:2,
+      e:'DNS es la "agenda" de internet: convierte mi-sitio.com en la IP del servidor. Cifrar es tarea de HTTPS; guardar copias es la caché; repartir carga es balanceo. Son funciones reales, pero de otros componentes.'},
+    {b:'B1',q:'El navegador recibe un código 404. ¿Qué ocurrió?',o:[
+      'La petición llegó, pero ese recurso no existe.',
+      'El servidor falló internamente al procesar la solicitud.',
+      'La página cambió de dirección de forma permanente.',
+      'El cliente perdió la conexión con la red de datos.'],c:0,
+      e:'404 = Not Found: la petición sí llegó, pero no hay nada en esa ruta. Un fallo interno del servidor sería 500; un cambio permanente, 301; y sin conexión no habría respuesta alguna del servidor.'},
+    {b:'B1',q:'¿Qué describe correctamente la relación cliente-servidor?',o:[
+      'Dos servidores que se sincronizan entre sí de forma continua.',
+      'El servidor pide los datos y el cliente se los entrega.',
+      'El navegador almacena y edita los archivos del sitio web.',
+      'El cliente pide un recurso y el servidor responde.'],c:3,
+      e:'El cliente (el navegador) inicia pidiendo; el servidor responde. La opción invertida cambia los papeles; las otras describen sincronización o edición local, que no es la relación petición-respuesta.'},
+
+    {b:'B2',q:'¿Por qué conviene usar etiquetas semánticas y no solo <code>&lt;div&gt;</code>?',o:[
+      'Porque hacen que la página cargue siempre mucho más rápido.',
+      'Porque aplican por defecto estilos visuales más atractivos.',
+      'Porque dan significado para buscadores y lectores.',
+      'Porque reducen el número de líneas de código escrito.'],c:2,
+      e:'La semántica comunica el ROL de cada zona a Google y a los lectores de pantalla. No cambian la velocidad, no traen estilos "bonitos" ni reducen código: su valor es el significado que aportan.'},
+    {b:'B2',q:'Una página tiene tres <code>&lt;h1&gt;</code> distintos. ¿Es un problema?',o:[
+      'Sí: confunde la jerarquía y perjudica el SEO.',
+      'No, siempre que cada uno tenga un color distinto.',
+      'No, los buscadores ignoran del todo los encabezados.',
+      'Sí, porque el navegador solo mostrará el primero.'],c:0,
+      e:'Debe haber un solo <h1> (el tema de la página); varios rompen la jerarquía que usa el SEO. El color no lo arregla, los buscadores sí leen los encabezados, y el navegador muestra todos de todos modos.'},
+    {b:'B2',q:'¿Qué función cumple el atributo <code>alt</code> de una imagen?',o:[
+      'Define el tamaño con que se mostrará la imagen.',
+      'Describe la imagen para accesibilidad y buscadores.',
+      'Establece la ruta del archivo que debe cargarse.',
+      'Indica el formato de compresión del archivo gráfico.'],c:1,
+      e:'alt es el texto alternativo: lo lee quien no puede ver la imagen y lo usa Google para entenderla. El tamaño se controla con CSS; la ruta, con src; y el formato es parte del propio archivo.'},
+
+    {b:'B3',q:'¿Para qué sirve <code>box-sizing: border-box</code>?',o:[
+      'Para que padding y borde no agranden la caja.',
+      'Para centrar la caja de manera automática dentro de su contenedor.',
+      'Para dibujar un borde visible alrededor de cada elemento.',
+      'Para separar el contenido del borde mediante un margen.'],c:0,
+      e:'Con border-box, el padding y el borde quedan DENTRO del ancho declarado, así la caja no "crece". Centrar es con margin auto; el borde se dibuja con border; y el margen separa por fuera, no por dentro.'},
+    {b:'B3',q:'Una clase <code>.caja-azul</code> ahora debe ser verde. ¿Qué enseña esto?',o:[
+      'Que conviene crear otra clase .caja-verde y duplicar estilos.',
+      'Que el color solo se cambia editando el HTML directamente.',
+      'Que las variables de CSS no permiten cambiar colores definidos.',
+      'Que conviene nombrar las clases por su función.'],c:3,
+      e:'El nombre debió describir la función (.tarjeta), no el color; así no "miente" al cambiar. Duplicar clases, editar el HTML a mano o culpar a las variables no resuelven el problema de raíz.'},
+    {b:'B3',q:'¿Qué ventaja ofrece definir una variable en <code>:root</code>?',o:[
+      'Acelera la descarga de toda la hoja de estilos.',
+      'Permite cambiar un valor en un solo lugar.',
+      'Obliga al navegador a recalcular todo el diseño.',
+      'Oculta los colores de marca a otros desarrolladores.'],c:1,
+      e:'Una variable centraliza un valor (un color, una medida): se edita una vez y se refleja en todo el sitio. No afecta la velocidad de descarga, no fuerza recálculos ni oculta información.'},
+
+    {b:'B4',q:'¿Qué imprime <code>console.log(typeof "5")</code>?',o:[
+      'number, porque JavaScript convierte el texto en número.',
+      'string, porque está escrito entre comillas.',
+      'undefined, porque la variable no fue declarada antes.',
+      'NaN, porque "5" no es un número válido.'],c:1,
+      e:'Lo que va entre comillas es texto (string), aunque parezca número. No hay conversión automática aquí; sí tiene valor, de modo que no es undefined; y NaN aparece en operaciones numéricas fallidas.'},
+    {b:'B4',q:'¿Cuál es la diferencia entre <code>let</code> y <code>const</code>?',o:[
+      'let es global y const vive solo dentro de funciones.',
+      'const se ejecuta más rápido que let en el navegador.',
+      'let permite reasignar el valor y const no.',
+      'No hay diferencia: son dos formas de escribir lo mismo.'],c:2,
+      e:'const fija el valor; let permite cambiarlo. El alcance no las distingue de ese modo, no hay una diferencia de velocidad relevante, y desde luego no son idénticas.'},
+    {b:'B4',q:'Para mostrar una lista de productos en la página, ¿qué patrón se usa?',o:[
+      'Recorrer el arreglo y pintar cada elemento.',
+      'Escribir cada producto a mano dentro del HTML.',
+      'Guardar todos los productos en una sola variable de texto.',
+      'Crear una función independiente para cada producto del catálogo.'],c:0,
+      e:'El patrón es datos → recorrer (forEach/map) → pintar en el DOM. Escribirlos a mano no escala; una sola variable de texto no es manejable; y una función por producto es innecesaria.'},
+    {b:'B4',q:'¿Qué hace el método <code>addEventListener</code>?',o:[
+      'Crea un elemento nuevo dentro del documento HTML.',
+      'Cambia el estilo CSS de un elemento seleccionado.',
+      'Recorre una lista de elementos del árbol DOM.',
+      'Ejecuta una función cuando ocurre un evento.'],c:3,
+      e:'addEventListener "escucha" un evento (un clic, etc.) y ejecuta la función asociada. Crear elementos es createElement; el estilo se toca con .style; y recorrer es forEach.'},
+
+    {b:'B5',q:'¿Qué hace <code>await</code> dentro de una función <code>async</code>?',o:[
+      'Repite la petición hasta que el servidor responda bien.',
+      'Cancela la petición si tarda demasiado en responder.',
+      'Convierte automáticamente la respuesta en formato JSON.',
+      'Pausa hasta que la respuesta esté disponible.'],c:3,
+      e:'await espera a que la promesa (la respuesta) se resuelva antes de continuar. No reintenta, no cancela por tiempo y no convierte a JSON — eso último lo hace el método .json().'},
+    {b:'B5',q:'Tras un fetch correcto, los productos aparecen como <code>undefined</code>. Causa probable:',o:[
+      'La dirección de la API quedó mal escrita en el código.',
+      'Los datos están anidados y se lee el nivel equivocado.',
+      'El navegador utilizado no reconoce la función fetch.',
+      'Falta instalar una librería externa para leer el JSON.'],c:1,
+      e:'Si el fetch fue "correcto", la URL funcionó; lo común es que los datos vengan anidados (p. ej. en datos.products) y se acceda al nivel equivocado. fetch es nativo y no requiere librerías.'},
+    {b:'B5',q:'¿Qué es JSON en el contexto de una API?',o:[
+      'Un lenguaje de programación para construir servidores.',
+      'Una base de datos donde se guarda la información.',
+      'Un formato de datos con objetos y listas.',
+      'Un protocolo que reemplaza por completo a HTTP.'],c:2,
+      e:'JSON es un formato de intercambio de datos (objetos y listas, como en JavaScript). No es un lenguaje de programación, ni una base de datos, ni un protocolo de transporte como HTTP.'},
+
+    {b:'B6',q:'¿Qué propone la regla 60-30-10 en diseño?',o:[
+      'Dividir la pantalla en tres columnas de igual ancho.',
+      'Usar tres tipografías distintas en proporciones fijas.',
+      'Repartir el color en neutro, secundario y acento.',
+      'Mantener un contraste mínimo entre el texto y el fondo.'],c:2,
+      e:'Es una regla de proporción de COLOR: 60% neutro, 30% secundario, 10% acento. No habla de columnas, ni de tipografías, ni del contraste texto-fondo (eso es accesibilidad).'},
+    {b:'B6',q:'Un sitio "se ve apretado y agobiante". ¿Qué revisa primero?',o:[
+      'El espacio en blanco y la escala de espaciado.',
+      'La cantidad de imágenes incluidas en la página.',
+      'El peso de los archivos que descarga el sitio.',
+      'El número de fuentes tipográficas usadas en total.'],c:0,
+      e:'Lo "apretado" casi siempre es falta de aire: una escala de espaciado (8 pt) da ritmo. Las imágenes, el peso de los archivos y las fuentes afectan otras cosas, no la sensación de saturación visual.'},
+    {b:'B6',q:'¿Por qué se usa una retícula de 12 columnas?',o:[
+      'Porque es el número máximo que admite el navegador.',
+      'Porque se divide exacto en 2, 3, 4 y 6.',
+      'Porque cada columna mide exactamente cien píxeles.',
+      'Porque coincide con el número de secciones del sitio.'],c:1,
+      e:'12 es divisible entre 2, 3, 4 y 6, así que permite mitades, tercios, cuartos y sextos sin decimales. No es un máximo del navegador, ni un ancho fijo, ni se relaciona con las secciones.'},
+    {b:'B6',q:'¿Qué significan las siglas C.R.A.P. en diseño?',o:[
+      'Color, Retícula, Armonía y Proporción visual del conjunto.',
+      'Contenido, Ritmo, Anchura y Posición fija.',
+      'Claridad, Rapidez, Accesibilidad y Precisión del diseño.',
+      'Contraste, Repetición, Alineación y Proximidad.'],c:3,
+      e:'C.R.A.P. = Contraste, Repetición, Alineación y Proximidad: los cuatro principios base del diseño. Las otras son siglas inventadas, con palabras plausibles pero incorrectas.'}
+  ];
+
+  const EJER=[
+    {b:'B2',t:'Estructura semántica con head para SEO',
+      enun:'Cree la estructura base de la página de un restaurante: un <code>&lt;head&gt;</code> optimizado para SEO y un cuerpo semántico.',
+      req:['lang declarado y charset','title y meta description con sentido','un solo &lt;h1&gt; con el nombre','header, nav, main y footer','una imagen con alt descriptivo'],
+      lng:'HTML',
+      sol:`<span class="kw">&lt;!DOCTYPE html&gt;</span>
+&lt;html <span class="kw">lang</span>=<span class="st">"es"</span>&gt;
+&lt;head&gt;
+  &lt;meta <span class="kw">charset</span>=<span class="st">"utf-8"</span>&gt;
+  &lt;meta <span class="kw">name</span>=<span class="st">"viewport"</span> <span class="kw">content</span>=<span class="st">"width=device-width, initial-scale=1"</span>&gt;
+  &lt;title&gt;<span class="st">Sabor Caribeño · Restaurante en Punta Cana</span>&lt;/title&gt;
+  &lt;meta <span class="kw">name</span>=<span class="st">"description"</span>
+        <span class="kw">content</span>=<span class="st">"Cocina dominicana frente al mar en Bávaro."</span>&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;<span class="st">Sabor Caribeño</span>&lt;/h1&gt;
+    &lt;nav&gt; &lt;a <span class="kw">href</span>=<span class="st">"#menu"</span>&gt;Menú&lt;/a&gt; &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;img <span class="kw">src</span>=<span class="st">"plato.jpg"</span> <span class="kw">alt</span>=<span class="st">"Camarones al ajillo"</span>&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;<span class="st">Bávaro, Punta Cana</span>&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;`,
+      why:'El &lt;head&gt; no se ve, pero decide cómo aparece el sitio en Google (title + meta description). El cuerpo usa etiquetas con significado en lugar de divs, con un único &lt;h1&gt; para fijar el tema, y el alt hace la imagen accesible e indexable.'},
+
+    {b:'B3',t:'Centrar una tarjeta con flexbox',
+      enun:'Centre una tarjeta horizontal y verticalmente en toda la pantalla usando flexbox.',
+      req:['el contenedor ocupa el alto de la ventana','display flex','centrado en los dos ejes'],
+      lng:'CSS',
+      sol:`<span class="kw">.pantalla</span> {
+  <span class="kw">display</span>: flex;
+  <span class="kw">justify-content</span>: center;  <span class="cm">/* eje horizontal */</span>
+  <span class="kw">align-items</span>: center;      <span class="cm">/* eje vertical */</span>
+  <span class="kw">min-height</span>: 100vh;        <span class="cm">/* alto de la ventana */</span>
+}
+<span class="kw">.tarjeta</span> {
+  <span class="kw">background</span>: <span class="st">#fff</span>;
+  <span class="kw">padding</span>: 32px;
+  <span class="kw">border-radius</span>: 12px;
+}`,
+      why:'Con flex, justify-content centra en el eje principal (horizontal) y align-items en el cruzado (vertical). El truco está en que el contenedor tenga altura (100vh); sin ella, "centrar vertical" no tiene espacio donde operar.'},
+
+    {b:'B3',t:'Rejilla de tarjetas responsiva',
+      enun:'Monte una rejilla de tarjetas que se reacomode sola según el ancho disponible, <b>sin</b> media queries.',
+      req:['display grid','columnas automáticas con auto-fit','ancho mínimo por tarjeta con minmax','separación con gap'],
+      lng:'CSS',
+      sol:`<span class="kw">.galeria</span> {
+  <span class="kw">display</span>: grid;
+  <span class="kw">grid-template-columns</span>: repeat(auto-fit, minmax(220px, 1fr));
+  <span class="kw">gap</span>: 16px;
+}`,
+      why:'auto-fit crea tantas columnas como quepan; minmax(220px, 1fr) dice "mínimo 220px, y si sobra, repártelo". Así la rejilla se adapta sola al ancho de la pantalla sin necesidad de escribir media queries.'},
+
+    {b:'B4',t:'Filtrar y transformar una lista',
+      enun:'Dada una lista de productos <code>{nombre, precio}</code>, escriba una función que devuelva los <b>nombres</b> de los que cuesten menos de 500.',
+      req:['recibir el arreglo como parámetro','filter para quedarse con los baratos','map para extraer el nombre','return del resultado'],
+      lng:'JavaScript',
+      sol:`<span class="kw">function</span> baratos(productos) {
+  <span class="kw">return</span> productos
+    .filter(p =&gt; p.precio &lt; 500)   <span class="cm">// se queda con los baratos</span>
+    .map(p =&gt; p.nombre);           <span class="cm">// extrae solo el nombre</span>
+}
+
+<span class="cm">// baratos([{nombre:"A",precio:400},{nombre:"B",precio:600}]) → ["A"]</span>`,
+      why:'filter decide QUÉ elementos pasan (los de precio &lt; 500) y devuelve un arreglo nuevo; map TRANSFORMA cada uno (de objeto a su nombre). Encadenarlos es el patrón idiomático: primero se filtra, luego se transforma.'},
+
+    {b:'B4',t:'Mostrar y ocultar con un evento',
+      enun:'Un botón que muestra u oculta un bloque de horario al hacer clic.',
+      req:['agarrar botón y bloque con querySelector','escuchar el clic con addEventListener','alternar una clase con classList.toggle'],
+      lng:'JavaScript',
+      sol:`<span class="cm">// en CSS: .oculto { display: none; }</span>
+<span class="kw">const</span> boton = document.querySelector(<span class="st">"#ver"</span>);
+<span class="kw">const</span> horario = document.querySelector(<span class="st">"#horario"</span>);
+
+boton.addEventListener(<span class="st">"click"</span>, <span class="kw">function</span>() {
+  horario.classList.toggle(<span class="st">"oculto"</span>);
+});`,
+      why:'Primero se "agarran" los elementos; luego addEventListener asocia una función al clic. toggle pone la clase si no está y la quita si está, de modo que un mismo botón sirve para mostrar y ocultar sin un if adicional.'},
+
+    {b:'B5',t:'Traer un catálogo desde una API',
+      enun:'Traiga productos de <code>https://dummyjson.com/products?limit=6</code> y píntelos como tarjetas con título y precio.',
+      req:['función async','await en fetch y en .json()','acceder al arreglo dentro de .products','recorrer con forEach y pintar en el DOM'],
+      lng:'JavaScript',
+      sol:`<span class="kw">async function</span> cargar() {
+  <span class="kw">const</span> res = <span class="kw">await</span> fetch(<span class="st">"https://dummyjson.com/products?limit=6"</span>);
+  <span class="kw">const</span> datos = <span class="kw">await</span> res.json();
+  <span class="kw">const</span> grid = document.querySelector(<span class="st">"#grid"</span>);
+
+  datos.products.forEach(p =&gt; {        <span class="cm">// los datos vienen en .products</span>
+    grid.innerHTML += <span class="st">\`&lt;div class="card"&gt;
+      &lt;h3&gt;\${p.title}&lt;/h3&gt;
+      &lt;p&gt;$\${p.price}&lt;/p&gt;
+    &lt;/div&gt;\`</span>;
+  });
+}
+cargar();`,
+      why:'Son dos esperas: una para la respuesta (fetch) y otra para convertirla (.json()). El detalle crítico es que DummyJSON envuelve el arreglo en datos.products; recorrerlo con forEach y construir el HTML con plantillas ${…} es el mismo patrón "datos → recorrer → pintar".'},
+
+    {b:'B6',t:'Paleta por roles y regla 60-30-10',
+      enun:'Defina en CSS una paleta por roles (neutro, secundario, acento) como variables y aplíquela a una sección respetando el 60-30-10.',
+      req:['variables en :root para los tres roles','fondo neutro (60%)','tarjetas secundarias (30%)','acento solo en el botón (10%)'],
+      lng:'CSS',
+      sol:`<span class="kw">:root</span> {
+  <span class="kw">--neutro</span>: <span class="st">#f4f0e8</span>;     <span class="cm">/* 60% — fondo */</span>
+  <span class="kw">--secundario</span>: <span class="st">#dce8e3</span>; <span class="cm">/* 30% — tarjetas */</span>
+  <span class="kw">--acento</span>: <span class="st">#0f7c74</span>;     <span class="cm">/* 10% — solo lo importante */</span>
+}
+<span class="kw">section</span>  { <span class="kw">background</span>: <span class="kw">var</span>(--neutro); }
+<span class="kw">.card</span>    { <span class="kw">background</span>: <span class="kw">var</span>(--secundario); }
+<span class="kw">.btn</span>     { <span class="kw">background</span>: <span class="kw">var</span>(--acento); <span class="kw">color</span>: <span class="st">#fff</span>; }`,
+      why:'Nombrar por rol (no por color) hace el sistema reutilizable: cambiar la marca es editar una línea. La regla 60-30-10 reserva el acento para la acción (el botón); si se usara también en fondos, dejaría de "señalar" y la jerarquía visual se perdería.'}
+  ];
+
+  const CASOS=[
+    {b:'B2 · B6',t:'Primera web de una cafetería',
+      prob:'Un cliente dueño de una cafetería le pide su primera web de una sola página. Tiene: logo, un texto de bienvenida, fotos de cuatro productos con su precio, el horario y un botón de contacto. Plantee cómo <b>estructuraría y posicionaría</b> ese contenido.',
+      pista:'Piense en qué debe ver el ojo primero, cómo se agrupa lo relacionado y sobre qué "esqueleto" se alinea todo.',
+      sol:'Estructura semántica: &lt;header&gt; con logo + nav; &lt;main&gt; con una sección "hero" (bienvenida + botón de contacto como acción principal), una sección de productos en rejilla de tarjetas (las cuatro, con foto, nombre y precio), y una sección de horario; &lt;footer&gt; con contacto. Posicionamiento: el hero arriba (lo primero del patrón F/Z) con el título grande y el botón como único acento de color; los productos en una rejilla responsiva (auto-fit/minmax); espaciado generoso con escala de 8 pt para que respire.',
+      why:'El orden sigue la jerarquía: primero quién es y qué acción tomar, luego la oferta, luego el dato práctico. La rejilla da orden y se adapta al móvil; reservar el color de acento para el botón dirige la vista a la conversión (contactar).'},
+
+    {b:'B6',t:'Identidad visual: cálida pero profesional',
+      prob:'El mismo cliente quiere que la web "transmita calidez artesanal" pero que a la vez "se vea profesional". Debe elegir <b>paleta y tipografías</b> y justificar las decisiones.',
+      pista:'Relacione la sensación buscada con la psicología del color y con la fuente según el contexto; recuerde la proporción del color.',
+      sol:'Paleta: una base neutra cálida (cremas/arena) para el 60%, un secundario terroso suave para el 30%, y un acento cálido (terracota o un verde oliva) al 10% para botones y detalles — los tonos cálidos y tierra comunican lo artesanal sin perder sobriedad. Tipografías: un serif de carácter para los títulos (aporta tradición y calidez) + una sans neutra y legible para el cuerpo (Inter, por ejemplo), máximo dos familias. Contraste suficiente entre texto y fondo para legibilidad.',
+      why:'"Calidez" y "profesional" no se contradicen: la calidez la dan los tonos tierra y el serif; lo profesional, la disciplina del sistema (dos fuentes, 60-30-10, buen contraste, mucho espacio). La clave es que la decisión se justifique por la sensación buscada, no por gusto personal.'},
+
+    {b:'B4 · B5',t:'El fetch que no muestra nada',
+      prob:'Un estudiante hizo un <code>fetch</code> a una API. La consola no muestra errores, pero la página queda vacía. Diagnostique las <b>causas posibles</b> y cómo las verificaría.',
+      pista:'Si no hay error, el problema no es que "falle", sino dónde o cuándo se usan los datos. Revise tres sospechosos.',
+      sol:'Sospechosos: (1) los datos vienen anidados y se está leyendo el nivel equivocado (p. ej. usar la respuesta directa en vez de datos.products) → verificar abriendo la URL de la API en el navegador y mirando la forma del JSON, o con console.log(datos). (2) La función async nunca se llama → confirmar que hay una llamada a la función. (3) Se intenta pintar antes de que los datos lleguen (no se usó await) → revisar que fetch y .json() estén con await. También: el selector del contenedor no coincide con ningún elemento.',
+      why:'"Sin errores pero vacío" casi nunca es un fallo de red: es acceder mal a los datos, no ejecutar la función, o no esperar la respuesta. El método profesional es inspeccionar la forma real del JSON antes de asumir, en lugar de adivinar los nombres de los campos.'},
+
+    {b:'B4 · B5',t:'¿API o datos locales?',
+      prob:'Para el catálogo de la cafetería —cuatro productos que casi nunca cambian— ¿conviene traerlos de una API con <code>fetch</code> o escribirlos como datos en el propio JavaScript? Argumente su decisión.',
+      pista:'No es "lo más avanzado gana". Pregúntese con qué frecuencia cambian los datos y qué complejidad agrega cada opción.',
+      sol:'Para cuatro productos estáticos, lo razonable es un arreglo local en el JS (o directamente en el HTML): cero dependencias, carga instantánea, nada que pueda fallar por red. fetch a una API se justifica cuando los datos cambian con frecuencia, son muchos, los administra otra persona, o provienen de un sistema externo (un inventario, un PMS). Una vía intermedia: tener los datos en un archivo JSON propio y leerlo con fetch, para separar datos de código sin montar un backend.',
+      why:'La decisión es de ingeniería, no de moda: se elige la solución más simple que resuelve el problema. Introducir una API para datos que no cambian agrega puntos de fallo y complejidad sin beneficio. Saber cuándo NO usar algo también es dominio del tema.'},
+
+    {b:'B3 · B6',t:'Rescatar una página "amateur"',
+      prob:'Recibe una página que "funciona, pero se ve amateur": todo pegado a los bordes, los títulos tienen el mismo tamaño que el texto, y hay cinco colores vivos compitiendo. Elabore un <b>plan de mejora priorizado</b>.',
+      pista:'Hay un marco de cuatro letras que ordena esta clase de revisión; aplíquelo y priorice por impacto.',
+      sol:'Plan por prioridad: (1) Espacio — aplicar una escala de 8 pt: padding generoso, aire entre secciones, un ancho máximo de contenido centrado. (2) Jerarquía (Contraste) — una escala tipográfica: &lt;h1&gt; grande, subtítulos medianos, cuerpo de 16px. (3) Color (60-30-10) — reducir a una base neutra + un secundario + un acento, y reservar el acento para los botones. (4) Repetición y alineación — mismos estilos de botón y tarjeta en todo, y alinear a una retícula. En paralelo, limitar a dos tipografías.',
+      why:'El marco C.R.A.P. (Contraste, Repetición, Alineación, Proximidad) más el espacio en blanco explican casi todo lo "amateur". Se prioriza por impacto: el espacio y la jerarquía se notan de inmediato; el color ordenado y la consistencia consolidan la sensación profesional.'}
+  ];
+
+  // ---------------- tabs ----------------
+  const views={diag:'v-diag',ejer:'v-ejer',casos:'v-casos'};
+  document.querySelectorAll('.tabbtn').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.tabbtn').forEach(x=>x.classList.toggle('sel',x===b));
+    Object.values(views).forEach(id=>document.getElementById(id).classList.remove('sel'));
+    document.getElementById(views[b.dataset.v]).classList.add('sel');
+    window.scrollTo({top:0,behavior:'auto'});
+    runReveal();
+  }));
+
+  // ---------------- progress bar ----------------
+  const prog=document.getElementById('progress');
+  addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%';},{passive:true});
+
+  // ---------------- reveal ----------------
+  let ro;
+  function runReveal(){
+    const els=document.querySelectorAll('.view.sel .reveal:not(.in)');
+    if('IntersectionObserver' in window){
+      ro=ro||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}}),{threshold:.08});
+      els.forEach(el=>ro.observe(el));
+    } else els.forEach(el=>el.classList.add('in'));
+  }
+
+  // ---------------- diagnóstico ----------------
+  let qi=0, correct=0; const perBlock={};
+  Object.keys(BLOQUES).forEach(k=>perBlock[k]={ok:0,n:0});
+  PREG.forEach(p=>perBlock[p.b].n++);
+  const LET=['A','B','C','D'];
+
+  function showQ(){
+    const p=PREG[qi];
+    document.getElementById('qidx').textContent=qi+1;
+    document.getElementById('qbar').style.width=((qi)/PREG.length*100)+'%';
+    document.getElementById('qscore').textContent=correct+' correctas';
+    document.getElementById('qtag').textContent=BLOQUES[p.b];
+    document.getElementById('qtext').innerHTML=p.q;
+    const opts=document.getElementById('qopts');opts.innerHTML='';
+    p.o.forEach((txt,i)=>{
+      const b=document.createElement('button');b.className='opt';
+      b.innerHTML='<span class="lt">'+LET[i]+'</span><span>'+txt+'</span>';
+      b.addEventListener('click',()=>answer(i));
+      opts.appendChild(b);
+    });
+    const ex=document.getElementById('qexpl');ex.className='expl';ex.innerHTML='';
+    document.getElementById('qnext').style.display='none';
+  }
+  function answer(i){
+    const p=PREG[qi];const opts=[...document.getElementById('qopts').children];
+    opts.forEach((b,bi)=>{b.disabled=true;if(bi===p.c)b.classList.add('correct');else if(bi===i)b.classList.add('wrong');});
+    if(i===p.c){correct++;perBlock[p.b].ok++;}
+    document.getElementById('qscore').textContent=correct+' correctas';
+    const ex=document.getElementById('qexpl');ex.className='expl show';
+    ex.innerHTML='<b>'+(i===p.c?'Correcto. ':'Repase. ')+'</b>'+p.e;
+    document.getElementById('qnext').style.display='inline-block';
+  }
+  document.getElementById('qnext').addEventListener('click',()=>{
+    qi++;
+    if(qi>=PREG.length) showResults(); else showQ();
+  });
+  document.getElementById('diag-go').addEventListener('click',()=>{
+    document.getElementById('diag-start').style.display='none';
+    document.getElementById('diag-quiz').style.display='block';
+    qi=0;correct=0;Object.keys(perBlock).forEach(k=>perBlock[k].ok=0);
+    showQ();
+  });
+  function showResults(){
+    document.getElementById('diag-quiz').style.display='none';
+    const r=document.getElementById('diag-results');r.classList.add('show');
+    const pct=Math.round(correct/PREG.length*100);
+    document.getElementById('pct').textContent=pct;
+    document.getElementById('raw').textContent=correct;
+    const mapa=document.getElementById('mapa');mapa.innerHTML='';
+    const bajos=[];
+    Object.keys(BLOQUES).forEach(k=>{
+      const pb=perBlock[k];const p=Math.round(pb.ok/pb.n*100);
+      let cls='casi',lab='Casi';
+      if(p>=80){cls='dom';lab='Dominado';} else if(p<50){cls='rep';lab='A repasar';}
+      if(p<80) bajos.push({k,p});
+      const row=document.createElement('div');row.className='mrow';
+      row.innerHTML='<div class="mb">'+BLOQUES[k]+'</div><div class="track"><span style="width:'+p+'%"></span></div><div class="lab '+cls+'">'+lab+' · '+p+'%</div>';
+      mapa.appendChild(row);
+    });
+    const pr=document.getElementById('priority');
+    bajos.sort((a,b)=>a.p-b.p);
+    if(bajos.length===0){
+      pr.innerHTML='<h3>Qué repasar con prioridad</h3><p style="margin:0;color:var(--texto)">Dominio parejo en todos los bloques. Puede usar las pestañas de ejercicios y casos para afianzar la aplicación práctica.</p>';
+    } else {
+      let li=bajos.map(x=>'<li><b>'+BLOQUES[x.k]+'</b> — '+x.p+'%'+(x.p<50?' (prioridad alta)':'')+'</li>').join('');
+      pr.innerHTML='<h3>Qué repasar con prioridad</h3><ol>'+li+'</ol>';
+    }
+    runReveal();
+  }
+  document.getElementById('diag-retry').addEventListener('click',()=>{
+    document.getElementById('diag-results').classList.remove('show');
+    document.getElementById('diag-start').style.display='block';
+  });
+
+  // ---------------- ejercicios ----------------
+  const el=document.getElementById('ejer-list');
+  EJER.forEach((e,i)=>{
+    const d=document.createElement('div');d.className='item reveal';
+    d.innerHTML=
+      '<div class="inum">Ejercicio '+(i+1)+' · '+BLOQUES[e.b]+'</div>'+
+      '<div class="ititle">'+e.t+'</div>'+
+      '<p style="margin:0;color:var(--texto)">'+e.enun+'</p>'+
+      '<div class="ireq"><div class="h">Requisitos</div><ul>'+e.req.map(r=>'<li>'+r+'</li>').join('')+'</ul></div>'+
+      '<div class="yourlabel">Escriba su solución antes de revelar:</div>'+
+      '<textarea class="yoursol" spellcheck="false" placeholder="// su código aquí..."></textarea>'+
+      '<div style="margin-top:14px"><button class="btn sec rev">Ver solución</button></div>'+
+      '<div class="sol"><div class="code"><div class="cbar"><span class="lng">'+e.lng+'</span></div><pre>'+e.sol+'</pre></div>'+
+      '<div class="why"><span class="h">Por qué</span>'+e.why+'</div></div>';
+    el.appendChild(d);
+    const btn=d.querySelector('.rev'),sol=d.querySelector('.sol');
+    btn.addEventListener('click',()=>{const open=sol.classList.toggle('show');btn.textContent=open?'Ocultar solución':'Ver solución';});
+  });
+
+  // ---------------- casos ----------------
+  const cl=document.getElementById('casos-list');
+  CASOS.forEach((c,i)=>{
+    const d=document.createElement('div');d.className='item reveal';
+    d.innerHTML=
+      '<div class="inum">Caso '+(i+1)+' · '+c.b+'</div>'+
+      '<div class="ititle">'+c.t+'</div>'+
+      '<p style="margin:0;color:var(--texto)">'+c.prob+'</p>'+
+      '<div class="pista">💭 <b>Para pensar antes de resolver:</b> '+c.pista+'</div>'+
+      '<div class="yourlabel">Plantee su propia solución:</div>'+
+      '<textarea class="yoursol" spellcheck="false" placeholder="Su planteamiento..."></textarea>'+
+      '<div style="margin-top:14px"><button class="btn sec rev">Ver solución modelo</button></div>'+
+      '<div class="sol"><div class="why" style="border-left-color:var(--acento)"><span class="h">Solución modelo</span>'+c.sol+'</div>'+
+      '<div class="why"><span class="h">Por qué</span>'+c.why+'</div>'+
+      '<p class="modelnote">Esta es una solución modelo, no la única correcta. Si su planteamiento difiere pero resuelve el problema y usted puede justificarlo, es igualmente válido.</p></div>';
+    cl.appendChild(d);
+    const btn=d.querySelector('.rev'),sol=d.querySelector('.sol');
+    btn.addEventListener('click',()=>{const open=sol.classList.toggle('show');btn.textContent=open?'Ocultar solución modelo':'Ver solución modelo';});
+  });
+
+  runReveal();
+</script>
+</body>
+</html>

@@ -383,3 +383,4 @@ dialog::backdrop {
     padding: 8px;
   }
 }
+.review-home-card{padding:clamp(24px,4vw,48px);border:1px solid #ccd5fb;border-radius:22px;background:linear-gradient(120deg,#f0f3ff,#f7fafc)}.review-home-card p:not(.eyebrow){max-width:70ch;color:var(--muted)}.review-home-card h2{max-width:800px}
