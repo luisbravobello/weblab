@@ -3,31 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Estudia seguridad web con ejemplos interactivos de HTTPS, XSS, inyección, contraseñas, cabeceras y dependencias.">
+<meta name="description" content="Clase 05 de seguridad web: HTTPS, XSS, inyección, contraseñas, cabeceras, dependencias y seguridad al programar con IA.">
 <title>Seguridad web · Clase 05 | WebLab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="../assets/design.css">
-<link rel="stylesheet" href="../assets/study.css">
-<link rel="stylesheet" href="../assets/appearance.css?v=20261019-5">
-<link rel="stylesheet" href="../assets/spacing.css?v=20261019-2">
 <style>
   :root{
-    --bg:#f5f7fc;--surface:#fff;--surface-2:#eef1ff;
-    --ink:#18213a;--muted:#59657c;
-    --cyan:#233de0;--amber:#b74619;--violet:#795300;--sky:#233de0;
+    --bg:#10132E;--surface:#1A1F45;--surface-2:#242A5C;
+    --ink:#EDEEF7;--muted:#9DA2C4;
+    --cyan:#35D6C0;--amber:#F6B44D;--violet:#B7A8FF;--sky:#7FB2FF;
     --ok:#57E389;--bad:#FF6B6B;--warn:#FF9D6B;
-    --line:#e1e6f0;--line-strong:#c7d0e0;
-    --shadow:0 24px 60px -30px rgba(24,33,58,.18);
+    --line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);
+    --shadow:0 24px 60px -30px rgba(0,0,0,.7);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.7;
-    background:#fff;
+  body{margin:0;color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.55;
+    background:radial-gradient(1100px 640px at 85% -10%,rgba(255,107,107,.08),transparent 60%),
+      radial-gradient(900px 520px at -5% 12%,rgba(53,214,192,.08),transparent 55%),var(--bg);
     -webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em;line-height:1.12}
+  h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.015em;line-height:1.12}
   code,pre,textarea,.mono{font-family:'JetBrains Mono',monospace}
   a{color:var(--cyan)}
   :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
@@ -208,50 +204,31 @@
   @media(max-width:820px){.nav-links{width:100%;overflow-x:auto}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
-  .site-header .nav-inner{width:min(1160px,calc(100% - 48px));margin:auto;min-height:80px;display:flex;align-items:center;gap:28px}
-  .site-header #main-nav{display:flex;align-items:center;gap:22px;margin-left:auto}
-  .site-header #main-nav>a{font-size:.9rem;font-weight:800;text-decoration:none;padding:10px 0}
-  .site-header .design-nav{width:auto}.site-header .design-nav nav{display:grid;gap:5px}
-  .site-header .menu-button{display:none}
-  .nav-links{position:sticky;top:80px;z-index:15;display:flex;gap:10px;overflow:auto;padding:12px max(24px,calc((100% - 1160px)/2));background:var(--soft);border-bottom:1px solid var(--line)}
-  .nav-links a{flex:none;padding:7px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;background:white}
-  .nav-links a.active,.nav-links a:hover{background:#eef1ff;color:#233de0;border-color:#cfd7ef}
-  body>section:not(.hero){padding:52px 24px;border-bottom:1px solid var(--line)}
-  body>section>main{width:min(100%,1000px);padding:0;margin:0 auto}
-  .hero{padding:74px 24px;background:linear-gradient(140deg,#f2f4ff,#f7fafc);border-bottom:1px solid var(--line)}
-  .hero>main{width:min(100%,1000px);margin:auto;padding:0}
-  .reveal{transform:translateY(10px)}
-  footer{width:min(100%,1160px);padding:36px 24px 54px;border-top:1px solid var(--line)}
-  [data-theme=dark]{--bg:#050505;--surface:#151e2c;--surface-2:#1a202c;--ink:#f2f5fc;--muted:#c4cede;--line:#384156;--line-strong:#54637e;--cyan:#aebdff;--amber:#ffc18e;--violet:#d6b0ff;--sky:#8cdcf7;--ok:#8de2ad;--bad:#ff929e;--warn:#ffc18e}
-  [data-theme=dark] body{background:#050505;color:var(--ink)}
-  [data-theme=dark] body>section:not(.hero),[data-theme=dark] .hero{background:#050505}
-  [data-theme=dark] .hero{background:linear-gradient(140deg,#111825,#050505)}
-  [data-theme=dark] .nav-links{background:#0a0d13}
-  [data-theme=dark] .nav-links a{background:#151e2c;color:#edf1fa;border-color:#384156}
-  [data-theme=dark] .nav-links a.active,[data-theme=dark] .nav-links a:hover{background:#1e2944;color:#cfdaff;border-color:#445478}
-  [data-theme=dark] .site-header .nav-practice{background:#1e2944;color:#cfdaff;border-color:#445478}
-  [data-theme=dark] .site-header #main-nav .design-nav nav{background:#111721}
-  @media(max-width:940px){.site-header .nav-inner{width:calc(100% - 32px);min-height:72px;display:grid;grid-template-columns:minmax(0,1fr) 44px 44px;gap:12px;padding:12px 0}.site-header .brand{grid-column:1;grid-row:1}.site-header .appearance-open{grid-column:2;grid-row:1}.site-header .menu-button{grid-column:3;grid-row:1;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink)}.site-header #main-nav{display:none;grid-column:1/-1;grid-row:2;width:100%;margin:0}.site-header #main-nav.is-open{display:grid;max-height:calc(100dvh - 96px);overflow-y:auto}.site-header .nav-practice{display:none}}
-  @media(max-width:600px){body>section:not(.hero){padding:38px 18px}.hero{padding:48px 18px}.nav-links{top:72px;padding-inline:16px}}
+  label,.label,.field-label{color:var(--ink);font-weight:700;opacity:1}
+  input,select,textarea{color:var(--ink)}
 </style>
-<script src="../js/appearance.js?v=20261019-5"></script>
-<script src="../js/app.js?v=20261019-2" defer></script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
-<a class="skip-link" href="#inicio">Saltar al contenido</a>
-<header class="site-header">
-  <div class="nav-inner">
-    <a class="brand" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 5l-6 22" /></svg>Web<span>Lab</span></a>
-    <button class="menu-button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg></button>
-    <nav id="main-nav" aria-label="Principal">
-      <a href="../index.html">Inicio</a><a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
-      <details class="design-nav"><summary>Diseño</summary><nav aria-label="Diseño visual"><a href="composicion.html">Composición</a><a href="tipografia.html">Tipografía</a><a href="color.html">Color</a></nav></details>
-      <details class="design-nav practice-nav" open><summary>Estudio</summary><nav aria-label="Estudio y práctica"><a href="repaso.html">Repaso y 50 casos</a><a href="seguridad.html" aria-current="page">Seguridad web</a><a href="seo.html">SEO con Google</a><a href="json.html">JSON y datos</a><a href="redes.html">DNS, HTTP y HTTPS</a><a href="accesibilidad.html">Accesibilidad</a><a href="adaptable.html">Diseño adaptable</a><a href="practicas.html">Retos y progreso</a><a href="componentes.html">Componentes</a><a href="proyecto.html">Proyecto guiado</a><a href="glosario.html">Glosario</a><a href="fuentes.html">Documentación</a></nav></details>
-    </nav><a class="nav-practice" href="#reto">Practicar</a>
-  </div>
-</header>
 
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span> ISW-312 · Clase 05</div>
+    <div class="nav-links">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#mente">Mentalidad</a>
+      <a href="#https">HTTPS</a>
+      <a href="#xss">XSS</a>
+      <a href="#sql">Inyección</a>
+      <a href="#pass">Contraseñas</a>
+      <a href="#secretos">Secretos</a>
+      <a href="#headers">Cabeceras</a>
+      <a href="#deps">Dependencias</a>
+      <a href="#ia">Seguridad con IA</a>
+      <a href="#reto">Reto</a>
+    </div>
+  </div>
+</nav>
 
 <section class="hero" id="inicio">
   <main>
@@ -259,7 +236,7 @@
     <h1>Hoy aprendes a <span class="g">defender</span> lo que construyes.</h1>
     <p>Ya sabes hacer sitios que funcionan y se ven bien. Pero una web insegura no es solo un bug: son datos de clientes robados, dinero perdido y la reputación del negocio por el suelo. Hoy ves las amenazas reales, <b>cómo</b> protegerte de cada una y <b>con qué tecnología</b> — incluyendo cómo programar seguro cuando usas IA.</p>
     <div class="recall">
-      <span class="ic">🛡️</span>
+      <span class="ic"></span>
       <p><b>La regla de oro de toda esta clase:</b> <b>nunca confíes en nada que venga del usuario</b> ni en nada que corra en el navegador. Todo lo que el usuario puede tocar, un atacante también. Repite esa frase: es el 80% de la seguridad web.</p>
     </div>
   </main>
@@ -284,7 +261,7 @@
       <div class="pr"><div class="l">3 · Defensa en capas</div><p>No dependas de una sola barrera. Valida en el cliente Y en el servidor, cifra Y limita permisos. Si una falla, otra protege.</p></div>
       <div class="pr"><div class="l">4 · Menor privilegio</div><p>Cada usuario, cada parte del sistema, solo con los permisos mínimos para su tarea. Si algo se compromete, el daño es limitado.</p></div>
     </div>
-    <div class="callout bad">⚠️ <b>El error mental #1:</b> "validé el formulario con JavaScript, ya está seguro". No. La validación del cliente es para <b>comodidad del usuario</b>; un atacante salta el navegador y le pega directo a tu servidor. La seguridad real <b>siempre</b> vive en el servidor.</div>
+    <div class="callout bad"> <b>El error mental #1:</b> "validé el formulario con JavaScript, ya está seguro". No. La validación del cliente es para <b>comodidad del usuario</b>; un atacante salta el navegador y le pega directo a tu servidor. La seguridad real <b>siempre</b> vive en el servidor.</div>
   </main>
 </section>
 
@@ -298,7 +275,7 @@
       <div class="tcol def"><h4>Cómo te proteges</h4><ul><li>Instala un <b>certificado TLS/SSL</b> y sirve todo por <code>https://</code>.</li><li>Redirige todo el tráfico HTTP → HTTPS.</li><li>Activa <b>HSTS</b> para forzar HTTPS siempre.</li></ul></div>
       <div class="tcol tec"><h4>Con qué tecnología</h4><ul><li><b>Let's Encrypt</b> — certificados gratis y automáticos.</li><li><b>Cloudflare</b> — HTTPS + protección, plan gratis.</li><li>Hostings como Netlify/Vercel traen HTTPS incluido.</li></ul></div>
     </div>
-    <div class="callout"><b>Dato práctico:</b> hoy no hay excusa para no tener HTTPS — es gratis con Let's Encrypt y automático en la mayoría de hostings modernos. El candado 🔒 del navegador es lo primero que tus clientes miran para confiar.</div>
+    <div class="callout"><b>Dato práctico:</b> hoy no hay excusa para no tener HTTPS — es gratis con Let's Encrypt y automático en la mayoría de hostings modernos. El candado  del navegador es lo primero que tus clientes miran para confiar.</div>
   </main>
 </section>
 
@@ -313,7 +290,7 @@
       <h4>Un comentario malicioso en un blog</h4>
       <p class="body" style="margin:0 0 12px">Imagina una caja de comentarios. Abajo está el "comentario" que escribe un atacante. Cambia entre la versión <b style="color:var(--bad)">insegura</b> (usa <code>innerHTML</code>) y la <b style="color:var(--ok)">segura</b> (usa <code>textContent</code>) y pulsa Publicar. Todo ocurre en un recuadro aislado.</p>
       <label class="lbl">Comentario del atacante:</label>
-      <input class="field" id="xss-in" value="&lt;img src=x onerror=&quot;document.body.innerHTML='💀 SITIO HACKEADO'&quot;&gt;">
+      <input class="field" id="xss-in" value="&lt;img src=x onerror=&quot;document.body.innerHTML=' SITIO HACKEADO'&quot;&gt;">
       <div class="toggle" id="xss-mode" style="margin-top:12px">
         <button data-m="bad" data-danger class="sel">innerHTML (inseguro)</button>
         <button data-m="ok">textContent (seguro)</button>
@@ -330,13 +307,13 @@
     </div>
     <div class="code">
       <div class="cbar"><span class="fn">comentarios.js</span><span class="tag ok">SEGURO</span></div>
-      <pre><span class="c">// ✗ PELIGRO: ejecuta lo que sea que el usuario haya escrito</span>
+      <pre><span class="c">//  PELIGRO: ejecuta lo que sea que el usuario haya escrito</span>
 caja.innerHTML = comentario;
 
-<span class="c">// ✓ SEGURO: lo muestra como texto literal, sin ejecutar</span>
+<span class="c">//  SEGURO: lo muestra como texto literal, sin ejecutar</span>
 caja.textContent = comentario;
 
-<span class="c">// ✓ Si NECESITAS HTML (ej. negritas), límpialo primero:</span>
+<span class="c">//  Si NECESITAS HTML (ej. negritas), límpialo primero:</span>
 caja.innerHTML = <span class="f">DOMPurify</span>.<span class="f">sanitize</span>(comentario);</pre>
     </div>
   </main>
@@ -371,10 +348,10 @@ caja.innerHTML = <span class="f">DOMPurify</span>.<span class="f">sanitize</span
     </div>
     <div class="code">
       <div class="cbar"><span class="fn">login.php</span><span class="tag bad">COMPARA</span></div>
-      <pre><span class="c">// ✗ PELIGRO: pega el texto del usuario directo en la consulta</span>
+      <pre><span class="c">//  PELIGRO: pega el texto del usuario directo en la consulta</span>
 <span class="at">$sql</span> = <span class="s">"SELECT * FROM users WHERE user='"</span> . <span class="at">$_POST</span>[<span class="s">'user'</span>] . <span class="s">"'"</span>;
 
-<span class="c">// ✓ SEGURO: el dato va como parámetro (?), nunca pegado</span>
+<span class="c">//  SEGURO: el dato va como parámetro (?), nunca pegado</span>
 <span class="at">$stmt</span> = <span class="at">$pdo</span>-&gt;<span class="f">prepare</span>(<span class="s">"SELECT * FROM users WHERE user = ?"</span>);
 <span class="at">$stmt</span>-&gt;<span class="f">execute</span>([<span class="at">$_POST</span>[<span class="s">'user'</span>]]);</pre>
     </div>
@@ -393,8 +370,8 @@ caja.innerHTML = <span class="f">DOMPurify</span>.<span class="f">sanitize</span
       <label class="lbl">Escribe una contraseña:</label>
       <input class="field" id="pw-in" value="miClave123">
       <div class="hashrow">
-        <div class="hashcard bad"><div class="h">❌ Texto plano (en la BD)</div><div class="v" id="pw-plain">miClave123</div><p>Quien vea la base de datos la lee tal cual. Inaceptable.</p></div>
-        <div class="hashcard ok"><div class="h">✓ Hash con bcrypt</div><div class="v" id="pw-hash">—</div><p>Huella irreversible y única. Aunque roben la BD, no obtienen la clave.</p></div>
+        <div class="hashcard bad"><div class="h"> Texto plano (en la BD)</div><div class="v" id="pw-plain">miClave123</div><p>Quien vea la base de datos la lee tal cual. Inaceptable.</p></div>
+        <div class="hashcard ok"><div class="h"> Hash con bcrypt</div><div class="v" id="pw-hash">—</div><p>Huella irreversible y única. Aunque roben la BD, no obtienen la clave.</p></div>
       </div>
       <div class="note">La misma contraseña siempre produce un hash distinto gracias al <b>salt</b> (un valor aleatorio añadido), lo que frena los ataques por tablas precalculadas.</div>
     </div>
@@ -426,7 +403,7 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
 <span class="c"># En el código lo lees así, sin exponerlo:</span>
 <span class="k">const</span> clave = process.env.<span class="at">API_KEY</span>;</pre>
     </div>
-    <div class="callout bad">💀 <b>Caso real frecuente:</b> subir una clave a GitHub "por un momentito". Hay bots que escanean GitHub y encuentran claves en <b>segundos</b>. Si pasa: revoca la clave de inmediato — no basta con borrar el commit, ya quedó en el historial.</div>
+    <div class="callout bad"> <b>Caso real frecuente:</b> subir una clave a GitHub "por un momentito". Hay bots que escanean GitHub y encuentran claves en <b>segundos</b>. Si pasa: revoca la clave de inmediato — no basta con borrar el commit, ya quedó en el historial.</div>
   </main>
 </section>
 
@@ -463,14 +440,14 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
     <h2>Programar con <em>IA</em>, sin bajar la guardia</h2>
     <p class="lead">La IA (como la que quizá ya usas) acelera muchísimo, pero introduce riesgos nuevos. Usarla bien es una habilidad profesional. Estas son las prácticas que te separan de quien "copia y pega" sin pensar.</p>
     <div class="aigrid">
-      <div class="aicard"><div class="ic">🔍</div><h4>Revisa, no copies a ciegas</h4><p>La IA genera código que <b>puede tener vulnerabilidades</b> (inyección, XSS, validación floja). Entiende cada línea antes de usarla. Si no la entiendes, no la pegues.</p></div>
-      <div class="aicard"><div class="ic">📦</div><h4>Verifica los paquetes</h4><p>La IA a veces <b>inventa</b> nombres de librerías que no existen. Atacantes registran esos nombres con malware (<i>slopsquatting</i>). Confirma que el paquete existe y es oficial antes de instalarlo.</p></div>
-      <div class="aicard"><div class="ic">🤐</div><h4>No pegues secretos en el prompt</h4><p>Nunca pegues contraseñas, API keys, datos de clientes o código propietario en un chat de IA. Trátalo como algo público.</p></div>
-      <div class="aicard"><div class="ic">💉</div><h4>Cuidado con la inyección de prompts</h4><p>Si tu app usa IA y le pasa texto del usuario, ese texto puede contener instrucciones maliciosas. Es el "nunca confíes en la entrada" aplicado a la IA.</p></div>
-      <div class="aicard"><div class="ic">✅</div><h4>Pídele que revise seguridad</h4><p>Úsala a tu favor: "revisa este código buscando vulnerabilidades de seguridad". Pero <b>verifica</b> lo que te diga; es apoyo, no autoridad final.</p></div>
-      <div class="aicard"><div class="ic">⚖️</div><h4>Licencias y datos</h4><p>El código generado puede parecerse a código con licencia. Y no entrenes ni subas datos sensibles de tu empresa o clientes a herramientas sin permiso.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>Revisa, no copies a ciegas</h4><p>La IA genera código que <b>puede tener vulnerabilidades</b> (inyección, XSS, validación floja). Entiende cada línea antes de usarla. Si no la entiendes, no la pegues.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>Verifica los paquetes</h4><p>La IA a veces <b>inventa</b> nombres de librerías que no existen. Atacantes registran esos nombres con malware (<i>slopsquatting</i>). Confirma que el paquete existe y es oficial antes de instalarlo.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>No pegues secretos en el prompt</h4><p>Nunca pegues contraseñas, API keys, datos de clientes o código propietario en un chat de IA. Trátalo como algo público.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>Cuidado con la inyección de prompts</h4><p>Si tu app usa IA y le pasa texto del usuario, ese texto puede contener instrucciones maliciosas. Es el "nunca confíes en la entrada" aplicado a la IA.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>Pídele que revise seguridad</h4><p>Úsala a tu favor: "revisa este código buscando vulnerabilidades de seguridad". Pero <b>verifica</b> lo que te diga; es apoyo, no autoridad final.</p></div>
+      <div class="aicard"><div class="ic"></div><h4>Licencias y datos</h4><p>El código generado puede parecerse a código con licencia. Y no entrenes ni subas datos sensibles de tu empresa o clientes a herramientas sin permiso.</p></div>
     </div>
-    <div class="callout amber">🧠 <b>La idea que lo une todo:</b> la IA es un copiloto rapidísimo, pero <b>la responsabilidad de que el código sea seguro es tuya</b>. Tienes que saber de seguridad para poder revisar lo que la IA produce — si no, estás metiendo vulnerabilidades a gran velocidad sin saberlo.</div>
+    <div class="callout amber"> <b>La idea que lo une todo:</b> la IA es un copiloto rapidísimo, pero <b>la responsabilidad de que el código sea seguro es tuya</b>. Tienes que saber de seguridad para poder revisar lo que la IA produce — si no, estás metiendo vulnerabilidades a gran velocidad sin saberlo.</div>
   </main>
 </section>
 
@@ -483,7 +460,7 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
       <div class="prog" id="clf-prog"></div>
       <div class="ctx" id="clf-ctx"></div>
       <div class="snippet" id="clf-snip"></div>
-      <div class="btns"><button class="seg" data-a="ok">✓ Seguro</button><button class="ins" data-a="bad">✗ Inseguro</button></div>
+      <div class="btns"><button class="seg" data-a="ok"> Seguro</button><button class="ins" data-a="bad"> Inseguro</button></div>
       <div class="fb" id="clf-fb"></div>
       <div class="done" id="clf-done"><div class="big" id="clf-score"></div><p style="color:var(--muted)">Entre más reconozcas, más seguro programas.</p></div>
     </div>
@@ -511,7 +488,7 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
     <div class="check" id="check"></div>
 
     <div class="home">
-      <h3>🎯 Tu reto para la próxima</h3>
+      <h3> Tu reto para la próxima</h3>
       <ol>
         <li>Revisa el proyecto de tu negocio y aplícale <b>tres</b> medidas de hoy: HTTPS, que no haya secretos en el front, y validación/escape de cualquier entrada del usuario.</li>
         <li>Si usaste IA para algún código, <b>audítalo</b>: ¿hay innerHTML con datos del usuario? ¿consultas pegadas? ¿alguna clave expuesta? Corrige lo que encuentres.</li>
@@ -550,12 +527,12 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
       const doc=base+'<h4>Comentarios</h4><div class="c" id="box"></div>'+
         '<scr'+'ipt>document.getElementById("box").innerHTML='+JSON.stringify(raw)+';</scr'+'ipt>';
       frame.srcdoc=doc;
-      note.innerHTML='<b style="color:var(--bad)">⚠️ Inseguro:</b> con <code>innerHTML</code>, el navegador interpretó la etiqueta y <b>ejecutó</b> el código del atacante. En un sitio real, ese código podría robar la sesión de quien lea el comentario.';
+      note.innerHTML='<b style="color:var(--bad)"> Inseguro:</b> con <code>innerHTML</code>, el navegador interpretó la etiqueta y <b>ejecutó</b> el código del atacante. En un sitio real, ese código podría robar la sesión de quien lea el comentario.';
     } else {
       const doc=base+'<h4>Comentarios</h4><div class="c" id="box"></div>'+
         '<scr'+'ipt>document.getElementById("box").textContent='+JSON.stringify(raw)+';</scr'+'ipt>';
       frame.srcdoc=doc;
-      note.innerHTML='<b style="color:var(--ok)">✓ Seguro:</b> con <code>textContent</code>, el mismo texto se muestra <b>literal</b>, como caracteres. El código no se ejecuta: el atacante solo logró escribir un comentario raro.';
+      note.innerHTML='<b style="color:var(--ok)"> Seguro:</b> con <code>textContent</code>, el mismo texto se muestra <b>literal</b>, como caracteres. El código no se ejecuta: el atacante solo logró escribir un comentario raro.';
     }
   });
 
@@ -570,11 +547,11 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
     const inj=/('|--|\bOR\b|=)/i.test(p);
     if(sqlMode==='bad'){
       out.innerHTML='Consulta que se ejecuta:\n\nSELECT * FROM users\nWHERE user=\''+esc(u)+'\' AND pass=\'<span class="inj">'+esc(p)+'</span>\'';
-      if(inj){ver.className='verdict bad';ver.textContent='✗ Acceso concedido SIN la contraseña correcta. La inyección hizo la condición siempre verdadera.';}
+      if(inj){ver.className='verdict bad';ver.textContent=' Acceso concedido SIN la contraseña correcta. La inyección hizo la condición siempre verdadera.';}
       else{ver.className='verdict';ver.style.color='var(--muted)';ver.textContent='Con una contraseña normal parece funcionar… pero la puerta a la inyección está abierta. Prueba con \' OR \'1\'=\'1';}
     } else {
       out.innerHTML='Consulta preparada (el dato va aparte):\n\nSELECT * FROM users\nWHERE user = <span class="ph">?</span> AND pass = <span class="ph">?</span>\n\nParámetros: ['+esc(u)+', '+esc(p)+']';
-      ver.className='verdict ok';ver.textContent='✓ El texto del atacante se trata como un dato, no como código. La inyección no funciona.';
+      ver.className='verdict ok';ver.textContent=' El texto del atacante se trata como un dato, no como código. La inyección no funciona.';
     }
   });
 
@@ -609,7 +586,7 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
     const on=hstate.filter(Boolean).length;
     if(on===0) hn.innerHTML='Enciende las cabeceras para ver tu nivel de protección.';
     else if(on<HEADERS.length) hn.innerHTML='<b>'+on+'/'+HEADERS.length+' activas.</b> Cada una cierra una puerta distinta. Actívalas todas para blindaje completo.';
-    else hn.innerHTML='<b style="color:var(--ok)">✓ Blindaje completo.</b> Con estas cinco cabeceras cubres los vectores más comunes a nivel de navegador — y casi todo se activa con una línea usando <code>helmet</code>.';
+    else hn.innerHTML='<b style="color:var(--ok)"> Blindaje completo.</b> Con estas cinco cabeceras cubres los vectores más comunes a nivel de navegador — y casi todo se activa con una línea usando <code>helmet</code>.';
   }
   HEADERS.forEach((h,i)=>{
     const r=document.createElement('div');r.className='hrow';
@@ -687,7 +664,7 @@ API_KEY=<span class="s">sk_live_9f3a...NUNCA_EN_EL_FRONT</span>
   ];
   const ch=document.getElementById('check');
   CHECK.forEach(c=>{const d=document.createElement('div');d.className='ci';
-    d.innerHTML='<div class="bx">✓</div><div class="tx">'+c[0]+'<small>'+c[1]+'</small></div>';
+    d.innerHTML='<div class="bx"></div><div class="tx">'+c[0]+'<small>'+c[1]+'</small></div>';
     d.addEventListener('click',()=>d.classList.toggle('on'));ch.appendChild(d);});
 
   // nav active
